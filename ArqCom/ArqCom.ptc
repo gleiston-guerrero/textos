@@ -1,0 +1,84 @@
+\babel@toc {spanish}{}\relax 
+\ttl@starttoc {part@1}
+\contentsline {part}{\numberline {I}Componentes del Computador}{11}{part.1}%
+\contentsline {chapter}{\numberline {1}Contextualizaci{\'o}n y Perspectivas Generales}{15}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Prop{\'o}sito y Alcance del Cap{\'i}tulo}{15}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Resultados de Aprendizaje Esperados}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Ubicaci{\'o}n en el Libro y Prerrequisitos}{16}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Prerrequisitos y Preparaci{\'o}n}{16}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Competencias, Habilidades y Destrezas a Desarrollar}{16}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Motivaci{\'o}n y Contexto Hist{\'o}rico-Tecnol{\'o}gico}{16}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Paradigmas Arquitect{\'o}nicos de Referencia}{17}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Von Neumann y Harvard}{17}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}RISC vs.\ CISC}{17}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}VLIW/EPIC, \emph {Dataflow} y M{\'a}quinas de Pila}{17}{subsection.1.5.3}%
+\contentsline {section}{\numberline {1.6}M{\'e}tricas, Leyes y Principios de Dise{\~n}o}{18}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}IPC, ILP y TLP}{18}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Amdahl, Gustafson y \emph {roofline}}{18}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Principios de Localidad y Jerarqu{\'i}a de Memoria}{18}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}Organizaci{\'o}n Sist{\'e}mica Moderna}{18}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Heterogeneidad: CPU+GPU+TPU/NPU}{19}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Interconexiones: PCIe, NVLink, CXL}{19}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Memoria Unificada: UMA y HMM}{19}{subsection.1.7.3}%
+\contentsline {section}{\numberline {1.8}Tendencias y Perspectivas}{19}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Integraci{\'o}n \emph {Chiplet} y Gesti{\'o}n Energ{\'e}tica}{19}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Arquitecturas Neurom{\'o}rficas}{20}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Computaci{\'o}n Cu{\'a}ntica}{20}{subsection.1.8.3}%
+\contentsline {section}{\numberline {1.9}Metodolog{\'i}a de Laboratorio y Evaluaci{\'o}n}{20}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Benchmarks y trazas}{20}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Herramientas}{20}{subsection.1.9.2}%
+\contentsline {section}{\numberline {1.10}Lecturas Recomendadas y Mapa de Referencias}{21}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Glosario de Abreviaturas del (cap{\'i}tulo)}{21}{section.1.11}%
+\contentsline {chapter}{\numberline {2}Unidad Central de Procesamiento (CPU)}{25}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Arquitecturas fundacionales de las computadoras personales (años 70 y 80)}{25}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Intel 8086 / 8088}{25}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Motorola 68000 (m68k)}{26}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}MOS Technology 6502}{26}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Zilog Z80}{26}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Intel 8080 / 8085}{27}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Arquitecturas de transición (años 80 y 90)}{27}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Intel iAPX 432}{27}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}National Semiconductor NS32000 (32016)}{28}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Texas Instruments TMS9900}{28}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}DEC PDP-11 en tecnología LSI-11}{28}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Arquitecturas de Referencia y Vigentes}{28}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Estructura Interna}{29}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}\emph {Pipeline} y el Camino de Datos}{29}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Integraci{\'o}n con GPU y Aceleradores}{29}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Arquitecturas por Dominio}{29}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Unidad de Control (UC): Organizaci{\'o}n y Funcionamiento}{30}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Construcción y Partes}{30}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}\emph {Pipeline}, OoO y Renombrado}{30}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Control de Flujo en CPU y Coordinaci{\'o}n con GPU}{30}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Unidad Aritm{\'e}tico-L{\'o}gica (ALU)}{30}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Bloques Internos}{30}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}FPU e IEEE-754}{31}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}SIMD/Vector, GPU y Aceleradores}{31}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Registros: Organizaci{\'o}n, Usos y Ejemplos}{31}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Panorama General}{31}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}x86-64 (IA-32e)}{31}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}ARMv8-A (AArch64)}{32}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}RISC-V RV64}{32}{subsection.2.7.4}%
+\contentsline {section}{\numberline {2.8}Jerarqu{\'i}a de Cach{\'e}s: Construcci{\'o}n, Funcionamiento y Variaciones}{32}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Construcci{\'o}n y Organizaci{\'o}n}{32}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Coherencia y consistencia}{33}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Acceso Desde Software}{33}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}Diferencias entre Arquitecturas}{33}{subsection.2.8.4}%
+\contentsline {section}{\numberline {2.9}Evolución Hist{\'o}rica}{33}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Perspectivas Actuales}{37}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}CPU+GPU (SIMT)}{37}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}TPU/NPUs}{37}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}Neurom{\'o}rfica y Cu{\'a}ntica}{37}{subsection.2.10.3}%
+\contentsline {chapter}{\numberline {3}Unidad Central de Procesamiento (CPU)}{47}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Unidad Central de Procesamiento (CPU)}{49}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Unidad Central de Procesamiento (CPU)}{51}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Unidad Central de Procesamiento (CPU)}{53}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Unidad Central de Procesamiento (CPU)}{55}{chapter.7}%
+\contentsline {chapter}{\textcolor {ocre}{Bibliography}}{57}{chapter*.4}%
+\contentsline {chapter}{\textcolor {ocre}{Index}}{67}{section*.5}%
+\contentsline {chapter}{Appendices}{67}{section*.6}%
+\contentsline {chapter}{\numberline {A}Appendix Chapter Title}{67}{appendix.alph1.Alph1}%
+\contentsline {section}{\numberline {A.1}Appendix Section Title}{67}{section.alph1.Alph1.1}%
+\contentsline {chapter}{\numberline {B}Appendix Chapter Title}{69}{appendix.alph1.Alph2}%
+\contentsline {section}{\numberline {B.1}Appendix Section Title}{69}{section.alph1.Alph2.1}%
+\contentsfinish 

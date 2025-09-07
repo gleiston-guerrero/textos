@@ -1,0 +1,4267 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{hennessy2019quantitative}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4a72d9e0de431dadafab463df2ea7b0f}{%
+           family={Hennessy},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=95486d328725c1c6a933929c9442fe2a}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Burlington, MA}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{fullhash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{bibnamehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{authorbibnamehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{authornamehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{authorfullhash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6}
+      \field{isbn}{9780128119051}
+      \field{title}{Computer Architecture: A Quantitative Approach}
+      \field{year}{2019}
+    \endentry
+    \entry{stallings2020organization}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0599c551bf066f66e0e9c44815384cb4}{%
+           family={Stallings},
+           familyi={S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{0599c551bf066f66e0e9c44815384cb4}
+      \strng{fullhash}{0599c551bf066f66e0e9c44815384cb4}
+      \strng{bibnamehash}{0599c551bf066f66e0e9c44815384cb4}
+      \strng{authorbibnamehash}{0599c551bf066f66e0e9c44815384cb4}
+      \strng{authornamehash}{0599c551bf066f66e0e9c44815384cb4}
+      \strng{authorfullhash}{0599c551bf066f66e0e9c44815384cb4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{11}
+      \field{isbn}{9780136502139}
+      \field{title}{Computer Organization and Architecture}
+      \field{year}{2020}
+    \endentry
+    \entry{asanovic2006landscape}{report}{}
+      \name{author}{11}{}{%
+        {{hash=ab8b3b256286cedf287deca6326c7db0}{%
+           family={Asanovic},
+           familyi={A\bibinitperiod},
+           given={Krste},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f0c9c6893c57b5e0bed055fa63999ca7}{%
+           family={Bodik},
+           familyi={B\bibinitperiod},
+           given={Ras},
+           giveni={R\bibinitperiod}}}%
+        {{hash=eaa09f8ab8264b09352090fa98b9ab10}{%
+           family={Catanzaro},
+           familyi={C\bibinitperiod},
+           given={Bryan\bibnamedelima C.},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=9f71f8f62e96cdc91d971bd52a958d94}{%
+           family={Gebis},
+           familyi={G\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f64dee7c0835252d1c945e8bac717e14}{%
+           family={Husbands},
+           familyi={H\bibinitperiod},
+           given={Parry},
+           giveni={P\bibinitperiod}}}%
+        {{hash=994177386e5a63171a7be588e97df7e5}{%
+           family={Keutzer},
+           familyi={K\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+        {{hash=95486d328725c1c6a933929c9442fe2a}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b8dde82230ae239b481493debfc153ef}{%
+           family={Plishker},
+           familyi={P\bibinitperiod},
+           given={William\bibnamedelima L.},
+           giveni={W\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=8411e32c5282692ec8fb33ae8efc7b3a}{%
+           family={Shalf},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4fb8fbc5c4bfbbc94f80321c3336b71b}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1b1e734bfc7fb93bc65bcefd26a09bee}{%
+           family={Yelick},
+           familyi={Y\bibinitperiod},
+           given={Katherine\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {EECS Department, University of California, Berkeley}%
+      }
+      \strng{namehash}{1aa4ce0007f6bc49c8bec0491a075972}
+      \strng{fullhash}{db0911360d24732ff8dc5624dc48ffee}
+      \strng{bibnamehash}{1aa4ce0007f6bc49c8bec0491a075972}
+      \strng{authorbibnamehash}{1aa4ce0007f6bc49c8bec0491a075972}
+      \strng{authornamehash}{1aa4ce0007f6bc49c8bec0491a075972}
+      \strng{authorfullhash}{db0911360d24732ff8dc5624dc48ffee}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{UCB/EECS-2006-183}
+      \field{title}{The Landscape of Parallel Computing Research: A View from Berkeley}
+      \field{type}{techreport}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://www2.eecs.berkeley.edu/Pubs/TechRpts/2006/EECS-2006-183.pdf
+      \endverb
+      \verb{url}
+      \verb https://www2.eecs.berkeley.edu/Pubs/TechRpts/2006/EECS-2006-183.pdf
+      \endverb
+    \endentry
+    \entry{denning1968working}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c466deb7ebc32fdd92a6c470c15bda5b}{%
+           family={Denning},
+           familyi={D\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{fullhash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{bibnamehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{authorbibnamehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{authornamehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{authorfullhash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{5}
+      \field{title}{The Working Set Model for Program Behavior}
+      \field{volume}{11}
+      \field{year}{1968}
+      \field{pages}{323\bibrangedash 333}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/363095.363141
+      \endverb
+    \endentry
+    \entry{nielsen2010quantum}{book}{}
+      \name{author}{2}{}{%
+        {{hash=afe17482fc813e497188aee3b3783879}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=415ddff2f58b25977b1a2dedf18f4501}{%
+           family={Chuang},
+           familyi={C\bibinitperiod},
+           given={Isaac\bibnamedelima L.},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{fullhash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{bibnamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authorbibnamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authornamehash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \strng{authorfullhash}{456599bb4a61c2e997e2a7e1a21b25b4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10th Anniversary}
+      \field{isbn}{9781107002173}
+      \field{title}{Quantum Computation and Quantum Information}
+      \field{year}{2010}
+    \endentry
+    \entry{jouppi2017tpu}{inproceedings}{}
+      \name{author}{76}{}{%
+        {{hash=b1e691fb22f06afee78c3d52bf0c68f4}{%
+           family={Jouppi},
+           familyi={J\bibinitperiod},
+           given={Norman\bibnamedelima P.},
+           giveni={N\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2b3412c48bab46f41faab78455fce0e1}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Cliff},
+           giveni={C\bibinitperiod}}}%
+        {{hash=98e48fd2ef83c15cb4e696e6243eef05}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={Nishant},
+           giveni={N\bibinitperiod}}}%
+        {{hash=64f58317379ddd1a24e0e6cba85ae78c}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=74807a6d988186a9817a547408d8bb77}{%
+           family={Agrawal},
+           familyi={A\bibinitperiod},
+           given={Gaurav},
+           giveni={G\bibinitperiod}}}%
+        {{hash=120d928debde9c8a2bc6ac015f623e8c}{%
+           family={Bajwa},
+           familyi={B\bibinitperiod},
+           given={Raminder},
+           giveni={R\bibinitperiod}}}%
+        {{hash=eafee5821b3a759eeb4350ecb60b1973}{%
+           family={Bates},
+           familyi={B\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod}}}%
+        {{hash=158bf7535f376e882773db8f6306f5e7}{%
+           family={Bhatia},
+           familyi={B\bibinitperiod},
+           given={Suresh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=20809ed2e8eff0197b2917012f6d7b04}{%
+           family={Boden},
+           familyi={B\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=38dc630b1c85638854dae68766a3a267}{%
+           family={Borchers},
+           familyi={B\bibinitperiod},
+           given={Al},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0095869251fbc1f2fbd4479390f1dcbc}{%
+           family={Boyle},
+           familyi={B\bibinitperiod},
+           given={Rick},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a610b944810df9e0b592ee5790c14532}{%
+           family={Cantin},
+           familyi={C\bibinitperiod},
+           given={Pierre-luc},
+           giveni={P\bibinithyphendelim l\bibinitperiod}}}%
+        {{hash=12c6851173c05be41b5df010216d21bf}{%
+           family={Chao},
+           familyi={C\bibinitperiod},
+           given={Clifford},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e9c2ebaa8a7158905d3c92f1e5e814e2}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=65e648c4ce8673441f6ef50f2fc5a9a7}{%
+           family={Coriell},
+           familyi={C\bibinitperiod},
+           given={Jeremy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=703d3dda3f944af1ebcd379371d27ea5}{%
+           family={Daley},
+           familyi={D\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=650cd8fa953d4fe9a99a436569a68b64}{%
+           family={Dau},
+           familyi={D\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6709288fd9b8572164f780ab7f68c027}{%
+           family={Gelb},
+           familyi={G\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=93885e4781be44f939c9ddfeb3a6af42}{%
+           family={Ghaemmaghami},
+           familyi={G\bibinitperiod},
+           given={Tara\bibnamedelima Vazir},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=bfe9bd212fa3c1e14633218db79043cd}{%
+           family={Gottipati},
+           familyi={G\bibinitperiod},
+           given={Rajendra},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5b95cb03cf157bb75bbc356a9d72ba79}{%
+           family={Gulland},
+           familyi={G\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+        {{hash=052a58a1e87399ba5d5f308a4be577ca}{%
+           family={Hagmann},
+           familyi={H\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a8b265094c8ff00b61b98f6df0ff0386}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={C.\bibnamedelimi Richard},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=edbf8ffeface55668d0de897df3b3f45}{%
+           family={Hogberg},
+           familyi={H\bibinitperiod},
+           given={Doug},
+           giveni={D\bibinitperiod}}}%
+        {{hash=41750660c35d799c170678222a774ea8}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a0098788063d4fad833bc477a665d913}{%
+           family={Hundt},
+           familyi={H\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d5084fba35f47cfbcf2e4b8f18780cc2}{%
+           family={Hurt},
+           familyi={H\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=03345358e737db6abfc1f5accfc48533}{%
+           family={Ibarz},
+           familyi={I\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2d9f6d558519c9b66b62133fa212047b}{%
+           family={Jaffey},
+           familyi={J\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4bedac9743228f966ecc6c3d9243fd5b}{%
+           family={Jaworski},
+           familyi={J\bibinitperiod},
+           given={Alek},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2fcdfa905a9fb92046b78652e039bd99}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=81eb0e1b40308acf041041d47c2326b0}{%
+           family={Khaitan},
+           familyi={K\bibinitperiod},
+           given={Harshit},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3fd102e1b1b1b3473b15ddab175bd7a7}{%
+           family={Killebrew},
+           familyi={K\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f64657dee124882f5abd3d820e221ddc}{%
+           family={Koch},
+           familyi={K\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=033e1978ba23825a196e6284416fcb4a}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Naveen},
+           giveni={N\bibinitperiod}}}%
+        {{hash=24dddf31bfb6dd1fab14bad91f1cc8a2}{%
+           family={Lacy},
+           familyi={L\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+        {{hash=681ec2d612448910f8b7dbdf5fca78f1}{%
+           family={Laudon},
+           familyi={L\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a7bdb9538f3ef27d78bc069593577d58}{%
+           family={Law},
+           familyi={L\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1ccf841d4dec8310f6f87c3bc494a76c}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Diemthu},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0101ae5b219809cf901e7645ca40b9ae}{%
+           family={Leary},
+           familyi={L\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=56ab69534a7c115e7de4255131cd60a3}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zhuyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4e14bebd6afdd3c260e725ea06e37595}{%
+           family={Lucke},
+           familyi={L\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+        {{hash=513499c6fb32c88e787fb13a818f7c64}{%
+           family={Lundin},
+           familyi={L\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9444d780778381063a918ba72613ba24}{%
+           family={MacKean},
+           familyi={M\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d6453cf324ba0656c4cf2361e41cc1be}{%
+           family={Maggiore},
+           familyi={M\bibinitperiod},
+           given={Adriana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=307c4e6646134ebb1bde440f6f1c4914}{%
+           family={Mahony},
+           familyi={M\bibinitperiod},
+           given={Maire},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c401a24f4dffeff337816292d3f2a46a}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Kieran},
+           giveni={K\bibinitperiod}}}%
+        {{hash=79fadc0c81fb0a5cb1f16bb3b3180113}{%
+           family={Nagarajan},
+           familyi={N\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod}}}%
+        {{hash=184dcff61334dc65a7da0b036d264b5e}{%
+           family={Narayanaswami},
+           familyi={N\bibinitperiod},
+           given={Ravi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=86d75a72231ee23db3f0415227dcbc88}{%
+           family={Ni},
+           familyi={N\bibinitperiod},
+           given={Ray},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e4a239a65dea655b389b68153bfa260a}{%
+           family={Nix},
+           familyi={N\bibinitperiod},
+           given={Kathy},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4a0e950650bec8edd173aa615ba4b517}{%
+           family={Norrie},
+           familyi={N\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=90870f8d2c2dd318f093ef32f3b7b56a}{%
+           family={Omernick},
+           familyi={O\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3f28f5556771fb42bddd59be704ac783}{%
+           family={Penukonda},
+           familyi={P\bibinitperiod},
+           given={Narayana},
+           giveni={N\bibinitperiod}}}%
+        {{hash=743143a0eef16de0d7c60d709aaddd44}{%
+           family={Phelps},
+           familyi={P\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=78741497b0e1f2cc97516c9d5f722c91}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9d3cd6cd8f39b904ac3a015ed945ef35}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0d36745d1e53123354b81a31144a0eb3}{%
+           family={Salek},
+           familyi={S\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+        {{hash=038b70a3cae6409fc0a576b7f6d4ea31}{%
+           family={Samadiani},
+           familyi={S\bibinitperiod},
+           given={Emad},
+           giveni={E\bibinitperiod}}}%
+        {{hash=eaabe46b5c67edc45ba324663e2fad25}{%
+           family={Severn},
+           familyi={S\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d697a7b1ac2fb48b42cbf07ebc496d71}{%
+           family={Sizikov},
+           familyi={S\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f21022fffaa1408e30816137550ff9f1}{%
+           family={Snelham},
+           familyi={S\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f9d0b27578422a5b133ec223f9cb3283}{%
+           family={Souter},
+           familyi={S\bibinitperiod},
+           given={Jed},
+           giveni={J\bibinitperiod}}}%
+        {{hash=26b0fdde47ca3bcc90b785fda1cd14d4}{%
+           family={Steinberg},
+           familyi={S\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6305d4902371102e8d1f9f933d9c2845}{%
+           family={Swing},
+           familyi={S\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f16f1290599031a4df17c00ddb1d864b}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Mercedes},
+           giveni={M\bibinitperiod}}}%
+        {{hash=28b48771eabfc329ee18e7fe04a14250}{%
+           family={Thorson},
+           familyi={T\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=9bab0cd08d1b2f5aeaccf830c9eeafa8}{%
+           family={Tian},
+           familyi={T\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=21dfe69a39c740a4f162a09668dc6786}{%
+           family={Toma},
+           familyi={T\bibinitperiod},
+           given={Horia},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3af3aec04769a090edb632ee213498fc}{%
+           family={Tuttle},
+           familyi={T\bibinitperiod},
+           given={Erick},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bab2011f2b9e7af47ab45308470b9faf}{%
+           family={Vasudevan},
+           familyi={V\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod}}}%
+        {{hash=3a681bbbf3e5400be666826f19cd390e}{%
+           family={Walter},
+           familyi={W\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c13307bca415df3ecf92dc520c61584a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+        {{hash=69b5922f11425d5ed22558be14aad2b6}{%
+           family={Wilcox},
+           familyi={W\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=275ac5983fca48a0585b4752b4a88d71}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Doe\bibnamedelima Hyun},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Toronto, ON, Canada}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{861372c55b71e7688d63b889756999ce}
+      \strng{fullhash}{13b609d79e029686a4ba86d18e248fe1}
+      \strng{bibnamehash}{861372c55b71e7688d63b889756999ce}
+      \strng{authorbibnamehash}{861372c55b71e7688d63b889756999ce}
+      \strng{authornamehash}{861372c55b71e7688d63b889756999ce}
+      \strng{authorfullhash}{13b609d79e029686a4ba86d18e248fe1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 44th Annual International Symposium on Computer Architecture (ISCA)}
+      \field{isbn}{978-1-4503-4892-8}
+      \field{month}{6}
+      \field{note}{First public technical description of Google's TPU v1, including architecture, matrix multiply unit, systolic array design, and datacenter benchmarks}
+      \field{title}{In-Datacenter Performance Analysis of a Tensor Processing Unit}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/3079856.3080246
+      \endverb
+    \endentry
+    \entry{han2016deepcompression}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=873e4e07ff73d563d2651d20ffaf99e0}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Song},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1341c7c7f8d6acc2c0c244d6526ff658}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Huizi},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c4a8df92e1f8e22aa2062da8bcfd402d}{%
+           family={Dally},
+           familyi={D\bibinitperiod},
+           given={William\bibnamedelima J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{84bcde7dcf518d77e606ada9b3016020}
+      \strng{fullhash}{84bcde7dcf518d77e606ada9b3016020}
+      \strng{bibnamehash}{84bcde7dcf518d77e606ada9b3016020}
+      \strng{authorbibnamehash}{84bcde7dcf518d77e606ada9b3016020}
+      \strng{authornamehash}{84bcde7dcf518d77e606ada9b3016020}
+      \strng{authorfullhash}{84bcde7dcf518d77e606ada9b3016020}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the International Conference on Learning Representations (ICLR)}
+      \field{title}{Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.48550/arXiv.1510.00149
+      \endverb
+    \endentry
+    \entry{armv82025manual}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=4c6b78ed398e0733e69047e17b88729f}{%
+           family={{Arm Limited}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Arm Limited}%
+      }
+      \strng{namehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{fullhash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{bibnamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authorbibnamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authornamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authorfullhash}{4c6b78ed398e0733e69047e17b88729f}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{Covers the Armv8-A architecture profile, including AArch32 and AArch64 states, system registers, exception model, memory model, and instruction sets}
+      \field{number}{DDI0487L.b}
+      \field{subtitle}{For Armv8-A architecture profile}
+      \field{title}{Arm®{} Architecture Reference Manual, Armv8-A Profile}
+      \field{type}{Reference Manual}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{version}{Issue L.b}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.arm.com/documentation/ddi0487/latest
+      \endverb
+      \verb{url}
+      \verb https://developer.arm.com/documentation/ddi0487/latest
+      \endverb
+    \endentry
+    \entry{nvidia2025cudac}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=9ad14fae09b617d96cb4af76c555b394}{%
+           family={{NVIDIA Corporation}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {NVIDIA Corporation}%
+      }
+      \strng{namehash}{9ad14fae09b617d96cb4af76c555b394}
+      \strng{fullhash}{9ad14fae09b617d96cb4af76c555b394}
+      \strng{bibnamehash}{9ad14fae09b617d96cb4af76c555b394}
+      \strng{authorbibnamehash}{9ad14fae09b617d96cb4af76c555b394}
+      \strng{authornamehash}{9ad14fae09b617d96cb4af76c555b394}
+      \strng{authorfullhash}{9ad14fae09b617d96cb4af76c555b394}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{12.4}
+      \field{note}{Official CUDA C Programming Guide. Includes references to GPU Architecture Whitepapers such as Volta, Ampere, and Hopper}
+      \field{title}{CUDA C Programming Guide}
+      \field{type}{Programming Guide}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf
+      \endverb
+      \verb{url}
+      \verb https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf
+      \endverb
+    \endentry
+    \entry{amd2025rocm}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=40fc5d76b787be3bc3548ecd393342bd}{%
+           family={{Advanced Micro Devices, Inc. (AMD)}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {AMD ROCm Team}%
+      }
+      \strng{namehash}{40fc5d76b787be3bc3548ecd393342bd}
+      \strng{fullhash}{40fc5d76b787be3bc3548ecd393342bd}
+      \strng{bibnamehash}{40fc5d76b787be3bc3548ecd393342bd}
+      \strng{authorbibnamehash}{40fc5d76b787be3bc3548ecd393342bd}
+      \strng{authornamehash}{40fc5d76b787be3bc3548ecd393342bd}
+      \strng{authorfullhash}{40fc5d76b787be3bc3548ecd393342bd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Official documentation of the ROCm software stack, covering drivers, HIP runtime, math libraries, tools (rocProfiler, rocTracer), and GPUOpen architecture notes for CDNA and RDNA GPUs}
+      \field{subtitle}{Radeon Open Compute Platform}
+      \field{title}{ROCm Documentation}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{version}{Latest}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://rocm.docs.amd.com/en/latest/
+      \endverb
+      \verb{url}
+      \verb https://rocm.docs.amd.com/en/latest/
+      \endverb
+    \endentry
+    \entry{cxl2021compute}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=0ac595cc65c8beb74071eb1e742aa7ca}{%
+           family={Wagh},
+           familyi={W\bibinitperiod},
+           given={Mahesh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b5593ef61acf0aec88a851b00fb059e3}{%
+           family={Sodke},
+           familyi={S\bibinitperiod},
+           given={Rick},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {CXL Consortium}%
+      }
+      \strng{namehash}{1a42be8fc3d69757926457d990f0c311}
+      \strng{fullhash}{1a42be8fc3d69757926457d990f0c311}
+      \strng{bibnamehash}{1a42be8fc3d69757926457d990f0c311}
+      \strng{authorbibnamehash}{1a42be8fc3d69757926457d990f0c311}
+      \strng{authornamehash}{1a42be8fc3d69757926457d990f0c311}
+      \strng{authorfullhash}{1a42be8fc3d69757926457d990f0c311}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentation, CXL Consortium}
+      \field{note}{Presentation on CXL 2.0 memory expansion and pooling, including Fabric Manager API and topologies}
+      \field{title}{Compute Express Link\texttrademark~2.0 Specification: Memory Pooling}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.computeexpresslink.org/
+      \endverb
+      \verb{url}
+      \verb https://www.computeexpresslink.org/
+      \endverb
+    \endentry
+    \entry{cxl2024compute}{manual}{}
+      \list{organization}{1}{%
+        {CXL Consortium}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{Official specification of the CXL Consortium, defining architecture, protocol layers, coherency models, memory pooling, switching fabric, and advanced interconnect capabilities. Evaluation Copy.}
+      \field{title}{Compute Express Link\texttrademark~ (CXL) Specification}
+      \field{type}{Specification}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{version}{Revision 3.2, Version 1.0}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.computeexpresslink.org/specifications
+      \endverb
+      \verb{url}
+      \verb https://www.computeexpresslink.org/specifications
+      \endverb
+    \endentry
+    \entry{davies2021survey}{article}{}
+      \name{author}{23}{}{%
+        {{hash=0bc60d7603817a37ff3e36eb14b92487}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=28b7a3e822135b8ebc38d10091bb076f}{%
+           family={Srinivasa},
+           familyi={S\bibinitperiod},
+           given={Arun\bibnamedelima N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=1dc5a6a2f364fab1a13b98d96ef39f87}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Tsung‐Han},
+           giveni={T\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=b55c7e3fd16f1c2c09ca7949f486df6b}{%
+           family={Chinya},
+           familyi={C\bibinitperiod},
+           given={Gautham},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c9212d13ce429d2b238a42883b655045}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yongqiang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=52890f18fe191f41f150bb800497e6f9}{%
+           family={Choday},
+           familyi={C\bibinitperiod},
+           given={Sri\bibnamedelima Harsha},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=478512b7bfad73d75c1e5289e2f58d86}{%
+           family={Dimou},
+           familyi={D\bibinitperiod},
+           given={Georgios},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c8499674e18abd00238970e6dfe03850}{%
+           family={Joshi},
+           familyi={J\bibinitperiod},
+           given={Prasad},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1740f8cc7a7c89c636ffbdf3345ddabf}{%
+           family={Imam},
+           familyi={I\bibinitperiod},
+           given={Narender},
+           giveni={N\bibinitperiod}}}%
+        {{hash=97a29de72330c6a226c3c532c70aa113}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Shweta},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7f6d883eff201b3cc56b4bd491f3c336}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={Yuyun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2ad8ce7dc5ef94c527a7f1fc9631e86d}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Chit‐Kwan},
+           giveni={C\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=f90900f5e78290c35b7ac9f3f0fa4489}{%
+           family={Lines},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f2c4380c10aa400bc0abf5da89f30bad}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ruokun},
+           giveni={R\bibinitperiod}}}%
+        {{hash=39271d1ed2bd506de4b08ce1877b8377}{%
+           family={Mathaikutty},
+           familyi={M\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6c2626e8d613dbcd632e7794bd907ee5}{%
+           family={McCoy},
+           familyi={M\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=59637ba7f832d9a49d7d96964bf7c77b}{%
+           family={Paul},
+           familyi={P\bibinitperiod},
+           given={Arnab},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b5bd9a8ba4475b61566c533e9828c12a}{%
+           family={Tse},
+           familyi={T\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=11bd35a42728f6ea4355fa6a287c16e3}{%
+           family={Venkataramanan},
+           familyi={V\bibinitperiod},
+           given={Guruguhanathan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=882b4e43adc7c4ce08128d2cc24e9064}{%
+           family={Weng},
+           familyi={W\bibinitperiod},
+           given={Yi‐Hsin},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=7178db613484edad04461666446dc1e5}{%
+           family={Wild},
+           familyi={W\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6f48c4d199874b3c48bf827f01dd0e26}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Yoonseok},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6b170f4c37010a14987a849eab01fe7b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{fullhash}{a3645a416aaf87006146353082093ab0}
+      \strng{bibnamehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{authorbibnamehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{authornamehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{authorfullhash}{a3645a416aaf87006146353082093ab0}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{month}{5}
+      \field{note}{Comprehensive survey on Intel’s Loihi neuromorphic chip, covering NoC architectures, spiking models, on-chip learning and roadmap}
+      \field{number}{5}
+      \field{title}{Advancing Neuromorphic Computing With Loihi: A Survey of Results and Outlook}
+      \field{volume}{109}
+      \field{year}{2021}
+      \field{pages}{911\bibrangedash 934}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1109/JPROC.2021.3067593
+      \endverb
+    \endentry
+    \entry{davies2018loihi}{article}{}
+      \name{author}{23}{}{%
+        {{hash=0bc60d7603817a37ff3e36eb14b92487}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a03a5af519294c1cf16fc92c0b476160}{%
+           family={Srinivasa},
+           familyi={S\bibinitperiod},
+           given={Narayan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=395a860d63a2dce4b225f7574f13b3f7}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Tsung-Han},
+           giveni={T\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=b55c7e3fd16f1c2c09ca7949f486df6b}{%
+           family={Chinya},
+           familyi={C\bibinitperiod},
+           given={Gautham},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c9212d13ce429d2b238a42883b655045}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yongqiang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=52890f18fe191f41f150bb800497e6f9}{%
+           family={Choday},
+           familyi={C\bibinitperiod},
+           given={Sri\bibnamedelima Harsha},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=478512b7bfad73d75c1e5289e2f58d86}{%
+           family={Dimou},
+           familyi={D\bibinitperiod},
+           given={Georgios},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c8499674e18abd00238970e6dfe03850}{%
+           family={Joshi},
+           familyi={J\bibinitperiod},
+           given={Prasad},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e163f651fdd325c5aec756360008e0cb}{%
+           family={Imam},
+           familyi={I\bibinitperiod},
+           given={Nabil},
+           giveni={N\bibinitperiod}}}%
+        {{hash=97a29de72330c6a226c3c532c70aa113}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Shweta},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7f6d883eff201b3cc56b4bd491f3c336}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={Yuyun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2a29a9dddfc1fad0f6d597fa8b2672b7}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Chit-Kwan},
+           giveni={C\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=f90900f5e78290c35b7ac9f3f0fa4489}{%
+           family={Lines},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f2c4380c10aa400bc0abf5da89f30bad}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ruokun},
+           giveni={R\bibinitperiod}}}%
+        {{hash=39271d1ed2bd506de4b08ce1877b8377}{%
+           family={Mathaikutty},
+           familyi={M\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6c2626e8d613dbcd632e7794bd907ee5}{%
+           family={McCoy},
+           familyi={M\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=59637ba7f832d9a49d7d96964bf7c77b}{%
+           family={Paul},
+           familyi={P\bibinitperiod},
+           given={Arnab},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b5bd9a8ba4475b61566c533e9828c12a}{%
+           family={Tse},
+           familyi={T\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=11bd35a42728f6ea4355fa6a287c16e3}{%
+           family={Venkataramanan},
+           familyi={V\bibinitperiod},
+           given={Guruguhanathan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d537d78da66fe17c08ee94733d4c0617}{%
+           family={Weng},
+           familyi={W\bibinitperiod},
+           given={Yi-Hsin},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=7178db613484edad04461666446dc1e5}{%
+           family={Wild},
+           familyi={W\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6f48c4d199874b3c48bf827f01dd0e26}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Yoonseok},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6b170f4c37010a14987a849eab01fe7b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{fullhash}{2a358292bc68a36d3b31dea6e7b2b59f}
+      \strng{bibnamehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{authorbibnamehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{authornamehash}{d66490e8c0ce745865715deebbd77b84}
+      \strng{authorfullhash}{2a358292bc68a36d3b31dea6e7b2b59f}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1937-4143}
+      \field{journaltitle}{IEEE Micro}
+      \field{month}{1}
+      \field{note}{Feature article on neuromorphic computing. Introduces Loihi, a 60-mm\textsuperscript{2} Intel 14-nm neuromorphic processor with on-chip learning, spiking neural network support, and programmable synaptic rules}
+      \field{number}{1}
+      \field{title}{Loihi: A Neuromorphic Manycore Processor with On-Chip Learning}
+      \field{volume}{38}
+      \field{year}{2018}
+      \field{pages}{82\bibrangedash 99}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/MM.2018.112130359
+      \endverb
+    \endentry
+    \entry{intel2025sdm}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Includes Architecture, System Programming, and Instruction Set Reference manuals; version 088 of Vols. 1--3, and version 050 of Optimization Reference Manuals.}
+      \field{title}{Intel®~64 and IA-32 Architectures Software Developer’s Manuals}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{version}{088}
+      \field{volume}{1--3}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
+      \endverb
+    \endentry
+    \entry{Volk2001Recollections}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c90e2ba6fa013a3c6a8f0f2cac17619a}{%
+           family={Volk},
+           familyi={V\bibinitperiod},
+           given={Andrew\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=334db665d652632519cfd84a58510831}{%
+           family={Stoll},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=198b4926858f13f44457a10dde3cf618}{%
+           family={Metrovich},
+           familyi={M\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{d58f9645288c9cfd3245d4ff479758c5}
+      \strng{fullhash}{d58f9645288c9cfd3245d4ff479758c5}
+      \strng{bibnamehash}{d58f9645288c9cfd3245d4ff479758c5}
+      \strng{authorbibnamehash}{d58f9645288c9cfd3245d4ff479758c5}
+      \strng{authornamehash}{d58f9645288c9cfd3245d4ff479758c5}
+      \strng{authorfullhash}{d58f9645288c9cfd3245d4ff479758c5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Intel Technology Journal}
+      \field{month}{1}
+      \field{note}{[En línea; acceso: 6 septiembre 2025]}
+      \field{title}{Recollections of Early Chip Development at Intel}
+      \field{year}{2001}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/dam/www/public/us/en/documents/research/2001-vol05-iss-1-intel-technology-journal.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/dam/www/public/us/en/documents/research/2001-vol05-iss-1-intel-technology-journal.pdf
+      \endverb
+    \endentry
+    \entry{Hennessy2019Golden}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4a72d9e0de431dadafab463df2ea7b0f}{%
+           family={Hennessy},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=95486d328725c1c6a933929c9442fe2a}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{fullhash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{bibnamehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{authorbibnamehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{authornamehash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \strng{authorfullhash}{f7c6979c0d2d2afa03b2d508432d429d}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{2}
+      \field{title}{A New Golden Age for Computer Architecture}
+      \field{volume}{62}
+      \field{year}{2019}
+      \field{pages}{48\bibrangedash 60}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/3282307
+      \endverb
+    \endentry
+    \entry{Mazor2007Intel}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c4cb5e89d6a284387ebd66acb7d2d303}{%
+           family={Mazor},
+           familyi={M\bibinitperiod},
+           given={Stanley},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4cb5e89d6a284387ebd66acb7d2d303}
+      \strng{fullhash}{c4cb5e89d6a284387ebd66acb7d2d303}
+      \strng{bibnamehash}{c4cb5e89d6a284387ebd66acb7d2d303}
+      \strng{authorbibnamehash}{c4cb5e89d6a284387ebd66acb7d2d303}
+      \strng{authornamehash}{c4cb5e89d6a284387ebd66acb7d2d303}
+      \strng{authorfullhash}{c4cb5e89d6a284387ebd66acb7d2d303}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{IEEE} Annals of the History of Computing}
+      \field{number}{2}
+      \field{title}{Intel 8080 CPU Chip Development}
+      \field{volume}{29}
+      \field{year}{2007}
+      \field{pages}{70\bibrangedash 73}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/MAHC.2007.25
+      \endverb
+    \endentry
+    \entry{Spectrum2017Motorola}{article}{}
+      \name{author}{1}{}{%
+        {{hash=20e79c1011f46e584ffee5a328f015ad}{%
+           family={{IEEE Spectrum}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{fullhash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{bibnamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authorbibnamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authornamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authorfullhash}{20e79c1011f46e584ffee5a328f015ad}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Spectrum}
+      \field{month}{6}
+      \field{note}{[En línea; acceso: 6 septiembre 2025]}
+      \field{title}{Chip Hall of Fame: Motorola MC68000 Microprocessor}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://spectrum.ieee.org/chip-hall-of-fame-motorola-mc68000-microprocessor
+      \endverb
+      \verb{url}
+      \verb https://spectrum.ieee.org/chip-hall-of-fame-motorola-mc68000-microprocessor
+      \endverb
+    \endentry
+    \entry{Cass2021QA}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fee5071af0f142724fb6d3a7843bb41a}{%
+           family={Cass},
+           familyi={C\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fee5071af0f142724fb6d3a7843bb41a}
+      \strng{fullhash}{fee5071af0f142724fb6d3a7843bb41a}
+      \strng{bibnamehash}{fee5071af0f142724fb6d3a7843bb41a}
+      \strng{authorbibnamehash}{fee5071af0f142724fb6d3a7843bb41a}
+      \strng{authornamehash}{fee5071af0f142724fb6d3a7843bb41a}
+      \strng{authorfullhash}{fee5071af0f142724fb6d3a7843bb41a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Spectrum}
+      \field{month}{9}
+      \field{note}{[En línea; acceso: 6 septiembre 2025]}
+      \field{title}{Q\&A With Co-Creator of the 6502 Processor}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://spectrum.ieee.org/q-a-with-co-creator-of-the-6502-processor
+      \endverb
+      \verb{url}
+      \verb https://spectrum.ieee.org/q-a-with-co-creator-of-the-6502-processor
+      \endverb
+    \endentry
+    \entry{Preethichandra2021Z80}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6c71a02eb64412fa421ebb94bd0407fd}{%
+           family={Preethichandra},
+           familyi={P\bibinitperiod},
+           given={D.M.G.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c71a02eb64412fa421ebb94bd0407fd}
+      \strng{fullhash}{6c71a02eb64412fa421ebb94bd0407fd}
+      \strng{bibnamehash}{6c71a02eb64412fa421ebb94bd0407fd}
+      \strng{authorbibnamehash}{6c71a02eb64412fa421ebb94bd0407fd}
+      \strng{authornamehash}{6c71a02eb64412fa421ebb94bd0407fd}
+      \strng{authorfullhash}{6c71a02eb64412fa421ebb94bd0407fd}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Micro}
+      \field{number}{6}
+      \field{title}{Z80 — The 1970s Microprocessor Still Alive}
+      \field{volume}{41}
+      \field{year}{2021}
+      \field{pages}{156\bibrangedash 157}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1109/MM.2021.3115609
+      \endverb
+    \endentry
+    \entry{IDC2014History}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8c2ec89a582298fba52a58218df4ab01}{%
+           family={Online},
+           familyi={O\bibinitperiod},
+           given={IDC},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c2ec89a582298fba52a58218df4ab01}
+      \strng{fullhash}{8c2ec89a582298fba52a58218df4ab01}
+      \strng{bibnamehash}{8c2ec89a582298fba52a58218df4ab01}
+      \strng{authorbibnamehash}{8c2ec89a582298fba52a58218df4ab01}
+      \strng{authornamehash}{8c2ec89a582298fba52a58218df4ab01}
+      \strng{authorfullhash}{8c2ec89a582298fba52a58218df4ab01}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IDC Online}
+      \field{note}{[En línea; acceso: 6 septiembre 2025]}
+      \field{title}{History of Microprocessor and 8085 – Introduction}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://www.idc-online.com/technical_references/pdfs/electronic_engineering/History_Of_Microprocessor_And_8085_Introduction.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.idc-online.com/technical_references/pdfs/electronic_engineering/History_Of_Microprocessor_And_8085_Introduction.pdf
+      \endverb
+    \endentry
+    \entry{Spectrum2017MOS}{article}{}
+      \name{author}{1}{}{%
+        {{hash=20e79c1011f46e584ffee5a328f015ad}{%
+           family={{IEEE Spectrum}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{fullhash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{bibnamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authorbibnamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authornamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authorfullhash}{20e79c1011f46e584ffee5a328f015ad}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Spectrum}
+      \field{month}{6}
+      \field{note}{[En línea; acceso: 6 septiembre 2025]}
+      \field{title}{Chip Hall of Fame: MOS Technology 6502 Microprocessor}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://spectrum.ieee.org/chip-hall-of-fame-mos-technology-6502-microprocessor
+      \endverb
+      \verb{url}
+      \verb https://spectrum.ieee.org/chip-hall-of-fame-mos-technology-6502-microprocessor
+      \endverb
+    \endentry
+    \entry{Witten1983Introduction}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8a6712e42c49f65d652e34f990c39c46}{%
+           family={Witten},
+           familyi={W\bibinitperiod},
+           given={Ian\bibnamedelima H.},
+           giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a6712e42c49f65d652e34f990c39c46}
+      \strng{fullhash}{8a6712e42c49f65d652e34f990c39c46}
+      \strng{bibnamehash}{8a6712e42c49f65d652e34f990c39c46}
+      \strng{authorbibnamehash}{8a6712e42c49f65d652e34f990c39c46}
+      \strng{authornamehash}{8a6712e42c49f65d652e34f990c39c46}
+      \strng{authorfullhash}{8a6712e42c49f65d652e34f990c39c46}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Software \& Microsystems}
+      \field{number}{2}
+      \field{title}{An Introduction to the Architecture of the Intel iAPX 432}
+      \field{volume}{2}
+      \field{year}{1983}
+      \field{pages}{121\bibrangedash 132}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1049/sm.1983.0013
+      \endverb
+    \endentry
+    \entry{Kahn1981IMAX}{article}{}
+      \name{author}{6}{}{%
+        {{hash=4253f6cd64b0fb52df5aed43d988adda}{%
+           family={Kahn},
+           familyi={K\bibinitperiod},
+           given={Kenneth\bibnamedelima C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=123c9a85803ecfeaca41d9fd6c30ab63}{%
+           family={Corwin},
+           familyi={C\bibinitperiod},
+           given={William\bibnamedelima M.},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=3d76a4b0b13b55a1c2999e23da7be6e3}{%
+           family={Dennis},
+           familyi={D\bibinitperiod},
+           given={Jack\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=0f17ca414d37898e23ea37e226446fc7}{%
+           family={d'Hooge},
+           familyi={d\bibinitperiod},
+           given={Herman},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f0a1fd445ac13920ab6b41412cd9325b}{%
+           family={Hubka},
+           familyi={H\bibinitperiod},
+           given={David\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b50fc44b19507f45730a651f499dea8d}{%
+           family={Pollack},
+           familyi={P\bibinitperiod},
+           given={Frederic\bibnamedelima J.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e266486340163c5ce89c3f037533e2c}
+      \strng{fullhash}{867116af47e3c973d9a4239b5c3d8c6a}
+      \strng{bibnamehash}{8e266486340163c5ce89c3f037533e2c}
+      \strng{authorbibnamehash}{8e266486340163c5ce89c3f037533e2c}
+      \strng{authornamehash}{8e266486340163c5ce89c3f037533e2c}
+      \strng{authorfullhash}{867116af47e3c973d9a4239b5c3d8c6a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM SIGOPS Operating Systems Review}
+      \field{number}{5}
+      \field{title}{iMAX: A Multiprocessor Operating System for an Object-Based Microcomputer}
+      \field{volume}{15}
+      \field{year}{1981}
+      \field{pages}{26\bibrangedash 32}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1145/1067627.806601
+      \endverb
+    \endentry
+    \entry{Pollack1981Object}{article}{}
+      \name{author}{6}{}{%
+        {{hash=b50fc44b19507f45730a651f499dea8d}{%
+           family={Pollack},
+           familyi={P\bibinitperiod},
+           given={Frederic\bibnamedelima J.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=4253f6cd64b0fb52df5aed43d988adda}{%
+           family={Kahn},
+           familyi={K\bibinitperiod},
+           given={Kenneth\bibnamedelima C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=123c9a85803ecfeaca41d9fd6c30ab63}{%
+           family={Corwin},
+           familyi={C\bibinitperiod},
+           given={William\bibnamedelima M.},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=3d76a4b0b13b55a1c2999e23da7be6e3}{%
+           family={Dennis},
+           familyi={D\bibinitperiod},
+           given={Jack\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=0f17ca414d37898e23ea37e226446fc7}{%
+           family={d'Hooge},
+           familyi={d\bibinitperiod},
+           given={Herman},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f0a1fd445ac13920ab6b41412cd9325b}{%
+           family={Hubka},
+           familyi={H\bibinitperiod},
+           given={David\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5814ad383dc57956ec6ca59fd514c98e}
+      \strng{fullhash}{8ee55d107bf79ddfc72991d6b3d88c14}
+      \strng{bibnamehash}{5814ad383dc57956ec6ca59fd514c98e}
+      \strng{authorbibnamehash}{5814ad383dc57956ec6ca59fd514c98e}
+      \strng{authornamehash}{5814ad383dc57956ec6ca59fd514c98e}
+      \strng{authorfullhash}{8ee55d107bf79ddfc72991d6b3d88c14}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM SIGOPS Operating Systems Review}
+      \field{number}{5}
+      \field{title}{The iMAX-432 Object Filing System}
+      \field{volume}{15}
+      \field{year}{1981}
+      \field{pages}{137\bibrangedash 147}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/1067627.806602
+      \endverb
+    \endentry
+    \entry{Bal1982NS16000}{article}{}
+      \name{author}{5}{}{%
+        {{hash=2654c555de45845bf4e9e27c8575b923}{%
+           family={Bal},
+           familyi={B\bibinitperiod},
+           given={Subhash},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c750acea2442c554edb4ff0389ec4f7b}{%
+           family={Kaminker},
+           familyi={K\bibinitperiod},
+           given={Asher},
+           giveni={A\bibinitperiod}}}%
+        {{hash=88bebac646153bb80cb33a58b44c7d0c}{%
+           family={Lavi},
+           familyi={L\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e9845c3759af793b8edda8d070d001e4}{%
+           family={Menachem},
+           familyi={M\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5585bd5ab19b8f1fecea90687ff454fb}{%
+           family={Soha},
+           familyi={S\bibinitperiod},
+           given={Zvi},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{f05078425461cb2246e24580e1b17ff0}
+      \strng{fullhash}{0ff49783e6037df8bd2dd5393354705f}
+      \strng{bibnamehash}{f05078425461cb2246e24580e1b17ff0}
+      \strng{authorbibnamehash}{f05078425461cb2246e24580e1b17ff0}
+      \strng{authornamehash}{f05078425461cb2246e24580e1b17ff0}
+      \strng{authorfullhash}{0ff49783e6037df8bd2dd5393354705f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer}
+      \field{number}{6}
+      \field{title}{The NS16000 Family—Advances in Architecture and Hardware}
+      \field{volume}{15}
+      \field{year}{1982}
+      \field{pages}{58\bibrangedash 67}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/MC.1982.1654051
+      \endverb
+    \endentry
+    \entry{Cooper1986Benchmark}{article}{}
+      \name{author}{4}{}{%
+        {{hash=71b07c2876732a11b65340a5c5a9c92f}{%
+           family={Cooper},
+           familyi={C\bibinitperiod},
+           given={Thayne\bibnamedelima C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ad00db6ed0d53ad1d9089c588f2923cc}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={Wayne\bibnamedelima D.},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0837e574e6eba622ce7a81bcdd9e6298}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Frank\bibnamedelima C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=dccc3ecf02794ac58f8c4513763ac857}{%
+           family={Rasmussen},
+           familyi={R\bibinitperiod},
+           given={Norm\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2731f849b393cb745f5f2e23f63196ae}
+      \strng{fullhash}{43c68e264ccee49e3f19419ccf0f035d}
+      \strng{bibnamehash}{2731f849b393cb745f5f2e23f63196ae}
+      \strng{authorbibnamehash}{2731f849b393cb745f5f2e23f63196ae}
+      \strng{authornamehash}{2731f849b393cb745f5f2e23f63196ae}
+      \strng{authorfullhash}{43c68e264ccee49e3f19419ccf0f035d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Micro}
+      \field{number}{4}
+      \field{title}{A Benchmark Comparison of 32-bit Microprocessors}
+      \field{volume}{6}
+      \field{year}{1986}
+      \field{pages}{53\bibrangedash 58}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/MM.1986.304780
+      \endverb
+    \endentry
+    \entry{Rhines2017TI99}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6033a90ce78a3fee6e263ecf4e5281da}{%
+           family={Rhines},
+           familyi={R\bibinitperiod},
+           given={Walden\bibnamedelima C.},
+           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{6033a90ce78a3fee6e263ecf4e5281da}
+      \strng{fullhash}{6033a90ce78a3fee6e263ecf4e5281da}
+      \strng{bibnamehash}{6033a90ce78a3fee6e263ecf4e5281da}
+      \strng{authorbibnamehash}{6033a90ce78a3fee6e263ecf4e5281da}
+      \strng{authornamehash}{6033a90ce78a3fee6e263ecf4e5281da}
+      \strng{authorfullhash}{6033a90ce78a3fee6e263ecf4e5281da}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Spectrum}
+      \field{month}{6}
+      \field{note}{Artículo histórico; revista técnica}
+      \field{title}{The Texas Instruments 99/4: World's First 16-Bit Home Computer}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://spectrum.ieee.org/the-texas-instruments-994-worlds-first-16bit-computer
+      \endverb
+      \verb{url}
+      \verb https://spectrum.ieee.org/the-texas-instruments-994-worlds-first-16bit-computer
+      \endverb
+    \endentry
+    \entry{Spectrum2017TMS9900}{article}{}
+      \name{author}{1}{}{%
+        {{hash=20e79c1011f46e584ffee5a328f015ad}{%
+           family={{IEEE Spectrum}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{fullhash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{bibnamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authorbibnamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authornamehash}{20e79c1011f46e584ffee5a328f015ad}
+      \strng{authorfullhash}{20e79c1011f46e584ffee5a328f015ad}
+      \field{extraname}{3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Spectrum}
+      \field{month}{6}
+      \field{note}{Artículo histórico; revista técnica}
+      \field{title}{Chip Hall of Fame: Texas Instruments TMS9900}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://spectrum.ieee.org/chip-hall-of-fame-texas-instruments-tms9900
+      \endverb
+      \verb{url}
+      \verb https://spectrum.ieee.org/chip-hall-of-fame-texas-instruments-tms9900
+      \endverb
+    \endentry
+    \entry{Texas1977Family}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=2c8afd4ea4406ec87839d0c2010387b6}{%
+           family={{Texas Instruments Incorporate}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Texas Instruments}%
+      }
+      \strng{namehash}{2c8afd4ea4406ec87839d0c2010387b6}
+      \strng{fullhash}{2c8afd4ea4406ec87839d0c2010387b6}
+      \strng{bibnamehash}{2c8afd4ea4406ec87839d0c2010387b6}
+      \strng{authorbibnamehash}{2c8afd4ea4406ec87839d0c2010387b6}
+      \strng{authornamehash}{2c8afd4ea4406ec87839d0c2010387b6}
+      \strng{authorfullhash}{2c8afd4ea4406ec87839d0c2010387b6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manual técnico del fabricante}
+      \field{title}{TMS 9900 Family System Development Manual}
+      \field{year}{1977}
+      \verb{urlraw}
+      \verb https://bitsavers.computerhistory.org/components/ti/TMS9900/MP702_TMS9900_Family_System_Development_Manual_1977.pdf
+      \endverb
+      \verb{url}
+      \verb https://bitsavers.computerhistory.org/components/ti/TMS9900/MP702_TMS9900_Family_System_Development_Manual_1977.pdf
+      \endverb
+    \endentry
+    \entry{Bell1970Architecture}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=8893450aaa9e75507409781fb86ccf3d}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={C.\bibnamedelimi Gordon},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=75535ab736bff2fab3b874819df00838}{%
+           family={Cady},
+           familyi={C\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8e07b81799d1e38857cc0f66448c8fb5}{%
+           family={McFarland},
+           familyi={M\bibinitperiod},
+           given={Harold},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5148d19369631e45e9e3d52da837e697}{%
+           family={Delagi},
+           familyi={D\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1f3af4fc5beba4417e467b7ec0fbf658}{%
+           family={O'Loughlin},
+           familyi={O\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f5304a01c260a88bd1d6ec6dd2a76f6e}{%
+           family={Noonan},
+           familyi={N\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e7eb88c6f88e8596edb124a655c04f7d}{%
+           family={Wulf},
+           familyi={W\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{f0966bedb76c31f030491b00b1667008}
+      \strng{fullhash}{c45a0b6155c25b4d4068518459436b65}
+      \strng{bibnamehash}{f0966bedb76c31f030491b00b1667008}
+      \strng{authorbibnamehash}{f0966bedb76c31f030491b00b1667008}
+      \strng{authornamehash}{f0966bedb76c31f030491b00b1667008}
+      \strng{authorfullhash}{c45a0b6155c25b4d4068518459436b65}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Spring Joint Computer Conference (AFIPS SJCC)}
+      \field{isbn}{9781450379038}
+      \field{title}{A New Architecture for Mini-Computers: The DEC PDP-11}
+      \field{year}{1970}
+      \field{pages}{657\bibrangedash 675}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1145/1476936.1477037
+      \endverb
+    \endentry
+    \entry{Bell1975Learned}{journal}{}
+      \name{author}{2}{}{%
+        {{hash=8893450aaa9e75507409781fb86ccf3d}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={C.\bibnamedelimi Gordon},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=c82cee05b6d4e7ab6304a29727f7b304}{%
+           family={Strecker},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima D.},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{938ab5eca45831bf7825d25defbad140}
+      \strng{fullhash}{938ab5eca45831bf7825d25defbad140}
+      \strng{bibnamehash}{938ab5eca45831bf7825d25defbad140}
+      \strng{authorbibnamehash}{938ab5eca45831bf7825d25defbad140}
+      \strng{authornamehash}{938ab5eca45831bf7825d25defbad140}
+      \strng{authorfullhash}{938ab5eca45831bf7825d25defbad140}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{ACM SIGARCH} Computer Architecture News}
+      \field{note}{Reimpresión del trabajo original de 1975}
+      \field{number}{4}
+      \field{title}{What Have We Learned from the {PDP}-11?}
+      \field{volume}{4}
+      \field{year}{1976}
+      \field{pages}{1\bibrangedash 14}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1145/633617.803541
+      \endverb
+    \endentry
+    \entry{tomasulo1967algorithm}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4e41d59939d3667384e326a1bb5f9bfa}{%
+           family={Tomasulo},
+           familyi={T\bibinitperiod},
+           given={Robert\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{fullhash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{bibnamehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{authorbibnamehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{authornamehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{authorfullhash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IBM Journal of Research and Development}
+      \field{number}{1}
+      \field{title}{An Efficient Algorithm for Exploiting Multiple Arithmetic Units}
+      \field{volume}{11}
+      \field{year}{1967}
+      \field{pages}{25\bibrangedash 33}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1147/rd.111.0025
+      \endverb
+    \endentry
+    \entry{seznec2007ltage}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ce8c53881842530f7851ae211a78c668}{%
+           family={Seznec},
+           familyi={S\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce8c53881842530f7851ae211a78c668}
+      \strng{fullhash}{ce8c53881842530f7851ae211a78c668}
+      \strng{bibnamehash}{ce8c53881842530f7851ae211a78c668}
+      \strng{authorbibnamehash}{ce8c53881842530f7851ae211a78c668}
+      \strng{authornamehash}{ce8c53881842530f7851ae211a78c668}
+      \strng{authorfullhash}{ce8c53881842530f7851ae211a78c668}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Instruction-Level Parallelism (JILP)}
+      \field{month}{10}
+      \field{note}{Available online: JILP, Vol. 9, October 2007}
+      \field{title}{The {L-TAGE} Branch Predictor}
+      \field{volume}{9}
+      \field{year}{2007}
+      \field{pages}{1\bibrangedash 20}
+      \range{pages}{20}
+      \verb{urlraw}
+      \verb https://jilp.org/vol9/v9paper3.pdf
+      \endverb
+      \verb{url}
+      \verb https://jilp.org/vol9/v9paper3.pdf
+      \endverb
+    \endentry
+    \entry{ieee2019FloatingPoint}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9487aee3b3fbd99c83193a8fafb1f2f9}{%
+           family={{IEEE Standards Association}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{9487aee3b3fbd99c83193a8fafb1f2f9}
+      \strng{fullhash}{9487aee3b3fbd99c83193a8fafb1f2f9}
+      \strng{bibnamehash}{9487aee3b3fbd99c83193a8fafb1f2f9}
+      \strng{authorbibnamehash}{9487aee3b3fbd99c83193a8fafb1f2f9}
+      \strng{authornamehash}{9487aee3b3fbd99c83193a8fafb1f2f9}
+      \strng{authorfullhash}{9487aee3b3fbd99c83193a8fafb1f2f9}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Replaces IEEE 754-2008 and IEEE 854-1987}
+      \field{number}{IEEE Std 754-2019}
+      \field{title}{IEEE Standard for Floating-Point Arithmetic}
+      \field{type}{Standard}
+      \field{urlday}{6}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{version}{Revision of IEEE 754-2008}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 84}
+      \range{pages}{84}
+      \verb{doi}
+      \verb 10.1109/IEEESTD.2019.8766229
+      \endverb
+      \keyw{floating-point arithmetic,IEEE 754,numerical standards}
+    \endentry
+    \entry{arm2025sve}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=4c6b78ed398e0733e69047e17b88729f}{%
+           family={{Arm Limited}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Arm Limited}%
+      }
+      \strng{namehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{fullhash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{bibnamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authorbibnamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authornamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authorfullhash}{4c6b78ed398e0733e69047e17b88729f}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Defines the Scalable Vector Extension (SVE) and SVE2 instruction sets for the Armv8-A architecture profile, including vector-length agnostic programming model}
+      \field{number}{DDI0602}
+      \field{title}{Arm®{} Architecture Reference Manual Supplement: Scalable Vector Extension (SVE and SVE2) Instructions}
+      \field{type}{Architecture Supplement}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.arm.com/documentation/ddi0602/2025-06/SVE-Instructions
+      \endverb
+      \verb{url}
+      \verb https://developer.arm.com/documentation/ddi0602/2025-06/SVE-Instructions
+      \endverb
+    \endentry
+    \entry{riscv2021manual}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=76d518858c86ed08b75504e5bc4eb749}{%
+           family={{RISC-V International}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {RISC-V International}%
+      }
+      \strng{namehash}{76d518858c86ed08b75504e5bc4eb749}
+      \strng{fullhash}{76d518858c86ed08b75504e5bc4eb749}
+      \strng{bibnamehash}{76d518858c86ed08b75504e5bc4eb749}
+      \strng{authorbibnamehash}{76d518858c86ed08b75504e5bc4eb749}
+      \strng{authornamehash}{76d518858c86ed08b75504e5bc4eb749}
+      \strng{authorfullhash}{76d518858c86ed08b75504e5bc4eb749}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Defines the RISC-V unprivileged and privileged instruction set architectures. Volume I, Unprivileged ISA v2.2 (2019) and subsequent drafts; Volume II, Privileged Architecture v1.12 (2021).}
+      \field{subtitle}{Volume I: Unprivileged ISA (Version 2.2 and later) and Volume II: Privileged Architecture (Version 1.12+)}
+      \field{title}{The RISC-V Instruction Set Manual}
+      \field{type}{Specification}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://riscv.org/technical/specifications/
+      \endverb
+      \verb{url}
+      \verb https://riscv.org/technical/specifications/
+      \endverb
+    \endentry
+    \entry{gupta2020misspenalty}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7ce0184033556a2893ddd9ccf2e2d2e8}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Pulkit},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a161b3e1eec452aea465cf8cbcf5673d}{%
+           family={Mittal},
+           familyi={M\bibinitperiod},
+           given={Sparsh},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{28b11ddfd725080f166c4a855d76a0b0}
+      \strng{fullhash}{28b11ddfd725080f166c4a855d76a0b0}
+      \strng{bibnamehash}{28b11ddfd725080f166c4a855d76a0b0}
+      \strng{authorbibnamehash}{28b11ddfd725080f166c4a855d76a0b0}
+      \strng{authornamehash}{28b11ddfd725080f166c4a855d76a0b0}
+      \strng{authorfullhash}{28b11ddfd725080f166c4a855d76a0b0}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}
+      \field{note}{Covers cache hierarchy design, line size, replacement policies, and miss penalty in hybrid memory systems}
+      \field{number}{11}
+      \field{title}{Miss Penalty Aware Cache Replacement for Hybrid Memory Systems}
+      \field{volume}{39}
+      \field{year}{2020}
+      \field{pages}{3804\bibrangedash 3817}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TCAD.2020.3003232
+      \endverb
+    \endentry
+    \entry{jouppi1990improving}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=b1e691fb22f06afee78c3d52bf0c68f4}{%
+           family={Jouppi},
+           familyi={J\bibinitperiod},
+           given={Norman\bibnamedelima P.},
+           giveni={N\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Seattle, WA, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{b1e691fb22f06afee78c3d52bf0c68f4}
+      \strng{fullhash}{b1e691fb22f06afee78c3d52bf0c68f4}
+      \strng{bibnamehash}{b1e691fb22f06afee78c3d52bf0c68f4}
+      \strng{authorbibnamehash}{b1e691fb22f06afee78c3d52bf0c68f4}
+      \strng{authornamehash}{b1e691fb22f06afee78c3d52bf0c68f4}
+      \strng{authorfullhash}{b1e691fb22f06afee78c3d52bf0c68f4}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 17th Annual International Symposium on Computer Architecture (ISCA)}
+      \field{title}{Improving Direct-Mapped Cache Performance by the Addition of a Small Fully-Associative Cache and Prefetch Buffers}
+      \field{year}{1990}
+      \field{pages}{364\bibrangedash 373}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/325164.325162
+      \endverb
+    \endentry
+    \entry{intel2011intel4004smithsonian}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9418cb4ba63a67791f2ae5bbd72cec85}{%
+           family={{Smithsonian National Museum of American History}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{9418cb4ba63a67791f2ae5bbd72cec85}
+      \strng{fullhash}{9418cb4ba63a67791f2ae5bbd72cec85}
+      \strng{bibnamehash}{9418cb4ba63a67791f2ae5bbd72cec85}
+      \strng{authorbibnamehash}{9418cb4ba63a67791f2ae5bbd72cec85}
+      \strng{authornamehash}{9418cb4ba63a67791f2ae5bbd72cec85}
+      \strng{authorfullhash}{9418cb4ba63a67791f2ae5bbd72cec85}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Catalog ID: NMAH.713495, Part of the Smithsonian Institution Collections}
+      \field{title}{Intel 4004 Microprocessor}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://americanhistory.si.edu/collections/nmah_713495
+      \endverb
+      \verb{url}
+      \verb https://americanhistory.si.edu/collections/nmah_713495
+      \endverb
+      \keyw{Intel 4004,Smithsonian,microprocessor history}
+    \endentry
+    \entry{intel2021intel4004vault}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Intel Virtual Vault: Articles on the History of Computing}
+      \field{title}{The {Intel} 4004 Microprocessor}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html
+      \endverb
+    \endentry
+    \entry{intel2021intel8008vault}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Intel Virtual Vault: Articles on the History of Computing}
+      \field{title}{The Intel 8008 Microprocessor}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-8008.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-8008.html
+      \endverb
+      \keyw{Intel 8008,microprocessor history,Intel Virtual Vault}
+    \endentry
+    \entry{wiki2025intel8008}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Intel_8008}}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{Intel 8008}
+      \field{year}{2025}
+      \keyw{Intel 8008,microprocessor history,Wikipedia}
+    \endentry
+    \entry{wiki2025s100bus}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/S-100_bus}}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{S-100 bus}
+      \field{year}{2025}
+      \keyw{S-100 bus,microcomputers,Altair 8800,history,Wikipedia}
+    \endentry
+    \entry{altair2008wired}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c653d9c0b073bf10d9ac370eb3feb9eb}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Tony},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c653d9c0b073bf10d9ac370eb3feb9eb}
+      \strng{fullhash}{c653d9c0b073bf10d9ac370eb3feb9eb}
+      \strng{bibnamehash}{c653d9c0b073bf10d9ac370eb3feb9eb}
+      \strng{authorbibnamehash}{c653d9c0b073bf10d9ac370eb3feb9eb}
+      \strng{authornamehash}{c653d9c0b073bf10d9ac370eb3feb9eb}
+      \strng{authorfullhash}{c653d9c0b073bf10d9ac370eb3feb9eb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{Wired Magazine, This Day in Tech series}
+      \field{title}{Dec. 19, 1974: Altair 8800 Kits Go on Sale, Igniting the PC Revolution}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.wired.com/2008/12/dec-19-1974-altair-8800-kits-go-on-sale
+      \endverb
+      \verb{url}
+      \verb https://www.wired.com/2008/12/dec-19-1974-altair-8800-kits-go-on-sale
+      \endverb
+      \keyw{Altair 8800,S-100 bus,microcomputer history,Wired}
+    \endentry
+    \entry{wiki2025mos6502}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/MOS_Technology_6502}}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{MOS Technology 6502}
+      \field{year}{2025}
+      \keyw{MOS 6502,microprocessor history,8-bit CPUs,Wikipedia}
+    \endentry
+    \entry{walls2020history}{online}{}
+      \name{author}{1}{}{%
+        {{hash=209e37018ad665d908d8476364650df5}{%
+           family={Walls},
+           familyi={W\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{209e37018ad665d908d8476364650df5}
+      \strng{fullhash}{209e37018ad665d908d8476364650df5}
+      \strng{bibnamehash}{209e37018ad665d908d8476364650df5}
+      \strng{authorbibnamehash}{209e37018ad665d908d8476364650df5}
+      \strng{authornamehash}{209e37018ad665d908d8476364650df5}
+      \strng{authorfullhash}{209e37018ad665d908d8476364650df5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{EmbeddedRelated.com}
+      \field{title}{A History of Early Microprocessors: The MOS Technology 6502}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.embeddedrelated.com/showarticle/1453.php
+      \endverb
+      \verb{url}
+      \verb https://www.embeddedrelated.com/showarticle/1453.php
+      \endverb
+      \keyw{MOS 6502,microprocessor history,embedded systems}
+    \endentry
+    \entry{zilog2016um}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=a241b4a4c56f5fd8e873f71ac505fbc7}{%
+           family={{Zilog, Inc.}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{fullhash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{bibnamehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{authorbibnamehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{authornamehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{authorfullhash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{UM0080, Revision 08}
+      \field{note}{Zilog official documentation}
+      \field{title}{Z80 CPU User Manual}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.zilog.com/docs/z80/um0080.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.zilog.com/docs/z80/um0080.pdf
+      \endverb
+      \keyw{Zilog Z80,CPU manual,user guide,microprocessor documentation}
+    \endentry
+    \entry{zilog2001z80}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=a241b4a4c56f5fd8e873f71ac505fbc7}{%
+           family={{Zilog, Inc.}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{fullhash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{bibnamehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{authorbibnamehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{authornamehash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \strng{authorfullhash}{a241b4a4c56f5fd8e873f71ac505fbc7}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Revision 04}
+      \field{note}{Zilog official documentation}
+      \field{title}{ZZ80 Family CPU User Manual}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2004}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.zilog.com/docs/z80/z80cpu_um.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.zilog.com/docs/z80/z80cpu_um.pdf
+      \endverb
+      \keyw{Zilog Z80,CPU manual,instruction set,microprocessor documentation}
+    \endentry
+    \entry{wiki2025z80}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Zilog_Z80}}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{Zilog Z80}
+      \field{year}{2025}
+      \keyw{Zilog Z80,8-bit microprocessor,microcomputer history,Wikipedia}
+    \endentry
+    \entry{intel2023ibmpc8086}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Intel Virtual Vault article}
+      \field{title}{The 8086 and the IBM PC}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-8086-and-the-ibm-pc.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-8086-and-the-ibm-pc.html
+      \endverb
+      \keyw{Intel 8086,IBM PC,microprocessor history,Intel Virtual Vault}
+    \endentry
+    \entry{wiki2025intel8086}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Intel_8086}}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{Intel 8086}
+      \field{year}{2025}
+      \keyw{Intel 8086,microprocessor,x86,history}
+    \endentry
+    \entry{intel1986i386}{manual}{}
+      \list{location}{1}{%
+        {Santa Clara, CA}%
+      }
+      \list{organization}{1}{%
+        {Intel Corporation}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{Mirror MIT PDOS. © Intel Corporation 1987 (CG-5/26/87). Edited 2001-02-01 by G.\,N.}
+      \field{title}{Intel 80386 Programmer's Reference Manual}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{1986}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://pdos.csail.mit.edu/6.828/2018/readings/i386.pdf
+      \endverb
+      \verb{url}
+      \verb https://pdos.csail.mit.edu/6.828/2018/readings/i386.pdf
+      \endverb
+    \endentry
+    \entry{wiki2025protectedmode}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wikimedia Foundation}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Protected_mode}}
+      \field{note}{Page version ID: 1244778650, Accessed: 2025-09-03}
+      \field{title}{Protected mode --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2025}
+    \endentry
+    \entry{m68k1992manual}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=0784a4452275971ace2f63eaa15b0bf0}{%
+           family={{Motorola Inc.}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {NXP Semiconductors}%
+      }
+      \strng{namehash}{0784a4452275971ace2f63eaa15b0bf0}
+      \strng{fullhash}{0784a4452275971ace2f63eaa15b0bf0}
+      \strng{bibnamehash}{0784a4452275971ace2f63eaa15b0bf0}
+      \strng{authorbibnamehash}{0784a4452275971ace2f63eaa15b0bf0}
+      \strng{authornamehash}{0784a4452275971ace2f63eaa15b0bf0}
+      \strng{authorfullhash}{0784a4452275971ace2f63eaa15b0bf0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Third Edition}
+      \field{note}{Comprehensive reference manual for the Motorola 68000 microprocessor}
+      \field{title}{MC68000 16-/32-Bit Microprocessor User's Manual}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{1992}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nxp.com/docs/en/reference-manual/MC68000UM.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.nxp.com/docs/en/reference-manual/MC68000UM.pdf
+      \endverb
+      \keyw{Motorola 68000,M68k,microprocessor,user manual,NXP}
+    \endentry
+    \entry{i3861986hrm}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Intel Corporation}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Official Intel reference manual for the 80386 microprocessor hardware implementation}
+      \field{title}{80386 Hardware Reference Manual}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{1986}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.dosdays.co.uk/media/intel/1986_80386_Hardware_Reference_Manual.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.dosdays.co.uk/media/intel/1986_80386_Hardware_Reference_Manual.pdf
+      \endverb
+      \keyw{Intel 80386,i386,x86 architecture,hardware reference}
+    \endentry
+    \entry{oracle2004sparc}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=d51288dc67d9f5e0330d927a009e208b}{%
+           family={{Oracle Corporation}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{d51288dc67d9f5e0330d927a009e208b}
+      \strng{fullhash}{d51288dc67d9f5e0330d927a009e208b}
+      \strng{bibnamehash}{d51288dc67d9f5e0330d927a009e208b}
+      \strng{authorbibnamehash}{d51288dc67d9f5e0330d927a009e208b}
+      \strng{authornamehash}{d51288dc67d9f5e0330d927a009e208b}
+      \strng{authorfullhash}{d51288dc67d9f5e0330d927a009e208b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Oracle documentation explaining the SPARC register window mechanism and architecture overview}
+      \field{title}{SPARC Architecture: Register Windows Overview}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2004}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.oracle.com/cd/E19253-01/816-4854/hwovr-5/index.html
+      \endverb
+      \verb{url}
+      \verb https://docs.oracle.com/cd/E19253-01/816-4854/hwovr-5/index.html
+      \endverb
+      \keyw{SPARC,register windows,RISC architecture,Oracle documentation}
+    \endentry
+    \entry{kane1992mipsr4000}{article}{}
+      \name{author}{2}{}{%
+        {{hash=78dcbc71f4b18fb07cd189249cc9a4a8}{%
+           family={Kane},
+           familyi={K\bibinitperiod},
+           given={Gerry},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ad2e864c90ca0adb7057cabc3e409fe0}{%
+           family={Heinrich},
+           familyi={H\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{a1ab17bc43b024f79a2286aa89862b49}
+      \strng{fullhash}{a1ab17bc43b024f79a2286aa89862b49}
+      \strng{bibnamehash}{a1ab17bc43b024f79a2286aa89862b49}
+      \strng{authorbibnamehash}{a1ab17bc43b024f79a2286aa89862b49}
+      \strng{authornamehash}{a1ab17bc43b024f79a2286aa89862b49}
+      \strng{authorfullhash}{a1ab17bc43b024f79a2286aa89862b49}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Micro}
+      \field{note}{Original IEEE Micro publication describing the MIPS R4000 architecture and design.}
+      \field{number}{3}
+      \field{title}{MIPS R4000 Microprocessor User's Manual}
+      \field{volume}{12}
+      \field{year}{1992}
+      \field{pages}{10\bibrangedash 22}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/40.137383
+      \endverb
+      \verb{urlraw}
+      \verb https://people.eecs.berkeley.edu/~kubitron/courses/cs252-S07/handouts/papers/R4000.pdf
+      \endverb
+      \verb{url}
+      \verb https://people.eecs.berkeley.edu/~kubitron/courses/cs252-S07/handouts/papers/R4000.pdf
+      \endverb
+    \endentry
+    \entry{alpha1999manual}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=543c3cdcc1f48346e03c070671d599b1}{%
+           family={{Digital Equipment Corporation}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Compaq Computer Corporation}%
+      }
+      \strng{namehash}{543c3cdcc1f48346e03c070671d599b1}
+      \strng{fullhash}{543c3cdcc1f48346e03c070671d599b1}
+      \strng{bibnamehash}{543c3cdcc1f48346e03c070671d599b1}
+      \strng{authorbibnamehash}{543c3cdcc1f48346e03c070671d599b1}
+      \strng{authornamehash}{543c3cdcc1f48346e03c070671d599b1}
+      \strng{authorfullhash}{543c3cdcc1f48346e03c070671d599b1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Compaq/Digital official documentation of the Alpha 21264 (EV6) microarchitecture, covering pipeline, memory hierarchy, and system interface.}
+      \field{title}{Alpha 21264 Microprocessor (EV6) Hardware Reference Manual}
+      \field{year}{1999}
+      \verb{urlraw}
+      \verb https://download.majix.org/dec/21264ev6_hrm.pdf
+      \endverb
+      \verb{url}
+      \verb https://download.majix.org/dec/21264ev6_hrm.pdf
+      \endverb
+    \endentry
+    \entry{wiki2025alpha}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wikipedia}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online encyclopedia article}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{Alpha 21264}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Alpha_21264
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Alpha_21264
+      \endverb
+    \endentry
+    \entry{Intel1996p6}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Intel Corporation}%
+      }
+      \list{location}{1}{%
+        {Santa Clara, CA}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Covers architecture, programming environment, and hardware interface of the P6 family, including Pentium Pro and Pentium II processors}
+      \field{number}{244001-001}
+      \field{title}{P6 Family of Processors Hardware Developer’s Manual}
+      \field{volume}{1--3}
+      \field{year}{1996}
+      \verb{urlraw}
+      \verb https://download.intel.com/design/PentiumII/manuals/24400101.pdf
+      \endverb
+      \verb{url}
+      \verb https://download.intel.com/design/PentiumII/manuals/24400101.pdf
+      \endverb
+    \endentry
+    \entry{arm1996arm7tdmi}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=d8c59dfa75014dab2a6b898b0ba1b5e9}{%
+           family={{ARM Limited}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {ARM Limited}%
+      }
+      \list{location}{1}{%
+        {Cambridge, UK}%
+      }
+      \strng{namehash}{d8c59dfa75014dab2a6b898b0ba1b5e9}
+      \strng{fullhash}{d8c59dfa75014dab2a6b898b0ba1b5e9}
+      \strng{bibnamehash}{d8c59dfa75014dab2a6b898b0ba1b5e9}
+      \strng{authorbibnamehash}{d8c59dfa75014dab2a6b898b0ba1b5e9}
+      \strng{authornamehash}{d8c59dfa75014dab2a6b898b0ba1b5e9}
+      \strng{authorfullhash}{d8c59dfa75014dab2a6b898b0ba1b5e9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Covers the ARM7TDMI core architecture, instruction set, debug features and interface specifications}
+      \field{number}{DDI 0029E}
+      \field{title}{ARM7TDMI Technical Reference Manual}
+      \field{type}{Reference Manual}
+      \field{version}{Revision r3p1}
+      \field{year}{1996}
+      \field{pages}{1\bibrangedash 336}
+      \range{pages}{336}
+      \verb{urlraw}
+      \verb https://documentation-service.arm.com/static/5e8e1323fd977155116a3129
+      \endverb
+      \verb{url}
+      \verb https://documentation-service.arm.com/static/5e8e1323fd977155116a3129
+      \endverb
+    \endentry
+    \entry{arm2001arm7tdmis}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=4c6b78ed398e0733e69047e17b88729f}{%
+           family={{Arm Limited}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, UK}%
+      }
+      \list{organization}{1}{%
+        {Arm Limited}%
+      }
+      \strng{namehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{fullhash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{bibnamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authorbibnamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authornamehash}{4c6b78ed398e0733e69047e17b88729f}
+      \strng{authorfullhash}{4c6b78ed398e0733e69047e17b88729f}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Reference Number: DDI 0234, Issue I}
+      \field{title}{ARM7TDMI-S Technical Reference Manual}
+      \field{type}{Technical Reference Manual}
+      \field{year}{2001}
+      \verb{urlraw}
+      \verb https://documentation-service.arm.com/static/5e8e13a9fd977155116a3368
+      \endverb
+      \verb{url}
+      \verb https://documentation-service.arm.com/static/5e8e13a9fd977155116a3368
+      \endverb
+    \endentry
+    \entry{dunn1996Instruction}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=efe2aa585e65de8bba6b0b590b5058f1}{%
+           family={Dunn},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=59eff1482afbcb6d7e01d07362be6df7}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={Wei-Chung},
+           giveni={W\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris, France}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{8a3ce369152ffd5bde23690f03488dda}
+      \strng{fullhash}{8a3ce369152ffd5bde23690f03488dda}
+      \strng{bibnamehash}{8a3ce369152ffd5bde23690f03488dda}
+      \strng{authorbibnamehash}{8a3ce369152ffd5bde23690f03488dda}
+      \strng{authornamehash}{8a3ce369152ffd5bde23690f03488dda}
+      \strng{authorfullhash}{8a3ce369152ffd5bde23690f03488dda}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 29th Annual ACM/IEEE International Symposium on Microarchitecture}
+      \field{isbn}{0818676418}
+      \field{series}{MICRO 29}
+      \field{title}{Instruction scheduling for the HP PA-8000}
+      \field{year}{1996}
+      \field{pages}{298\bibrangedash 307}
+      \range{pages}{10}
+    \endentry
+    \entry{wiki2025pa8000}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wikimedia Foundation}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/PA-8000}}
+      \field{note}{Accessed: 2025-09-03}
+      \field{title}{PA-8000 --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2025}
+    \endentry
+    \entry{amd19993dnow}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=bf70e453946d5be989799409fe1e53b9}{%
+           family={{Advanced Micro Devices, Inc.}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Advanced Micro Devices, Inc.}%
+      }
+      \strng{namehash}{bf70e453946d5be989799409fe1e53b9}
+      \strng{fullhash}{bf70e453946d5be989799409fe1e53b9}
+      \strng{bibnamehash}{bf70e453946d5be989799409fe1e53b9}
+      \strng{authorbibnamehash}{bf70e453946d5be989799409fe1e53b9}
+      \strng{authornamehash}{bf70e453946d5be989799409fe1e53b9}
+      \strng{authorfullhash}{bf70e453946d5be989799409fe1e53b9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{Archived technical documentation}
+      \field{number}{Publication \#21928}
+      \field{title}{AMD 3DNow!\texttrademark{} Technology Manual}
+      \field{version}{Rev. 1.0}
+      \field{year}{1999}
+      \verb{urlraw}
+      \verb https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/21928.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/21928.pdf
+      \endverb
+    \endentry
+    \entry{wiki20253dnow}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wikipedia, The Free Encyclopedia}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/3DNow!}}
+      \field{note}{Última edición: 5 de marzo de 2025, consultado el 5 de marzo de 2025}
+      \field{title}{3DNow!}
+      \field{year}{2025}
+    \endentry
+    \entry{wiki2025athlon}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wikipedia, The Free Encyclopedia}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{10}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Athlon}}
+      \field{note}{Última edición: 5 de marzo de 2025, consultado el 5 de marzo de 2025}
+      \field{title}{Athlon}
+      \field{year}{2025}
+    \endentry
+    \entry{amd2020zen3}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c11acf902e50b25c588c8c18d117f809}{%
+           family={Naffziger},
+           familyi={N\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=84666a285b6823b0dd9c9650fc5302b8}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ca72c3344d39e96b71704364de60ffa0}{%
+           family={Wasson},
+           familyi={W\bibinitperiod},
+           given={Scott\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=23b9b9a08b88045a5aa96ba317d483e4}{%
+           family={Singhal},
+           familyi={S\bibinitperiod},
+           given={Sharad},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Palo Alto, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{8b434a6700b363051d09af5fac8735b3}
+      \strng{fullhash}{d677b6fc17696b82ee315304338d6b76}
+      \strng{bibnamehash}{8b434a6700b363051d09af5fac8735b3}
+      \strng{authorbibnamehash}{8b434a6700b363051d09af5fac8735b3}
+      \strng{authornamehash}{8b434a6700b363051d09af5fac8735b3}
+      \strng{authorfullhash}{d677b6fc17696b82ee315304338d6b76}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 IEEE Hot Chips 32 Symposium (HCS)}
+      \field{note}{Describes the Zen 3 core microarchitecture as used in AMD Ryzen 5000 series, with unified CCX per CCD and significant IPC improvements.}
+      \field{title}{AMD ``Zen 3'': The Next Generation x86 Core}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 32}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1109/HCS49909.2020.9220538
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9220538
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9220538
+      \endverb
+    \endentry
+    \entry{apple2020m1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3325b015fbae57ba74629a53f1ead961}{%
+           family={{Apple Inc.}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{fullhash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{bibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorbibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authornamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorfullhash}{3325b015fbae57ba74629a53f1ead961}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Apple Unveils M1, the Most Powerful Chip Apple Has Ever Created}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/
+      \endverb
+      \verb{url}
+      \verb https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/
+      \endverb
+    \endentry
+    \entry{ampere2020ampereunveils}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3d9384676a1b869449d06eaf736c5437}{%
+           family={{Ampere Computing}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{fullhash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{bibnamehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{authorbibnamehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{authornamehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{authorfullhash}{3d9384676a1b869449d06eaf736c5437}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Ampere Unveils 80-Core Altra Processor for Cloud Workloads}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://amperecomputing.com/news/ampere-altra-80-core
+      \endverb
+      \verb{url}
+      \verb https://amperecomputing.com/news/ampere-altra-80-core
+      \endverb
+    \endentry
+    \entry{intel2022generation}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{10th Generation Intel Core Processors Datasheet (Comet Lake)}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cdrdv2-public.intel.com/615211/615211-008.pdf
+      \endverb
+      \verb{url}
+      \verb https://cdrdv2-public.intel.com/615211/615211-008.pdf
+      \endverb
+    \endentry
+    \entry{riken2020fugaku}{online}{}
+      \name{author}{2}{}{%
+        {{hash=1828cf8227c2bcde1fd0c880ec9b14d9}{%
+           family={{RIKEN}},
+           familyi={R\bibinitperiod}}}%
+        {{hash=053f42c6bae3432cae270ea978f7e638}{%
+           family={{Fujitsu}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2b3c31cd221755fd8ec8478916c9a5b}
+      \strng{fullhash}{a2b3c31cd221755fd8ec8478916c9a5b}
+      \strng{bibnamehash}{a2b3c31cd221755fd8ec8478916c9a5b}
+      \strng{authorbibnamehash}{a2b3c31cd221755fd8ec8478916c9a5b}
+      \strng{authornamehash}{a2b3c31cd221755fd8ec8478916c9a5b}
+      \strng{authorfullhash}{a2b3c31cd221755fd8ec8478916c9a5b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Fugaku Takes First Place in TOP500, HPCG, HPL-AI, and Graph500 Rankings}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.riken.jp/en/news_pubs/news/2020/20200623_1/index.html
+      \endverb
+      \verb{url}
+      \verb https://www.riken.jp/en/news_pubs/news/2020/20200623_1/index.html
+      \endverb
+    \endentry
+    \entry{intel2021intellgencore}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Intel 11th Gen Core (Rocket Lake-S) Desktop Processors Launch}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/support/articles/000099655/processors.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/support/articles/000099655/processors.html
+      \endverb
+    \endentry
+    \entry{intel2021launches}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Intel Launches 12th Gen Core (Alder Lake) with Performance Hybrid Architecture}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-12th-gen-core.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-12th-gen-core.html
+      \endverb
+    \endentry
+    \entry{arm2021neoversev1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5edf4f8eb107a4dc00890f63e07fe39d}{%
+           family={{Arm Editorial Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5edf4f8eb107a4dc00890f63e07fe39d}
+      \strng{fullhash}{5edf4f8eb107a4dc00890f63e07fe39d}
+      \strng{bibnamehash}{5edf4f8eb107a4dc00890f63e07fe39d}
+      \strng{authorbibnamehash}{5edf4f8eb107a4dc00890f63e07fe39d}
+      \strng{authornamehash}{5edf4f8eb107a4dc00890f63e07fe39d}
+      \strng{authorfullhash}{5edf4f8eb107a4dc00890f63e07fe39d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Introduces Neoverse V1 with SVE for HPC/ML workloads, ~50\% IPC uplift over N1}
+      \field{title}{Neoverse V1: A New Approach to HPC}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://newsroom.arm.com/blog/neoverse-v1
+      \endverb
+      \verb{url}
+      \verb https://newsroom.arm.com/blog/neoverse-v1
+      \endverb
+    \endentry
+    \entry{arm2021neoversen2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=23e4b7075a5b05c2fd96ffc01224e117}{%
+           family={Taneja},
+           familyi={T\bibinitperiod},
+           given={Mohit},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{23e4b7075a5b05c2fd96ffc01224e117}
+      \strng{fullhash}{23e4b7075a5b05c2fd96ffc01224e117}
+      \strng{bibnamehash}{23e4b7075a5b05c2fd96ffc01224e117}
+      \strng{authorbibnamehash}{23e4b7075a5b05c2fd96ffc01224e117}
+      \strng{authornamehash}{23e4b7075a5b05c2fd96ffc01224e117}
+      \strng{authorfullhash}{23e4b7075a5b05c2fd96ffc01224e117}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Describes Arm Neoverse N2 with SVE2, ~40\% IPC uplift, and focus on cloud-to-edge scale-out}
+      \field{title}{Arm Neoverse N2 Platform: Industry-leading performance and power efficiency for Cloud-to-Edge infrastructure}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/arm-neoverse-n2-industry-leading-performance-efficiency
+      \endverb
+      \verb{url}
+      \verb https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/arm-neoverse-n2-industry-leading-performance-efficiency
+      \endverb
+    \endentry
+    \entry{arm2021neoversev1topdown}{online}{}
+      \name{author}{1}{}{%
+        {{hash=964de4c56bd11a7919ac79017a8db688}{%
+           family={Team},
+           familyi={T\bibinitperiod},
+           given={Arm\bibnamedelima Editorial},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{964de4c56bd11a7919ac79017a8db688}
+      \strng{fullhash}{964de4c56bd11a7919ac79017a8db688}
+      \strng{bibnamehash}{964de4c56bd11a7919ac79017a8db688}
+      \strng{authorbibnamehash}{964de4c56bd11a7919ac79017a8db688}
+      \strng{authornamehash}{964de4c56bd11a7919ac79017a8db688}
+      \strng{authorfullhash}{964de4c56bd11a7919ac79017a8db688}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Performance analysis methodology and PMU events for Neoverse V1, including SVE and vector-matrix support}
+      \field{title}{Neoverse V1 Performance Analysis Methodology White Paper}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://community.arm.com/arm-community-blogs/b/servers-and-cloud-computing-blog/posts/arm-neoverse-v1-top-down-methodology
+      \endverb
+      \verb{url}
+      \verb https://community.arm.com/arm-community-blogs/b/servers-and-cloud-computing-blog/posts/arm-neoverse-v1-top-down-methodology
+      \endverb
+    \endentry
+    \entry{wiki2022neoversev1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=10d1b484801b325cc5863d67806d487e}{%
+           family={{WikiChip contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {WikiChip}%
+      }
+      \strng{namehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{fullhash}{10d1b484801b325cc5863d67806d487e}
+      \strng{bibnamehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{authorbibnamehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{authornamehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{authorfullhash}{10d1b484801b325cc5863d67806d487e}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikichip.org/wiki/arm_holdings/microarchitectures/neoverse_v1}}
+      \field{note}{Detailed technical overview of Neoverse V1 microarchitecture (ISA, pipeline, SVE, performance improvements)}
+      \field{title}{Neoverse V1 (codename Zeus) Microarchitecture}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{wiki2025neoversen2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=10d1b484801b325cc5863d67806d487e}{%
+           family={{WikiChip contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {WikiChip}%
+      }
+      \strng{namehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{fullhash}{10d1b484801b325cc5863d67806d487e}
+      \strng{bibnamehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{authorbibnamehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{authornamehash}{10d1b484801b325cc5863d67806d487e}
+      \strng{authorfullhash}{10d1b484801b325cc5863d67806d487e}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikichip.org/wiki/arm_holdings/microarchitectures/neoverse_n2}}
+      \field{note}{Detailed technical overview of Neoverse N2 microarchitecture (ISA ARMv9-A, SVE2, pipeline, uop cache, BTB, etc.)}
+      \field{title}{Neoverse N2 (codename Perseus) Microarchitecture}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{ibm2021power10server}{online}{}
+      \name{author}{1}{}{%
+        {{hash=cbf44511d041dc6d1dd73cc0c033122c}{%
+           family={{IBM}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{title}{IBM Introduces the Power E1080 Server, the First Based on IBM Power10}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://newsroom.ibm.com/2021-09-08-IBM-Unveils-the-IBM-Power-E1080
+      \endverb
+      \verb{url}
+      \verb https://newsroom.ibm.com/2021-09-08-IBM-Unveils-the-IBM-Power-E1080
+      \endverb
+    \endentry
+    \entry{wiki2024loongson}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{11}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consulted for release and ISA transition context}
+      \field{title}{Loongson 3A5000}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Loongson#3A5000
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Loongson#3A5000
+      \endverb
+    \endentry
+    \entry{amd2022ryzen7000}{online}{}
+      \name{author}{1}{}{%
+        {{hash=48af4341f745163f945fa838eeabb062}{%
+           family={{AMD}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{48af4341f745163f945fa838eeabb062}
+      \strng{fullhash}{48af4341f745163f945fa838eeabb062}
+      \strng{bibnamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authorbibnamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authornamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authorfullhash}{48af4341f745163f945fa838eeabb062}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{AMD Announces Ryzen 7000 Series Desktop Processors}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.amd.com/en/press-releases/2022-08-29-amd-announces-ryzen-7000-desktop-cpus
+      \endverb
+      \verb{url}
+      \verb https://www.amd.com/en/press-releases/2022-08-29-amd-announces-ryzen-7000-desktop-cpus
+      \endverb
+    \endentry
+    \entry{intel2022raptor}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{10}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{title}{Intel Launches 13th Gen Core (Raptor Lake) Desktop Processors}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-13th-gen-core.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-13th-gen-core.html
+      \endverb
+    \endentry
+    \entry{apple2022m2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3325b015fbae57ba74629a53f1ead961}{%
+           family={{Apple Inc.}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{fullhash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{bibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorbibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authornamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorfullhash}{3325b015fbae57ba74629a53f1ead961}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Apple Introduces M2}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.apple.com/newsroom/2022/06/apple-introduces-m2/
+      \endverb
+      \verb{url}
+      \verb https://www.apple.com/newsroom/2022/06/apple-introduces-m2/
+      \endverb
+    \endentry
+    \entry{aws2022graviton3c7g}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f9f845588f6eb3afda5a4f36013de23c}{%
+           family={{AWS News Blog}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f9f845588f6eb3afda5a4f36013de23c}
+      \strng{fullhash}{f9f845588f6eb3afda5a4f36013de23c}
+      \strng{bibnamehash}{f9f845588f6eb3afda5a4f36013de23c}
+      \strng{authorbibnamehash}{f9f845588f6eb3afda5a4f36013de23c}
+      \strng{authornamehash}{f9f845588f6eb3afda5a4f36013de23c}
+      \strng{authorfullhash}{f9f845588f6eb3afda5a4f36013de23c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Now Available — Amazon EC2 C7g Instances Powered by AWS Graviton3}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://aws.amazon.com/blogs/aws/new-graviton3-based-amazon-ec2-c7g-instances/
+      \endverb
+      \verb{url}
+      \verb https://aws.amazon.com/blogs/aws/new-graviton3-based-amazon-ec2-c7g-instances/
+      \endverb
+    \endentry
+    \entry{nvidia2022gracecpu}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a2fe9051fe051f819bd739ef3e340377}{%
+           family={{NVIDIA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{fullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{bibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorbibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authornamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorfullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{NVIDIA Grace CPU Superchip}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nvidia.com/en-us/data-center/grace-cpu/
+      \endverb
+      \verb{url}
+      \verb https://www.nvidia.com/en-us/data-center/grace-cpu/
+      \endverb
+    \endentry
+    \entry{apple2023m3}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3325b015fbae57ba74629a53f1ead961}{%
+           family={{Apple Inc.}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{fullhash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{bibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorbibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authornamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorfullhash}{3325b015fbae57ba74629a53f1ead961}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Apple Unveils M3, M3 Pro, and M3 Max}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.apple.com/newsroom/2023/10/apple-unveils-m3-m3-pro-and-m3-max/
+      \endverb
+      \verb{url}
+      \verb https://www.apple.com/newsroom/2023/10/apple-unveils-m3-m3-pro-and-m3-max/
+      \endverb
+    \endentry
+    \entry{intel202314threfresh}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{11}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Intel Introduces 14th Gen Core Desktop Processors (Raptor Lake Refresh)}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-core-14th-gen-desktop.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-core-14th-gen-desktop.html
+      \endverb
+    \endentry
+    \entry{ampere2023ampereone}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3d9384676a1b869449d06eaf736c5437}{%
+           family={{Ampere Computing}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{fullhash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{bibnamehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{authorbibnamehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{authornamehash}{3d9384676a1b869449d06eaf736c5437}
+      \strng{authorfullhash}{3d9384676a1b869449d06eaf736c5437}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{AmpereOne: Up to 192 Cores for Cloud Native}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://amperecomputing.com/news/ampereone-192-cores
+      \endverb
+      \verb{url}
+      \verb https://amperecomputing.com/news/ampereone-192-cores
+      \endverb
+    \endentry
+    \entry{nvidia2023gh200}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a2fe9051fe051f819bd739ef3e340377}{%
+           family={{NVIDIA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{fullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{bibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorbibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authornamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorfullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{NVIDIA GH200 Grace Hopper Superchip}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nvidia.com/en-us/data-center/grace-hopper-superchip/
+      \endverb
+      \verb{url}
+      \verb https://www.nvidia.com/en-us/data-center/grace-hopper-superchip/
+      \endverb
+    \endentry
+    \entry{google2023tpuv5p}{online}{}
+      \name{author}{1}{}{%
+        {{hash=57f3af2a3d1051c172ab3c3db7d5409d}{%
+           family={{Google Cloud}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{fullhash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{bibnamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{authorbibnamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{authornamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{authorfullhash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Cloud TPU v5p — Scaling Generative AI Training}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cloud.google.com/blog/products/ai-machine-learning/announcing-cloud-tpu-v5p
+      \endverb
+      \verb{url}
+      \verb https://cloud.google.com/blog/products/ai-machine-learning/announcing-cloud-tpu-v5p
+      \endverb
+    \endentry
+    \entry{msft2023ignitecobalt}{online}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{note}{Incluye el recap de Cobalt 100 y Maia}
+      \field{title}{Microsoft Ignite 2023/2024 Book of News (Azure Cobalt 100 \& Maia 100)}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://news.microsoft.com/ignite-2024-book-of-news/
+      \endverb
+      \verb{url}
+      \verb https://news.microsoft.com/ignite-2024-book-of-news/
+      \endverb
+    \endentry
+    \entry{intel2023coreultrapresskit}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{12}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Intel Core Ultra Processors — Press Kit (Dec 14, 2023)}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://download.intel.com/newsroom/archive/2025/en-us-2023-12-14-intel-core-ultra-processors.pdf
+      \endverb
+      \verb{url}
+      \verb https://download.intel.com/newsroom/archive/2025/en-us-2023-12-14-intel-core-ultra-processors.pdf
+      \endverb
+    \endentry
+    \entry{intel2024coreultra200s}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{13}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Intel Core Ultra 200S Series Desktop Processors Launch}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://newsroom.intel.com/client-computing/core-ultra-200s-series-desktop
+      \endverb
+      \verb{url}
+      \verb https://newsroom.intel.com/client-computing/core-ultra-200s-series-desktop
+      \endverb
+    \endentry
+    \entry{intel2024coreultra200v}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{14}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Intel Core Ultra 200V Client Processors}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-core-ultra-200v.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/intel-core-ultra-200v.html
+      \endverb
+    \endentry
+    \entry{intel2024lunarlakeq3}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{15}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Intel Lunar Lake to Power Copilot+ PCs in Q3 2024}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/lunar-lake-copilot-plus-pc.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/lunar-lake-copilot-plus-pc.html
+      \endverb
+    \endentry
+    \entry{intel2024xeon6sierra}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{16}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Intel Xeon 6 Processors with E-Cores (Sierra Forest) Now Available}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/xeon-6-sierra-forest-now-available.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/xeon-6-sierra-forest-now-available.html
+      \endverb
+    \endentry
+    \entry{intel2024xeon6granite}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{17}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Intel Xeon 6 Processors with P-Cores (Granite Rapids) Extend Performance Leadership}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/xeon-6-p-cores.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/xeon-6-p-cores.html
+      \endverb
+    \endentry
+    \entry{amd2024ryzen9000}{online}{}
+      \name{author}{1}{}{%
+        {{hash=48af4341f745163f945fa838eeabb062}{%
+           family={{AMD}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{48af4341f745163f945fa838eeabb062}
+      \strng{fullhash}{48af4341f745163f945fa838eeabb062}
+      \strng{bibnamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authorbibnamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authornamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authorfullhash}{48af4341f745163f945fa838eeabb062}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{AMD Announces Ryzen 9000 Series Desktop Processors (Zen 5)}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.amd.com/en/newsroom/press-releases/2024-06-03-amd-announces-ryzen-9000-desktop-processors.html
+      \endverb
+      \verb{url}
+      \verb https://www.amd.com/en/newsroom/press-releases/2024-06-03-amd-announces-ryzen-9000-desktop-processors.html
+      \endverb
+    \endentry
+    \entry{apple2024m4}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3325b015fbae57ba74629a53f1ead961}{%
+           family={{Apple Inc.}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{fullhash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{bibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorbibnamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authornamehash}{3325b015fbae57ba74629a53f1ead961}
+      \strng{authorfullhash}{3325b015fbae57ba74629a53f1ead961}
+      \field{extraname}{4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Apple Unveils M4}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.apple.com/newsroom/2024/05/apple-unveils-m4/
+      \endverb
+      \verb{url}
+      \verb https://www.apple.com/newsroom/2024/05/apple-unveils-m4/
+      \endverb
+    \endentry
+    \entry{nvidia2024gb200}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a2fe9051fe051f819bd739ef3e340377}{%
+           family={{NVIDIA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{fullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{bibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorbibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authornamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorfullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{NVIDIA Unveils GB200 Grace Blackwell Platform and NVL72 Systems}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://nvidianews.nvidia.com/news/nvidia-introduces-blackwell-platform
+      \endverb
+      \verb{url}
+      \verb https://nvidianews.nvidia.com/news/nvidia-introduces-blackwell-platform
+      \endverb
+    \endentry
+    \entry{qcom2023xelite}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c9b0cb53646238b8c03fb69b8f331220}{%
+           family={{Qualcomm}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{fullhash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{bibnamehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{authorbibnamehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{authornamehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{authorfullhash}{c9b0cb53646238b8c03fb69b8f331220}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Introducing Snapdragon X Elite}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.qualcomm.com/news/onq/2023/10/introducing-snapdragon-x-elite
+      \endverb
+      \verb{url}
+      \verb https://www.qualcomm.com/news/onq/2023/10/introducing-snapdragon-x-elite
+      \endverb
+    \endentry
+    \entry{qcom2024xplus}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c9b0cb53646238b8c03fb69b8f331220}{%
+           family={{Qualcomm}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{fullhash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{bibnamehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{authorbibnamehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{authornamehash}{c9b0cb53646238b8c03fb69b8f331220}
+      \strng{authorfullhash}{c9b0cb53646238b8c03fb69b8f331220}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Snapdragon X Plus Joins the Snapdragon X Series for Copilot+ PCs}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.qualcomm.com/news/onq/2024/04/snapdragon-x-plus-joins-the-snapdragon-x-series
+      \endverb
+      \verb{url}
+      \verb https://www.qualcomm.com/news/onq/2024/04/snapdragon-x-plus-joins-the-snapdragon-x-series
+      \endverb
+    \endentry
+    \entry{amd2024epyc9005press}{online}{}
+      \name{author}{1}{}{%
+        {{hash=48af4341f745163f945fa838eeabb062}{%
+           family={{AMD}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{48af4341f745163f945fa838eeabb062}
+      \strng{fullhash}{48af4341f745163f945fa838eeabb062}
+      \strng{bibnamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authorbibnamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authornamehash}{48af4341f745163f945fa838eeabb062}
+      \strng{authorfullhash}{48af4341f745163f945fa838eeabb062}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{5th Gen AMD EPYC 9005 Series Processors Launch}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.amd.com/en/newsroom/press-releases/2024-10-10-amd-launches-5th-gen-amd-epyc-cpus-maintaining-le.html
+      \endverb
+      \verb{url}
+      \verb https://www.amd.com/en/newsroom/press-releases/2024-10-10-amd-launches-5th-gen-amd-epyc-cpus-maintaining-le.html
+      \endverb
+    \endentry
+    \entry{intel2025cescoreultra200}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b7f0fb90e404efb48f8a85a517dec3c9}{%
+           family={{Intel Corporation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{fullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{bibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorbibnamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authornamehash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \strng{authorfullhash}{b7f0fb90e404efb48f8a85a517dec3c9}
+      \field{extraname}{18}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{Intel at CES 2025: Core Ultra 200 Series Expands AI PC Portfolio}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/ces-2025-core-ultra-200.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/newsroom/news/ces-2025-core-ultra-200.html
+      \endverb
+    \endentry
+    \entry{google2024axion}{online}{}
+      \name{author}{1}{}{%
+        {{hash=57f3af2a3d1051c172ab3c3db7d5409d}{%
+           family={{Google Cloud}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{fullhash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{bibnamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{authorbibnamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{authornamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \strng{authorfullhash}{57f3af2a3d1051c172ab3c3db7d5409d}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Introducing Axion Processors: Google’s First Custom Arm-Based CPUs for the Data Center}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cloud.google.com/blog/products/compute/introducing-axion-processors
+      \endverb
+      \verb{url}
+      \verb https://cloud.google.com/blog/products/compute/introducing-axion-processors
+      \endverb
+    \endentry
+    \entry{intel2025novalake2026}{online}{}
+      \name{author}{1}{}{%
+        {{hash=abc330ff72b629d1173b2b5b82eec394}{%
+           family={Hardware},
+           familyi={H\bibinitperiod},
+           given={Tom's},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{abc330ff72b629d1173b2b5b82eec394}
+      \strng{fullhash}{abc330ff72b629d1173b2b5b82eec394}
+      \strng{bibnamehash}{abc330ff72b629d1173b2b5b82eec394}
+      \strng{authorbibnamehash}{abc330ff72b629d1173b2b5b82eec394}
+      \strng{authornamehash}{abc330ff72b629d1173b2b5b82eec394}
+      \strng{authorfullhash}{abc330ff72b629d1173b2b5b82eec394}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Cita declaraciones del CFO de Intel}
+      \field{title}{Intel Confirms Nova Lake Client CPUs Targeting Late 2026}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.tomshardware.com/pc-components/cpus/intel-nova-lake-cpus-coming-in-late-2026
+      \endverb
+      \verb{url}
+      \verb https://www.tomshardware.com/pc-components/cpus/intel-nova-lake-cpus-coming-in-late-2026
+      \endverb
+    \endentry
+    \entry{intel20252025pcgamernovalake2026}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a49052c885c473460cad777041162329}{%
+           family={Gamer},
+           familyi={G\bibinitperiod},
+           given={PC},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{a49052c885c473460cad777041162329}
+      \strng{fullhash}{a49052c885c473460cad777041162329}
+      \strng{bibnamehash}{a49052c885c473460cad777041162329}
+      \strng{authorbibnamehash}{a49052c885c473460cad777041162329}
+      \strng{authornamehash}{a49052c885c473460cad777041162329}
+      \strng{authorfullhash}{a49052c885c473460cad777041162329}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{Intel Acknowledges Arrow Lake Fell Short and Eyes Nova Lake in 2026}
+      \field{urlday}{3}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.pcgamer.com/hardware/cpus/intel-admits-arrow-lake-didnt-deliver-and-looks-to-nova-lake-in-2026
+      \endverb
+      \verb{url}
+      \verb https://www.pcgamer.com/hardware/cpus/intel-admits-arrow-lake-didnt-deliver-and-looks-to-nova-lake-in-2026
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

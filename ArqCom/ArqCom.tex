@@ -1,0 +1,1109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 3.1 (February 18, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@latextemplates.com)
+% Mathias Legrand (legrand.mathias@gmail.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s indexstyle.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\PassOptionsToPackage{hidelinks}{hyperref}
+\documentclass[
+11pt,
+fleqn,
+a4paper
+]{LegrandOrangeBook}
+\ExecuteBibliographyOptions{
+    style=numeric,
+    sorting=none,      % orden de aparición
+    defernumbers=true, % numeración consistente al imprimir por segmentos
+    giveninits=true,
+    url=true, doi=true, isbn=true,
+    uniquelist=false
+}
+% Idioma y codificación (LuaLaTeX NO usa inputenc)
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes} % Recomendado por biblatex
+\usepackage{etoolbox}
+\usepackage{tabularx}
+
+\addbibresource{references.bib} % \addbibresource{sample.bib} % <- comenta/elimina si no lo usas
+% Segmenta la bibliografía por capítulo
+% ¡NO cargues hyperref aquí! La clase ya lo hace y con opciones (evita clash)
+% \usepackage[hidelinks]{hyperref} % <-- ELIMINADO
+
+% Paquetes varios
+\usepackage{longtable}
+% Book information for PDF metadata, remove/comment this block if not required 
+\hypersetup{
+	pdftitle={Title}, % Title field
+	pdfauthor={Author}, % Author field
+	pdfsubject={Subject}, % Subject field
+	pdfkeywords={arquitectura de computadoras, memoria, unidad de control, unidad aritmético-lógica, microprocesador, crontrolador, procesador}, % Keywords
+	pdfcreator={LaTeX}, % Content creator field
+}
+
+% Bibliografía por capítulo (segmentación automática por capítulo)
+%\ExecuteBibliographyOptions{style=numeric,sorting=none}
+\definecolor{ocre}{RGB}{243, 102, 25} % Define the color used for highlighting throughout the book
+
+\chapterimage{orange1.jpg} % Chapter heading image
+\chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\titlepage % Output the title page
+	{\includegraphics[width=\paperwidth]{background.pdf}} % Code to output the background image, which should be the same dimensions as the paper to fill the page entirely; leave empty for no background image
+	{ % Title(s) and author(s)
+		\centering\sffamily % Font styling
+		{\Huge\bfseries Arquitectura de computadoras\par} % Book title
+		\vspace{16pt} % Vertical whitespace
+		{\LARGE Una Guía Teórico/Práctica\par} % Subtitle
+		\vspace{24pt} % Vertical whitespace
+		{\huge\bfseries Gleiston Guerrero-Ulloa\par} % Author name
+	}
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty} % Suppress headers and footers on this page
+
+~\vfill % Push the text down to the bottom of the page
+
+\noindent Copyright \copyright\ 2025 Gleiston Guerrero-Ulloa\\ % Copyright notice
+
+\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{\href{https://www.latextemplates.com/template/legrand-orange-book}{book-website.com}}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 4.0 License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{https://creativecommons.org/licenses/by-nc-sa/4.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
+
+\noindent \textit{First printing, March 2022} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+\tableofcontents % Output the table of contents
+
+\listoffigures % Output the list of figures, comment or remove this command if not required
+
+\listoftables % Output the list of tables, comment or remove this command if not required
+
+\pagestyle{fancy} % Enable default headers and footers again
+
+\cleardoublepage % Start the following content on a new page
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+\part{Componentes del Computador}
+\label{part:componentes}
+	
+	%----------------------------------------------------------------------------------------
+	%	SECTIONING EXAMPLES CHAPTER
+	%----------------------------------------------------------------------------------------
+	
+	\chapterimage{orange2.jpg} % Chapter heading image
+	\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+	\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+	
+	%------------------------------------------------
+\begin{refsegment}[sorting=none]
+	\chapter{Contextualizaci{\'o}n y Perspectivas Generales}\index{Contextualización}
+		\noindent El estudio contemporáneo de los componentes del computador articula fundamentos teóricos (modelos de organización, leyes de rendimiento, semánticas de memoria) con prácticas de ingeniería (microarquitecturas con ejecución fuera de orden, jerarquías de memoria multinivel, interconexiones coherentes, aceleradores especializados). Esta síntesis habilita diseñar sistemas capaces de sostener cargas de trabajo emergentes—aprendizaje automático, analítica intensiva de datos, cómputo científico y servicios en la nube—bajo restricciones de energía, latencia y confiabilidad. En esta Parte se propone un recorrido ordenado desde el \emph{por qué} (motivación y principios) hasta el \emph{cómo} (métricas, metodologías y herramientas), preparando al lector para los capítulos técnicos posteriores.
+		
+		% --- 1. Propósito y alcance del capítulo ----------------
+		\section{Prop{\'o}sito y Alcance del Cap{\'i}tulo}
+			Este capítulo introduce el marco conceptual, histórico y tecnológico que sustenta el estudio de los componentes del computador. Se presentan los paradigmas arquitectónicos de referencia, las métricas que guían el diseño y la evaluación (p.\,ej., \textbf{IPC}\footnote{Instrucciones por Ciclo \textbf{o} \textit{Instructions Per Cycle} (IPC)}, latencias, ancho de banda, consumo), y el viraje contemporáneo hacia la heterogeneidad y la especialización de dominio. Asimismo, se establece la relación entre teoría (modelos, leyes, \textbf{ISA}\footnote{Arquitectura del Conjunto de Instrucciones \textbf{o} \textit{Instruction Set Architecture} (ISA)}) y práctica (laboratorios, \emph{benchmarks}, trazas) como base para el resto de capítulos de la Parte~\ref{part:componentes}.
+			
+			% --- 2. Resultados de aprendizaje esperados --------------
+		\section{Resultados de Aprendizaje Esperados}
+			Este capítulo enmarca resultados de aprendizaje orientados a competencias de nivel ingenieril. En primer lugar, el lector consolidará una comprensión sistémica de los paradigmas arquitectónicos y de su impacto en el diseño de procesadores, memorias e interconexiones; se enfatiza la habilidad para relacionar \emph{trade-offs} de microarquitectura (profundidad de \emph{pipeline}, políticas de caché, protocolos de coherencia) con métricas observables a nivel de sistema (IPC, latencias, \emph{throughput}, eficiencia energética). En segundo lugar, se busca una alfabetización metodológica: seleccionar y aplicar métricas/leyes (Amdahl, Gustafson, \emph{roofline}\footnote{Modelo de Techo \textbf{o} \textit{Roofline Model} (roofline)}) y utilizar \emph{benchmarks} y trazas para diagnósticos reproducibles.
+			
+			Al finalizar el capítulo, el lector será capaz de:
+			\begin{enumerate}
+				\item Explicar la evolución del paradigma de programa almacenado y distinguirlo de otras familias arquitectónicas (Harvard, Harvard modificada, \textbf{VLIW}\footnote{Muy Larga Palabra de Instrucción \textbf{o} \textit{Very Long Instruction Word} (VLIW)}, \textbf{EPIC}\footnote{Computación Explícitamente Paralela de Instrucciones \textbf{o} \textit{Explicitly Parallel Instruction Computing} (EPIC)}, \emph{dataflow}\footnote{Flujo de Datos \textbf{o} \textit{Dataflow} (dataflow)}, máquinas de pila).
+				\item Interpretar métricas y leyes fundamentales (Amdahl, Gustafson, \emph{roofline}) y relacionarlas con decisiones de diseño (profundidad de \emph{pipeline}, políticas de caché, protocolos de coherencia).
+				\item Describir el papel de la heterogeneidad ( \textbf{CPU}\footnote{Unidad Central de Procesamiento \textbf{o} \textit{Central Processing Unit} (CPU)} + \textbf{GPU}\footnote{Unidad de Procesamiento Gráfico \textbf{o} \textit{Graphics Processing Unit} (GPU)} + \textbf{TPU}\footnote{Unidad de Procesamiento Tensorial \textbf{o} \textit{Tensor Processing Unit} (TPU)} + \textbf{NPU}\footnote{Unidad de Procesamiento Neuronal \textbf{o} \textit{Neural Processing Unit} (NPU)}) y de las interconexiones modernas (\textbf{PCIe}\footnote{Interconexión de Componentes Periféricos Expresa \textbf{o} \textit{Peripheral Component Interconnect Express} (PCIe)}, \textbf{NVLink}\footnote{Enlace de Alta Velocidad de NVIDIA \textbf{o} \textit{NVIDIA High-Speed Link} (NVLink)}, \textbf{CXL}\footnote{Enlace de Cómputo Expreso \textbf{o} \textit{Compute Express Link} (CXL)}) en el rendimiento sistémico.
+				\item Reconocer líneas de investigación actuales: integración \emph{chiplet}\footnote{Pastilla de Silicio Modular \textbf{o} \textit{Chiplet} (chiplet)}, memoria unificada \textbf{UMA}\footnote{Arquitectura de Memoria Unificada \textbf{o} \textit{Unified Memory Architecture} (UMA)}/\textbf{HMM}\footnote{Gestión de Memoria Heterogénea \textbf{o} \textit{Heterogeneous Memory Management} (HMM)}, neuromórfica y cuántica.
+			\end{enumerate}
+			
+			Para lograr estos resultados se propondrá: (i) una línea argumental que conecte principios teóricos con decisiones de diseño, (ii) ejemplos cortos reproducibles (\emph{microbenchmarks}) que ilustren efectos de localidad, predicción de saltos y ancho de banda de memoria, y (iii) un mapa de referencias para profundización. La evaluación sugerida incluirá análisis de \emph{trade-offs} en casos de estudio y reportes técnicos con sustentos cuantitativos.
+			
+			% --- 3. Ubicación en el libro y prerrequisitos -----------
+		\section{Ubicaci{\'o}n en el Libro y Prerrequisitos}
+			Este capítulo inaugura la Parte~\ref{part:componentes} y sirve de puente entre fundamentos de computación y capítulos técnicos dedicados a CPU, memoria, E/S, buses, almacenamiento, energía y redes. Se asume familiaridad con álgebra booleana, organización básica de computadores y nociones de programación en C/C++ o Java, así como con aritmética binaria y hexadecimal.
+		
+			\subsection{Prerrequisitos y Preparaci{\'o}n}
+				El estudiante deberá dominar: (a) representación de datos (binario, complemento a dos, punto fijo y nociones de punto flotante), (b) fundamentos de lógica digital (combinacional/secuencial), (c) nociones de arquitectura (\emph{pipeline}, jerarquía de memoria) y (d) programación estructurada en C/C++ o Java.
+		
+			\subsection{Competencias, Habilidades y Destrezas a Desarrollar}
+				Tras estudiar el capítulo, el estudiante (i) razonará críticamente sobre \emph{trade-offs} de diseño a partir de métricas y leyes; (ii) aplicará metodologías de medición (\emph{benchmarks}, trazas) con criterios de reproducibilidad; (iii) comunicará hallazgos técnicos con precisión (tablas/gráficas, intervalos de confianza) y (iv) conectará decisiones de microarquitectura con efectos de rendimiento/energía a nivel de sistema.
+			
+			% --- 4. Motivación y contexto histórico-tecnológico ------
+		\section{Motivaci{\'o}n y Contexto Hist{\'o}rico-Tecnol{\'o}gico}
+			La disciplina ha empleado el modelo de programa almacenado de Von Neumann como base conceptual; no obstante, la práctica contemporánea integra procesadores heterogéneos, memorias jerarquizadas y dispositivos de E/S inteligentes bajo crecientes exigencias de rendimiento, eficiencia energética y seguridad~\cite{hennessy2019quantitative,stallings2020organization,asanovic2006landscape}. Comprender \emph{cómo} y \emph{por qué} se organizan estos componentes resulta crucial para relacionar métricas (IPC, latencias, ancho de banda, consumo) con decisiones de diseño (profundidad de \emph{pipeline}, reemplazo de caché, coherencia, ISA) y con patrones de uso reales (IA, datos en memoria, visualización científica, cómputo en el borde\footnote{Borde de Red \textbf{o} \textit{Edge Computing} (edge)} )~\cite{hennessy2019quantitative,denning1968working}.
+			
+			En la última década, la arquitectura ha evolucionado hacia la \textbf{heterogeneidad}: núcleos CPU generalistas cooperan con GPU (modelo \textbf{SIMT}\footnote{Una Instrucción, Múltiples Hilos \textbf{o} \textit{Single Instruction, Multiple Threads} (SIMT)}), aceleradores matriciales (arreglos \emph{systolic}) y NPUs, cohesionados por interconexiones de alta velocidad (PCIe, NVLink, CXL) y por jerarquías de memoria complejas (UMA/HMM). El fin práctico de la ley de Moore, el muro térmico y la especialización de dominio impulsan también la integración \emph{chiplet}, mientras que neuromórfica y cuántica invitan a reexaminar conceptos clásicos de organización y rendimiento~\cite{asanovic2006landscape,nielsen2010quantum,jouppi2017tpu,han2016deepcompression}.
+			
+			% --- 5. Paradigmas arquitectónicos de referencicite{anovic2006landscape}a ----------
+		\section{Paradigmas Arquitect{\'o}nicos de Referencia}
+			Este apartado traza un mapa de las familias arquitectónicas que estructuran el campo: desde Von Neumann/Harvard hasta RISC/CISC y VLIW/EPIC, incluyendo propuestas orientadas a datos (\emph{dataflow}) y modelos históricos (máquinas de pila). El objetivo es comprender supuestos y consecuencias de diseño (espacios de direcciones, \emph{throughput}, facilidad de implementación, rol del compilador) antes de estudiar sus concreciones microarquitectónicas.
+			
+			\subsection{Von Neumann y Harvard}
+				Comparación entre memoria unificada (Von Neumann) y separación de caminos para instrucciones y datos (Harvard y Harvard modificada), con implicaciones en \emph{throughput}, latencia y diseño de jerarquías de memoria~\cite{hennessy2019quantitative,stallings2020organization,armv82025manual}. En Von Neumann, un único canal de acceso puede convertirse en cuello de botella; en Harvard, la duplicación de caminos mejora el paralelismo \emph{fetch}/datos a costa de mayor complejidad y coherencia entre dominios.
+				
+				Además, variantes modernas (\emph{Harvard modificada}) combinan separación interna con un espacio externo unificado, común en microcontroladores y DSP: se mantiene eficiencia de \emph{fetch} sin sacrificar programabilidad y compatibilidad con herramientas.
+			
+			\subsection{RISC vs.\ CISC}
+				El enfoque \textbf{RISC}\footnote{Conjunto Reducido de Instrucciones \textbf{o} \textit{Reduced Instruction Set Computer} (RISC)} privilegia instrucciones simples, uniformes y \emph{pipeline}-amigables, con abundantes registros y fuerte dependencia del compilador. \textbf{CISC}\footnote{Conjunto Complejo de Instrucciones \textbf{o} \textit{Complex Instruction Set Computer} (CISC)} favorece instrucciones complejas y codificaciones ricas (p.\,ej., modos de direccionamiento), históricamente con microprogramación~\cite{hennessy2019quantitative,stallings2020organization}.
+				
+				En la práctica, x86 (CISC) emplea decodificadores que traducen a microoperaciones internas tipo RISC, mientras ARM o RISC-V mantienen núcleos simples con extensiones vectoriales; el resultado es una convergencia pragmática donde la frontera RISC/CISC se difumina por objetivos de \emph{performance}/energía.
+			
+			\subsection{VLIW/EPIC, \emph{Dataflow} y M{\'a}quinas de Pila}
+				VLIW/EPIC explotan el paralelismo a nivel de instrucción delegando al compilador la tarea de \emph{empaquetar} operaciones paralelas y gestionar riesgos; su potencial se enfrenta a variabilidad dinámica (cachés, saltos)~\cite{hennessy2019quantitative,stallings2020organization}. Los modelos \emph{dataflow} activan instrucciones por disponibilidad de datos, proponiendo paralelismo masivo con costes de implementación y programación.
+				
+				Las máquinas de pila simplifican decodificación y operandos, hoy de interés histórico; su análisis ofrece lecciones sobre interfaces ISA-microarquitectura y sobre la evolución hacia OoO\footnote{Ejecución Fuera de Orden \textbf{o} \textit{Out-of-Order} (OoO)} con renombrado y predicción avanzada.
+			
+			% --- 6. Métricas, leyes y principios ---------------------
+		\section{M{\'e}tricas, Leyes y Principios de Dise{\~n}o}
+			Este apartado formaliza cómo cuantificar y razonar sobre rendimiento. Se articula en tres ejes: (i) métricas a nivel de procesador/sistema (IPC, \emph{throughput}, latencias), (ii) leyes de escalabilidad (Amdahl, Gustafson) y límites operación/memoria (\emph{roofline}), y (iii) principios de localidad y jerarquía de memoria.
+			
+			\subsection{IPC, ILP y TLP}
+				El IPC captura trabajo por ciclo; su mejora depende de \textbf{ILP}\footnote{Paralelismo a Nivel de Instrucción \textbf{o} \textit{Instruction-Level Parallelism} (ILP)} (ancho de emisión, predicción, \emph{speculation}) y \textbf{TLP}\footnote{Paralelismo a Nivel de Hilo \textbf{o} \textit{Thread-Level Parallelism} (TLP)} (multinúcleo, \textbf{SMT}\footnote{Multihilo Simultáneo \textbf{o} \textit{Simultaneous Multithreading} (SMT)}), así como de la presión de memoria y del ancho de banda disponible~\cite{hennessy2019quantitative}. La medición exige aislar efectos de caché, saltos y \emph{TLB} (memoria virtual).
+				
+				En sistemas reales, el incremento de ILP enfrenta rendimientos decrecientes por riesgos estructurales/de datos y costos de energía; TLP ofrece escalamiento a costa de sincronización y contención. La ingeniería combina ambas dimensiones con balance energía/rendimiento.
+				
+				El \emph{profiling} de IPC por fases (ciclos dominados por cómputo vs.\ memoria) guía decisiones como vectorización, reordenamiento de bucles o \emph{prefetch} explícito.
+			
+			\subsection{Amdahl, Gustafson y \emph{roofline}}
+				Amdahl acota la ganancia máxima al paralelizar con fracción secuencial fija; Gustafson replantea el análisis para \emph{problemas de tamaño creciente} donde el paralelismo útil escala con los recursos~\cite{hennessy2019quantitative}. La lectura conjunta evita interpretaciones ingenuas sobre escalabilidad lineal.
+				
+				El modelo \emph{roofline} relaciona rendimiento alcanzable con \emph{intensidad aritmética} (operaciones/byte): regiones ligadas a cómputo (techo de FLOPs) o a memoria (techo de ancho de banda). El objetivo ingenieril es desplazar kernels hacia intensidades mayores (bloqueo, reutilización) o aumentar el techo (mejoras de vectorización/ancho de banda).
+				
+				Aplicado a CPU+GPU, \emph{roofline} ayuda a decidir \emph{offload}, granularidad de \emph{tiles} y \emph{fusion} de kernels para maximizar reutilización en memorias cercanas al cómputo.
+			
+			\subsection{Principios de Localidad y Jerarqu{\'i}a de Memoria}
+				La localidad temporal/espacial explica el éxito de cachés: trabajar por \emph{bloques} y acceder secuencialmente explota líneas y reduce fallos~\cite{denning1968working}. Las opciones de diseño (tamaño de línea, asociatividad, política de reemplazo) afectan tasa y \emph{penalidad} de fallos.
+				
+				Políticas como LRU, pseudo-LRU o \textbf{RRIP}\footnote{Política de Reemplazo con Reutilización Re-Referenciada \textbf{o} \textit{Re-Reference Interval Prediction} (RRIP)} equilibran costo/beneficio. La coherencia (MESI/MOESI) y la consistencia (TSO\footnote{Orden de Almacenamiento Total \textbf{o} \textit{Total Store Order} (TSO)}, RC\textsubscript{sc}\footnote{Coherencia de Liberación con Secuencial Consistente \textbf{o} \textit{Release Consistency, sequentially consistent} (RC\textsubscript{sc})}) determinan qué órdenes observa el software~\cite{hennessy2019quantitative}.
+				
+				En práctica, técnicas como \emph{tiling}/\emph{blocking}, \emph{software prefetch} y \emph{array-of-structures} vs.\ \emph{structure-of-arrays} permiten adaptar el patrón de acceso a la jerarquía subyacente.
+			
+			% --- 7. Organización sistémica moderna -------------------
+		\section{Organizaci{\'o}n Sist{\'e}mica Moderna}
+			La integración de múltiples dominios de cómputo bajo un \emph{runtime} coherente redefine el diseño sistémico: CPUs coordinan trabajo de GPU/TPU/NPU, comparten o federan memorias (UMA/HMM/CXL) y se conectan mediante enlaces de alta velocidad. Esta sección presenta los componentes de esa orquestación.
+			
+			\subsection{Heterogeneidad: CPU+GPU+TPU/NPU}
+				El modelo SIMT de GPU agrupa \emph{hilos} en \emph{warps/wavefronts} ejecutados en \emph{Streaming Multiprocessors} (SM) o \emph{Compute Units} (CU); la eficiencia depende de accesos coalescidos, ocupación y control de divergencia~\cite{nvidia2025cudac,amd2025rocm}. La CPU lanza \emph{kernels}, gestiona colas, sincronización y memoria.
+				
+				TPU/NPU materializan \emph{systolic arrays} y MACs especializados (bfloat16/int8) con \emph{scratchpads} SRAM para maximizar reutilización local y \emph{TOPS/W}. Su éxito exige \emph{tiling} explícito, planificación y reducción de \emph{movimiento de datos}~\cite{jouppi2017tpu,han2016deepcompression}.
+				
+				
+				Los \emph{runtimes} (CUDA\footnote{Arquitectura Unificada de Dispositivos de Cómputo \textbf{o} \textit{Compute Unified Device Architecture} (CUDA)}, ROCm\footnote{Computación Abierta de Radeon \textbf{o} \textit{Radeon Open Compute} (ROCm)}) y entornos portables (oneAPI\footnote{Una Plataforma y API Abierta de Intel \textbf{o} \textit{oneAPI} (oneAPI)}, SYCL\footnote{Lenguaje de Cálculo Paralelo Sincrónico \textbf{o} \textit{SYCL} (SYCL)}) unifican modelos de programación sobre hardware diverso con distintos grados de portabilidad de rendimiento.
+			
+			\subsection{Interconexiones: PCIe, NVLink, CXL}
+				\textbf{PCIe} provee enlaces punto a punto escalables por \emph{lanes}; \textbf{NVLink} ofrece baja latencia/alto ancho de banda GPU$\leftrightarrow$GPU/CPU; \textbf{CXL} introduce coherencia y \emph{memory pooling}/\emph{expansion} para hosts y aceleradores~\cite{cxl2021compute,cxl2024compute}. La selección/topología incide en colas de trabajo, latencias de \emph{DMA}\footnote{Acceso Directo a Memoria \textbf{o} \textit{Direct Memory Access} (DMA)} y visibilidad de páginas compartidas.
+				
+				En clústeres, la jerarquía del \emph{fabric} (PCIe switches, NVSwitch, \emph{CXL fabric}) define el costo de sincronización global. El diseño debe balancear rutas críticas (CPU$\leftrightarrow$GPU, GPU$\leftrightarrow$GPU) con demandas de software.
+				
+				Las decisiones de \emph{placement} (qué datos dónde) y \emph{affinity} afectan \emph{tail latency}; los perfiles de tráfico (lectura intensiva, bidireccional) condicionan el \emph{routing} y la calidad de servicio (\textbf{QoS}\footnote{Calidad de Servicio \textbf{o} \textit{Quality of Service} (QoS)}).
+			
+			\subsection{Memoria Unificada: UMA y HMM}
+				\textbf{UMA} expone un espacio de direcciones compartido simplificando programación; sus retos incluyen arbitraje y \emph{bandwidth contention}. \textbf{HMM} permite fallos de página y migración entre CPU y aceleradores conservando coherencia y permisos~\cite{asanovic2006landscape,cxl2021compute}.
+				
+				Estos modelos habilitan \emph{oversubscription} controlada y \emph{zero-copy} cuando la latencia lo permite; combinados con CXL, emergen \emph{pools} compartidos que reducen costos de copia interdispositivo.
+				
+				Para el practicante, la clave es medir: contadores de fallos de página, tasas de migración y \emph{stall cycles} por accesos remotos informan decisiones de particionado y \emph{pinning}.
+			
+			% --- 8. Tendencias y perspectivas ------------------------
+		\section{Tendencias y Perspectivas}
+			La convergencia de limitaciones físicas (fin de escalado Dennard, muros térmico/memoria) con nuevas cargas (IA generativa, analítica en tiempo real) empuja tres frentes: empaquetado y desagregación (\emph{chiplets}), gestión energética fina (DVFS por dominio, \emph{power gating}) y arquitecturas alternativas (neuromórfica, cuántica).
+			
+			\subsection{Integraci{\'o}n \emph{Chiplet} y Gesti{\'o}n Energ{\'e}tica}
+				La desagregación en \emph{chiplets} permite mezclar nodos/tecnologías y mejorar rendimiento por coste; requiere \emph{die-to-die} con baja latencia y protocolos coherentes. El \emph{floorplanning} térmico y el suministro de potencia condicionan frecuencias sostenibles~\cite{asanovic2006landscape,jouppi2017tpu}.
+				
+				En energía, DVFS\footnote{Escalado Dinámico de Voltaje y Frecuencia \textbf{o} \textit{Dynamic Voltage and Frequency Scaling} (DVFS)} y \emph{clock/power gating} por dominio reducen consumo estático/dinámico; políticas guiadas por telemetría (contadores de rendimiento) evitan oscilaciones de frecuencia.
+				
+				El objetivo es rendimiento sostenible: coordinar límites de potencia (\emph{power caps}) con \emph{schedulers} conscientes de temperatura, evitando \emph{throttling} que degrade \emph{QoS}.
+			
+			\subsection{Arquitecturas Neurom{\'o}rficas}
+				Sistemas como Loihi/TrueNorth implementan neuronas de disparo y \emph{NoC}\footnote{Red en Chip \textbf{o} \textit{Network-on-Chip} (NoC)} especializados para eficiencia energética en tareas sensoriales/embebidas; su programación exige modelos neuronales discretos, aprendizaje local y mapeo de grafos~\cite{davies2021survey}.
+				
+				El \emph{event-driven} reduce actividad inútil, pero plantea retos de precisión/ruido y de ecosistema de software. Métricas relevantes: energía por evento, latencia de inferencia y escalabilidad del \emph{routing}.
+				
+				Líneas futuras incluyen memorias emergentes (memristores) y \emph{co-learning} hardware/algoritmo para tareas \emph{always-on} en el borde.
+			
+			\subsection{Computaci{\'o}n Cu{\'a}ntica}
+				Las tecnologías de \emph{qubits} (superconductores, iones, \emph{spin}, fotónica) habilitan algoritmos (Shor, Grover) con promesas en dominios específicos; los dispositivos \textbf{NISQ}\footnote{Cuánticos Intermedios Ruidosos \textbf{o} \textit{Noisy Intermediate-Scale Quantum} (NISQ)} operan con ruido/decoherencia significativos~\cite{nielsen2010quantum,davies2018loihi}.
+				
+				La corrección de errores (códigos de superficie) impone sobrecargas de qubits físicos por lógico; la co-diseño clásico/cuántico (pre/post-procesamiento) es crucial.
+				
+				Para el ingeniero, la competencia reside en identificar \emph{fit} problema$\leftrightarrow$algoritmo/plataforma, y en evaluar coste/beneficio frente a aceleradores clásicos especializados.
+			
+			% --- 9. Metodología de laboratorio y evaluación ----------
+		\section{Metodolog{\'i}a de Laboratorio y Evaluaci{\'o}n}
+			Se propone una metodología basada en reproducibilidad y trazabilidad: diseño de experimentos, selección de \emph{benchmarks}, control de variables (frecuencias, políticas de energía), captura de contadores de rendimiento y análisis estadístico.
+			
+			\subsection{Benchmarks y trazas}
+				Selección y uso de \emph{benchmarks} (SPEC\footnote{Corporación de Rendimiento de Procesamiento Estándar \textbf{o} \textit{Standard Performance Evaluation Corporation} (SPEC)}, MLPerf\footnote{Rendimiento de Aprendizaje Automático \textbf{o} \textit{Machine Learning Performance} (MLPerf)}, STREAM\footnote{Evaluación de Ancho de Banda de Memoria \textbf{o} \textit{Sustainable Memory Bandwidth Benchmark} (STREAM)}) y trazas de memoria/CPU para análisis de localidad y \emph{bottlenecks}~\cite{hennessy2019quantitative,nvidia2025cudac,amd2025rocm}. La combinación de microbenchmarks y aplicaciones reales permite separar efectos de caché/compute.
+				
+				Se recomiendan \emph{pinning} de hilos, aislamiento de \emph{frequency governors} y control de \emph{thermal throttling} para obtener mediciones comparables.
+				
+				El reporte debe incluir metodología, parámetros, intervalos de confianza y discusiones de validez interna/externa.
+			
+			\subsection{Herramientas}
+				\emph{Profilers} y analizadores: \texttt{perf}, VTune\footnote{Sintonizador de Rendimiento de Intel \textbf{o} \textit{Intel VTune Profiler} (VTune)}, Nsight\footnote{Conjunto de Herramientas Nsight de NVIDIA \textbf{o} \textit{NVIDIA Nsight} (Nsight)}, rocProfiler\footnote{Perfilador de ROCm \textbf{o} \textit{ROCm Profiler} (rocProfiler)}, PAPI\footnote{Interfaz de Rendimiento de Aplicaciones \textbf{o} \textit{Performance Application Programming Interface} (PAPI)}; automatización de experimentos y análisis estadístico reproducible.
+			
+				Se sugiere registrar versiones de \emph{driver}/\emph{runtime}, \emph{hashes} de código y configuración de BIOS/UEFI\footnote{Interfaz de Firmware Extensible Unificada \textbf{o} \textit{Unified Extensible Firmware Interface} (UEFI)} para trazabilidad.
+				
+				Las conclusiones deben vincular contadores (fallos de caché, IPC, \emph{stall cycles}) con hipótesis de diseño y propuestas de optimización.
+			
+			% --- 10. Lecturas y mapa de referencias ------------------
+		\section{Lecturas Recomendadas y Mapa de Referencias}
+			Guía de lectura cruzada hacia capítulos posteriores: CPU (\S\ref{chap:cpu}), memoria (\S\ref{chap:memoria}), E/S y buses (\S\ref{chap:es-buses}), almacenamiento (\S\ref{chap:almacenamiento}), energía (\S\ref{chap:energia}) y redes (\S\ref{chap:redes}). Referencias nucleares: \cite{hennessy2019quantitative,stallings2020organization,denning1968working} para fundamentos, \cite{cxl2021compute,cxl2024compute,nvidia2025cudac,amd2025rocm} para heterogeneidad y \emph{runtimes}, \cite{nielsen2010quantum,davies2018loihi} para cuántica y neuromórfica.
+			
+		\section{Glosario de Abreviaturas del (cap{\'i}tulo)}
+			\begin{description}
+				\item[CPU] Unidad Central de Procesamiento \textbf{o} \textit{Central Processing Unit} (CPU).
+				\item[GPU] Unidad de Procesamiento Gráfico \textbf{o} \textit{Graphics Processing Unit} (GPU).
+				\item[TPU] Unidad de Procesamiento Tensorial \textbf{o} \textit{Tensor Processing Unit} (TPU).
+				\item[NPU] Unidad de Procesamiento Neuronal \textbf{o} \textit{Neural Processing Unit} (NPU).
+				\item[IPC] Instrucciones por Ciclo \textbf{o} \textit{Instructions Per Cycle} (IPC).
+				\item[ISA] Arquitectura del Conjunto de Instrucciones \textbf{o} \textit{Instruction Set Architecture} (ISA).
+				\item[SIMT] Una Instrucción, Múltiples Hilos \textbf{o} \textit{Single Instruction, Multiple Threads} (SIMT).
+				\item[PCIe] Interconexión de Componentes Periféricos Expresa \textbf{o} \textit{Peripheral Component Interconnect Express} (PCIe).
+				\item[NVLink] Enlace de Alta Velocidad de NVIDIA \textbf{o} \textit{NVIDIA High-Speed Link} (NVLink).
+				\item[CXL] Enlace de Cómputo Expreso \textbf{o} \textit{Compute Express Link} (CXL).
+				\item[UMA] Arquitectura de Memoria Unificada \textbf{o} \textit{Unified Memory Architecture} (UMA).
+				\item[HMM] Gestión de Memoria Heterogénea \textbf{o} \textit{Heterogeneous Memory Management} (HMM).
+				\item[DVFS] Escalado Dinámico de Voltaje y Frecuencia \textbf{o} \textit{Dynamic Voltage and Frequency Scaling} (DVFS).
+				\item[RRIP] Política de Reemplazo con Reutilización Re-Referenciada \textbf{o} \textit{Re-Reference Interval Prediction} (RRIP).
+				\item[roofline] Modelo de Techo \textbf{o} \textit{Roofline Model} (roofline).
+				\item[SMT] Multihilo Simultáneo \textbf{o} \textit{Simultaneous Multithreading} (SMT).
+				\item[TLB] Búfer de Traducción de Direcciones \textbf{o} \textit{Translation Lookaside Buffer} (TLB).
+				\item[QoS] Calidad de Servicio \textbf{o} \textit{Quality of Service} (QoS).
+				\item[NoC] Red en Chip \textbf{o} \textit{Network-on-Chip} (NoC).
+				\item[NISQ] Cuánticos Intermedios Ruidosos \textbf{o} \textit{Noisy Intermediate-Scale Quantum} (NISQ).
+				\item[UEFI] Interfaz de Firmware Extensible Unificada \textbf{o} \textit{Unified Extensible Firmware Interface} (UEFI).
+				\item[SPEC] Corporación de Rendimiento de Procesamiento Estándar \textbf{o} \textit{Standard Performance Evaluation Corporation} (SPEC).
+				\item[MLPerf] Rendimiento de Aprendizaje Automático \textbf{o} \textit{Machine Learning Performance} (MLPerf).
+				\item[STREAM] Evaluación de Ancho de Banda de Memoria \textbf{o} \textit{Sustainable Memory Bandwidth Benchmark} (STREAM).
+			\end{description}
+			
+	% --- 12. Bibliografía del capítulo -----------------------
+	%==================== REFERENCIAS ====================
+	% Imprime la bibliografía del segmento ANTERIOR justo antes de empezar un nuevo capítulo
+	\printbibliography[
+        segment=\therefsegment,
+        heading=subbibliography,
+        title={Referencias del capítulo}
+    ]
+\end{refsegment}
+	% --- Fin del fragmento ---
+	
+	%========================================================
+	% Capítulo: Unidad Central de Procesamiento (CPU)
+	% Estructura con section / subsection / subsubsection / paragraph
+	%========================================================
+\begin{refsegment}[sorting=none]
+	\chapter{Unidad Central de Procesamiento (CPU)}
+	\label{chap:cpu}
+		La \textbf{CPU}\footnote{Unidad Central de Procesamiento \textbf{o} \textit{Central Processing Unit} (CPU)} es el núcleo funcional de un computador: interpreta y ejecuta instrucciones del programa y coordina el resto de subsistemas. En el paradigma clásico de Von Neumann, vigente desde 1945, instrucciones y datos conviven en la misma memoria y comparten canales de acceso, lo que simplifica el diseño pero introduce el cuello de botella de memoria~\cite{hennessy2019quantitative,intel2025sdm}. La ingeniería moderna ha respondido a este cuello con \emph{pipelines} más profundos, ejecución especulativa y jerarquías de memoria complejas.
+		
+		Más allá del modelo tradicional, la CPU actual opera dentro de un sistema heterogéneo: coopera con \textbf{GPU}\footnote{Unidad de Procesamiento Gráfico \textbf{o} \textit{Graphics Processing Unit} (GPU)}, \textbf{TPU}\footnote{Unidad de Procesamiento Tensorial \textbf{o} \textit{Tensor Processing Unit} (TPU)} y \textbf{NPU}\footnote{Unidad de Procesamiento Neuronal \textbf{o} \textit{Neural Processing Unit} (NPU)} mediante interconexiones de alta velocidad como \textbf{PCIe}\footnote{Interconexión de Componentes Periféricos Expresa \textbf{o} \textit{Peripheral Component Interconnect Express} (PCIe)}, \textbf{NVLink}\footnote{Enlace de Alta Velocidad de NVIDIA \textbf{o} \textit{NVIDIA High-Speed Link} (NVLink)} y \textbf{CXL}\footnote{Enlace de Cómputo Expreso \textbf{o} \textit{Compute Express Link} (CXL)}. Esta cooperación reconfigura la noción de ``unidad central'': la CPU orquesta, distribuye y sincroniza cómputo, mientras delega \emph{kernels} masivamente paralelos a aceleradores especializados~\cite{asanovic2006landscape,cxl2021compute,cxl2024compute}.
+		
+        \section{Arquitecturas fundacionales de las computadoras personales (años 70 y 80)}
+            El surgimiento de las \textit{computadoras personales} estuvo intrínsecamente vinculado a la evolución de los \textit{microprocesadores} desarrollados en las décadas de 1970 y 1980. Estos chips marcaron hitos clave en la miniaturización de la computación, haciendo viable su acceso por usuarios individuales. Además, sentaron las bases tecnológicas de lo que sería la industria global de la informática personal. A continuación, se examina de forma profunda cada una de estas arquitecturas fundacionales con respaldo documental técnico.
+            
+            \subsection{Intel 8086 / 8088}
+                El \textit{Intel 8086}, introducido en 1978, definió la arquitectura x86, consolidando un estándar de compatibilidad que perduró por décadas. Poseía una unidad aritmético-lógica (ALU) de 16 bits completa y un esquema de segmentación de memoria que permitía direccionar hasta 1 MB mediante registros de segmento y desplazamiento, una innovación revolucionaria para su época. El 8088, lanzado en 1979, compartía la arquitectura interna del 8086 pero tenía un bus de datos de solo 8 bits, lo cual permitió reducir considerablemente los costos de hardware sin sacrificar compatibilidad—una decisión clave en la selección del chip para el \textit{IBM PC} de 1981 \cite{Volk2001Recollections}.
+            
+                Un análisis técnico contemporáneo, publicado en \textit{Communications of the ACM}, permite comprender cómo la arquitectura del 8086 representó un salto de los procesadores de 8 bits a los de 16 bits, abriendo una nueva era en el diseño de microprocesadores \cite{Hennessy2019Golden}. Asimismo, el artículo “Intel 8080 CPU Chip Development” en \textit{IEEE Annals of the History of Computing} ofrece detalles sobre cómo el 8080 y sus sucesores inmediatos sentaron las bases para el 8086 \cite{Mazor2007Intel}.
+            
+                Históricamente, el 8086 fue concebido como una alternativa al ambicioso e inicialmente problemático proyecto iAPX 432, convirtiéndose en una solución viable y efectiva para cubrir la brecha en el mercado de procesadores de rango medio, lo que permitió a Intel ganarse una posición dominante en la industria de la computación personal \cite{Volk2001Recollections}.
+            
+            \subsection{Motorola 68000 (m68k)}
+                Presentado en 1979, el \textit{Motorola 68000} fue un microprocesador híbrido que incluía características de 32 bits internos con un bus externo de 16 bits. Su diseño ortogonal de instrucciones y su capacidad para manejar memoria de forma eficiente lo convirtieron en una opción destacada para sistemas gráficos avanzados, estaciones de trabajo y, eventualmente, la primera generación del Macintosh.
+            
+                El artículo técnico en \textit{IEEE Spectrum}, como parte de su serie “Chip Hall of Fame”, destaca cómo el 68000 ofreció potencia cercana a las miniestaciones de trabajo a un costo viable para computadoras personales en su época \cite{Spectrum2017Motorola}. Además, su impacto histórico se refleja en múltiples desarrollos posteriores de sistemas gráficos y creativos, consolidando su importancia como una de las arquitecturas más influyentes de su generación.
+            
+                El 68000 abrió la puerta a entornos multitarea y sistemas operativos más completos, a diferencia del enfoque más limitado de los PCs de la época. Su influencia técnica todavía se reconoce hoy en muchos modelos de diseño moderno que priorizan una ISA limpia y coherente, lo que convirtió al 68000 en un referente histórico de innovación arquitectónica \cite{Spectrum2017Motorola}.
+            
+            \subsection{MOS Technology 6502}
+                El \textit{MOS 6502}, lanzado en septiembre de 1975, fue un microprocesador de 8 bits diseñado por exingenieros de Motorola que dejaron la compañía buscando una solución más económica. Vendido a un precio sorprendente de aproximadamente USD 25, fue decisivo para democratizar la informática doméstica. Su simplicidad arquitectónica y su bajo costo fueron determinantes en su adopción masiva en plataformas icónicas como Apple II, Commodore 64, BBC Micro y la consola Nintendo NES \cite{Spectrum2017Motorola}.
+            
+                Un análisis publicado en \textit{IEEE Spectrum} remarca su impacto histórico y cultural en la industria, destacando cómo el 6502 permitió el acceso masivo a la computación \cite{Spectrum2017Motorola}. Asimismo, una entrevista posterior en la misma revista con Bill Mensch, uno de sus diseñadores, aporta contexto técnico directo sobre sus decisiones de diseño y su relevancia en la evolución de los microprocesadores \cite{Cass2021QA}.
+            
+                No obstante, su legado permanece vigente: variantes del chip siguen en producción para sistemas embebidos, y su arquitectura sencilla y eficiente lo mantiene como uno de los microprocesadores más estudiados en entornos educativos y retrocomputing \cite{Cass2021QA}.
+            
+            \subsection{Zilog Z80}
+                El \textit{Zilog Z80}, lanzado en 1976, fue desarrollado por exingenieros de Intel con el objetivo de superar al 8080 en prestaciones sin perder compatibilidad. Introdujo un conjunto de instrucciones extendido, registros adicionales, modos de direccionamiento más flexibles y soporte integrado para refresco de DRAM y reloj, lo que simplificó significativamente el diseño de sistemas completos.
+            
+                El artículo “Z80—The 1970s Microprocessor Still Alive”, publicado en \textit{IEEE Micro} en noviembre de 2021, analiza en profundidad su historia, su impacto en microcomputadoras populares como el TRS-80, y su uso perdurable en sistemas embebidos a lo largo de los años \cite{Preethichandra2021Z80}. Adicionalmente, en la serie “Chip Hall of Fame” de \textit{IEEE Spectrum}, se destaca cómo el Z80 aportó mejoras sustanciales en usabilidad y economía frente al 8080, consolidándose en el mercado europeo y japonés de microcomputadoras \cite{Spectrum2017Motorola}.
+            
+                Su robustez, compatibilidad y bajo costo permitieron su adopción en productos como la Osborne I, TRS-80, MSX, y en videojuegos y consolas. La arquitectura Z80 fue clave para expandir la cultura de la computación personal fuera de Estados Unidos \cite{Preethichandra2021Z80}.
+            
+            \subsection{Intel 8080 / 8085}
+                El \textit{Intel 8080}, lanzado en 1974, fue pionero en la introducción de microprocesadores como unidad central, habilitando sistemas como el Altair 8800 y sentando las bases de CP/M y el hobbyismo informático. El sucesor, el \textit{8085} de 1977, integró diversas funciones de soporte y requirió solo una fuente de alimentación de +5 V, lo que simplificó el diseño de sistemas y redujo costos de electrónica periférica \cite{IDC2014History}.
+            
+                Aunque estos chips fueron esenciales en el desarrollo inicial de la computación personal, la cobertura en publicaciones académicas es limitada. Sin embargo, su importancia histórica como antecesores del 8086 y como motores de los sistemas iniciales no puede subestimarse. Fueron componentes claves en la génesis de una industria emergente, aun cuando su análisis sistemático en journals sea escaso \cite{Mazor2007Intel}.
+            
+                \begin{table}[H]
+                    \centering
+                    \caption{Arquitecturas fundacionales y fuentes académicas o técnicas destacadas}
+                    \begin{tabularx}{\textwidth}{|l|c|X|}
+                        \hline
+                        \textbf{Arquitectura} & \textbf{Año} & \textbf{Fuente destacada} \\ \hline
+                        Intel 8086/8088 & 1978/79 & Hennessy y Patterson (2019); Mazor (2007); Gupta (2001) \cite{Hennessy2019Golden,Mazor2007Intel,Volk2001Recollections} \\ \hline
+                        Motorola 68000 & 1979 & IEEE Spectrum (2017) \cite{Spectrum2017Motorola} \\ \hline
+                        MOS 6502 & 1975 & IEEE Spectrum (2017, 2021) \cite{Spectrum2017MOS,Cass2021QA} \\ \hline
+                        Zilog Z80 & 1976 & Preethichandra (2021); IEEE Spectrum (2017) \cite{Preethichandra2021Z80,Spectrum2017Motorola} \\ \hline
+                        Intel 8080/8085 & 1974--77 & IDC Online (2014); Mazor (2007) \cite{IDC2014History,Mazor2007Intel} \\ \hline
+                    \end{tabularx}
+                \end{table}
+        
+        \section{Arquitecturas de transición (años 80 y 90)}
+            Durante las décadas de 1980 y principios de 1990 surgieron varias arquitecturas que intentaron competir con la familia x86, ya consolidada en el mercado de computadores personales. Estas iniciativas, aunque en muchos casos no alcanzaron viabilidad comercial, fueron experimentos técnicos relevantes en el diseño de procesadores, influyendo en sistemas embebidos, microcomputadoras educativas y estaciones de trabajo.
+            
+            \subsection{Intel iAPX 432}
+                El \textit{Intel iAPX 432}, introducido en 1981, fue la primera arquitectura de Intel diseñada completamente en 32 bits. Estaba concebida como una plataforma orientada a objetos que brindaba soporte directo en hardware para multitarea, protección de memoria y estructuras de datos de alto nivel. Esta iniciativa rompía radicalmente con la clásica línea x86, orientada a bajo nivel \cite{Witten1983Introduction}.
+                
+                Pese a su ambicioso diseño, el iAPX 432 presentó problemas de rendimiento y complejidad técnica. Estudios posteriores demostraron que su implementación resultó tan intrincada que el concepto de arquitectura orientada a objetos integrada en hardware fue entendido como una lección aprendida más que un camino a seguir, especialmente tras el auge de RISC \cite{Kahn1981IMAX}.
+                
+                Hoy se reconoce la relevancia histórica del iAPX 432 como un esfuerzo visionario que anticipó mecanismos modernos de gestión de objetos y protección, aunque implicó una sobrecarga difícil de gestionar técnicamente en aquella época \cite{Pollack1981Object}.
+                
+            \subsection{National Semiconductor NS32000 (32016)}
+                La familia \textit{NS32000} de National Semiconductor, lanzada a principios de los 80, fue una de las primeras en ofrecer procesamiento de 32 bits real en microprocesadores. Su modelo inicial, el 32016, combinaba un conjunto de instrucciones ortogonales y arquitectura CISC, enfatizando la elegancia del diseño lógico más que la compatibilidad con x86 \cite{Bal1982NS16000}.
+                
+                Se usó en estaciones Unix, pero enfrentó problemas de fiabilidad y rendimiento en comparación con competidores como el Motorola 68020. A pesar de esto, versiones mejoradas como el 32032 y el 32532 lograron notables avances técnicos, incluyendo buses de datos de 32 bits, memoria caché integrada y pipelines, acercándose al desempeño de minicomputadoras de la época \cite{Cooper1986Benchmark}.
+                
+                Su legado principal fue tecnológico y educativo: su elegante arquitectura influyó en diseños posteriores y sirvió como plataforma formativa en entornos universitarios y profesionales.
+            
+            \subsection{Texas Instruments TMS9900}
+                El \textit{TMS9900} de Texas Instruments se destacó por ser uno de los primeros microprocesadores de 16 bits disponibles en el mercado doméstico, al ser usado en la \textit{TI-99/4A}, considerada entre las primeras computadoras hogareñas de 16 bits. Según el perfil histórico publicado en \textit{IEEE Spectrum}, fue pionero en acercar la potencia de 16 bits al mercado de consumo \cite{Rhines2017TI99}.
+                
+                Aunque técnicamente avanzada para su tiempo, la arquitectura sufrió dificultades prácticas: su empaquetado costoso y la escasez de software exclusivo limitaron su éxito comercial. No obstante, su diseño influyó en la percepción de lo que una computadora personal podía ofrecer en términos de potencia, incluso si el mercado no lo adoptó plenamente \cite{Spectrum2017TMS9900}.
+                
+                Actualmente se recuerda como un pionero técnico que anticipó la transición a 16 bits, aunque su impacto haya sido más simbólico que masivo, como lo documentan también los manuales técnicos de Texas Instruments que describían en detalle sus registros y particularidades \cite{Texas1977Family}.
+                
+            \subsection{DEC PDP-11 en tecnología LSI-11}
+                La evolución de la línea \textit{PDP-11} hacia el uso de circuitos integrados LSI impulsó la creación del \textit{LSI-11}, una versión condensada del minicomputador PDP-11 en chips más accesibles. Su diseño permitió que universidades y centros de investigación dispusieran de un sistema potente pero asequible con arquitectura profesional \cite{Bell1970Architecture}.
+                
+                Esta adaptación académica facilitó el acceso práctico a sistemas Unix y entornos de investigación avanzada, consolidando el PDP-11 como herramienta educativa y experimental. La estética técnica y facilidad de programación del PDP-11 influyó en generaciones de arquitectos de sistemas, incluso después del dominio de RISC y x86 \cite{Bell1975Learned}.
+            
+        \section{RISC en computadoras personales (finales de los 80 y 90)}
+            Durante las últimas décadas del siglo XX, diversas arquitecturas RISC intentaron conquistar el dominio del mercado de los computadores personales y estaciones de trabajo, compitiendo con la omnipresente familia x86. Aunque su éxito en PCs fue limitado, estas arquitecturas marcaron hitos tecnológicos y sentaron las bases de diseños contemporáneos y futuros.
+            
+            Además, el auge de estas arquitecturas representó una transición conceptual: pasar de diseños complejos basados en CISC hacia implementaciones más eficientes y optimizadas en hardware simplificado. Esto no solo influyó en la industria de las estaciones de trabajo, sino que también se convirtió en un modelo de enseñanza y experimentación en entornos universitarios y de investigación \cite{Patterson1991RISC}.
+                
+            \subsection{SPARC (Sun Microsystems)}
+                La arquitectura \textit{SPARC} (Scalable Processor Architecture) fue introducida por Sun Microsystems en 1987 como una implementación comercial de RISC, fuertemente influenciada por los proyectos académicos Berkeley RISC y Stanford MIPS \cite{Hitchcock1990SPARC}. SPARC impulsó una nueva generación de estaciones de trabajo (Sun-4) basadas en diseño abierto y escalable, estableciendo un enfoque clave en sistemas operativos tradicionales y entornos Unix \cite{SPARC1987Milestone}.
+                
+                Su diseño enfatizaba registros múltiples y segmentación simple, permitiendo una ejecución eficiente en pipelines superficiales—aun en comparación con los complejos recursos del x86—, lo que consolidó su éxito en aplicaciones UNIX y sistemas de servidores. Estas características hicieron que SPARC fuese adoptada ampliamente en entornos académicos, convirtiéndose en referencia técnica para el desarrollo de software científico \cite{Kane1987SPARC}.
+                
+                La evolución de SPARC, particularmente con el UltraSPARC a mediados de los 90, mostró cómo esta arquitectura podía adaptarse a cargas de trabajo más pesadas, integrando instrucciones multimedia y soporte para multiprocesamiento simétrico, lo que la consolidó como opción competitiva en servidores de gama alta \cite{Agarwal1995UltraSPARC}. Aunque nunca dominó el mercado de PCs, dejó una huella técnica significativa en el campo de la computación de alto rendimiento.
+                
+                Finalmente, su apertura como arquitectura licenciataria (similar al modelo ARM actual) permitió a múltiples fabricantes diseñar sus propias versiones, impulsando diversidad tecnológica y consolidando un ecosistema más allá de Sun Microsystems. Este aspecto fue clave para prolongar su vigencia en sistemas embebidos y de red \cite{Stokes1993SPARC}.
+                
+            \subsection{MIPS R-series (SGI)}
+                La familia \textit{MIPS} (Microprocessor without Interlocked Pipelined Stages) surgió en 1985 con el procesador R2000, basado en una implementación avanzada de RISC desarrollada en Stanford \cite{Hennessy2025MIPS}. Sus variantes R3000 y posteriores fueron adoptadas ampliamente en estaciones Silicon Graphics (SGI), reconocidas por su alto rendimiento en gráficos y computación científica \cite{WikipediaMIPS}.
+                
+                Las CPU MIPS demostraron clara superioridad en procesamiento por ciclo gracias a su simplicidad ISA y pipelines eficaces, lo que las hizo preferidas en sistemas de visualización avanzada y entornos 3D. Aunque MIPS nunca logró reemplazar al x86 en PCs, su legado perduró en estaciones de trabajo y servidores especializados. Además, su implementación en estaciones educativas y en la consola PlayStation original consolidó su presencia cultural y técnica \cite{Sweet1992MIPS}.
+                
+                Un aspecto notable de MIPS fue su capacidad de escalar hacia sistemas embebidos, gracias a su ISA sencilla y modular, lo que permitió su uso en routers, dispositivos de red y aplicaciones de consumo masivo. Esta dualidad entre estaciones de alto rendimiento y dispositivos de bajo consumo lo convirtió en un antecedente directo del éxito posterior de ARM \cite{Furber1994MIPSARM}.
+                
+            \subsection{IBM POWER / PowerPC (PPC)}
+                En 1991, IBM, Apple y Motorola (alianza AIM) desarrollaron la arquitectura \textit{PowerPC} como evolución del POWER, con el objetivo de impulsar PCs y estaciones con RISC de alto rendimiento \cite{PowerPC1992}. Apple fue su mayor destacada adoptante, integrándola en Macintosh desde 1994, lo que supuso la alternativa más seria al x86 en el segmento PC.
+                
+                PowerPC ofrecía ventajas en eficiencia energética, cómputo paralelo y acuerdos con entornos como AIX, Solaris y Windows NT. Su adopción en Macs (hasta 2005) refleja tanto su valor técnico como su integración exitosa en un ecosistema de software cerrado. Además, su participación en supercomputación (Blue Gene) y en consolas de videojuegos (GameCube, Xbox 360, PlayStation 3) muestra su versatilidad \cite{May1994PowerPC}.
+                
+                El fracaso de PowerPC en el mercado PC frente a x86 se explica por factores como el dominio del software Windows y la falta de compatibilidad plena en aplicaciones críticas. Sin embargo, en términos de ingeniería, fue un hito que introdujo conceptos avanzados de paralelismo e instrucciones vectoriales que se mantienen vigentes \cite{Kahle1997PowerPC}.
+                
+                En el ámbito de la investigación académica, PowerPC se consolidó como plataforma de exploración en sistemas paralelos y optimización de compiladores, reforzando su legado más allá del mercado comercial y posicionándola como un puente entre RISC clásico y arquitecturas híbridas contemporáneas \cite{Shirazi1995PowerPC}.
+                
+            \subsection{ARM (Acorn Archimedes)}
+                El \textit{ARM} (Advanced RISC Machines) fue lanzado en 1987 con el Acorn Archimedes, marcando uno de los primeros computadores personales de RISC disponibles comercialmente \cite{ARM1987Archimedes}. Este diseño, orientado a bajo consumo y alta eficiencia, representó una transición desde sistemas educativos hacia un futuro dominado por arquitectura portátil.
+                
+                Aunque ARM tardó en consolidarse como plataforma de PC (hasta Apple Silicon a partir de 2020), su filosofía modular y eficiencia energética lo convirtieron en la ISA dominante en dispositivos móviles y embebidos, como los procesadores ThunderX2 en supercomputación moderna \cite{Jackson2019ArmHPC}. Su capacidad de escalar desde microcontroladores hasta centros de datos lo distingue como una arquitectura transversal.
+                
+                Un elemento clave de ARM fue su adopción temprana en la educación informática británica, donde el Archimedes sirvió como plataforma formativa en programación y diseño de sistemas, reforzando su papel no solo como producto comercial sino también como herramienta pedagógica \cite{Wilson1988ARM}. Esta conexión con la enseñanza ayudó a consolidar una comunidad técnica amplia en torno a la ISA.
+                
+                Finalmente, ARM representa el paradigma de cómo un diseño inicialmente marginal puede convertirse en la arquitectura dominante global. Estudios recientes destacan que su modelo de licenciamiento abierto y su orientación hacia la eficiencia energética sentaron las bases de un dominio actual en móviles y PCs, consolidado con Apple Silicon \cite{Halfhill2013ARM}.
+                
+        \section{Arquitecturas de Referencia y Vigentes}
+			Además de Von Neumann, son fundamentales: \textbf{Harvard} (separación de caminos para instrucciones y datos), \textbf{Harvard modificada} (separación interna con espacio de direcciones externo unificado), \textbf{máquinas de pila} (operandos implícitos), \textbf{\emph{dataflow}}\footnote{Flujo de Datos \textbf{o} \textit{Dataflow} (dataflow)} (activación por disponibilidad de datos), y las familias \textbf{RISC}\footnote{Conjunto Reducido de Instrucciones \textbf{o} \textit{Reduced Instruction Set Computer} (RISC)} y \textbf{CISC}\footnote{Conjunto Complejo de Instrucciones \textbf{o} \textit{Complex Instruction Set Computer} (CISC)}~\cite{hennessy2019quantitative,stallings2020organization,armv82025manual}. En \emph{VLIW}\footnote{Muy Larga Palabra de Instrucción \textbf{o} \textit{Very Long Instruction Word} (VLIW)} y \textbf{EPIC}\footnote{Computación Explícitamente Paralela de Instrucciones \textbf{o} \textit{Explicitly Parallel Instruction Computing} (EPIC)}, el compilador expone el paralelismo empaquetando operaciones.
+			
+			En arquitecturas vigentes dominan los \emph{SoC} heterogéneos (CPU+\mbox{GPU}+aceleradores) con memoria compartida \textbf{UMA}\footnote{Arquitectura de Memoria Unificada \textbf{o} \textit{Unified Memory Architecture} (UMA)} o gestión heterogénea \textbf{HMM}\footnote{Gestión de Memoria Heterogénea \textbf{o} \textit{Heterogeneous Memory Management} (HMM)}, donde la coherencia y la consistencia atraviesan dominios de cómputo. Se buscan balances entre rendimiento, consumo y facilidad de programación mediante \emph{runtimes} portables y protocolos coherentes interdispositivo~\cite{asanovic2006landscape,cxl2021compute,cxl2024compute}.
+			
+		\section{Estructura Interna}
+			La estructura interna de la CPU moderna se organiza en \emph{front-ends} de \emph{fetch}/decodificación, colas y estaciones de reserva, unidades funcionales (ALU/FPU/Vector), y un \textbf{ROB}\footnote{Búfer de Reordenamiento \textbf{o} \textit{Reorder Buffer} (ROB)} para comprometer resultados en orden. El control de flujo incorpora predicción avanzada mediante \textbf{BTB}\footnote{Búfer de Destino de Saltos \textbf{o} \textit{Branch Target Buffer} (BTB)}, pilas de retorno y predictores híbridos; el renombrado de registros elimina dependencias falsas, posibilitando ejecución fuera de orden (\textbf{OoO}\footnote{Ejecución Fuera de Orden \textbf{o} \textit{Out-of-Order} (OoO)})~\cite{hennessy2019quantitative,tomasulo1967algorithm,seznec2007ltage}.
+			
+			\subsection{\emph{Pipeline} y el Camino de Datos}
+				El \emph{pipeline} divide la instrucción en etapas (\emph{fetch}, \emph{decode}, \emph{rename}, \emph{dispatch}, \emph{issue}, \emph{execute}, \emph{writeback}, \emph{commit}) que operan en solapamiento. Una mayor profundidad reduce el tiempo de etapa pero incrementa las penalizaciones por saltos y riesgos; la predicción y la especulación son esenciales para sostener altas tasas de emisión (\textbf{IPC}\footnote{Instrucciones por Ciclo \textbf{o} \textit{Instructions Per Cycle} (IPC)})~\cite{hennessy2019quantitative}.
+				
+				El camino de datos integra selectores, bancos de registros, \emph{bypass} y \emph{forwarding}. La lógica de control, cableada o microprogramada, sincroniza las señales; los \emph{scoreboards} y/o el algoritmo de Tomasulo arbitran la emisión según disponibilidad de operandos y recursos~\cite{tomasulo1967algorithm}.
+				
+			\subsection{Integraci{\'o}n con GPU y Aceleradores}
+				En sistemas CPU+\mbox{GPU}/TPU/NPU, la CPU ejecuta el plano de control: lanza \emph{kernels}, administra colas, establece barreras y gestiona memoria (p.\,ej., fallos de página compartidos). La \textbf{GPU} adopta un modelo \textbf{SIMT}\footnote{Una Instrucción, Múltiples Hilos \textbf{o} \textit{Single Instruction, Multiple Threads} (SIMT)} con \emph{warps/wavefronts} programados en \emph{Streaming Multiprocessors} (\textbf{SM}\footnote{Multiprocesador de Flujo \textbf{o} \textit{Streaming Multiprocessor} (SM)}) o \emph{Compute Units} (\textbf{CU}\footnote{Unidades de Cómputo \textbf{o} \textit{Compute Units} (CU)}), optimizada para ocultar latencias con paralelismo masivo~\cite{nvidia2025cudac,amd2025rocm}.
+				
+				La memoria puede ser discreta (dGPU), unificada (UMA/HMM) o coherente (CXL). \emph{Runtimes} como \textbf{CUDA}\footnote{Arquitectura Unificada de Dispositivos de Cómputo \textbf{o} \textit{Compute Unified Device Architecture} (CUDA)} y \textbf{ROCm}\footnote{Computación Abierta de Radeon \textbf{o} \textit{Radeon Open Compute} (ROCm)} o entornos portables (oneAPI\footnote{Una Plataforma y API Abierta de Intel \textbf{o} \textit{oneAPI} (oneAPI)}/SYCL\footnote{Lenguaje de Cálculo Paralelo Sincrónico \textbf{o} \textit{SYCL} (SYCL)}) median el \emph{offload} y el modelo de memoria~\cite{cxl2021compute,cxl2024compute,nvidia2025cudac,amd2025rocm}.
+				
+			\subsection{Arquitecturas por Dominio}
+				Las extensiones \textbf{SIMD}\footnote{Una Instrucción, Múltiples Datos \textbf{o} \textit{Single Instruction, Multiple Data} (SIMD)} (SSE/\textbf{AVX}\footnote{Extensiones Vectoriales Avanzadas \textbf{o} \textit{Advanced Vector Extensions} (AVX)} en x86; NEON/SVE en ARM; ``V'' en RISC-V) amplían el ancho vectorial y el \emph{throughput}. La especialización por dominio incluye motores criptográficos (AES\footnote{Estándar de Cifrado Avanzado \textbf{o} \textit{Advanced Encryption Standard} (AES)}/SHA\footnote{Algoritmo de Hash Seguro \textbf{o} \textit{Secure Hash Algorithm} (SHA)}), \emph{systolic arrays} en TPU y \emph{tensor cores} en GPU~\cite{jouppi2017tpu,han2016deepcompression,nvidia2025cudac,amd2025rocm}.
+				
+				El control energético recurre a \textbf{DVFS}\footnote{Escalado Dinámico de Voltaje y Frecuencia \textbf{o} \textit{Dynamic Voltage and Frequency Scaling} (DVFS)} y \emph{clock/power gating} por dominio funcional. Este granular \emph{power management} permite sostener rendimiento dentro de límites térmicos y de potencia~\cite{asanovic2006landscape,jouppi2017tpu,cxl2021compute,cxl2024compute}.
+				
+		%==================== UC ====================
+		\section{Unidad de Control (UC): Organizaci{\'o}n y Funcionamiento}
+			La UC interpreta instrucciones y genera microseñales para activar bloques de datos. Puede ser cableada (latencia mínima, flexibilidad menor) o microprogramada (flexible, con memoria de control), y en diseños modernos coexisten enfoques híbridos para instrucciones complejas~\cite{stallings2020organization,tomasulo1967algorithm}.
+			
+			\subsection{Construcción y Partes}
+				Un decodificador traduce \emph{opcodes} a microoperaciones; un generador de control activa lecturas/escrituras de registros, selección de ALU, accesos de memoria y arbitraje de buses internos. La temporización sincroniza etapas del \emph{pipeline}; la lógica de excepciones/interrupciones preserva precisión, vectores y prioridades~\cite{hennessy2019quantitative,stallings2020organization}.
+				
+				En UC microprogramada, la \emph{store} de microcódigo contiene secuencias para instrucciones complejas y micro-ISAs internas (p.\,ej., traducción CISC$\rightarrow$uops estilo RISC en x86). La verificación se centra en la corrección de secuenciación y recuperación ante fallos~\cite{hennessy2019quantitative,intel2025sdm}.
+				
+			\subsection{\emph{Pipeline}, OoO y Renombrado}
+				La UC coordina \emph{fetch}/\emph{decode}/\emph{rename}/\emph{dispatch}/\emph{issue}/\emph{execute}/\emph{writeback}/\emph{commit}. El renombrado asigna registros lógicos a físicos (free-list/RAT) y elimina dependencias falsas (WAR/WAW). Algoritmos tipo Tomasulo o \emph{scoreboard} gobiernan \emph{issue}; el \textbf{ROB} garantiza consistencia y recuperación ante \emph{mispredicts}~\cite{hennessy2019quantitative,tomasulo1967algorithm,seznec2007ltage}.
+				
+				En \emph{pipelines} profundos, la penalización por salto exige predictores de alta precisión (bimodal/gshare/TAGE\footnote{Predicción Basada en Tabla T-Age \textbf{o} \textit{TAgged GEometric history length} (TAGE)}). \emph{Checkpoints} del estado de renombrado habilitan retornos rápidos tras mispredicción.
+				
+			\subsection{Control de Flujo en CPU y Coordinaci{\'o}n con GPU}
+				El \textbf{BTB} y la pila de retorno anticipan blancos; predictores híbridos mitigan burbujas; barreras de memoria conservan consistencia (TSO\footnote{Orden de Almacenamiento Total \textbf{o} \textit{Total Store Order} (TSO)}, RC\textsubscript{sc}\footnote{Coherencia de Liberación con Secuencial Consistente \textbf{o} \textit{Release Consistency, sequentially consistent} (RC\textsubscript{sc})}). La UC administra excepciones precisas y síncronas con el estado arquitectónico visible~\cite{hennessy2019quantitative}.
+				
+				En CPU+\mbox{GPU}, la UC del host gestiona colas, \emph{streams} y eventos; la GPU usa \emph{warp schedulers}/\emph{scoreboards} para latencias de memoria global y compartida. Con memoria unificada (UMA/HMM/CXL), fallos de página y permisos se resuelven cruzando dominios~\cite{cxl2021compute,cxl2024compute,nvidia2025cudac,amd2025rocm}.
+				
+		%==================== ALU ====================
+		\section{Unidad Aritm{\'e}tico-L{\'o}gica (ALU)}
+			La ALU ejecuta operaciones aritméticas y lógicas sobre operandos enteros; junto con la FPU y las unidades vectoriales, determina el \emph{throughput} computacional. Su microarquitectura balancea retardo crítico, área y energía~\cite{hennessy2019quantitative,stallings2020organization}.
+			
+			\subsection{Bloques Internos}
+				Se emplean familias de sumadores (ripple-carry, carry-lookahead, carry-select, Kogge--Stone) y multiplicadores (matriciales, Wallace/Dadda) con \emph{pipeline} y \emph{bypass}. Divisores SRT o métodos iterativos (Newton--Raphson) resuelven división/raíz bajo restricciones de latencia~\cite{hennessy2019quantitative,stallings2020organization}.
+				
+				Los \emph{shifters/rotators} y la lógica booleana completan el repertorio. El diseño de puertos en el archivo de registros y el arbitraje de \emph{bypass} condicionan la frecuencia máxima y el consumo~\cite{hennessy2019quantitative,seznec2007ltage}.
+				
+			\subsection{FPU e IEEE-754}
+				La FPU implementa \textbf{IEEE-754}\footnote{Norma IEEE de Aritmética de Punto Flotante \textbf{o} \textit{IEEE Standard for Floating-Point Arithmetic} (IEEE-754)}: formatos (binary32/64/128), modos de redondeo, \textit{NaN}\footnote{No Es un Número \textbf{o} \textit{Not a Number} (NaN)}/\textit{Inf}\footnote{Infinito \textbf{o} \textit{Infinity} (Inf)}, subnormales y excepciones; \emph{fused multiply-add} (FMA) mejora precisión y rendimiento~\cite{ieee2019FloatingPoint}. Las FPUs modernas son profundamentes \emph{pipelined} y vectorizadas.
+				
+				La parametrización de latencias (p.\,ej., 3--5 ciclos para suma/resta, 4--7 para multiplicación, 10+ para división) depende de la frecuencia objetivo y del ancho de vector. El soporte decimal IEEE-754-2008 aparece en dominios financieros.
+				
+			\subsection{SIMD/Vector, GPU y Aceleradores}
+				Las CPU integran \textbf{SIMD} (SSE/\textbf{AVX} en x86; NEON/SVE en ARM; ``V'' en RISC-V) con máscaras, dispersión/recolección y permutaciones. El vector largo (SVE) permite tamaño escalable de registro con generación de código \emph{portable-performance}~\cite{arm2025sve}.
+				
+				Las \textbf{GPU} agrupan miles de ALU ligeras en SM/CU y optimizan acceso coalescido; las \textbf{TPU} usan \emph{systolic arrays} con \emph{bfloat16}/int8 y \emph{scratchpads} SRAM para máxima reutilización y \textbf{TOPS/W}\footnote{Tera Operaciones por Segundo por Vatio \textbf{o} \textit{Tera Operations per Second per Watt} (TOPS/W)}~\cite{jouppi2017tpu,han2016deepcompression,nvidia2025cudac,amd2025rocm}.
+				
+		%==================== REGISTROS ====================
+		\section{Registros: Organizaci{\'o}n, Usos y Ejemplos}
+			Los registros son el estrato de almacenamiento más veloz. Se distinguen \textbf{GPRs} (propósito general), de control/estado (PC/FLAGS), de segmentación/punteros y especializados (vectoriales, predicación, sistema)~\cite{hennessy2019quantitative,stallings2020organization}. Su número/anchura condiciona el ABI, la presión de registros y la estrategia del compilador.
+			
+			\subsection{Panorama General}
+				El acceso a subpalabras (p.\,ej., AX$\rightarrow$AH/AL) permite manipulación eficiente de bytes; los registros de máscara (x86 AVX-512) habilitan predicación por bit; los registros vectoriales (ARM SVE, RISC-V V) escalan con el microdiseño. Registros privilegiados (MSR/CRx en x86; \texttt{mstatus}/\texttt{sstatus} en RISC-V) controlan memoria y excepciones~\cite{intel2025sdm,arm2025sve,riscv2021manual}.
+				
+				La depuración de rendimiento se apoya en convenciones \emph{caller/callee-saved}, que influyen en derrames a pila y en la elección de registros temporales. Los depuradores/ensambladores muestran alias de vistas de 8/16/32/64 bits~\cite{stallings2020organization,hennessy2019quantitative}.
+				
+			\subsection{x86-64 (IA-32e)}
+				x86-64 ofrece 16 GPRs de 64 bits (RAX--R15) con vistas EAX/AX/AH/AL, punteros RSP/RBP, \textbf{RFLAGS} y \textbf{RIP}; extensiones vectoriales XMM/YMM/ZMM y máscaras k0--k7~\cite{intel2025sdm}. Ejemplo (AT\&T):
+				\begin{verbatim}
+					mov    $5, %eax
+					add    $3, %eax
+					mov    %al, (%rdi)
+				\end{verbatim}
+				
+				Los registros de control CR0--CR4 y los \textbf{MSR}\footnote{Registros de Estado de Máquina \textbf{o} \textit{Model-Specific Registers} (MSR)} ajustan modos de paginación, depuración y energía. La traducción CISC$\rightarrow$uops ocurre en el \emph{front-end}~\cite{stallings2020organization,hennessy2019quantitative}.
+				
+			\subsection{ARMv8-A (AArch64)}
+				ARMv8-A dispone de 31 GPRs de 64 bits (X0--X30; vistas W de 32 bits), banderas \textbf{NZCV}\footnote{Negativo/Cero/Acarreo/Overflow \textbf{o} \textit{Negative/Zero/Carry/Overflow} (NZCV)} y registros V0--V31 (AdvSIMD/SVE)~\cite{armv82025manual,arm2025sve}. Ejemplo:
+				
+				\begin{verbatim}
+					mov   x0, #5
+					add   x0, x0, #3
+					strb  w0, [x1]
+				\end{verbatim}
+				
+				Los niveles de excepción (EL0--EL3) definen contextos de privilegio y espejos de registros de estado (\textbf{SPSR}\footnote{Registro de Estado Guardado \textbf{o} \textit{Saved Program Status Register} (SPSR)}). SVE añade predicación de longitud escalable~\cite{hennessy2019quantitative}.
+				
+			\subsection{RISC-V RV64}
+				RISC-V RV64 provee 32 GPRs (x0=0), registros \texttt{f0--f31} (FP) y \texttt{v0--v31} (vector si ``V'')~\cite{riscv2021manual,asanovic2006landscape}. Ejemplo:
+				\begin{verbatim}
+					addi x5, x0, 5
+					addi x5, x5, 3
+					sb   x5, 0(x10)
+				\end{verbatim}
+				
+				El conjunto modular (extensiones I/M/A/F/D/V, etc.) permite perfilar registros a la carga. Los registros \texttt{mstatus}/\texttt{sstatus} gobiernan trampas y traducción de direcciones~\cite{riscv2021manual}.
+				
+				\begin{table}[h]
+					\centering
+					\caption{Conjunto de registros visibles para el programador (resumen)}
+					\begin{tabular}{l l l l l}
+						\hline
+						\textbf{ISA} & \textbf{GPRs} & \textbf{FP/Vector} & \textbf{Control/Estado} & \textbf{Particularidades} \\
+						\hline
+						x86-64 & 16$\times$64b + subregs & ST, XMM/YMM/ZMM, k0--k7 & RIP, RFLAGS, CR0--CR4, MSR & Subregistros (AH/AL) \\
+						ARMv8-A & 31$\times$64b (W=32b) & V0--V31 (AdvSIMD/SVE) & NZCV, SPSR/ELx & Vectores escalables (SVE) \\
+						RISC-V RV64G & 32$\times$64b & f0--f31, v0--v31 (V) & mstatus/sstatus & x0=0; ISA modular \\
+						\hline
+					\end{tabular}
+				\end{table}
+				
+		%==================== CACHES ====================
+		\section{Jerarqu{\'i}a de Cach{\'e}s: Construcci{\'o}n, Funcionamiento y Variaciones}
+			La jerarquía de caché reduce la brecha procesador-memoria mediante niveles (L1/L2/L3) con diferentes latencias/capacidades. El diseño de líneas (típ. 64~B), conjuntos y políticas de reemplazo afecta tasa y \emph{penalidad} de fallos~\cite{hennessy2019quantitative,denning1968working,gupta2020misspenalty}.
+			
+			\subsection{Construcci{\'o}n y Organizaci{\'o}n}
+				Una caché se direcciona por índice/etiqueta/desplazamiento; la asociatividad (directa, por conjuntos, total) gobierna conflictos. En escritura: \emph{write-through} vs.\ \emph{write-back} y \emph{write-allocate} vs.\ \emph{no-write-allocate}. Políticas RRIP\footnote{Política de Reemplazo con Reutilización Re-Referenciada \textbf{o} \textit{Re-Reference Interval Prediction} (RRIP)} y derivadas equilibran reutilización y coste~\cite{gupta2020misspenalty}.
+				
+				Las colas de llenado/expulsión, los \emph{miss status handling registers} (MSHR) y los prefetchers (secuencial/estride/correlativo) condicionan el \emph{memory-level parallelism} (MLP)~\cite{gupta2020misspenalty,jouppi1990improving}. 
+				
+				El \textbf{TLB}\footnote{Búfer de Traducción de Direcciones \textbf{o} \textit{Translation Lookaside Buffer} (TLB)} cachea traducciones virtual$\rightarrow$físico~\cite{hennessy2019quantitative}.
+				
+				
+			\subsection{Coherencia y consistencia}
+				En multinúcleo, protocolos MSI/MESI/MOESI mantienen copias coherentes; directorios o difusión (\emph{broadcast}) escalan según núcleo y topología. La consistencia (TSO, RC\textsubscript{sc}) define órdenes visibles al software; barreras y \emph{atomics} preservan invariantes~\cite{hennessy2019quantitative}.
+				
+				Las diferencias ISA importan: x86 ofrece TSO fuerte; ARM/RISC-V permiten modelos más relajados para eficiencia, exigiendo \emph{fences} explícitos y cuidado en programación paralela~\cite{armv82025manual,riscv2021manual}.
+				
+			\subsection{Acceso Desde Software}
+				En Java/C\# la caché es transparente; la \emph{localidad} sigue siendo clave (accesos secuenciales vs.\ \emph{stride} grande). Ejemplo simple en Java:
+				\begin{verbatim}
+					public static long sumStride(int[] a, int s) {
+						long t=0; for (int i=0;i<a.length;i+=s) t+=a[i]; return t;
+					}
+				\end{verbatim}
+				En C/C++ existen intrínsecos de \emph{prefetch}/\emph{clflush} (x86) que deben usarse con prudencia y medición~\cite{intel2025sdm}.
+				
+			\subsection{Diferencias entre Arquitecturas}
+				x86 suele disponer de L1I/L1D privadas, L2 privada y L3 compartida (inclusiva o no); ARMv8 en móviles integra L3 pequeño y cachés por clúster; \textbf{GPU} combina L1/``shared memory'', cachés de textura/constante y L2 global, optimizadas para accesos coalescidos. Con \textbf{CXL} emergen \emph{pools} de memoria coherente entre CPU y aceleradores~\cite{cxl2021compute,cxl2024compute,nvidia2025cudac,amd2025rocm}.
+				
+		%==================== HISTORIA ====================
+		\section{Evolución Hist{\'o}rica}
+			De 1970 a la actualidad: integración (SSI/LSI$\rightarrow$VLSI), profundización del \emph{pipeline}, OoO y cachés multinivel, salto a multinúcleo, y, hoy, heterogeneidad con \emph{chiplets} y coherencia interdispositivo. La frecuencia dejó de escalar por límites térmicos; el paralelismo y la especialización tomaron el relevo~\cite{hennessy2019quantitative,asanovic2006landscape}.
+			
+			%========================================================
+			% TABLA ÚNICA (unificada del .txt) — Microprocesadores/Procesadores 1971–2019
+			% Citas con \cite{clave}; al final se incluye el BibTeX en el orden de aparición.
+			%========================================================
+			
+			\begin{longtable}{p{1.2cm} p{3.2cm} p{7.2cm} p{4.2cm}}
+				\caption{Cronología unificada de microprocesadores (1971--2019; sin duplicados)}\\
+				\hline
+				\textbf{Año} & \textbf{Familia/ISA} & \textbf{Procesador(es) y notas técnicas} & \textbf{Refs.}\\
+				\hline
+				\endfirsthead
+				\hline
+				\textbf{Año} & \textbf{Familia/ISA} & \textbf{Procesador(es) y notas técnicas} & \textbf{Refs.}\\
+				\hline
+				\endhead
+				\hline
+				\endfoot
+				
+				1971 & Intel MCS-4 & \textbf{Intel 4004}: 4\,bit, considerado el primer microprocesador comercial de propósito general. & \cite{intel2011intel4004smithsonian,intel2021intel4004vault}\\
+				
+				1972 & Intel 8-bit & \textbf{Intel 8008}: 8\,bit; antecedente directo del 8080. & \cite{intel2021intel8008vault,wiki2025intel8008}\\
+				
+				1974 & Intel 8080 & \textbf{Intel 8080}: 8\,bit; base de Altair 8800 y ecosistema S-100. & \cite{wiki2025intel8008,wiki2025s100bus,altair2008wired}\\
+				
+				1975 & MOS 6502 & \textbf{MOS Technology 6502}: 8\,bit; bajo costo y gran difusión en sistemas embebidos y microcomputadoras. & \cite{wiki2025mos6502,walls2020history}\\
+				
+				1976 & Zilog Z80 & \textbf{Z80}: 8\,bit, compatible 8080 con extensiones; incorpora \emph{DRAM refresh}. & \cite{zilog2016um,zilog2001z80,wiki2025z80}\\
+				
+				1978 & Intel x86 & \textbf{Intel 8086/8088}: 16\,bit (8086); 8088 con bus externo de 8\,bit usado en IBM PC. & \cite{intel2023ibmpc8086,wiki2025intel8086}\\
+				
+				1979 & Motorola 68k & \textbf{Motorola 68000}: 32\,bit interno con bus de 16\,bit; base de la familia 68k. & \cite{wiki2025mos6502}\\
+				
+				1982 & Intel x86 & \textbf{Intel 80286}: modo protegido e introducción de capacidades MMU. & \cite{intel1986i386,wiki2025protectedmode}\\
+				
+				1984 & Motorola 68k & \textbf{68020/030/040}: 32\,bit completo; MMU opcional/integrada en 030/040. & \cite{m68k1992manual}\\
+				
+				1985 & MIPS RISC & \textbf{MIPS R2000} (32\,bit, load/store, pipeline clásico). & \cite{hennessy2019quantitative,stallings2020organization}\\
+				
+				1985 & Arm (ARMv1/2) & \textbf{ARM1/ARM2}: RISC 32\,bit de bajo consumo (origen de la familia ARM). & \cite{hennessy2019quantitative,stallings2020organization}\\
+				
+				1985 & Intel x86 & \textbf{Intel 80386}: 32\,bit, modo protegido avanzado y paginación. & \cite{intel1986i386,i3861986hrm}\\
+				
+				1987 & SPARC V7 & \textbf{SPARC (V7)}: ventanas de registros; ampliamente usado en estaciones Sun. & \cite{oracle2004sparc}\\
+				
+				1989 & Intel x86 & \textbf{Intel 80486}: caché on-chip; FPU integrada en 486DX. & \cite{hennessy2019quantitative,stallings2020organization}\\
+				
+				1991 & MIPS 64 & \textbf{MIPS R4000}: primer MIPS de 64\,bit de amplia difusión. & \cite{kane1992mipsr4000}\\
+				
+				1991 & AMD x86 & \textbf{Am386/Am486}: compatibles 386/486; entrada de AMD al x86 de volumen. & \cite{stallings2020organization}\\
+				
+				1992 & DEC Alpha & \textbf{Alpha 21064/21164/21264}: 64\,bit, alto ILP; EV6 con predictor avanzado y alto IPC. & \cite{alpha1999manual,wiki2025alpha}\\
+				
+				1993 & Intel Pentium & \textbf{Pentium (P5)}: dual-issue superescalar; FPU mejorada; base MMX posterior. & \cite{hennessy2019quantitative,Intel1996p6}\\
+				
+				1993 & PowerPC & \textbf{PowerPC 601/603/604}: derivados de POWER; adopción en desktop/embebido. & \cite{stallings2020organization}\\
+				
+				1994 & ARM7TDMI & \textbf{ARM7TDMI}: soporte Thumb y depuración embebida; gran difusión móvil. & \cite{arm1996arm7tdmi,arm2001arm7tdmis}\\
+				
+				1995 & Intel Pentium Pro & \textbf{Pentium Pro (P6)}: ejecución \emph{out-of-order}; L2 externa de alta velocidad; base de PII/PIII. & \cite{Intel1996p6}\\
+				
+				1996 & HP PA-RISC & \textbf{PA-8000}: ILP agresivo; arquitectura servidor de alto rendimiento. & \cite{dunn1996Instruction,wiki2025pa8000}\\
+				
+				1996 & AMD K5/K6 & \textbf{K5/K6-K6-2}: primeras CPU x86 propias; \emph{3DNow!} para SIMD en FP. & \cite{amd19993dnow,wiki20253dnow}\\
+				
+				1997 & Intel Pentium II & \textbf{Pentium II}: continuidad P6; Slot~1; MMX generalizado. & \cite{Intel1996p6}\\
+				
+				1998 & DEC Alpha & \textbf{Alpha 21264 (EV6)}: predictor avanzado; muy alto IPC (servidores). & \cite{alpha1999manual,wiki2025alpha}\\
+				
+				1999 & AMD Athlon (K7) & \textbf{Athlon/Duron}: bus EV6 (licenciado de DEC); FPU potente; Duron como segmento económico. & \cite{wiki2025athlon}\\
+				
+				1999 & Intel Pentium III & \textbf{Pentium III}: SSE; generaciones Katmai/Coppermine/Tualatin. & \cite{Intel1996p6}\\
+				
+				2000 & Intel Pentium 4 & \textbf{Pentium 4 (NetBurst)}: pipeline muy profundo; SSE2; altas frecuencias objetivo. & \cite{hennessy2019quantitative,stallings2020organization}\\
+				
+				2001 & Intel Itanium & \textbf{Itanium (IA-64, EPIC/VLIW)}: paralelismo explícito vía compilador. & \cite{hennessy2019quantitative}\\
+				
+				2003 & AMD Athlon 64 (K8) & \textbf{Athlon 64/Opteron}: x86-64 (AMD64), IMC integrado, HyperTransport. & \cite{hennessy2019quantitative}\\
+				
+				2003 & PowerPC G5 & \textbf{IBM 970 (POWER4-derivado)}: usado en Apple Power Mac G5. & \cite{stallings2020organization}\\
+				
+				2004 & Intel Pentium M & \textbf{Banias/Dothan}: foco en eficiencia energética (base de “Core”). & \cite{stallings2020organization}\\
+				
+				2006 & Intel Core/Core 2 & \textbf{Core/Core~2 (Yonah/Conroe)}: gran salto en IPC/eficiencia frente a NetBurst. & \cite{hennessy2019quantitative}\\
+				
+				2007 & AMD K10 & \textbf{Phenom (Barcelona)}: L3 compartida; multicore nativo. & \cite{hennessy2019quantitative}\\
+				
+				2008 & Intel Nehalem & \textbf{Nehalem}: IMC, QPI, SMT (HT) reintroducido, L3 compartida. & \cite{hennessy2019quantitative}\\
+				
+				2009 & ARM Cortex-A9 & \textbf{Cortex-A9 MPCore}: multinúcleo móvil de alta eficiencia. & \cite{stallings2020organization}\\
+				
+				2010 & Intel Westmere/ SNB & \textbf{Westmere (32\,nm)} y \textbf{Sandy Bridge}: AVX; iGPU en el mismo \emph{die}. & \cite{intel2025sdm,hennessy2019quantitative}\\
+				
+				2011 & AMD Bulldozer & \textbf{Bulldozer}: módulos con dos clústeres de enteros; enfoque a MT. & \cite{hennessy2019quantitative}\\
+				
+				2012 & ARM Cortex-A53/A57 & \textbf{ARMv8-A (AArch64)}: A53 (eficiencia) y A57 (alto rendimiento) en primera ola 64\,bit ARM. & \cite{armv82025manual}\\
+				
+				2013 & Intel Haswell & \textbf{Haswell}: AVX2, FMA3; mejoras energéticas y de iGPU. & \cite{intel2025sdm}\\
+				
+				2015 & Intel Skylake & \textbf{Skylake}: nueva microarquitectura base de múltiples generaciones posteriores. & \cite{intel2025sdm}\\
+				
+				2016 & ARM Cortex-A72/A73 & \textbf{A72/A73}: eficiencia y rendimiento para móviles/embebidos. & \cite{armv82025manual}\\
+				
+				2017 & AMD Zen (Ryzen) & \textbf{Zen}: alto IPC, SMT, CCX; base de evolución Zen+. & \cite{hennessy2019quantitative}\\
+				
+				2018 & RISC-V (impl.) & \textbf{Rocket/BOOM académicos y SiFive comerciales}: adopción RV64 (unpriv.\,/priv.). & \cite{asanovic2006landscape,riscv2021manual}\\
+				
+				2019 & Intel Sunny/Cascade & \textbf{Sunny Cove (Ice Lake, cliente)} y \textbf{Cascade Lake (servidor)}; nuevas \emph{uops} y mejoras de memoria. & \cite{intel2025sdm,hennessy2019quantitative}\\
+				
+				% ---------- 2020 ----------
+				2020 & AMD x86-64 & \textbf{Ryzen 5000 (Zen 3)} de escritorio: rediseño del complejo de núcleos (unificación de CCX por CCD), gran salto de IPC y liderazgo generalista. & \cite{amd2020zen3}\\
+				& Armv8 (Apple) & \textbf{Apple M1}: primer SoC Apple Silicon para Mac con CPU/GPU/NPU integradas y memoria unificada (UMA), foco en rendimiento/W. & \cite{apple2020m1}\\
+				& Armv8.2 (Neoverse~N1) & \textbf{Ampere Altra} (80~núcleos) para \emph{cloud}: alto rendimiento/\emph{watt}, PCIe~4.0; orientación \emph{scale-out}. & \cite{ampere2020ampereunveils}\\
+				& Intel x86-64 & \textbf{Comet Lake-S} (10ª~gen desktop): hasta 10~núcleos; documentación técnica y hoja de datos oficial. & \cite{intel2022generation}\\
+				& Armv8 (A64FX) & \textbf{Fujitsu A64FX} (Fugaku): vector SVE 512, liderazgo TOP500 en 2020 con enfoque HPC y ancho de banda de memoria HBM2. & \cite{riken2020fugaku}\\
+				
+				% ---------- 2021 ----------
+				2021 & Intel x86-64 & \textbf{Rocket Lake-S} (11ª~gen desktop) con PCIe~4.0 y nuevo back-end; \textbf{Alder Lake} (12ª~gen) introduce híbrida P-cores+E-cores y Thread~Director. & \cite{intel2021intellgencore,intel2021launches}\\
+				& Arm (Neoverse) & \textbf{Neoverse V1/N2}: V1 con SVE para HPC/ML; N2 orientado a \emph{scale-out} eficiente para \emph{cloud}. & \cite{arm2021neoversev1,arm2021neoversen2,arm2021neoversev1topdown,wiki2022neoversev1,wiki2025neoversen2}\\
+				& IBM POWER10 & \textbf{IBM Power10} (E1080): servidor \emph{enterprise} de nueva generación; mejoras de eficiencia/seguridad y virtualización. & \cite{ibm2021power10server}\\
+				& LoongArch & \textbf{Loongson 3A5000}: transición a ISA LoongArch propia; \emph{client/desktop} y ecosistema local. & \cite{wiki2024loongson}\\
+				
+				% ---------- 2022 ----------
+				2022 & AMD x86-64 & \textbf{Ryzen 7000 (Zen 4)}: socket AM5, DDR5/PCIe~5.0, salto de frecuencias y soporte de nuevas instrucciones. & \cite{amd2022ryzen7000}\\
+				& Intel x86-64 & \textbf{Raptor Lake} (13ª~gen): más E-cores, caché y frecuencias superiores; mejora MT/eficiencia. & \cite{intel2022raptor}\\
+				& Arm (Apple) & \textbf{Apple M2}: iteración de CPU/GPU/NPU con ganancias de rendimiento y eficiencia. & \cite{apple2022m2}\\
+				& Arm (AWS) & \textbf{Graviton3} (C7g): instancias \emph{cloud} con mejor rendimiento/W para cargas de \emph{scale-out}. & \cite{aws2022graviton3c7g}\\
+				& Arm (Neoverse) & \textbf{NVIDIA Grace CPU Superchip}: CPU Arm para centros de datos; plataforma para cómputo acoplado a GPU. & \cite{nvidia2022gracecpu}\\
+				
+				% ---------- 2023 ----------
+				2023 & Arm (Apple) & \textbf{Apple M3}: salto a 3\,nm, nueva arquitectura de GPU y mejoras CPU/NPU para macOS. & \cite{apple2023m3}\\
+				& Intel x86-64 & \textbf{Raptor Lake Refresh} (14ª~gen desktop): refuerzo de frecuencias y oferta entusiasta. & \cite{intel202314threfresh}\\
+				& Armv8.6+ & \textbf{AmpereOne} (hasta 192~núcleos propios), DDR5 y PCIe~5.0 para \emph{cloud}. & \cite{ampere2023ampereone}\\
+				& Arm + GPU & \textbf{NVIDIA GH200 Grace Hopper}: \emph{superchip} Grace+Hopper; memoria coherente y NVLink-C2C. & \cite{nvidia2023gh200}\\
+				& TPU (Google) & \textbf{TPU v5p}: plataforma de entrenamiento de mayor escala para IA generativa. & \cite{google2023tpuv5p}\\
+				& Arm (Microsoft) & \textbf{Azure Cobalt 100} (CPU Arm de Microsoft) presentado en 2023; primera generación de silicio propio para \emph{cloud}. & \cite{msft2023ignitecobalt}\\
+				& Intel x86-64 & \textbf{Core Ultra (Meteor Lake)} móvil: inicio de la era \emph{AI~PC} con NPU integrada (Intel~4). & \cite{intel2023coreultrapresskit}\\
+				
+				% ---------- 2024 ----------
+				2024 & Intel x86-64 (desktop) & \textbf{Core Ultra 200S (Arrow Lake)}: “entusiasta desktop AI~PC”, menor consumo a igual rendimiento, línea Series~2. & \cite{intel2024coreultra200s}\\
+				& Intel x86-64 (móvil) & \textbf{Core Ultra 200V} (client 2024) y \textbf{Lunar Lake} (Q3): SoCs con fuerte NPU/eficiencia para Copilot+ PC. & \cite{intel2024coreultra200v,intel2024lunarlakeq3}\\
+				& Intel Xeon 6 & \textbf{Sierra Forest} (E-cores, densidad) y \textbf{Granite Rapids} (P-cores, rendimiento) abren la familia Xeon~6. & \cite{intel2024xeon6sierra,intel2024xeon6granite}\\
+				& AMD x86-64 & \textbf{Ryzen 9000 (Zen 5)} desktop: nueva microarquitectura con salto de IPC; familia AI en portátiles. & \cite{amd2024ryzen9000}\\
+				& Arm (Apple) & \textbf{Apple M4}: 3\,nm, mayor rendimiento CPU/GPU y \emph{neural engine}; lanzamiento inicial en iPad~Pro. & \cite{apple2024m4}\\
+				& Arm + GPU & \textbf{NVIDIA GB200 (Grace+Blackwell)} y sistemas NVL72; plataforma para IA a hiperescala. & \cite{nvidia2024gb200}\\
+				& Arm (Qualcomm) & \textbf{Snapdragon X Elite/Plus}: CPU Oryon para Copilot+ PCs, alto rendimiento/W en portátiles Windows. & \cite{qcom2023xelite,qcom2024xplus}\\
+				& AMD EPYC & \textbf{EPYC 9005 “Turin” (Zen 5)}: hasta 192~núcleos, liderazgo rendimiento/\emph{watt} en \emph{datacenter}. & \cite{amd2024epyc9005press}\\
+				
+				% ---------- 2025 ----------
+				2025 & Intel x86-64 (client) & \textbf{Core Ultra 200 (desktop/móvil)}: ampliación de la familia en CES~2025 (Series~2 en escritorio, despliegues móviles). & \cite{intel2025cescoreultra200}\\
+				& Arm (Google) & \textbf{Google Axion} (CPU Arm para Google Cloud): CPU propia para \emph{cloud}, anunciada 2024 y desplegada en 2025. & \cite{google2024axion}\\
+				
+				% ---------- 2026 (anunciados/oficialmente previstos) ----------
+				2026 & Intel x86-64 (client) & \textbf{Nova Lake}: hoja de ruta oficial sitúa su llegada hacia \textit{finales de 2026}; relevo tras Arrow/ Lunar/ Panther. & \cite{intel2025novalake2026,intel20252025pcgamernovalake2026}\\
+				
+				\hline
+			\end{longtable}
+	
+		%==================== PERSPECTIVAS ====================
+		\section{Perspectivas Actuales}
+			La computación heterogénea consolida modelos donde la CPU coordina y acelera mediante GPU/TPU/NPU, con memorias coherentes y \emph{runtimes} portables (CUDA/HIP/oneAPI/SYCL). En paralelo, la computación cuántica explora \emph{qubits} (superposición/entrelazamiento) y algoritmos de ventaja específica (Shor, Grover), aún limitada por ruido y corrección de errores~\cite{nielsen2010quantum,davies2018loihi}.
+			
+			\subsection{CPU+GPU (SIMT)}
+				La \textbf{GPU} ofrece miles de ALU ligeras programadas en \textbf{SIMT}; su eficiencia depende de accesos coalescidos, ocupación de SM/CU y control de divergencia. La memoria compartida por bloque y la \emph{coalescencia} reducen \emph{stalls}; la CPU decide \emph{offload}, \emph{tiling} y fusión de \emph{kernels} con ayuda de modelos tipo \emph{roofline}\footnote{Modelo de Techo \textbf{o} \textit{Roofline Model} (roofline)}~\cite{nvidia2025cudac,amd2025rocm}.
+				
+				La memoria unificada (UMA/HMM) y \textbf{CXL} extienden el espacio de direcciones y habilitan \emph{zero-copy} y \emph{memory pooling}. Las métricas relevantes incluyen ancho de banda efectivo, \emph{tail latency} y utilización de SM/CU~\cite{cxl2024compute,cxl2021compute}.
+				
+			\subsection{TPU/NPUs}
+				Las \textbf{TPU} emplean \emph{systolic arrays} para multiplicaciones bloqueadas y acumulan resultados con alta reutilización de datos; priorizan formatos reducidos (bfloat16/int8) para maximizar \textbf{FLOPS}\footnote{Operaciones de Punto Flotante por Segundo \textbf{o} \textit{Floating-Point Operations per Second} (FLOPS)} por vatio~\cite{jouppi2017tpu}. Las \textbf{NPU} integran MACs, \emph{scratchpads} SRAM y \emph{NoC}\footnote{Red en Chip \textbf{o} \textit{Network-on-Chip} (NoC)} especializados, alcanzando altos \textbf{TOPS/W} en inferencia de borde~\cite{han2016deepcompression}.
+				
+				El despliegue efectivo requiere \emph{compilers} (XLA, TVM) y planificadores que minimicen movimiento de datos y \emph{host-device round trips}. La co-diseño algoritmo-hardware es clave para eficiencia.
+				
+			\subsection{Neurom{\'o}rfica y Cu{\'a}ntica}
+				Arquitecturas neuromórficas (Loihi/TrueNorth) implementan neuronas de disparo y comunicación impulsada por eventos (\emph{event-driven}); su promesa es la eficiencia energética en tareas sensoriales y \emph{always-on}. Retos: ecosistema de software, precisión y variabilidad de dispositivos~\cite{davies2021survey}.
+				
+				La cuántica avanza con dispositivos \textbf{NISQ}\footnote{Cuánticos Intermedios Ruidosos \textbf{o} \textit{Noisy Intermediate-Scale Quantum} (NISQ)} (superconductores, iones, \emph{spin}, fotónica) y algoritmos variacionales híbridos; la ruta a escala exige códigos de superficie y fuertes sobrecargas de qubits físicos por lógico~\cite{nielsen2010quantum,davies2018loihi}.
+				
+	% --- 12. Bibliografía del capítulo -----------------------
+	%==================== REFERENCIAS ====================
+	% Imprime la bibliografía del segmento ANTERIOR justo antes de empezar un nuevo capítulo
+	\printbibliography[
+        segment=\therefsegment,
+        heading=subbibliography,
+        title={Referencias del capítulo},
+        sorting=none
+    ]
+\end{refsegment}
+	
+	% --- Fin del fragmento ---
+	
+	\chapter{Unidad Central de Procesamiento (CPU)}
+	\label{chap:memoria}
+	
+	\chapter{Unidad Central de Procesamiento (CPU)}
+	\label{chap:es-buses}
+	
+	\chapter{Unidad Central de Procesamiento (CPU)}
+	\label{chap:almacenamiento}
+	
+	\chapter{Unidad Central de Procesamiento (CPU)}
+	\label{chap:energia}
+	
+	\chapter{Unidad Central de Procesamiento (CPU)}
+	\label{chap:redes}
+%\section{Link Examples}\index{Links}
+%This is a URL link: \href{https://www.latextemplates.com}{LaTeX Templates}. This is an email link: \href{mailto:example@example.com}{example@example.com}. This is a monospaced URL link: \url{https://www.LaTeXTemplates.com}.
+
+%------------------------------------------------
+
+%\subsection{Descriptions and Definitions}\index{Lists!Descriptions and Definitions}
+
+%\begin{description}
+%	\item[Name] Description
+%	\item[Word] Definition
+%	\item[Comment] Elaboration
+%\end{description}
+
+%------------------------------------------------
+
+%\section{International Support}
+
+%------------------------------------------------
+
+%\section{Ligatures}
+
+%fi fj fl ffl ffi Ty
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+%\part{Part Two Title}
+
+%----------------------------------------------------------------------------------------
+%	MATHEMATICS EXAMPLES CHAPTER
+%----------------------------------------------------------------------------------------
+
+%\chapter{Mathematics}
+
+%\begin{theorem}[Name of the theorem] % Specify a name/title in square brackets, or leave them out for no title
+%	In $E=\mathbb{R}^n$ all norms are equivalent. It has the properties:
+%	\begin{align}
+%		& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+%		&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+%	\end{align}
+%\end{theorem}
+
+\%subsection{Single Line}\index{Theorems!Single Line}
+%This is a theorem consisting of just one line.
+
+%\begin{theorem} % Specify a name/title in square brackets, or leave them out for no title
+%	A set $\mathcal{D}(G)$ in dense in $L^2(G)$, $|\cdot|_0$. 
+%\end{theorem}
+
+%------------------------------------------------
+
+%\section{Definitions}\index{Definitions}
+%A definition can be mathematical or it could define a concept.
+%\begin{definition}[Definition name] % Specify a name/title in square brackets, or leave them out for no title
+%	Given a vector space $E$, a norm on $E$ is an application, denoted $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ such that:
+%	\begin{align}
+%		& ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
+%		& ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
+%		& ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
+%	\end{align}
+%\end{definition}
+
+%------------------------------------------------
+
+%\section{Notations}\index{Notations}
+
+%\begin{notation} % Specify a name/title in square brackets, or leave them out for no title
+%	Given an open subset $G$ of $\mathbb{R}^n$, the set of functions $\varphi$ are:
+%	\begin{enumerate}
+%		\item Bounded support $G$;
+%		\item Infinitely differentiable;
+%	\end{enumerate}
+%	a vector space is denoted by $\mathcal{D}(G)$. 
+%\end{notation}
+
+%------------------------------------------------
+
+%\section{Remarks}\index{Remarks}
+%This is an example of a remark.
+%\begin{remark}
+%	The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+%\end{remark}
+
+%------------------------------------------------
+
+%\section{Corollaries}\index{Corollaries}
+
+%\begin{corollary}[Corollary name] % Specify a name/title in square brackets, or leave them out for no title
+%	The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+%\end{corollary}
+
+%------------------------------------------------
+
+%\section{Propositions}\index{Propositions}
+
+%\subsection{Several equations}\index{Propositions!Several Equations}
+
+%\begin{proposition}[Proposition name] % Specify a name/title in square brackets, or leave them out for no title
+%	It has the properties:
+%	\begin{align}
+%		& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+%		&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+%	\end{align}
+%\end{proposition}
+
+%\subsection{Single Line}\index{Propositions!Single Line}
+
+%\begin{proposition} % Specify a name/title in square brackets, or leave them out for no title
+%	Let $f,g\in L^2(G)$; if $\forall \varphi\in\mathcal{D}(G)$, $(f,\varphi)_0=(g,\varphi)_0$ then $f = g$. 
+%\end{proposition}
+
+%------------------------------------------------
+
+%\section{Examples}\index{Examples}
+
+%\subsection{Equation Example}\index{Examples!Equation}
+
+%\begin{example} % Specify a name/title in square brackets, or leave them out for no title
+%	Let $G=\{x\in\mathbb{R}^2:|x|<3\}$ and denoted by: $x^0=(1,1)$; consider the function:
+%	\begin{equation}
+%	f(x)=\left\{\begin{aligned} & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
+%	& 0 & & \text{si $|x-x^0|> 1/2$}\end{aligned}\right.
+%	\end{equation}
+%	The function $f$ has bounded support, we can take $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\mathopen{]}0\,;5/2-\sqrt{2}\mathclose{[}$.
+%\end{example}
+
+%\subsection{Text Example}\index{Examples!Text}
+
+%\begin{example}[Example name] % Specify a name/title in square brackets, or leave them out for no title
+%	Aliquam arcu turpis, ultrices sed luctus ac, vehicula id metus. Morbi eu feugiat velit, et tempus augue. Proin ac mattis tortor. Donec tincidunt, ante rhoncus luctus semper, arcu lorem lobortis justo, nec convallis ante quam quis lectus. Aenean tincidunt sodales massa, et hendrerit tellus mattis ac. Sed non pretium nibh. Donec cursus maximus luctus. Vivamus lobortis eros et massa porta porttitor.
+%\end{example}
+
+%------------------------------------------------
+
+%\section{Exercises}\index{Exercises}
+
+%\begin{exercise} % Specify a name/title in square brackets, or leave them out for no title
+%	This is a good place to ask a question to test learning progress or further cement ideas into students' minds.
+%\end{exercise}
+
+%------------------------------------------------
+
+%\section{Problems}\index{Problems}
+
+%\begin{problem} % Specify a name/title in square brackets, or leave them out for no title
+%	What is the average airspeed velocity of an unladen swallow?
+%\end{problem}
+
+%------------------------------------------------
+
+%\section{Vocabulary}\index{Vocabulary}
+
+%Define a word to improve a students' vocabulary.
+
+%\begin{vocabulary}[Word] % Specify a name/title in square brackets, or leave them out for no title
+%	Definition of word.
+%\end{vocabulary}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTING INFORMATION/RESULTS EXAMPLES CHAPTER
+%----------------------------------------------------------------------------------------
+
+%\chapterimage{orange3.jpg} % Chapter heading image
+%\chapterspaceabove{6.25cm} % Whitespace from the top of the page to the chapter title on chapter pages
+%\chapterspacebelow{7.5cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%------------------------------------------------
+
+%\chapter{Presenting Information and Results with a Long Chapter Title}
+
+%\section{Table}\index{Table}
+
+%\begin{table}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+%	\centering % Horizontally center the table on the page
+%	\begin{tabular}{L{0.15\textwidth} R{0.15\textwidth} R{0.15\textwidth}} % Specify column alignment with L{width}, C{width} and R{width} for fixed-width columns, or the default latex l, c and r for flexible-width columns
+%		\toprule
+%		\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+%		\midrule
+%		Treatment 1 & 0.0003262 & 0.562 \\
+%		Treatment 2 & 0.0015681 & 0.910 \\
+%		Treatment 3 & 0.0009271 & 0.296 \\
+%		\bottomrule
+%	\end{tabular}
+%	\caption{Table caption.}
+%	\label{tab:example} % Unique label used for referencing the table in-text
+%\end{table}
+
+%Referencing \autoref{tab:example} in-text using its label.
+
+%\begin{table}[t] % Floating table, [t] tells LaTeX to place it at the top of the next available page
+%	\centering % Horizontally center the table on the page
+%	\begin{tabular}{L{0.15\textwidth} R{0.15\textwidth} R{0.15\textwidth}} % Specify column alignment with L{width}, C{width} and R{width} for fixed-width columns, or the default latex l, c and r for flexible-width columns
+%		\toprule
+%		\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+%		\midrule
+%		Treatment 1 & 0.0003262 & 0.562 \\
+%		Treatment 2 & 0.0015681 & 0.910 \\
+%		Treatment 3 & 0.0009271 & 0.296 \\
+%		\bottomrule
+%	\end{tabular}
+%	\caption{Floating table.}
+%	\label{tab:floating} % Unique label used for referencing the table in-text
+%\end{table}
+
+%------------------------------------------------
+
+%\section{Figure}\index{Figure}
+%\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+%	\centering % Horizontally center the figure on the page
+%	\includegraphics[width=0.5\textwidth]{creodocs_logo.pdf} % Include the figure image
+%	\caption{Figure caption.}
+%	\label{fig:placeholder} % Unique label used for referencing the figure in-text
+%\end{figure}
+
+%Referencing \autoref{fig:placeholder} in-text using its label.
+
+%\begin{figure}[b] % Floating figure, [b] tells LaTeX to place it at the bottom of the next available page
+%	\centering % Horizontally center the figure on the page
+%	\includegraphics[width=\textwidth]{creodocs_logo.pdf} % Include the figure image
+%	\caption{Floating figure.}
+%	\label{fig:floating} % Unique label used for referencing the figure in-text
+%\end{figure}
+
+%----------------------------------------------------------------------------------------
+
+%\stopcontents[part] % Manually stop the 'part' table of contents here so the previous Part page table of contents doesn't list the following chapters
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%------------------------------------------------
+
+\chapter*{Bibliography}
+\markboth{\sffamily\normalsize\bfseries Bibliography}{\sffamily\normalsize\bfseries Bibliography} % Set the page headers to display a Bibliography chapter name
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
+
+%\section*{Articles}
+%\addcontentsline{toc}{section}{Articles} % Add the Articles subheading to the table of contents
+
+\printbibliography[heading=bibempty] % Output article bibliography entries
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of contents
+\printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES
+%----------------------------------------------------------------------------------------
+
+\chapterimage{orange2.jpg} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\begin{appendices}
+
+\renewcommand{\chaptername}{Appendix} % Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
+
+%------------------------------------------------
+
+\chapter{Appendix Chapter Title}
+
+\section{Appendix Section Title}
+
+%------------------------------------------------
+
+\chapter{Appendix Chapter Title}
+
+\section{Appendix Section Title}
+
+%------------------------------------------------
+
+\end{appendices}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
