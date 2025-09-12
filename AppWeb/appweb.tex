@@ -1,0 +1,175 @@
+\documentclass[12pt,twoside]{book}
+
+% ------------------------------
+% Codificación y tipografía
+% ------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{inconsolata} % fuente monoespaciada legible (opcional)
+\usepackage[spanish]{babel}
+\usepackage{caption}
+\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}   % asegurarte de tener UTF-8
+%\usepackage[T1]{fontenc}
+\usepackage{pmboxdraw}
+\usepackage[most]{tcolorbox} % carga las librerías principales de tcolorbox
+\tcbuselibrary{listings,breakable}
+\usepackage{textcomp}
+\usepackage{upquote}
+% ------------------------------
+% Paquete solicitado (incluye geometry y el diseño elegante)
+% ------------------------------
+\usepackage{analysis_orax}
+
+% ------------------------------
+% Márgenes (no tocamos head/foot para no alterar el diseño)
+% ------------------------------
+\geometry{inner=3.5cm, outer=2.5cm, top=3cm, bottom=3cm, footskip=2cm}
+
+% ------------------------------
+% Paquetes habituales
+% ------------------------------
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shadows.blur,fit,matrix}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,frame=single}
+\usepackage{dirtree}
+% --- (opcional) listados, biblatex, etc. tal como tenías ---
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{appweb.bib}
+
+% ==========================================================
+% 1) Encabezados: respetar mayúsculas/minúsculas originales
+%    (sin tocar el diseño elegante del paquete)
+%    Estas redefiniciones aseguran que \leftmark/\rightmark
+%    conserven el "case" original que aparece en el cuerpo.
+% ==========================================================
+\makeatletter
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\makeatother
+
+% ==========================================================
+% 2) Número de página en el PIE sobre el banner azul, un poco MÁS ABAJO
+%    (sin reemplazar el pagestyle ni borrar el arte del encabezado/pie)
+%    Ajusta \PageNumberYOffset si necesitas subir/bajar finamente.
+% ==========================================================
+\newcommand*\PageNumberYOffset{5mm} % <- desplaza hacia ABAJO (positivo)
+\newcommand*\PageNumberStyle{\color{white}\bfseries\small} % color/estilo sobre el azul
+
+\newcommand*\OverlayPageNumber{%
+	\AddToShipoutPictureFG*{%
+		% Colocar centrado respecto al borde inferior físico de la página
+		\AtPageLowerCenter{%
+			% sube/baja con raisebox: positivo = subir; para bajar usamos yshift negativo
+			\raisebox{\PageNumberYOffset}{\makebox[0pt]{\PageNumberStyle \thepage}}%
+		}%
+	}%
+}
+% Paleta de colores (ajústala a tu gusto)
+\definecolor{code-bg}{HTML}{FBFBFB}
+\definecolor{code-frame}{HTML}{E6E6E6}
+\definecolor{code-key}{HTML}{005CC5}
+\definecolor{code-type}{HTML}{0B7F9C}
+\definecolor{code-ident}{HTML}{24292E}
+\definecolor{code-str}{HTML}{032F62}
+\definecolor{code-cmt}{HTML}{6A737D}
+\definecolor{code-num}{HTML}{7A3E9D}
+
+% ---------- Definición del lenguaje TypeScript para listings ----------
+\lstdefinelanguage{TypeScript}{
+	language=TypeScript,
+	sensitive=true,
+	morekeywords={
+		% palabras reservadas JS/TS
+		break, case, catch, class, const, continue, debugger, default, delete,
+		do, else, enum, export, extends, false, finally, for, from, function, if,
+		import, in, instanceof, new, null, return, super, switch, this, throw, true,
+		try, typeof, var, void, while, with, yield, as, async, await, of, get, set,
+		readonly, override, satisfies, assert, using
+	},
+	% tipos/constructos TS
+	morekeywords=[2]{any, unknown, never, boolean, number, bigint, string, symbol, object, undefined, null,
+		infer, keyof, unique, this, global, interface, type, implements, private, protected, public,
+		abstract, declare, namespace, module, require, readonly},
+	% decoradores (prefijo @)
+	morekeywords=[3]{@Component,@Injectable,@Directive,@Pipe,@NgModule,@Input,@Output,@HostListener,
+		@HostBinding,@ViewChild,@ViewChildren,@ContentChild,@ContentChildren},
+	% comentarios y strings
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]',
+	morestring=[b]",
+	morestring=[b]`,
+}
+
+% Alias en minúsculas: language=typescript
+\lstdefinelanguage{typescript}[]{TypeScript}{}
+
+% (Opcional) un lenguaje 'bash' sencillo para tus ejemplos de CLI
+\lstdefinelanguage{bash}{
+	sensitive=true,
+	morekeywords={ls,cd,cat,mkdir,rm,cp,mv,grep,ng,npm,pnpm,yarn,bun,git,tsc,node},
+	morecomment=[l]{\#},
+	morestring=[b]",
+	morestring=[b]',
+}
+
+% Estilo general para el código
+\lstdefinestyle{code}{
+	backgroundcolor=\color{code-bg},
+	basicstyle=\ttfamily\footnotesize\color{code-ident},
+	keywordstyle=\bfseries\color{code-key},
+	keywordstyle={[2]\bfseries\color{code-type}},
+	keywordstyle={[3]\bfseries\color{code-type}},
+	commentstyle=\itshape\color{code-cmt},
+	stringstyle=\color{code-str},
+	numberstyle=\tiny\color{code-num},
+	numbers=left,
+	numbersep=10pt,
+	frame=single,
+	rulecolor=\color{code-frame},
+	framerule=0.5pt,
+	breaklines=true,
+	breakatwhitespace=true,
+	showstringspaces=false,
+	tabsize=2,
+	columns=fullflexible,
+	keepspaces=true,
+	upquote=true,
+	captionpos=b
+}
+
+% Aplica el estilo por defecto a todos los listados
+\lstset{style=code}
+% ==========================================================
+% Inicio del documento
+% ==========================================================
+\begin{document}
+%	\numberwithin{figure}{chapter}  % requiere \usepackage{amsmath} o el paquete chngcntr
+	\frontmatter
+	\title{Desarrollo de Aplicaciones Web}
+	\author{Gleiston Guerrero Ulloa}
+	\maketitle
+	
+	% Índice
+	\tableofcontents
+	
+	\mainmatter
+	\lstset{tabsize=4}
+	\input{frameworks.tex}
+	%\include{react.tex}
+	
+	\
+	% ------------------------------------------------------------
+	% Bibliografía (BibTeX verificado). Puede copiar esto a angular.bib,
+	% o compilar en un solo archivo usando filecontents* como se muestra.
+	% ------------------------------------------------------------
+	% --- Opción A: entregar las entradas en un .bib externo (angular.bib)
+	
+	\printbibliography
+	
+\end{document}}

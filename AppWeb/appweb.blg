@@ -1,0 +1,14 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'appweb.blg'
+[104] biber-MSWIN64:342> INFO - === 
+[142] Biber.pm:421> INFO - Reading 'appweb.bcf'
+[260] Biber.pm:1002> INFO - Found 52 citekeys in bib section 0
+[274] Biber.pm:4487> INFO - Processing section 0
+[285] Biber.pm:4678> INFO - Looking for bibtex file 'appweb.bib' for section 0
+[331] bibtex.pm:1713> INFO - LaTeX decoding ...
+[382] bibtex.pm:1519> INFO - Found BibTeX data source 'appweb.bib'
+[575] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[575] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[575] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'es-ES'
+[605] bbl.pm:676> INFO - Writing 'appweb.bbl' with encoding 'UTF-8'
+[624] bbl.pm:779> INFO - Output to appweb.bbl

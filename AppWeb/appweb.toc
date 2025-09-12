@@ -1,0 +1,47 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Frameworks para Desarrollo Web}{1}{}%
+\contentsline {section}{Preparación del Entorno con Node.js y Gestores}{1}{}%
+\contentsline {subsection}{Instalación de Node.js LTS}{1}{}%
+\contentsline {subsubsection}{Windows}{2}{}%
+\contentsline {subsubsection}{Linux/macOS}{2}{}%
+\contentsline {subsubsection}{Después de la Instalación...}{3}{}%
+\contentsline {subsection}{Gestores de Paquetes}{3}{}%
+\contentsline {subsection}{Node.js y los Frameworks de Desarrollo Web}{4}{}%
+\contentsline {subsubsection}{Dependencias para Evitar Inconsistencias de Binarios Nativos}{5}{}%
+\contentsline {subsection}{Instalación y Reinstalación de Node.js}{6}{}%
+\contentsline {section}{Angular}{8}{}%
+\contentsline {subsection}{Descripción y Propósito}{8}{}%
+\contentsline {subsection}{Configuración del Ambiente de Desarrollo}{8}{}%
+\contentsline {subsection}{Ejemplo de Uso y Tooling}{9}{}%
+\contentsline {subsubsection}{Instalar Node JS LTS}{9}{}%
+\contentsline {subsubsection}{Instalar Angular CLI}{9}{}%
+\contentsline {subsubsection}{Crear el proyecto}{10}{}%
+\contentsline {subsubsection}{Extensiones útiles de editor}{10}{}%
+\contentsline {subsubsection}{Habilitar HttpClient y formularios}{11}{}%
+\contentsline {subsection}{Arquitectura y Buenas Prácticas}{12}{}%
+\contentsline {subsubsection}{Arquitectura de Angular}{12}{}%
+\contentsline {subsubsection}{Desarrollo de un Proyecto Angular}{14}{}%
+\contentsline {subsubsection}{Servidor de desarrollo (\emph {dev server}) con recarga en caliente}{15}{}%
+\contentsline {subsubsection}{Construcción de producción (\emph {build} optimizado)}{16}{}%
+\contentsline {subsubsection}{Modelo \texttt {models/producto.model.ts}}{17}{}%
+\contentsline {paragraph}{Contrato JSON con el back-end.}{17}{}%
+\contentsline {subsubsection}{Componente \texttt {productos/lista}}{18}{}%
+\contentsline {paragraph}{Vinculación UI \(\leftrightarrow \) API.}{20}{}%
+\contentsline {subsubsection}{Arranque Standalone en \texttt {main.ts}}{22}{}%
+\contentsline {subsubsection}{Consumo de API RESTful desde Angular}{22}{}%
+\contentsline {subsubsection}{Servicio \texttt {core/productos}}{23}{}%
+\contentsline {paragraph}{Fundamentos del consumo REST en Angular.}{23}{}%
+\contentsline {paragraph}{Presentación del listado \ref {lst:productservice}.}{24}{}%
+\contentsline {subsubsection}{Guardia de rutas \texttt {auth/auth}}{25}{}%
+\contentsline {subsubsection}{Enrutamiento Standalone con \texttt {app.routes.ts}}{28}{}%
+\contentsline {subsubsection}{Estructura Final del Proyecto Angular}{28}{}%
+\contentsline {section}{React}{31}{}%
+\contentsline {subsection}{Principios y Modelo de Componentes}{31}{}%
+\contentsline {subsection}{Entorno y Gestión de Versiones}{31}{}%
+\contentsline {subsection}{Creación de un Proyecto con Vite}{32}{}%
+\contentsline {subsection}{Arquitectura Lógica: Estado, Efectos y Reconciliación}{33}{}%
+\contentsline {subsection}{Ejemplo de Componente con \textit {Hooks} y Consumo de API}{34}{}%
+\contentsline {subsection}{Gestión de Estado Compartido con Context y \textit {Custom Hooks}}{35}{}%
+\contentsline {subsection}{Pruebas de Componentes}{36}{}%
+\contentsline {subsection}{Consideraciones de Rendimiento}{36}{}%
+\contentsline {subsection}{Arquitectura de Alto Nivel}{37}{}%

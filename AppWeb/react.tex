@@ -1,0 +1,792 @@
+%-------------------------TitlePage------------------------
+%\begin{titlepage}
+%\end{titlepage}
+
+%-------------------------Content------------------------
+
+% ------------------------------------------------------------
+%
+% Sección React — desarrollo de front-end consumiendo API RESTful (Spring Boot)
+%
+% ------------------------------------------------------------
+
+\chapter{Frameworks para Desarrollo Web}
+		Este capítulo presenta un panorama comparativo y analítico de los frameworks y bibliotecas contemporáneos más empleados en el desarrollo web. Antes de abordar cada tecnología, se establecen criterios comunes de análisis: modelo de programación y arquitectura, ecosistema y herramientas, rendimiento y escalabilidad, seguridad, pruebas e integración continua, casos de uso típicos, ventajas y limitaciones. Con ello se garantiza una lectura coherente y una base objetiva para seleccionar la tecnología adecuada según los requisitos del proyecto, las competencias del equipo y las restricciones no funcionales.
+		
+	\section{React}
+		\noindent React se ha consolidado como una biblioteca versátil para construir interfaces modernas, escalables y mantenibles, gracias a su arquitectura basada en componentes funcionales, el uso de \emph{hooks} para gestionar estado y efectos, y un \emph{tooling} flexible que se integra con Vite, ESLint, y soluciones de pruebas. En el contexto de aplicaciones empresariales que consumen servicios RESTful, React ofrece un modelo declarativo de UI, enrutamiento mediante React Router, clientes HTTP (p.\,ej., \texttt{fetch}/\texttt{axios}) y utilidades para internacionalización, pruebas e integración continua, lo que facilita un flujo de trabajo coherente desde el prototipo hasta la puesta en producción.
+		
+		\subsection{Descripción y Propósito}
+			React es una biblioteca de desarrollo \textit{front-end} mantenida por Meta y una gran comunidad que proporciona un conjunto mínimo pero potente de primitivas para construir aplicaciones web de una sola página (SPA) con TypeScript/JavaScript, HTML y CSS. Se orienta tanto a equipos pequeños como a bases de código grandes, con un fuerte énfasis en composición de componentes, programación declarativa y \emph{tooling} interoperable.
+		
+			\subsubsection{Configuración del Ambiente de Desarrollo}
+				\begin{enumerate}
+					\item \textbf{Instalar Node.js LTS} (versión LTS activa o mantenimiento LTS). El \emph{tooling} de React (Vite, Jest, ESLint) depende de Node y del gestor de paquetes (npm, pnpm, yarn o bun).\\
+					\begin{itemize}
+						\item \textbf{Node.js LTS (Long-Term Support).}
+						\begin{itemize}
+							\item \emph{Qué es:} Node.js es el entorno de ejecución de JavaScript en el lado del servidor sobre el que corre el \emph{tooling} moderno de React (creación, \emph{dev server}, pruebas, \emph{build}).
+							\item \emph{Por qué usar LTS:} las herramientas del ecosistema publican compatibilidades específicas; la línea LTS garantiza parches de seguridad y una API estable. En general, se recomienda la \textbf{LTS activa} y, si no es posible, la \textbf{LTS en mantenimiento}.
+							\item \emph{Comprobar e instalar:}
+							\begin{lstlisting}[language=bash,mathescape=false]
+#Instalar en Linux
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Este método instala la versión LTS más reciente de Node.js y npm.
+
+#Después de instalar nodejs
+node -v       # Verificar versión instalada
+npm -v        # Verificar npm (gestor por defecto) \end{lstlisting}
+							En Windows: Instalación con el instalador oficial
+							\begin{enumerate}
+								\item Ir a https://nodejs.org
+								\item Descargar el instalador .msi (versión LTS recomendada).
+								\item Ejecutar el instalador → siguiente, aceptar licencia, dejar las opciones por defecto.
+								\item Verificar instalación en PowerShell o CMD:
+								\begin{lstlisting}[language=bash,mathescape=false]
+node -v
+npm -v \end{lstlisting}
+								\item \emph{Consejo:} tras instalar/actualizar Node LTS, reinstale dependencias del proyecto para evitar inconsistencias del binario nativo (ver sección \ref{sec:reinstalacion}).
+							\end{enumerate}
+						\end{itemize}
+						\item \textbf{CLI y tooling para React.}
+						\begin{itemize}
+							\item \emph{Qué es:} Aunque React no impone una CLI monolítica, el flujo moderno usa \textbf{Vite} para crear/servir/construir proyectos, y herramientas como \textbf{ESLint}, \textbf{Prettier}, \textbf{Jest} y \textbf{React Testing Library}.
+							\item \emph{Relación con Node:} Todo el tooling se ejecuta sobre Node; requiere una versión compatible.
+							\item \emph{Usar un gestor concreto por proyecto:} puede fijarlo al crear o configurar:
+							\begin{lstlisting}[language=bash,mathescape=false]
+						# ejemplo con pnpm
+						pnpm create vite tienda-react --template react-ts
+						cd tienda-react
+						pnpm install \end{lstlisting}
+						\end{itemize}
+						
+						\item \textbf{Gestores de paquetes (npm, pnpm, yarn, bun).}
+						\begin{itemize}
+							\item \textbf{npm}
+							\begin{itemize}
+								\item \emph{Definición:} Gestor que viene con Node por defecto; mantiene \texttt{package.json} y \texttt{package-lock.json}.
+								\item \emph{Características:} Amplio soporte, comandos estándar (\texttt{install}, \texttt{run}, \texttt{update}); integración inmediata con Vite y herramientas de pruebas.
+								\item \emph{Ejemplos:}
+								\begin{lstlisting}[language=bash,mathescape=false]
+									npm ci                 # instalación limpia desde package-lock.json
+									npm run build          # ejecutar script "build"
+									npm create vite@latest tienda-react -- --template react-ts \end{lstlisting}
+								\item \emph{Cuándo elegirlo:} opción segura y universal; ideal si el equipo ya está familiarizado con npm.
+							\end{itemize}
+							
+							\item \textbf{pnpm}
+							\begin{itemize}
+								\item \emph{Definición:} Gestor con \emph{store} compartida y enlaces simbólicos; bloquea con \texttt{pnpm-lock.yaml}.
+								\item \emph{Características:} Instalaciones rápidas y eficientes en espacio; aislamiento estricto por proyecto.
+								\item \emph{Ejemplos:}
+								\begin{lstlisting}[language=bash,mathescape=false]
+									corepack enable pnpm
+									pnpm create vite tienda-react --template react-ts
+									pnpm install
+									pnpm run build \end{lstlisting}
+								\item \emph{Cuándo elegirlo:} monorepos o equipos que buscan reproducibilidad y velocidad.
+							\end{itemize}
+							
+							\item \textbf{yarn}
+							\begin{itemize}
+								\item \emph{Definición:} Alternativa popular; usa \texttt{yarn.lock}. Existen \emph{Yarn Classic} (v1) y \emph{Berry} (v2+).
+								\item \emph{Características:} Caché agresiva, \emph{workspaces}, y en Berry \emph{plug’n’play}.
+								\item \emph{Ejemplos:}
+								\begin{lstlisting}[language=bash,mathescape=false]
+									corepack enable yarn
+									yarn create vite tienda-react --template react-ts
+									yarn install
+									yarn build \end{lstlisting}
+								\item \emph{Cuándo elegirlo:} proyectos que ya usan Yarn o que necesitan workspaces específicos.
+							\end{itemize}
+							
+							\item \textbf{bun}
+							\begin{itemize}
+								\item \emph{Definición:} Runtime alternativo JS/TS con gestor propio (\texttt{bun add}); bloquea con \texttt{bun.lockb}.
+								\item \emph{Características:} Énfasis en rendimiento de instalación y ejecución; buena compatibilidad.
+								\item \emph{Ejemplos:}
+								\begin{lstlisting}[language=bash,mathescape=false]
+									bun create vite tienda-react --template react-ts
+									bun install
+									bun run build \end{lstlisting}
+								\item \emph{Cuándo elegirlo:} si su equipo lo estandarizó y verificó compatibilidad. Para principiantes, comience con npm o pnpm.
+							\end{itemize}
+						\end{itemize}
+						
+						\item \textbf{Buenas prácticas generales con gestores.}
+						\begin{itemize}
+							\item \emph{No mezclar gestores} en un mismo proyecto: use \textbf{uno} y mantenga su \emph{lockfile} bajo control de versiones.
+							\item \emph{Instalación reproducible:} en CI prefiera \texttt{npm ci}, \texttt{pnpm install --frozen-lockfile} o equivalentes.
+							\item \emph{Scripts uniformes:} ejecute tareas vía \texttt{npm run}/\texttt{pnpm run}/\texttt{yarn run}/\texttt{bun run} y documente los scripts en \texttt{package.json}.
+							\item \emph{Compatibilidad React--Node:} antes de actualizar Node o dependencias clave, revise requisitos de Vite, Jest, ESLint y React Router.
+						\end{itemize}
+						
+						\item \textbf{Ejemplo completo (de cero a proyecto funcional con LTS y tooling).}
+						\begin{itemize}
+							\item \emph{Pasos:}
+							\begin{lstlisting}[language=bash,mathescape=false]
+								# 1) Instalar Node LTS (vía NVM recomendado) y verificar:
+								node -v
+								npm -v
+								
+								# 2) Crear proyecto React + TypeScript (Vite):
+								npm create vite@latest tienda-react -- --template react-ts
+								cd tienda-react
+								npm install
+								
+								# 3) Servir en desarrollo:
+								npm run dev
+								
+								# 4) Construcción de producción:
+								npm run build \end{lstlisting}
+							\item \emph{Resultado:} aplicación React lista para desarrollo local y con artefactos en \texttt{dist/} para desplegar.
+						\end{itemize}
+					\end{itemize}
+					
+					Verifique:
+					\item \emph{Comprobar e instalar:}
+					\begin{lstlisting}[language=bash,mathescape=false]
+						node -v       # Verificar versión instalada
+						npm -v        # Verificar npm (gestor por defecto) \end{lstlisting}
+					\item \emph{Gestionar versiones con NVM (recomendado):}
+					\begin{lstlisting}[language=bash,mathescape=false]
+						# Linux/macOS
+						nvm install --lts
+						nvm use --lts
+						nvm alias default lts/*
+						# Windows: usar nvm-windows (comandos análogos). \end{lstlisting}
+					\item \emph{Instalación global (ejemplos):}
+					\begin{lstlisting}[language=bash,mathescape=false]
+						# para crear proyectos con Vite (no requiere instalación global estricta)
+						npm create vite@latest
+						# alternativas
+						pnpm create vite
+						yarn create vite
+						bun create vite \end{lstlisting}
+					\item \emph{Verificar entorno de tooling:}
+					\begin{lstlisting}[language=bash,mathescape=false]
+						node -v   # se recomienda LTS activo (p. ej., 20.x o 22.x)
+						npm -v \end{lstlisting}
+					
+					\item \textbf{Crear el proyecto} (con React + TS y Vite):
+					\begin{lstlisting}[mathescape=false]
+						npm create vite@latest tienda-react -- --template react-ts
+						cd tienda-react
+						npm run dev \end{lstlisting}
+					
+					\item \textbf{Extensiones útiles de editor}: React/TypeScript IntelliSense, ESLint, Prettier.
+					
+					\item \textbf{Habilitar cliente HTTP y rutas} (configuración típica):
+					\begin{lstlisting}[mathescape=false]
+						// src/main.tsx (React + Vite)
+						import React from 'react'
+						import ReactDOM from 'react-dom/client'
+						import { BrowserRouter } from 'react-router-dom'
+						import App from './App.tsx'
+						
+						ReactDOM.createRoot(document.getElementById('root')!).render(
+						<React.StrictMode>
+						<BrowserRouter>
+						<App />
+						</BrowserRouter>
+						</React.StrictMode>
+						) \end{lstlisting}
+				\end{enumerate}
+		
+		\subsection[Reinstalación de Dependencias]{Reinstalación de Dependencias para Evitar Inconsistencias de Binarios Nativos\label{sec:reinstalacion}}
+			Cada comando empleado en la reinstalación de dependencias dentro del ecosistema Node.js no sólo tiene un efecto técnico inmediato, sino que responde a motivaciones prácticas en distintos contextos de desarrollo. A continuación se amplía el sentido de cada uno de los comandos ya descritos, mostrando cómo contribuyen a la estabilidad, reproducibilidad y mantenimiento de proyectos modernos.
+			
+			El uso de \texttt{nvm use --lts} o \texttt{nvm use lts} en Windows responde a la necesidad de mantener sincronizada la versión de Node.js con la que el proyecto fue desarrollado. Un cambio de versión de Node puede provocar que dependencias con binarios nativos fallen, ya que la ABI varía entre versiones. Activar la versión LTS garantiza que se utilice un entorno estable y con soporte extendido, reduciendo riesgos en producción. En equipos de trabajo, este comando asegura que todos los integrantes compilen con la misma versión, evitando discrepancias en la ejecución del código.
+			
+			La verificación con \texttt{node -v} cumple la función de confirmar que el entorno se ha configurado de manera correcta. Puede parecer trivial, pero al trabajar con múltiples versiones mediante NVM o nvm-windows, este chequeo es la única forma de asegurar que las herramientas CLI estén apuntando a la versión correcta. Esta práctica evita invertir tiempo en depuración de errores que provienen únicamente de la incompatibilidad de versiones.
+			
+			Los comandos \texttt{rm -rf node\_modules} en sistemas Unix y \texttt{Remove-Item -Recurse -Force node\_modules} en Windows representan una limpieza radical de las dependencias instaladas. Aunque destructivos, son cruciales cuando los paquetes han quedado en un estado inconsistente, como ocurre después de una instalación interrumpida, un cambio de sistema operativo o un conflicto de versiones. Eliminar la carpeta completa asegura que en la siguiente instalación se generará un entorno totalmente coherente con los archivos de definición y bloqueo.
+			
+			El comando \texttt{npm ci} se introdujo específicamente para los entornos de integración continua. Al reinstalar dependencias basándose estrictamente en \texttt{package-lock.json}, asegura la reproducibilidad de un entorno que ya fue validado. Esto significa que no se recalculan rangos de versiones ni se actualizan paquetes, lo que reduce drásticamente la posibilidad de divergencias entre la máquina de desarrollo y la de producción. Por su parte, \texttt{npm install} sigue siendo útil para la instalación inicial o cuando se quiere regenerar el lockfile, pues actualiza dependencias dentro de los rangos permitidos y refleja esos cambios en el archivo de bloqueo.
+			
+			El comando \texttt{npm rebuild} atiende un problema particular: la incompatibilidad de módulos nativos. Muchas bibliotecas, como aquellas que usan \texttt{node-gyp}, generan binarios dependientes de la versión de Node y del sistema operativo. Al recompilarlos, se asegura que los ejecutables generados sean compatibles con la infraestructura actual. Complementariamente, la gestión de cachés con \texttt{npm cache verify} y \texttt{npm cache clean --force} resulta indispensable cuando se sospecha corrupción en los artefactos almacenados. Estas instrucciones evitan que se reutilicen archivos dañados en instalaciones futuras, garantizando integridad y confiabilidad.
+			
+			La filosofía de \texttt{pnpm install --frozen-lockfile} es semejante a la de \texttt{npm ci}, pero con la ventaja de que pnpm gestiona un almacén global compartido de dependencias. Esto no solo incrementa la eficiencia en tiempo y espacio, sino que también exige que el lockfile se respete estrictamente, lo que refuerza la reproducibilidad en entornos de CI/CD. El comando \texttt{pnpm rebuild} resuelve inconsistencias de binarios, mientras que \texttt{pnpm store prune} mantiene el almacén limpio, eliminando versiones que ya no son referenciadas. Esto último evita el crecimiento innecesario del almacenamiento y optimiza el rendimiento del sistema.
+			
+			En Yarn, los comandos \texttt{yarn install --frozen-lockfile}, \texttt{yarn rebuild} y \texttt{yarn cache clean} desempeñan roles análogos. Yarn destaca por su fuerte énfasis en entornos de trabajo colaborativo y monorepos, por lo que la instalación reproducible es esencial. El comando de reconstrucción es clave al migrar proyectos o actualizar Node.js, mientras que la limpieza de la caché previene que paquetes corruptos comprometan la instalación. Esta combinación asegura que los equipos trabajen sobre una base estable, independientemente de los entornos locales.
+			
+			Finalmente, Bun aporta comandos equivalentes, como \texttt{bun install --frozen-lockfile} y \texttt{bun rebuild}, que refuerzan la reproducibilidad y compatibilidad en proyectos que apuestan por este nuevo runtime. Aunque más reciente, su filosofía es consistente con la de otros gestores: bloquear versiones para evitar inconsistencias y recompilar binarios nativos cuando cambian las condiciones del sistema. Esto lo convierte en una alternativa prometedora para quienes priorizan velocidad de instalación y ejecución, sin sacrificar la estabilidad del proyecto.
+			
+			En conjunto, cada uno de estos comandos forma parte de un ecosistema de prácticas diseñadas para garantizar que los proyectos Node.js se mantengan coherentes, reproducibles y estables a lo largo del tiempo. Adoptarlos en el flujo de trabajo asegura que los equipos reduzcan errores derivados de diferencias de entorno, favoreciendo un desarrollo más profesional y confiable.
+		
+		\subsection{Arquitectura y Modelo de Programación}
+			React adopta una arquitectura basada en componentes funcionales, composición y un enrutador externo (React Router); favorece patrones declarativos y reactividad mediante \emph{hooks}. Sus elementos nucleares incluyen componentes (vista y lógica), \emph{hooks} (estado y efectos), contextos para compartir estado, y herramientas de \emph{data fetching} (fetch/axios, React Query). El proceso de \emph{build} con Vite transpila/optimiza el código para producción.
+			
+			\subsubsection{Gráfico de Arquitectura}
+				La Figura \ref{fig:arquitectura-react-spring} ilustra un flujo típico: componentes $\rightarrow$ capa de datos (fetch/axios o React Query) $\rightarrow$ interceptores/opciones $\rightarrow$ API REST de Spring Boot $\rightarrow$ capa de persistencia.
+				
+				\begin{figure}[!hbt]
+					\centering
+					\begin{tikzpicture}[
+						node distance=8mm,
+						box/.style={draw,rounded corners,fill=gray!5,inner sep=3mm,align=center,blur shadow},
+						arr/.style={-{Latex[length=2mm]},thick}
+						]
+						\node[box] (browser) {Navegador\\(React App)};
+						\node[box,below=of browser] (cmp) {Componentes\\(UI, TSX/JSX)};
+						\node[box,below=of cmp] (svc) {Capa de datos\\(fetch/axios, React Query)};
+						\node[box,below=of svc] (intc) {Interceptors/Config\\(auth, logging, retry, baseUrl)};
+						\node[box,below=of intc] (transport) {XHR/Fetch};
+						
+						\node[box,right=20mm of svc] (router) {React Router\\(rutas, loaders, actions)};
+						
+						\node[box,below=15mm of transport] (api) {API REST\\Spring Boot};
+						\node[box,below=of api] (svcjava) {Capa Servicio\\(Spring)};
+						\node[box,below=of svcjava] (repo) {Repositorio/JPA};
+						\node[box,below=of repo] (db) {Base de Datos};
+						
+						\draw[arr] (browser) -- (cmp);
+						\draw[arr] (cmp) -- (svc);
+						\draw[arr] (svc) -- (intc);
+						\draw[arr] (intc) -- (transport);
+						\draw[arr] (transport) -- node[right]{HTTP JSON} (api);
+						\draw[arr] (api) -- (svcjava);
+						\draw[arr] (svcjava) -- (repo);
+						\draw[arr] (repo) -- (db);
+						\draw[arr] (cmp) -- (router);
+					\end{tikzpicture}
+					\textcolor{Orange}{\textbf{\caption{Arquitectura de consumo de API REST con React (front-end) y Spring Boot (back-end).\label{fig:arquitectura-react-spring}}}}
+				\end{figure}
+		
+				\begin{itemize}
+					\item \textbf{Proyecto React (estructura inicial de la aplicación).}
+					\begin{itemize}
+						\item \emph{Definición:} Conjunto de carpetas y archivos base creados por Vite que incluye la aplicación, configuración de construcción, pruebas (si se añaden), \texttt{tsconfig}, \texttt{package.json}, y recursos. Esta estructura estandarizada permite a cualquier equipo iniciar un proyecto con convenciones claras y repetibles.
+						\item \emph{Características:} Soporte para enrutamiento opcional; estilos preconfigurables; estructura basada en componentes; scripts de \emph{build}/\emph{test}.
+						\item \emph{Funcionalidades:} Punto de entrada \texttt{main.tsx}, \texttt{App} inicial, soporte para variables de entorno y arquitectura para separar UI, estado y acceso a datos.
+						\item \emph{Ejemplo de uso:} Iniciar el desarrollo a partir de \texttt{App}, añadir React Router y un cliente HTTP e implementar la primera vista de inicio (ver Figura \ref{fig:estructura-react}).
+						
+						\begin{figure}[!hbt]
+							\centering
+							\begin{verbatim}
+tienda-react/
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── api/
+│   │   └── productos.ts
+│   ├── components/
+│   │   └── ListaProductos.tsx
+│   ├── assets/
+│   └── styles/
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts\end{verbatim}
+							\textcolor{Orange}{\textbf{\caption{Estructura típica de un proyecto React generado con Vite. \label{fig:estructura-react}}}}
+						\end{figure}
+					\end{itemize}
+					
+					\item \textbf{Servidor de desarrollo (\emph{dev server}) con recarga en caliente.}
+					\begin{itemize}
+						\item \emph{Definición:} Servidor local que sirve la aplicación en memoria y recompila al detectar cambios, con recarga instantánea de módulos (\emph{HMR}).
+						\item \emph{Características:} El \emph{Hot Module Replacement} (HMR), “reemplazo en caliente de módulos”, evita recargar toda la app, conservando el estado mientras se actualizan partes modificadas. Se complementa con \emph{source maps} para depurar el código TypeScript/JSX con precisión.
+						\item \emph{Funcionalidades:} Navegación inmediata para validar UI y flujos; integración de proxy en Vite para evitar CORS durante el desarrollo.
+						\item \emph{Ejemplo de uso:} Probar vistas y componentes mientras se edita el código; configurar el \texttt{server.proxy} de \texttt{vite.config.ts} para redirigir \texttt{/api} al back-end.
+					\end{itemize}
+					
+					\item \textbf{Construcción de producción (\emph{build} optimizado).}
+					\begin{itemize}
+						\item \emph{Definición:} Generación de artefactos estáticos minificados en \texttt{dist/}, listos para despliegue.
+						\item \emph{Características:} Minificación, eliminación de código muerto (\emph{tree-shaking}), división de código por rutas/componentes, comprobación de tamaños.
+						\item \emph{Funcionalidades:} Produce HTML, JS y CSS optimizados; integra variables de entorno para producción.
+						\item \emph{Ejemplo de uso:} Publicar \texttt{dist/} en un servidor estático, CDN o plataforma de hosting (p.\,ej., Nginx, Firebase Hosting).
+					\end{itemize}
+					
+					\item \textbf{Componente \texttt{productos/lista}.}
+					\begin{itemize}
+						\item \emph{Definición:} Unidad de UI que encapsula JSX/TSX y estilos para listar productos.
+						\item \emph{Características:} Enfoque declarativo; enlace de datos mediante \emph{state}/\emph{effects}; renderizado eficiente; memorización selectiva.
+						\item \emph{Funcionalidades:} Renderiza una colección proveniente de un cliente HTTP; emite eventos (p.\,ej., seleccionar/editar) via \emph{callbacks}.
+						\item \emph{Ejemplo de uso:} Consumir un \texttt{Promise<Producto[]>} con \texttt{useEffect}/\texttt{useState} o integrar React Query para manejar caché y revalidación.
+					\end{itemize}
+					
+					\item \textbf{Servicio \texttt{core/productos}.}
+					\begin{itemize}
+						\item \emph{Definición:} Capa de acceso a datos y lógica compartida para productos (consumo de API).
+						\item \emph{Características:} Funciones tipadas (\texttt{GET/POST/PUT/DELETE}); uso de \texttt{fetch}/\texttt{axios}. En este contexto, un \emph{hook} personalizado o React Query puede representar “la fuente” de datos que emite valores y actualiza componentes automáticamente.
+						\item \emph{Funcionalidades:} Encapsula URLs, parámetros y mapeo de respuestas; centraliza reintentos, caché y manejo de errores.
+						\item \emph{Ejemplo de uso:} \texttt{listar()}, \texttt{obtener(id)}, \texttt{crear(dto)}, \texttt{actualizar(id,dto)}, \texttt{eliminar(id)} consumidos por componentes y rutas.
+					\end{itemize}
+					
+					\item \textbf{Guardia de rutas (protección con React Router).}
+					\begin{itemize}
+						\item \emph{Definición:} Mecanismo que decide si una ruta puede activarse, implementado como \emph{wrapper} o \emph{loader}/\emph{action} que verifica sesión/roles.
+						\item \emph{Características:} Integración con el enrutador; puede consultar estado de sesión/roles; redirecciones.
+						\item \emph{Funcionalidades:} Protege áreas privadas; exige autenticación/autorización antes de renderizar componentes o rutas anidadas.
+						\item \emph{Ejemplo de uso:} Validar \texttt{isLoggedIn()} o un \texttt{roleRequired}; en caso negativo, navegar a \texttt{/login}.
+					\end{itemize}
+					
+					\item \textbf{Interceptor HTTP (axios).}
+					\begin{itemize}
+						\item \emph{Definición:} Filtro que intercepta solicitudes/respuestas HTTP para añadir cabeceras o tratar errores.
+						\item \emph{Características:} Se registra en una instancia compartida; compatible con \texttt{axios}; cadena de interceptores.
+						\item \emph{Funcionalidades:} Inserta \texttt{Authorization: Bearer <token>}; reintenta; centraliza manejo de 401/403/500.
+						\item \emph{Ejemplo de uso:} Leer \texttt{localStorage} y clonar/ajustar la petición con \texttt{headers}; redirigir a \texttt{/login} en 401.
+					\end{itemize}
+					
+					\item \textbf{Pruebas unitarias (\emph{unit tests}).}
+					\begin{itemize}
+						\item \emph{Definición:} Conjunto de \texttt{*.test.tsx} que validan componentes, utilidades y \emph{hooks}.
+						\item \emph{Características:} React Testing Library para montar componentes; \emph{mocks}/\emph{spies}; ejecución en Jest o Vitest.
+						\item \emph{Funcionalidades:} Detectar regresiones; medir cobertura; integrar en CI.
+						\item \emph{Ejemplo de uso:} Probar que \texttt{listarProductos()} entrega datos y que la plantilla muestra el conteo esperado.
+					\end{itemize}
+					
+					\item \textbf{Pruebas \emph{end-to-end} (E2E).}
+					\begin{itemize}
+						\item \emph{Definición:} Escenarios funcionales que automatizan la UI completa (navegación, formularios, respuestas del servidor).
+						\item \emph{Características:} Ejecución en navegador real; \emph{selectors} robustos; \emph{stubs} de red (\emph{fixtures}).
+						\item \emph{Funcionalidades:} Validar \emph{happy paths} y casos de error; garantizar integridad del flujo crítico antes de desplegar.
+						\item \emph{Ejemplo de uso:} Caso “crear producto”: abrir formulario, completar campos, enviar, verificar notificación y presencia en la lista.
+					\end{itemize}
+					
+					\item \textbf{Linter (análisis estático, ESLint).}
+					\begin{itemize}
+						\item \emph{Definición:} Reglas automáticas para estilo y calidad de código TypeScript/JSX.
+						\item \emph{Características:} Reglas recomendadas para React; autofix; integración con editores y CI.
+						\item \emph{Funcionalidades:} Estándares consistentes; detección temprana de \emph{anti-patterns}.
+						\item \emph{Ejemplo de uso:} Bloquear un \emph{pull request} si la base no cumple reglas; ejecutar \emph{autofix} localmente.
+					\end{itemize}
+					
+					\item \textbf{Paquete de componentes de interfaz (MUI/Chakra/Ant Design).}
+					\begin{itemize}
+						\item \emph{Definición:} Bibliotecas de UI basadas en sistemas de diseño (botones, \emph{dialogs}, \emph{tables}, formularios).
+						\item \emph{Características:} Temas (claro/oscuro), tipografía, accesibilidad (ARIA).
+						\item \emph{Funcionalidades:} Acelera la construcción de interfaces consistentes; integra tablas, formularios y diálogos.
+						\item \emph{Ejemplo de uso:} Implementar una tabla de productos con paginación/filtro y un diálogo para crear/editar.
+					\end{itemize}
+					
+					\item \textbf{Actualización de versión y migraciones.}
+					\begin{itemize}
+						\item \emph{Definición:} Proceso de actualización de React y librerías del ecosistema.
+						\item \emph{Características:} Guiarse por \emph{release notes}; herramientas de \emph{codemods} cuando corresponda.
+						\item \emph{Funcionalidades:} Mantener la base al día con mejoras de rendimiento, seguridad y nuevas APIs.
+						\item \emph{Ejemplo de uso:} Migrar entre versiones mayores, ajustar configuración de Vite, React Router y TypeScript automáticamente con \emph{codemods} y guías.
+					\end{itemize}
+					
+					\item \textbf{Despliegue (\emph{deploy}) de artefactos de \texttt{dist/}.}
+					\begin{itemize}
+						\item \emph{Definición:} Publicación de la aplicación ya construida en un entorno de producción o \emph{staging}.
+						\item \emph{Características:} Integración con \emph{adapters} o acciones de despliegue (Firebase, GitHub Pages, servicios de hosting); soporte de rutas base.
+						\item \emph{Funcionalidades:} Automatizar envío de \texttt{dist/} a un servidor; configurar cabeceras de caché y compresión en el destino.
+						\item \emph{Ejemplo de uso:} Desplegar la SPA en un bucket estático con CDN y \emph{fallback} a \texttt{index.html} para el enrutador del cliente.
+					\end{itemize}
+				\end{itemize}
+		
+		\subsection{Ecosistema y Herramientas}
+			El flujo moderno con React automatiza \emph{scaffolding}, pruebas, linting y compilación mediante Vite (desarrollo rápido con HMR y \emph{build} optimizado), ESLint/Prettier (calidad y estilo), y bibliotecas como React Router, React Query, Jest/RTL, Cypress/Playwright y MUI. La documentación oficial y las guías de las librerías cubren arquitectura, \emph{i18n}, accesibilidad y pruebas.
+		
+			\subsubsection{Comandos Frecuentes (front-end).}
+				\begin{lstlisting}[mathescape=false]
+# crear/servir/construir con Vite
+npm create vite@latest <app> -- --template react-ts
+cd <app>
+npm install
+npm run dev
+npm run build
+
+# generar artefactos (manual/esqueleto)
+# crear componentes/servicios con el editor o generadores de tu plantilla
+
+# utilidades
+npm test
+npm run lint
+# agregar UI (ejemplo MUI)
+npm install @mui/material @emotion/react @emotion/styled
+# actualizar dependencias (ejemplo)
+npm outdated && npm update
+# despliegue (ejemplo con gh-pages u otro host) \end{lstlisting}
+		
+			\subsubsection{Comandos Frecuentes (back-end con Spring Boot).}
+				\begin{lstlisting}[mathescape=false]
+# Maven
+mvn spring-boot:run
+mvn clean package
+mvn test
+mvn clean package -DskipTests
+
+# Gradle
+./gradlew bootRun
+./gradlew build
+
+# Inicialización del proyecto (web)
+# https://start.spring.io (Spring Initializr) \end{lstlisting}
+		
+		\subsection{Rendimiento y Escalabilidad}
+		
+			\subsubsection{Estrategias Clave (Teoría $\rightarrow$ Práctica).}
+				\begin{enumerate}
+					\item \textbf{División de código por rutas (lazy loading)} para reducir el TTI inicial.\\
+					\textit{Ejemplo} (carga diferida de \texttt{ProductosPage}):
+					\begin{lstlisting}[mathescape=false]
+const ProductosPage = React.lazy(() => import('./pages/ProductosPage'));
+function App() {
+	return (
+	<React.Suspense fallback={<p>Cargando...</p>}>
+	<ProductosPage />
+	</React.Suspense>
+	);
+} \end{lstlisting}
+					\item \textbf{Renderizado eficiente}. Use \texttt{React.memo}, \texttt{useMemo} y \texttt{useCallback} para evitar trabajo innecesario; en listas, establezca \texttt{key} estables para minimizar \emph{diff} del DOM.
+					\textit{Ejemplo}:
+					\begin{lstlisting}[mathescape=false]
+{lista.map(p => (
+	<Item key={p.id} producto={p} />
+	))
+} \end{lstlisting}
+			
+					\item \textbf{Uso correcto del cliente HTTP y caché}.\\
+					\textit{Ejemplo}: cachear lecturas con React Query y cancelar peticiones con \texttt{AbortController}.
+					\begin{lstlisting}[mathescape=false]
+import { useQuery } from '@tanstack/react-query';
+function useProductos() {
+	return useQuery({
+		queryKey: ['productos'],
+		queryFn: async () => (await fetch('/api/productos')).json(),
+		staleTime: 60_000
+	});
+} \end{lstlisting}
+			
+					\item \textbf{Inmutabilidad y funciones puras} para minimizar renders; evitar mutaciones directas del estado y preferir actualizaciones inmutables.
+					
+					\item \textbf{Optimizaciones de build}: \texttt{npm run build} con Vite activa minificación y \emph{tree-shaking}. Configure \emph{code splitting} usando importaciones dinámicas.
+					
+					\item \textbf{SSR e hidratación} cuando SEO/TTFB son críticos (p.\,ej., con Next.js). La hidratación y el \emph{streaming} de HTML reducen la percepción de latencia.
+				\end{enumerate}
+		
+		\subsection{Seguridad, Pruebas e Integración Continua}
+		
+			\subsubsection{Técnicas y Tecnologías Recomendadas}
+				\begin{enumerate}
+					\item \textbf{Mitigaciones integradas de React}:
+					\begin{itemize}
+						\item \textit{Escapado en JSX} por defecto; evitar \texttt{dangerouslySetInnerHTML} salvo casos justificados.
+						\item \textit{CSRF/XSRF cookie-to-header}: alinear nombre de cookie/cabecera con el servidor (p.\,ej., \texttt{XSRF-TOKEN}/\texttt{X-XSRF-TOKEN}) si se usa protección CSRF.
+					\end{itemize}
+					
+					\item \textbf{CORS bien definido en el back-end} (Spring Boot):
+					\begin{lstlisting}[mathescape=false]
+// Java / Spring Security 6+
+@Bean
+SecurityFilterChain security(HttpSecurity http) throws Exception {
+	http.csrf(csrf -> csrf.disable())
+	.cors(Customizer.withDefaults())
+	.authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+	return http.build();
+}
+
+@Bean
+CorsConfigurationSource corsConfigurationSource() {
+	var config = new CorsConfiguration();
+	config.setAllowedOrigins(List.of("http://localhost:5173"));
+	config.setAllowedMethods(List.of("GET","POST","PUT","DELETE"));
+	config.setAllowedHeaders(List.of("Content-Type","Authorization","X-XSRF-TOKEN"));
+	var source = new UrlBasedCorsConfigurationSource();
+	source.registerCorsConfiguration("/**", config);
+	return source;
+} \end{lstlisting}
+					
+					\item \textbf{Autenticación/JWT mediante \textit{interceptor}} con axios.
+					\begin{lstlisting}[mathescape=false]
+// src/lib/http.ts
+import axios from 'axios';
+export const http = axios.create({ baseURL: '/api' });
+http.interceptors.request.use(config => {
+	const token = localStorage.getItem('token');
+	if (token) config.headers.Authorization = `Bearer ${token}`;
+	return config;
+}); \end{lstlisting}
+					
+					\item \textbf{CSP y Trusted Types} (cabeceras en servidor) para endurecer el DOM frente a XSS; combinar con reglas estricas en el \emph{build}.
+					
+					\item \textbf{Pruebas y CI/CD}: unitarias (Jest/RTL), \emph{e2e} (Cypress/Playwright), \emph{lint} (ESLint). Ejemplo mínimo de \textit{pipeline} GitHub Actions:
+					\begin{lstlisting}[mathescape=false]
+# .github/workflows/ci.yml
+name: CI fullstack
+on: [push, pull_request]
+jobs:
+frontend:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+- uses: actions/setup-node@v4
+with: { node-version: '22' }
+- run: npm ci
+- run: npm run lint && npm test -- --watch=false
+- run: npm run build
+backend:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+- uses: actions/setup-java@v4
+with: { distribution: 'temurin', java-version: '21' }
+- run: mvn -B -DskipTests clean package
+- run: mvn test \end{lstlisting}
+				\end{enumerate}
+		
+		\subsection{Fortalezas de React}
+		
+			\begin{itemize}
+				\item \textbf{Consistencia del modelo declarativo y composición}: componentes funcionales y \emph{hooks}; React Router y clientes HTTP encajan de forma natural en la arquitectura.
+				\item \textbf{\emph{Tooling} moderno y rendimiento de \emph{build}}: Vite con HMR, \emph{code splitting} e integración con TypeScript.
+				\item \textbf{Seguridad por diseño en \emph{bindings}}: JSX escapa contenido por defecto; buenas prácticas con CSP/Trusted Types en el servidor.
+				\item \textbf{Ecosistema y documentación extensa}: guías completas para enrutamiento, HTTP, estado, pruebas y despliegue en el ecosistema de React.
+			\end{itemize}
+		
+		% ----------------------------------------------------------------
+		% Ejemplo completo (de cero a proyecto funcional con LTS y tooling React)
+		% ----------------------------------------------------------------
+		
+	\section{Proyecto Funcional con Node LTS y React (Vite)}
+		El siguiente procedimiento crea un entorno reproducible con \textbf{Node.js LTS} y \textbf{React} (con Vite), genera una aplicación inicial, la ejecuta en desarrollo y produce artefactos listos para despliegue. Se incluyen rutas para \emph{Windows} (con \texttt{nvm-windows}) y para \emph{Linux/macOS} (con \texttt{nvm}).
+		
+		\subsection{Preparación del Entorno (Selección de Node LTS)}
+			La preparación del entorno es el primer paso crítico en cualquier proyecto de desarrollo. Seleccionar la versión adecuada de Node.js garantiza que las librerías utilizadas por React funcionen de manera estable, ya que las versiones LTS son mantenidas con actualizaciones de seguridad y correcciones de errores durante un largo período. De este modo se evitan problemas de incompatibilidad al instalar dependencias y se asegura que el entorno de ejecución sea predecible y uniforme en diferentes equipos.
+		
+			\subsubsection{Windows (PowerShell) con \texttt{nvm-windows}.}
+				En el caso de Windows, la herramienta recomendada es \texttt{nvm-windows}, un gestor que permite instalar y cambiar entre distintas versiones de Node.js sin conflictos. Esto es especialmente útil para quienes trabajan en múltiples proyectos con requerimientos diferentes. El uso de comandos sencillos como \texttt{nvm install lts} y \texttt{nvm use lts} permite mantener el control sobre la versión en uso, evitando dependencias rotas o errores durante la compilación.
+				
+				\begin{lstlisting}[mathescape=false]
+nvm install lts        # instala la última versión LTS disponible
+nvm use lts            # activa la versión LTS instalada
+node -v                # verifica versión activa de Node
+npm -v                 # verifica versión activa de npm \end{lstlisting}
+		
+			\subsubsection{Linux/macOS con \texttt{nvm}.}
+				En sistemas Linux y macOS, el gestor equivalente es \texttt{nvm} (Node Version Manager). Su instalación habilita una administración flexible de las versiones de Node.js en entornos basados en Unix. De esta forma, el desarrollador puede probar aplicaciones en diferentes versiones sin necesidad de reinstalar manualmente el software. Esto es esencial para equipos distribuidos que buscan asegurar la reproducibilidad del entorno de desarrollo en distintos sistemas operativos.
+				
+				\begin{lstlisting}[language=bash]
+# instalar NVM (si no lo tienes) y cargarlo en tu shell
+# consulta la doc oficial de nvm para el comando de instalación más reciente
+# luego:
+nvm install --lts
+nvm use --lts
+node -v
+npm -v \end{lstlisting}
+		
+		\subsection{Instalar React (Tooling Global) y Elegir Gestor de Paquetes}
+			Una vez que Node.js está instalado, el siguiente paso es contar con el \emph{tooling} principal: Vite para crear y servir proyectos y, opcionalmente, utilidades como \texttt{create-react-app} (legado), ESLint y Prettier. Instalar y usar estas herramientas simplifica el flujo de trabajo, ya que el desarrollador puede generar componentes, ejecutar pruebas y construir la aplicación de forma automática.
+		
+			\subsubsection{Instalación con \texttt{npm} (Opción Sencilla para Comenzar).}
+				La verificación posterior a la creación es una práctica recomendable que asegura que el proyecto se ha configurado correctamente. Los comandos \texttt{npm run dev} y \texttt{npm run build} ofrecen un resumen práctico de que el \emph{dev server} y la compilación funcionan adecuadamente en el entorno de trabajo.
+				
+				\begin{lstlisting}[mathescape=false]
+npm create vite@latest tienda-react -- --template react-ts
+cd tienda-react
+npm install
+npm run dev             # verifica servidor y HMR \end{lstlisting}
+		
+			\subsubsection{(Opcional) Establecer Gestor de Paquetes Preferido.}
+				Además de npm, React funciona con \texttt{pnpm} y \texttt{yarn}, que ofrecen mejoras en velocidad y eficiencia de almacenamiento. Con Corepack (incluido en Node 16.13+), es posible habilitar y cambiar entre estos gestores sin instalaciones externas adicionales, lo que otorga flexibilidad y facilita la integración con distintos flujos de trabajo.
+				
+				\begin{lstlisting}[mathescape=false]
+# si prefieres pnpm o yarn, actívalo con Corepack (Node 16.13+)
+corepack enable
+corepack prepare pnpm@latest --activate
+# o: corepack prepare yarn@stable --activate \end{lstlisting}
+		
+		\subsection{Crear el proyecto React}
+			La creación del proyecto con Vite ofrece una base sólida y organizada desde el inicio. Esta estructura incluye carpetas para los componentes, configuraciones para entornos, y archivos de compilación, lo que evita que el desarrollador tenga que construir manualmente la arquitectura inicial. Gracias a esto, se promueve la uniformidad en los proyectos y se reduce la probabilidad de errores de configuración.
+			
+			\subsubsection{Estructura Inicial con Enrutamiento y \texttt{SCSS}.}
+				El uso del \emph{template} \texttt{react-ts} y la adición de React Router o estilos SCSS permite que la aplicación esté lista para soportar navegación entre páginas y trabajar con hojas de estilo avanzadas. Estas opciones ahorran tiempo y simplifican tareas comunes en proyectos modernos, incluso para principiantes.
+				
+				\begin{lstlisting}[mathescape=false]
+npm create vite@latest tienda-react -- --template react-ts
+# si deseas fijar un gestor específico al crear:
+# pnpm create vite tienda-react --template react-ts
+cd tienda-react \end{lstlisting}
+				
+			\subsubsection{Comprobación del Arranque en Desarrollo.}
+				Una vez creado el proyecto, es fundamental confirmar que el servidor de desarrollo se ejecute correctamente. El comando \texttt{npm run dev} levanta la aplicación con HMR. Esto crea un ciclo de desarrollo rápido e interactivo, permitiendo validar cada ajuste de manera inmediata.
+				
+				\begin{lstlisting}[mathescape=false]
+npm run dev            # abre la app en http://localhost:5173 \end{lstlisting}
+		
+		\subsection{Consumir una API (\texttt{mock} o Back-End Real) Durante el Desarrollo}
+			Para simular un back-end en las primeras etapas de desarrollo, se puede utilizar una herramienta ligera como \texttt{json-server}. Este paquete permite crear un servidor REST a partir de un archivo JSON, evitando la necesidad de implementar un servidor real. De esta forma, se facilita la validación de vistas y la integración de componentes de front-end sin depender de un sistema complejo.
+		
+			\subsubsection{Opción A: Servidor simulado con \texttt{json-server}.}
+				El archivo de datos definido para \texttt{json-server} actúa como base de la API simulada. Su estructura imita la respuesta que un servidor real entregaría en formato JSON, lo que resulta ideal para que los principiantes comprendan cómo funcionan las peticiones HTTP. Esta aproximación acelera el desarrollo inicial, al mismo tiempo que prepara el terreno para integrar posteriormente un back-end completo.
+				
+				\begin{lstlisting}[mathescape=false]
+npm i -D json-server
+# archivo de datos, p. ej. dev-data.json
+# {
+	#   "productos": [
+	#     { "id": 1, "nombre": "Teclado", "precio": 25.9 },
+	#     { "id": 2, "nombre": "Ratón",   "precio": 15.5 }
+	#   ]
+	# }
+npx json-server --watch dev-data.json --port 3001 \end{lstlisting}
+				
+			\subsubsection{Proxy de Desarrollo para Evitar \texttt{CORS}.}
+				El desarrollo moderno de aplicaciones web se encuentra con restricciones de seguridad como CORS, que limitan las peticiones entre dominios distintos. Para facilitar la comunicación entre el front-end y un servidor simulado o real, Vite permite configurar un \emph{proxy} que actúa como intermediario. Esta práctica evita problemas de acceso durante el desarrollo local.
+				
+				El \texttt{vite.config.ts} define cómo se deben redirigir las peticiones a rutas específicas, como \texttt{/api}, hacia el servidor adecuado. Este mecanismo elimina errores comunes relacionados con CORS y simplifica la comunicación entre la aplicación React y la API.
+				
+				Crea/ajusta \texttt{vite.config.ts} en la raíz del proyecto:
+				\begin{lstlisting}[mathescape=false]
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+	plugins: [react()],
+	server: {
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3001',
+				changeOrigin: true,
+				rewrite: path => path.replace(/^\/api/, '')
+			}
+		}
+	}
+}); \end{lstlisting}
+				Al ejecutar el servidor de desarrollo, Vite aplica la configuración de redirección. Así se trabaja con rutas relativas como \texttt{/api/productos} sin preocuparse por las direcciones reales del back-end, lo que simplifica colaboración y despliegue posterior.
+				
+				Sirve la aplicación usando el \emph{proxy}:
+				\begin{lstlisting}[mathescape=false]
+npm run dev \end{lstlisting}
+				
+			\subsubsection{Servicio React Mínimo para Consumir el \texttt{mock}.}
+				La estructuración en una carpeta \texttt{api/} con funciones \emph{fetcher} acelera el desarrollo y mantiene la consistencia del proyecto. Se separa la lógica de acceso a datos de la interfaz, permitiendo un código más limpio y fácil de mantener. Los componentes consumen estas funciones o \emph{hooks} personalizados.
+				
+				Crea un módulo de datos y un componente de lista:
+				
+				\begin{lstlisting}[mathescape=false]
+# (no hay generadores obligatorios; cree los archivos con el editor)
+# src/api/productos.ts
+# src/components/ListaProductos.tsx \end{lstlisting}
+				
+				Ejemplo de \texttt{src/api/productos.ts}:
+				
+				\begin{lstlisting}[language=bash]
+export type Producto = { id: number; nombre: string; precio: number };
+
+export async function listarProductos(): Promise<Producto[]> {
+	const res = await fetch('/api/productos');
+	if (!res.ok) throw new Error('Error de red');
+	return res.json();
+} \end{lstlisting}
+				El componente de lista actúa como puente entre la interfaz y la capa de datos. Su responsabilidad principal es invocar las funciones \emph{fetcher} y renderizar la información en la vista.
+				
+				Ejemplo de \texttt{src/components/ListaProductos.tsx} y uso:
+				
+				\begin{lstlisting}[mathescape=false]
+import * as React from 'react';
+import { listarProductos, type Producto } from '../api/productos';
+
+export function ListaProductos() {
+	const [datos, setDatos] = React.useState<Producto[]>([]);
+	const [cargando, setCargando] = React.useState(true);
+	const [error, setError] = React.useState<string | null>(null);
+	
+	React.useEffect(() => {
+		listarProductos()
+		.then(setDatos)
+		.catch(e => setError(e.message))
+		.finally(() => setCargando(false));
+	}, []);
+	
+	if (cargando) return <p>Cargando...</p>;
+	if (error)    return <p>Error: {error}</p>;
+	
+	return (
+	<section>
+	<h2>Productos</h2>
+	{datos.map(p => (
+		<div key={p.id} className="card">
+		<strong>{p.nombre}</strong> — ${'{'}p.precio{'}'}
+		</div>
+		))}
+	</section>
+	);
+} \end{lstlisting}
+				
+				Cuando se cuenta con un back-end real, como uno construido en Spring Boot, el desarrollo se orienta hacia la integración directa con servicios ya existentes. En este escenario, React consume datos provenientes de un servidor que gestiona usuarios, productos u otros recursos. Esto brinda una experiencia de desarrollo cercana a la realidad del despliegue final.
+				
+			\subsubsection{Opción B: Back-end Real (p. ej., Spring Boot).}
+				La configuración adecuada de cabeceras y políticas de CORS en el back-end es esencial para permitir que la aplicación React acceda a los recursos sin restricciones. Además, el alineamiento de medidas de seguridad como tokens CSRF/XSRF refuerza la protección contra ataques comunes, asegurando que las peticiones desde el cliente sean legítimas.
+				
+				\begin{itemize}
+					\item Apunta el \emph{baseURL} del cliente HTTP a \texttt{http://localhost:8080/api} o configura un \emph{proxy} análogo al anterior.
+					\item Habilita CORS en el servidor y alinea cabeceras de seguridad (XSRF si aplica).
+				\end{itemize}
+				
+				El archivo \texttt{src/lib/http.ts} puede centralizar la instancia de \texttt{axios} y sus interceptores, garantizando que todos los módulos y componentes se beneficien de manera uniforme y evitando configuraciones dispersas.
+		
+		\subsection{Configurar Cliente HTTP y Seguridad Básica}
+			El uso de configuraciones de seguridad como XSRF cookie-to-header permite que las peticiones HTTP incluyan automáticamente tokens que protegen contra ataques de falsificación de solicitudes. Al establecer estas medidas desde el inicio, incluso un desarrollador con poca experiencia puede contar con prácticas seguras sin necesidad de implementar soluciones manuales.
+			
+			En un módulo compartido, registre un cliente con interceptor:
+			\begin{lstlisting}[mathescape=false]
+import axios from 'axios';
+export const http = axios.create({ baseURL: '/api' });
+http.interceptors.request.use(config => {
+	const token = localStorage.getItem('token');
+	if (token) config.headers.Authorization = `Bearer ${token}`;
+	return config;
+}); \end{lstlisting}
+			
+			La construcción para producción implica optimizar la aplicación de forma que el código resultante sea lo más eficiente posible. Esto incluye reducir el tamaño de los archivos, eliminar fragmentos de código innecesario y mejorar el rendimiento en la carga inicial. Con este paso, la aplicación deja de estar en modo de desarrollo y se transforma en un conjunto de archivos listos para desplegar.
+		
+		\subsection{Construcción Optimizada para Producción}
+			El proceso de compilación también prepara el proyecto para escalar. Al dividir el código en fragmentos cargados bajo demanda, la aplicación mejora la experiencia del usuario final, ya que solo se descarga lo necesario en cada interacción. Este enfoque reduce tiempos de carga y optimiza el consumo de recursos en dispositivos con capacidades limitadas.
+			
+			\subsubsection{Compilación y Salida en \texttt{dist/}.}
+				El comando de construcción con Vite genera un conjunto de artefactos optimizados dentro de la carpeta \texttt{dist/}. Este proceso transforma el código fuente en archivos estáticos listos para ser servidos por cualquier servidor web. Para los desarrolladores principiantes, este paso es esencial porque marca la transición entre la fase de desarrollo y la fase de despliegue, garantizando que la aplicación esté compacta, eficiente y adecuada para entornos de producción.
+				
+				\begin{lstlisting}[mathescape=false]
+npm run build
+# Artefactos listos para desplegar (HTML, JS, CSS minificado y dividido por rutas). \end{lstlisting}
+				
+				La salida de la carpeta \texttt{dist/} contiene HTML, JavaScript y CSS ya procesados, lo que simplifica su publicación en servicios como Nginx, Firebase Hosting o GitHub Pages. Gracias a las técnicas de minificación y división por rutas, la aplicación carga más rápido y consume menos recursos en el navegador del usuario.
+		
+		\subsection{(Opcional) Reinstalar Dependencias ante Cambios de Versión de Node}
+			En ocasiones, al cambiar de versión de Node.js o actualizar dependencias, se pueden producir inconsistencias en módulos que requieren compilación nativa. Para evitar problemas, se recomienda reinstalar las dependencias desde cero, garantizando que se construyan en coherencia con la versión activa de Node. Esto asegura que la aplicación continúe funcionando correctamente tras los cambios en el entorno.
+			
+			Si cambias la versión de Node o notas inconsistencias con módulos nativos:
+			
+			\begin{lstlisting}[mathescape=false]
+# El uso de nvm/nvm-windows permite establecer rápidamente la versión adecuada de Node
+# y volver a un estado estable tras actualizar librerías con binarios específicos.
+
+# PowerShell (Windows) o bash (Linux/macOS) según tu sistema
+# 1) Asegura la versión LTS activa
+nvm use lts            # Windows (nvm-windows)
+# o: nvm use --lts      # Linux/macOS
+
+# La eliminación manual de node_modules y la reinstalación con "npm ci" aseguran
+# versiones exactas según el lockfile. "npm rebuild" recompila módulos nativos.
+
+# 2) Reinstalación limpia (respetando lockfile) con npm:
+Remove-Item -Recurse -Force node_modules	# PowerShell
+# o: rm -rf node_modules                    # Linux/macOS
+npm ci
+npm rebuild                                 # recompila bindings nativos si aplica \end{lstlisting}
+			
+			Una verificación rápida de calidad antes del despliegue permite asegurar que los principales aspectos de la aplicación funcionen como se espera. Ejecutar pruebas unitarias, análisis estáticos y pruebas end-to-end ayuda a identificar errores comunes y posibles regresiones.
+			
+		\subsection{(Opcional) Verificación Rápida de Calidad}
+			Las pruebas y el análisis estático ofrecen beneficios complementarios. Mientras que las pruebas unitarias validan la lógica en aislamiento, las pruebas end-to-end simulan escenarios reales de interacción, asegurando la integridad de los flujos críticos. Por su parte, el \texttt{lint} refuerza la consistencia del código y ayuda a detectar malas prácticas. Estos pasos, aunque opcionales en la etapa temprana, son altamente recomendados para proyectos en crecimiento.
+			
+			\begin{lstlisting}[mathescape=false]
+npm test         # pruebas unitarias (si están configuradas)
+npm run lint     # análisis estático (ESLint)
+# npx cypress run / npx playwright test     # E2E (si están configuradas) \end{lstlisting}
+			
+			El despliegue es el paso final en el ciclo de desarrollo. Una vez construida la aplicación, los archivos optimizados deben publicarse en un servidor o servicio de hosting. Esta etapa implica también configurar políticas de caché, seguridad y rutas adecuadas para que la aplicación funcione correctamente en un entorno de producción. Con un despliegue exitoso, la aplicación se convierte en una herramienta disponible para los usuarios finales.
+		
+		\subsection{Despliegue}
+			Existen múltiples alternativas para desplegar una aplicación React. Servicios de hosting gratuitos como GitHub Pages permiten mostrar proyectos de prueba de manera sencilla, mientras que soluciones más robustas como Firebase Hosting, Azure Static Web Apps o servidores propios con Nginx ofrecen mayor control y flexibilidad. La elección del destino depende de las necesidades del proyecto, pero en todos los casos el objetivo es garantizar disponibilidad, rendimiento y seguridad a los usuarios que accedan a la aplicación.
+			
+			\begin{lstlisting}[mathescape=false]
+# Subir la carpeta dist/tienda-react/ a tu hosting/CDN/servidor estático.
+# Ejemplos: Nginx, Firebase Hosting, GitHub Pages, Azure Static Web Apps, etc. \end{lstlisting}

@@ -1,0 +1,1001 @@
+%-------------------------TitlePage------------------------
+%\begin{titlepage}
+%\end{titlepage}
+
+%-------------------------Content------------------------
+
+% ------------------------------------------------------------
+%
+% Sección 6.1. Angular — desarrollo de front-end consumiendo API RESTful (Spring Boot)
+%
+% ------------------------------------------------------------
+
+\chapter{Frameworks para Desarrollo Web}
+	Este capítulo presenta un panorama comparativo y analítico de los frameworks y bibliotecas contemporáneos más empleados en el desarrollo web. Antes de abordar cada tecnología, se establecen criterios comunes de análisis: modelo de programación y arquitectura, ecosistema y herramientas, rendimiento y escalabilidad, seguridad, pruebas e integración continua, casos de uso típicos y fortalezas. Con ello se garantiza una lectura coherente y una base objetiva para seleccionar la tecnología adecuada según los requisitos del proyecto, las competencias del equipo y las restricciones no funcionales.
+
+	\section{Preparación del Entorno con Node.js y Gestores}\label{sec:PGED}
+		Node.js es un entorno de ejecución de JavaScript creado en 2009 por Ryan Dahl con el objetivo de ampliar las capacidades de este lenguaje más allá del navegador. Basado en el motor V8 de Google Chrome, permite ejecutar JavaScript en el lado del servidor y se caracteriza por un modelo de entrada y salida no bloqueante y orientado a eventos, lo que lo hace altamente eficiente para aplicaciones con alta concurrencia. Desde sus primeras versiones, Node.js ha transformado el ecosistema del desarrollo web al unificar el lenguaje entre cliente y servidor, y se ha consolidado como una pieza fundamental en proyectos modernos que requieren escalabilidad, como servidores web, sistemas de mensajería, microservicios y plataformas en tiempo real.
+
+
+		\subsection{Instalación de Node.js LTS}\label{sec:INJS}
+			La relevancia de Node.js en el desarrollo actual no solo radica en su uso directo como servidor mediante frameworks como \textbf{Express}, sino también en su papel como soporte para el \emph{tooling} de front-end. Frameworks como \textbf{Angular}, bibliotecas como \textbf{React}, y opciones más ligeras como \textbf{Vue.js} dependen de Node.js para sus herramientas de construcción, empaquetado, pruebas y despliegue. En este sentido, aunque el código de la aplicación se ejecute finalmente en el navegador, es indispensable disponer de Node.js en el entorno de desarrollo para compilar los proyectos, gestionar dependencias y ejecutar servidores locales con recarga en caliente. Por esta razón, se recomienda siempre instalar la versión \textbf{LTS (Long-Term Support)}, que asegura estabilidad y actualizaciones de seguridad durante varios años. El uso de versiones inestables puede ocasionar incompatibilidades con librerías críticas y fallos inesperados en entornos productivos.
+			
+			\subsubsection{Windows}
+				En Windows puede instalarse con el instalador oficial (\texttt{.msi}) desde \url{https://nodejs.org}, siguiendo los siguientes pasos:
+				
+				\begin{enumerate}
+					\item Ir a https://nodejs.org
+					\item Descargar el instalador .msi (versión LTS recomendada).
+					\item Ejecutar el instalador → siguiente, aceptar licencia, dejar las opciones por defecto.
+					\item Verificar instalación en PowerShell o CMD:
+					\begin{lstlisting}[mathescape=false]
+						node -v
+						npm -v \end{lstlisting}
+					\item \emph{Consejo:} tras instalar/actualizar Node LTS, reinstale dependencias del proyecto para evitar inconsistencias del binario nativo.
+				\end{enumerate}
+				
+				Una alternativa más flexible es utilizar \texttt{nvm-windows}, que permite instalar y cambiar entre distintas versiones:
+				\begin{lstlisting}[language=bash,mathescape=false]
+	nvm install lts
+	nvm use lts
+	node -v
+	npm -v\end{lstlisting}
+
+			\subsubsection{Linux/macOS}
+				
+				En sistemas basados en Unix, como Linux y macOS, el manejo de entornos de desarrollo requiere especial atención a la compatibilidad entre las diferentes versiones de Node.js y sus dependencias. Por ello, una práctica ampliamente recomendada es el uso de gestores de versiones como \textit{Node Version Manager} (NVM), que permite instalar, alternar y actualizar versiones de manera flexible, reduciendo conflictos con proyectos existentes. Este enfoque resulta particularmente relevante en entornos de desarrollo colaborativo donde distintos equipos trabajan con versiones específicas de Node.js, garantizando homogeneidad en la configuración del entorno \cite{Griggs2020Node}.
+				
+				Además, NVM facilita la instalación de versiones LTS (\textit{Long Term Support}), que ofrecen mayor estabilidad y soporte extendido, características clave en entornos productivos donde la fiabilidad es prioritaria.
+				
+				\begin{lstlisting}[language=bash,mathescape=false]
+	curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+	nvm install --lts
+	nvm use --lts\end{lstlisting}
+			
+			\subsubsection{Después de la Instalación...}
+			 	Preparar correctamente el entorno con Node.js y un gestor de paquetes confiable constituye un requisito indispensable para garantizar estabilidad, productividad y escalabilidad en el desarrollo web moderno.
+			
+			\begin{lstlisting}
+	#Después de instalar nodejs
+	node -v       # Verificar versión instalada
+	npm -v        # Verificar npm (gestor por defecto que acompaña a Node) \end{lstlisting}
+
+		\subsection{Gestores de Paquetes}
+			Junto con Node.js se distribuye \textbf{npm (Node Package Manager)}, el gestor de paquetes oficial y más utilizado en el ecosistema. npm permite instalar, actualizar y administrar librerías externas que forman parte de un proyecto, evitando la gestión manual de dependencias. A lo largo del tiempo han surgido alternativas que responden a necesidades específicas de los equipos de desarrollo: \textbf{Yarn}, que introdujo mejoras de rendimiento y control de versiones en sus inicios; \textbf{pnpm}, que destaca por su eficiencia en el uso de espacio y por su modelo de instalación basado en un almacén global compartido; y \textbf{Bun}, un gestor más reciente integrado en un \emph{runtime} alternativo que prioriza la velocidad de ejecución y la simplicidad. Todos ellos cumplen la misma función esencial: garantizar que las dependencias de un proyecto se instalen de manera consistente y reproducible. La elección entre uno u otro depende de factores como el tamaño del equipo, el tipo de proyecto y las necesidades de integración con sistemas de integración continua.
+			
+			Por lo tanto, resumiendo, los gestores disponibles son: \textbf{npm}, incluido por defecto; \textbf{pnpm}, que optimiza espacio y velocidad; \textbf{yarn}, con \emph{workspaces} y plug’n’play; y \textbf{bun}, un runtime alternativo con gestor propio.  
+			
+			Se recomienda usar un solo gestor por proyecto y mantener bajo control el archivo de bloqueo (\texttt{package-lock.json}, \texttt{pnpm-lock.yaml}, etc.).
+			
+			\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title={Importancia estratégica del entorno}]
+				La preparación del entorno de desarrollo web no es un paso trivial, sino un factor determinante en la calidad y sostenibilidad de los proyectos. La correcta elección de la versión de Node.js y del gestor de paquetes garantiza consistencia en la instalación de dependencias, estabilidad frente a actualizaciones y una base sólida para la integración continua. Una configuración inadecuada puede derivar en errores difíciles de depurar, incompatibilidades entre librerías críticas y pérdida de productividad del equipo. Por ello, estandarizar el entorno constituye una práctica esencial para asegurar que el software evolucione de manera controlada y confiable en todas las fases de su ciclo de vida.
+			\end{tcolorbox}
+			
+		\subsection{Node.js y los Frameworks de Desarrollo Web}
+			La instalación de Node.js es el paso inicial indispensable antes de emprender el desarrollo con frameworks modernos como Angular, React, Vue.js o Express. Tras instalarlo, es esencial verificar la ejecución de los comandos \texttt{node -v} y \texttt{npm -v}, los cuales confirman tanto la versión activa del motor de ejecución como la del gestor de paquetes. En equipos distribuidos, usar herramientas como \textbf{nvm (Node Version Manager)} o su equivalente \textbf{nvm-windows} asegura uniformidad de entorno entre distintos desarrolladores, evitando incompatibilidades que afectan la compilación, el rendimiento y la estabilidad del entorno de desarrollo. Ante un cambio de versión de Node.js, se recomienda reinstalar las dependencias del proyecto mediante \texttt{npm ci}, \texttt{pnpm install --frozen-lockfile} o \texttt{yarn install --frozen-lockfile}, para reconstruir correctamente los módulos nativos y garantizar compatibilidad total.
+			
+			Una vez instalado y verificado el entorno, es habitual ejecutar un proyecto de prueba en cada framework para asegurar que la construcción, el empaquetado y el servidor local funcionan correctamente. Node.js por sí solo no gestiona directamente el consumo de servicios REST, pero es el soporte fundamental que permite a frameworks como Angular y Express compilar, ejecutar y desplegar aplicaciones que luego interactúan con APIs back-end, como las RESTful implementadas en Spring Boot\footnote{Spring Boot es un marco de trabajo de código abierto basado en Spring que simplifica la creación de aplicaciones Java al proporcionar configuración automática, un servidor embebido (como Tomcat o Jetty) y un modelo de empaquetado listo para producción. Su objetivo principal es reducir la complejidad del desarrollo y despliegue de aplicaciones empresariales, permitiendo a los desarrolladores enfocarse en la lógica de negocio en lugar de en la configuración extensa del entorno \cite{Spring2025Reference}.}, usando clientes HTTP tipados. Esta interacción con APIs RESTful, basada en peticiones HTTP y manejo de JSON, se desarrolla con mayor precisión en la sección de Angular \cite{Fielding2000REST,WWWFieldingREST,AngularHttpClient2025}.
+			
+			Por otra parte, frameworks como React y Vue.js suelen utilizar herramientas como Vite para un servidor de desarrollo con recarga en caliente y empaquetado optimizado; mientras que Express permite levantar rápidamente un servidor backend para verificar que Node.js está funcionando correctamente del lado del servidor. Estas comprobaciones iniciales no solo confirman que el entorno está listo, sino que proporcionan una base estable y reproducible sobre la cual se construyen aplicaciones más complejas.
+					
+		\subsubsection{Dependencias para Evitar Inconsistencias de Binarios Nativos}\label{sec:reinstalacion}
+			En el ecosistema de Node.js, las dependencias incluyen tanto módulos JavaScript como complementos con binarios nativos dependientes del sistema operativo y la versión de Node.js. Por ello, al cambiar de versión de Node o trabajar en entornos distintos, pueden surgir errores al compilar o ejecutar el proyecto. La reinstalación de dependencias —como vía \texttt{npm ci}, \texttt{pnpm install --frozen-lockfile} o \texttt{yarn install --frozen-lockfile}— resulta esencial para garantizar coherencia, estabilidad y reproducibilidad, ayudando a reconstruir módulos nativos correctamente sin ambigüedad en la versión usada \cite{Manthan2024npm,jbandi2022How}.
+			
+			El uso de herramientas como \texttt{nvm use --lts} en Linux/macOS o su equivalente para Windows (\texttt{nvm use lts} con nvm-windows) permite alinear a todos los desarrolladores a una misma versión LTS de Node.js, evitando incompatibilidades en la ABI (Interfaz Binaria de Aplicación). Así se propicia un entorno homogéneo y predecible, especialmente importante cuando los módulos contienen componentes compilados de manera nativa para distintas plataformas \cite{NodejsDocs,NVMDocs}.
+			
+			Si los módulos ya instalados están corruptos o inconsistentes —por interrupciones durante la instalación o migración entre sistemas—, puede eliminarse manualmente la carpeta \texttt{node\_modules} (ej. con \texttt{rm -rf node\_modules} en Unix o \texttt{Remove-Item -Recurse -Force node\_modules} en Windows) y reinstalar desde los archivos de bloqueo (\texttt{package-lock.json}, \texttt{pnpm-lock.yaml}, etc.), reconstruyendo un entorno limpio y alineado con las versiones estrictas definidas \cite{NPMPackageManager,pnpm2025Install}.
+			
+			En entornos de integración continua, el comando \texttt{npm ci} es especialmente valioso porque reinstala las dependencias con alta fidelidad al archivo de bloqueo, sin recalcular versiones. En contraste, \texttt{npm install} sirve más para instalaciones iniciales o actualizaciones en rangos permitidos, reflejando dichos cambios en el lockfile. Asimismo, comandos como \texttt{npm rebuild} (recompilación de módulos nativos) y \texttt{npm cache verify / npm cache clean} contribuyen a preservar la integridad del entorno frente a posibles corrupciones o fallos en dependencias \cite{Manthan2024npm,NPMPackageManager}.
+			
+			Gestores alternativos como \textbf{pnpm} y \textbf{Yarn} también ofrecen versiones equivalentes que priorizan reproducibilidad y eficiencia. Por ejemplo:
+			- \texttt{pnpm install --frozen-lockfile} deja intacto el lockfile y evita diffs no deseados,
+			- \texttt{pnpm rebuild} recompila módulos nativos y \texttt{pnpm store prune} limpia versiones antiguas,
+			- De forma similar, \texttt{yarn install --frozen-lockfile}, \texttt{yarn rebuild} y \texttt{yarn cache clean} soportan flujos idénticos en proyectos colaborativos o entornos monorepo \cite{pnpm2025Install,YarnDocs}.
+			
+			Finalmente, una alternativa emergente como \textbf{Bun} incluye comandos propios como \texttt{bun install --frozen-lockfile} y \texttt{bun rebuild}. Aunque más reciente, su enfoque en reproducibilidad, rendimiento y manejo consistente de módulos nativos lo hace prometedor para equipos que priorizan velocidad y consistencia en sus entornos de desarrollo \cite{BunDocs,andria2022Using}.
+			
+			En conjunto, estas prácticas permiten reducir al mínimo las discrepancias entre entornos locales, de pruebas y de producción. Reinstalar dependencias de forma sistemática ante cambios de versión, o cuando se detectan inconsistencias, constituye una medida preventiva que asegura un desarrollo más confiable y profesional en proyectos basados en Node.js y frameworks asociados.
+			
+		\subsection{Instalación y Reinstalación de Node.js}\label{sec:IRNJS}
+			La correcta instalación de Node.js constituye la base de trabajo para frameworks de desarrollo web como Angular, React, Vue.js o Express. Existen diversas formas de instalarlo según el sistema operativo y la flexibilidad que se requiera. En Windows, el método más directo es el instalador oficial (\texttt{.msi}), que incluye también a \textbf{npm} como gestor por defecto. Sin embargo, para entornos en los que se necesita alternar entre versiones, la mejor práctica es utilizar gestores de versiones como \textbf{nvm-windows} en Windows o \textbf{nvm} en Linux/macOS, que permiten instalar múltiples versiones y activar la adecuada según el proyecto en curso. En entornos de servidores o contenedores también es común usar \textbf{NodeSource}, repositorios oficiales para distribuciones Linux, o incluso imágenes de \textbf{Docker}, cuando se desea aislar la ejecución en contenedores reproducibles.
+			
+			\begin{lstlisting}[language=bash,mathescape=false]
+	# Linux/macOS con NVM
+	curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+	nvm install --lts
+	nvm use --lts
+	
+	# Windows con nvm-windows
+	nvm install lts
+	nvm use lts
+	
+	# Instalador oficial (Windows, macOS, Linux)
+	# Descargar desde https://nodejs.org\end{lstlisting}
+			
+			Una vez instalado, la verificación debe realizarse comprobando las versiones activas de Node.js y de npm:
+			
+			\begin{lstlisting}[language=bash,mathescape=false]
+	node -v   # versión activa de Node.js
+	npm -v    # versión activa de npm \end{lstlisting}
+			
+			En caso de inconsistencias al cambiar de versión de Node.js, especialmente en proyectos que usan módulos con binarios nativos, es recomendable reinstalar las dependencias desde cero. El procedimiento típico consiste en eliminar la carpeta \texttt{node\_modules}, reinstalar dependencias a partir del archivo de bloqueo y recompilar módulos nativos.
+			
+			\begin{lstlisting}[language=bash,mathescape=false]
+	# Linux/macOS
+	rm -rf node_modules
+	
+	# Windows (PowerShell)
+	Remove-Item -Recurse -Force node_modules
+	
+	# Reinstalación limpia con npm
+	npm ci
+	npm rebuild \end{lstlisting}
+			
+			Además de npm, existen gestores alternativos que ofrecen comandos equivalentes y beneficios adicionales:
+			
+			\begin{itemize}
+				\item \textbf{pnpm}: 
+				\begin{lstlisting}[language=bash,mathescape=false]
+	pnpm install --frozen-lockfile
+	pnpm rebuild
+	pnpm store prune   # limpia versiones no usadas \end{lstlisting}
+				
+				\item \textbf{Yarn}:
+				\begin{lstlisting}[language=bash,mathescape=false]
+	yarn install --frozen-lockfile
+	yarn rebuild
+	yarn cache clean \end{lstlisting}
+				
+				\item \textbf{Bun} (runtime alternativo):
+				\begin{lstlisting}[language=bash,mathescape=false]
+	bun install --frozen-lockfile
+	bun rebuild \end{lstlisting}
+			\end{itemize}
+			
+			La elección entre estos gestores dependerá de las necesidades del proyecto: \textbf{npm} es universal y estable; \textbf{pnpm} optimiza espacio y velocidad; \textbf{Yarn} es útil en monorepos; y \textbf{Bun} representa una alternativa emergente centrada en rendimiento. 
+			
+			En todos los casos, mantener un único gestor por proyecto y conservar actualizado el archivo de bloqueo (\texttt{package-lock.json}, \texttt{pnpm-lock.\-yaml}, \texttt{yarn.lock}, \texttt{bun.lockb}) son prácticas fundamentales para garantizar coherencia y reproducibilidad en equipos de desarrollo y entornos de integración continua. Esta disciplina reduce discrepancias entre entornos locales, de pruebas y de producción, asegurando que Angular, React, Vue.js y Express funcionen de manera estable sobre Node.js.
+		
+	\section{Angular}
+		\noindent Angular se ha consolidado como una plataforma integral para construir interfaces modernas, escalables y mantenibles, gracias a su arquitectura basada en componentes, al tipado de TypeScript y a un \emph{tooling} estandarizado que reduce la variabilidad entre proyectos. En el contexto de aplicaciones empresariales que consumen servicios RESTful, Angular ofrece un cliente HTTP tipado, enrutamiento declarativo, formularios reactivos y utilidades para internacionalización, pruebas e integración continua, lo que facilita un flujo de trabajo coherente desde el prototipo hasta la puesta en producción \cite{AngularOverview2025,AngularHTTP2025,AngularRouting2025}.
+	
+		\subsection{Descripción y Propósito}
+			Angular es una plataforma de desarrollo \textit{front-end} mantenida por Google que proporciona un conjunto integrado de herramientas para construir aplicaciones web de una sola página (SPA) con TypeScript, HTML y CSS. Se orienta a equipos y bases de código grandes, con un fuerte énfasis en tipado estático, patrones consistentes y \emph{tooling} corporativo \cite{AngularOverview2025,AngularReleasesV20}.
+	
+		\subsection{Configuración del Ambiente de Desarrollo}
+			Angular requiere Node.js LTS y un gestor de paquetes compatible. Para instrucciones detalladas, véase la sección \ref{sec:PGED}. Por lo tanto, los pasos que son necesarios ejecutar para obtener una aplicación web con Angular y algún Back-End son los siguientes: 
+			
+			\begin{lstlisting}[mathescape=false]
+	# 1) Instalar Node LTS (vía NVM recomendado) y verificar:
+	#(revisar sección 1 de este capítulo)
+	#Comprobar versiones
+	node -v
+	npm -v
+	
+	# 2) Instalar Angular CLI global con npm (sencillo para empezar):
+	npm install -g @angular/cli
+	ng --version
+	
+	# 3) Crear proyecto indicando gestor (pnpm como ejemplo) y opciones básicas:
+	ng new tienda-app --package-manager=npm --routing --style=scss
+	cd tienda-app
+	
+	# 4) Servir en desarrollo:
+	ng serve -o
+	
+	# 5) Construcción de producción:
+	ng build --configuration production \end{lstlisting}
+			
+			\emph{Resultado:} aplicación Angular lista para desarrollo local y con artefactos en \texttt{dist/} para desplegar.
+		
+		\subsection{Ejemplo de Uso y Tooling}
+			En la práctica del desarrollo con frameworks modernos como Angular, no basta únicamente con instalar las dependencias principales, sino que se requiere un ecosistema de herramientas que complementen el flujo de trabajo. Entre ellas se incluyen sistemas de construcción, gestores de paquetes, linters y formateadores de código, así como servidores de desarrollo en caliente. Estas herramientas, en conjunto, permiten acelerar la iteración, garantizar la calidad del código y facilitar la integración continua en proyectos colaborativos \cite{Rappl2022Modern}.
+			
+			\subsubsection{Instalar Node JS LTS}
+				La instalación y reinstalación de Node JS se detalla en la sección \ref{sec:INJS} y en la sección \ref{sec:IRNJS}. Antes de instalar la última versión de Node JS (versión LTS) se debe verificar la versión instala y activa de node y el gestor de paquetes escogido para esta tarea.
+				
+				\begin{lstlisting}[mathescape=false]
+	node -v       # Verificar versión instalada
+	npm -v        # Verificar npm (gestor por defecto que acompaña a Node) \end{lstlisting}
+				
+			\subsubsection{Instalar Angular CLI} \cite{AngularCLI2025}:
+				La \textit{Angular Command Line Interface} (CLI) constituye una herramienta esencial para la creación y gestión de proyectos en Angular, ya que automatiza tareas comunes como la generación de componentes, servicios, módulos y pruebas. Además, ofrece comandos optimizados para la construcción del proyecto y la preparación para entornos de despliegue, lo que reduce significativamente el riesgo de errores manuales.
+				
+				Al estar disponible a través de diferentes gestores de paquetes (\texttt{npm}, \texttt{pnpm}, \texttt{yarn}, \texttt{bun}), brinda flexibilidad para adaptarse a distintas preferencias de los equipos de desarrollo y a las estrategias de manejo de dependencias en proyectos de gran escala.
+			
+				\begin{lstlisting}[mathescape=false]
+	# con npm
+	npm install -g @angular/cli
+	
+	# alternativas soportadas
+	pnpm install -g @angular/cli
+	yarn global add @angular/cli
+	bun install -g @angular/cli \end{lstlisting}
+	
+			\subsubsection{Crear el proyecto}
+				La creación de un nuevo proyecto en Angular no se limita a la ejecución de un simple comando, sino que implica la configuración inicial de toda la estructura de carpetas, archivos de configuración y dependencias necesarias para el ciclo de vida de la aplicación. Con la opción \texttt{--routing}, se habilita de inmediato el módulo de enrutamiento, facilitando la navegación entre diferentes vistas desde el inicio del proyecto. Asimismo, el uso de \texttt{--style=scss} permite configurar \textit{Sass} como preprocesador de estilos, proporcionando una sintaxis más avanzada y organizada en comparación con CSS plano \cite{AngularSetupLocal2025}.
+				
+				Esta combinación acelera la adopción de buenas prácticas en equipos de desarrollo, ya que fomenta el uso de estilos modulares y la separación clara de responsabilidades entre lógica y presentación. Además, una vez generado el proyecto, comandos como \texttt{ng serve -o} permiten iniciar un servidor de desarrollo local con recarga automática, optimizando el flujo iterativo de construcción y prueba en entornos ágiles.
+				
+				\begin{lstlisting}[mathescape=false]
+	ng new tienda-app --routing --style=scss
+	cd tienda-app
+	ng serve -o \end{lstlisting}
+		
+			\subsubsection{Extensiones útiles de editor}
+				Entre las extensiones más comunes por su utilidad se pueden mencionar a Angular Language Service, ESLint y Prettier \cite{AngularStyleGuide2025,Deschryver2024,BetterStack2025}. Estas herramientas se han consolidado como complementos indispensables en entornos de desarrollo profesional, ya que proporcionan asistencia inteligente en la edición de plantillas, aseguran la calidad del código mediante reglas de estilo y garantizan un formateo homogéneo en los proyectos colaborativos \cite{AngularArchitects2025}.
+				
+				El \textbf{Angular Language Service} proporciona autocompletado, información de tipos y validación en tiempo real dentro de plantillas HTML de Angular. Esto reduce errores comunes de sintaxis y mejora la productividad al ofrecer sugerencias contextuales basadas en los metadatos del proyecto \cite{AngularStyleGuide2025}.
+				
+				La extensión \textbf{ESLint} cumple un rol fundamental en el aseguramiento de la calidad del código, ya que permite aplicar reglas de estilo y verificar el cumplimiento de convenciones en el equipo. Su integración con Angular garantiza que las aplicaciones se construyan bajo criterios de consistencia, mantenibilidad y reducción de defectos técnicos \cite{ESLint2025}.
+				
+				Por su parte, \textbf{Prettier} complementa a ESLint automatizando el formateo del código de acuerdo con reglas predefinidas, evitando discusiones en torno al estilo y permitiendo que los equipos se concentren en la lógica de la aplicación. Esta integración asegura que el código se mantenga legible y homogéneo en repositorios compartidos, lo que resulta crucial en proyectos colaborativos y de larga duración \cite{Prettier2025}.
+				
+			\subsubsection{Habilitar HttpClient y formularios} 
+				La habilitación del cliente HTTP y de los formularios constituye un paso esencial en cualquier aplicación Angular moderna. El cliente HTTP (\texttt{HttpClient}) permite establecer comunicación tipada y segura con servicios externos a través de peticiones RESTful, mientras que el sistema de formularios ofrece dos enfoques complementarios: formularios reactivos, orientados a un control explícito de los flujos de datos, y formularios basados en plantillas, adecuados para escenarios más declarativos.
+				 
+				Ambos enfoques aprovechan el sistema de tipado de TypeScript y la detección de cambios de Angular, garantizando consistencia entre la lógica de negocio y la interfaz de usuario \cite{AngularForms2025}. En el contexto de aplicaciones Standalone (Angular 17+), la configuración del cliente HTTP y del enrutador se centraliza en el archivo \texttt{main.ts},  lo que simplifica la inicialización del proyecto y concentra la definición de proveedores esenciales en un único punto de arranque.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={Arranque Standalone en \texttt{main.ts}.},label=lst:main-standalone]
+/* src/main.ts */
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient, withFetch, withXsrfConfiguration } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
+
+bootstrapApplication(AppComponent, {
+	providers: [
+		provideRouter(routes),
+		provideHttpClient(
+			withFetch(),
+			withXsrfConfiguration({ headerName: 'X-XSRF-TOKEN', cookieName: 'XSRF-TOKEN' })
+		),
+		provideAnimations()
+	]
+}).catch(err => console.error(err)); \end{lstlisting}
+		
+		\subsection{Arquitectura y Buenas Prácticas}
+			Angular adopta una arquitectura basada en componentes, inyección de dependencias (DI) y un enrutador propio; favorece patrones reactivos mediante RxJS. Sus elementos nucleares incluyen componentes (vista y lógica), servicios (lógica de negocio compartida), directivas/\emph{pipes} (composición y transformación) y \emph{routing}. El compilador transforma plantillas en código optimizado durante la construcción (\emph{build}) \cite{AngularArchitecture2025,RxJSObservableGuide}.
+	
+			\subsubsection{Arquitectura de Angular}
+				La Figura \ref{fig:arquitectura-angular-spring} ilustra de manera esquemática el flujo de comunicación entre una aplicación Angular en el cliente y un backend desarrollado en Spring Boot.
+				
+				\begin{figure}[!hbt]
+					\centering
+					\begin{tikzpicture}[
+						node distance=8mm,
+						box/.style={draw,rounded corners,fill=gray!5,inner sep=3mm,align=center,blur shadow},
+						arr/.style={-{Latex[length=2mm]},thick}
+						]
+						\node[box] (browser) {Navegador\\(Angular App)};
+						\node[box,below=of browser] (cmp) {Componentes\\(UI, plantillas)};
+						\node[box,below=of cmp] (svc) {Servicios Angular\\(HttpClient, RxJS)};
+						\node[box,below=of svc] (intc) {Interceptors\\(auth, logging, retry, baseUrl)};
+						\node[box,below=of intc] (transport) {XHR/Fetch};
+						
+						\node[box,right=20mm of svc] (router) {Router\\(rutas, guardias, resolvers)};
+						
+						\node[box,below=15mm of transport] (api) {API REST\\Spring Boot};
+						\node[box,below=of api] (svcjava) {Capa Servicio\\(Spring)};
+						\node[box,below=of svcjava] (repo) {Repositorio/JPA};
+						\node[box,below=of repo] (db) {Base de Datos};
+						
+						\draw[arr] (browser) -- (cmp);
+						\draw[arr] (cmp) -- (svc);
+						\draw[arr] (svc) -- (intc);
+						\draw[arr] (intc) -- (transport);
+						\draw[arr] (transport) -- node[right]{HTTP JSON} (api);
+						\draw[arr] (api) -- (svcjava);
+						\draw[arr] (svcjava) -- (repo);
+						\draw[arr] (repo) -- (db);
+						\draw[arr] (cmp) -- (router);
+					\end{tikzpicture}
+					\textcolor{Orange}{\textbf{\caption{Arquitectura de consumo de API REST con Angular (front-end) y Spring Boot (back-end).\label{fig:arquitectura-angular-spring}}}}
+				\end{figure}
+				
+				La representación refleja la interacción jerárquica y modular de las capas, destacando cómo Angular organiza la interfaz y la lógica de presentación, mientras que Spring Boot gestiona los procesos de negocio y la persistencia de datos. Este enfoque arquitectónico no solo favorece la separación de responsabilidades, sino que también garantiza la escalabilidad y el mantenimiento del sistema \cite{AngularArchitecture2025}.
+				
+				En la parte superior se ubica el navegador, donde se ejecuta la aplicación Angular. Dentro de este contexto, los \textbf{componentes} constituyen la unidad fundamental de la interfaz de usuario, encargados de enlazar las plantillas con los datos dinámicos y gestionar la interacción del usuario. Estos componentes delegan la lógica de negocio a los \textbf{servicios}, que centralizan la comunicación con el backend utilizando el módulo \texttt{HttpClient} y la librería \texttt{RxJS} para el manejo reactivo de flujos de datos.
+				
+				Entre los servicios y la capa de transporte HTTP se sitúan los \textbf{interceptores}, que cumplen un rol esencial en la gestión de peticiones y respuestas. Por medio de interceptores es posible añadir cabeceras de autenticación, registrar solicitudes, reintentar conexiones en caso de fallos o configurar dinámicamente las URL base de los endpoints. Este diseño aporta un punto de control transversal en la aplicación, alineándose con buenas prácticas de seguridad y trazabilidad \cite{AngularInterceptors2025}.
+				
+				De manera complementaria, el \textbf{Router de Angular} gestiona la navegación entre vistas, implementando rutas, guardias de acceso y resolvers para la precarga de datos antes de la activación de un componente. Esto garantiza una experiencia de usuario fluida, en la que las transiciones entre páginas se realizan sin recargar la aplicación completa.
+				
+				En la parte inferior, el diagrama muestra la conexión con la \textbf{API REST} implementada en Spring Boot. Esta capa expone los recursos de la aplicación en formato JSON a través de HTTP, los cuales son consumidos por los servicios de Angular. Una vez recibida la petición, la capa de servicio en Spring procesa la lógica de negocio y delega las operaciones de persistencia al \textbf{repositorio}, típicamente implementado con JPA. Finalmente, los datos se almacenan o recuperan desde la base de datos, cerrando el ciclo de comunicación entre cliente y servidor \cite{Fielding2000REST,WWWFieldingREST}.
+				
+			\subsubsection{Desarrollo de un Proyecto Angular}
+				Un proyecto en Angular consiste en un conjunto organizado de carpetas y archivos base que conforman el denominado \emph{workspace}. Este incluye la aplicación principal, la configuración de compilación, los entornos de pruebas, los archivos de tipado como \texttt{tsconfig}, el manifiesto de dependencias en \texttt{package.json}, así como los recursos estáticos requeridos para su ejecución. Esta estructura estandarizada ofrece a los equipos de desarrollo una base sólida y repetible, lo que reduce la curva de aprendizaje inicial y evita errores frecuentes derivados de configuraciones manuales \cite{AngularDocs}.
+				
+				Entre sus características destacan el soporte opcional para enrutamiento, la preconfiguración de estilos mediante opciones como SCSS, una organización centrada en componentes y la presencia de scripts automatizados para construcción y pruebas. La disponibilidad de estas características permite que los desarrolladores, incluso sin experiencia previa, puedan producir aplicaciones escalables, mantenibles y alineadas con buenas prácticas de ingeniería de software.
+				
+				Las funcionalidades principales de un proyecto Angular incluyen el punto de entrada \texttt{main.ts}, el componente inicial \texttt{AppComponent}, la configuración de entornos definida en \texttt{environment}, y la arquitectura basada en inyección de dependencias (DI) y módulos o configuraciones \emph{standalone}. Este mecanismo de inyección de dependencias facilita el desacoplamiento entre módulos y promueve la reutilización de código, lo cual es esencial en proyectos de gran escala.
+				
+				En los proyectos generados con Angular CLI, la estructura inicial cumple un rol esencial al estandarizar la organización de archivos y carpetas, lo que facilita la curva de aprendizaje y garantiza coherencia entre equipos de desarrollo.
+				
+				A partir de Angular 17, la arquitectura recomendada es la basada en \textit{Standalone APIs}, por lo que aparecen archivos como \texttt{app.config.ts} y \texttt{app.routes.ts}, que reemplazan la necesidad del tradicional \texttt{AppModule} \cite{AngularReleasesV17}. No obstante, cuando se crea un proyecto con la opción \texttt{--standalone=false}, todavía se incluye un \texttt{app.module.ts}, manteniendo compatibilidad con versiones anteriores (Angular 16 o previas). Este cambio refleja una evolución en el framework hacia la simplificación y la modularidad explícita, reduciendo dependencias implícitas y mejorando la eficiencia en tiempo de compilación \cite{AngularDocs}.
+				
+				Por lo tanto, comprender estas diferencias entre las versiones es fundamental en contextos académicos y profesionales, ya que permite analizar la transición de Angular desde una arquitectura centrada en módulos hacia un paradigma más moderno y ligero, basado en configuración directa en \texttt{main.ts} y en el uso de \texttt{bootstrapApplication} para el arranque de la aplicación \cite{AngularArchitecture2025}.
+				
+				\begin{figure}[!hbt]
+					%\centering
+					\dirtree{%
+						.1 tienda-app/.
+						.2 node\_modules/.               % dependencias instaladas por npm/pnpm/yarn
+						.2 src/.
+						.3 app/.
+						.4 app.component.css.           % estilos del componente raíz
+						.4 app.component.html.          % plantilla del componente raíz
+						.4 app.component.spec.ts.       % pruebas unitarias del componente raíz
+						.4 app.component.ts.            % lógica del componente raíz
+						.4 app.config.ts.               % configuración inicial (Angular 17+)
+						.4 app.routes.ts.               % definición de rutas (Standalone)
+						.3 assets/.                     % recursos estáticos (imágenes, íconos, etc.)
+						.3 environments/.
+						.4 environment.ts.              % configuración para desarrollo
+						.4 environment.prod.ts.         % configuración para producción
+						.3 favicon.ico.                 % ícono por defecto
+						.3 main.ts.                     % punto de entrada de la aplicación
+						.2 angular.json.                % configuración de Angular CLI
+						.2 package.json.                % dependencias y scripts del proyecto
+						.2 tsconfig.app.json.           % configuración TypeScript para app
+						.2 tsconfig.json.               % configuración TypeScript raíz
+						.2 tsconfig.spec.json.          % configuración TypeScript para pruebas
+						.2 README.md.                   % guía inicial del proyecto
+					}
+					\textcolor{Orange}{\textbf{\caption{Estructura inicial de un proyecto Angular generado con la CLI (\texttt{ng new}).\label{fig:estructura-angular-inicial}}}}
+				\end{figure}
+				\textit{Nota:} La presencia de \texttt{environments/} y \texttt{app.config.ts} puede variar según la versión de la CLI y las opciones del generador; son archivos habituales pero opcionales en la plantilla Standalone moderna.
+				
+			\subsubsection{Servidor de desarrollo (\emph{dev server}) con recarga en caliente}
+				El servidor de desarrollo en Angular constituye una herramienta fundamental para la fase inicial de programación, ya que permite servir la aplicación de manera local en memoria y recompilar automáticamente cuando se detectan cambios en el código fuente. Esta capacidad hace posible que el desarrollador visualice en tiempo real cada modificación realizada en las plantillas, los estilos o la lógica de los componentes, sin necesidad de reiniciar el servidor manualmente. El efecto inmediato de los cambios agiliza notablemente el proceso de construcción de interfaces y facilita la detección temprana de errores.
+				
+				Una de sus características más destacadas es el \emph{Hot Module Replacement} (HMR), conocido en español como “reemplazo en caliente de módulos”. Este mecanismo evita la recarga completa de la aplicación, conservando el estado interno mientras únicamente se actualizan las secciones modificadas \cite{WebpackHMR}. Gracias a ello, es posible mantener la continuidad de los flujos de trabajo y acelerar la validación de funcionalidades. Este comportamiento se complementa con el uso de \emph{source maps}, que permiten depurar el código escrito en TypeScript observando directamente las líneas originales, en lugar del JavaScript transpilado, lo que reduce significativamente la complejidad durante las tareas de depuración.
+				
+				En términos funcionales, el servidor de desarrollo facilita una navegación inmediata dentro de la aplicación para validar tanto la interfaz de usuario como los flujos de interacción. Además, ofrece integración con la configuración de un \emph{proxy}, lo que resulta útil para redirigir solicitudes hacia un back-end y evitar problemas relacionados con CORS durante la etapa de desarrollo. Esto implica que incluso un programador principiante puede simular de forma sencilla la comunicación con un servidor sin necesidad de configurar mecanismos complejos.
+				
+				Su uso práctico se ejemplifica en la edición de componentes o vistas en el editor de código y la observación de resultados instantáneos en el navegador. En muchos proyectos, se emplea un archivo de configuración como \texttt{proxy.conf.json} para redirigir automáticamente todas las peticiones realizadas a rutas específicas, como \texttt{/api}, hacia el servidor de back-end. De esta manera, el desarrollador únicamente modifica la interfaz de usuario en el entorno local y obtiene retroalimentación inmediata, lo que optimiza la productividad y asegura un flujo de trabajo más eficiente.
+									
+			\subsubsection{Construcción de producción (\emph{build} optimizado)}
+				La construcción de producción en Angular corresponde al proceso mediante el cual la aplicación se transforma en un conjunto de artefactos estáticos preparados para ser desplegados en un entorno real. Estos artefactos se generan en la carpeta \texttt{dist/} y contienen versiones optimizadas del código fuente que garantizan un rendimiento adecuado y una carga eficiente en el navegador. Este procedimiento constituye una fase esencial, ya que marca la transición entre el desarrollo local y la disponibilidad pública de la aplicación.
+				
+				Durante la construcción, se aplican técnicas de optimización como la minificación de archivos y la eliminación de código muerto mediante \emph{tree-shaking}. Asimismo, el sistema divide el código en fragmentos asociados a rutas o módulos específicos, lo que permite cargar dinámicamente solo las partes necesarias de la aplicación. Estas prácticas no solo reducen el tamaño de los archivos descargados, sino que también mejoran la experiencia del usuario final al disminuir los tiempos de carga y optimizar el uso de los recursos del sistema.
+				
+				Otro aspecto relevante de la construcción es la integración de variables de \texttt{environment}, que permite diferenciar configuraciones entre los entornos de desarrollo y producción. De esta forma, el mismo proyecto puede adaptarse a distintas necesidades sin modificar manualmente los archivos de código. El sistema incluye, además, la verificación de presupuestos de \emph{bundle}, lo que asegura que los tamaños de los paquetes generados no sobrepasen límites establecidos previamente, contribuyendo a mantener la eficiencia y escalabilidad de la aplicación.
+				
+				El resultado de este proceso es un conjunto de archivos HTML, JavaScript y CSS listos para desplegarse en un servidor estático, una red de distribución de contenido (CDN) o en plataformas especializadas de hosting, como Nginx o Firebase Hosting. Una vez publicados, estos artefactos garantizan que los usuarios accedan a una versión estable, segura y optimizada de la aplicación, preparada para responder de manera eficiente a las demandas de un entorno productivo.
+				
+			\subsubsection{Modelo \texttt{models/producto.model.ts}}
+				El archivo \texttt{core/models/producto.model.ts} cuyo contenido se muestra en el listado de código \ref{lst:producto-model}, cumple la función de definir la estructura de datos asociada a los productos dentro de la aplicación Angular. Se trata de un modelo tipado en TypeScript, cuyo objetivo es estandarizar cómo se representan los objetos en memoria y cómo se intercambian a través de los distintos componentes, servicios y módulos de la aplicación. Al establecer un contrato explícito para las propiedades que debe poseer un producto, se reduce la ambigüedad en el código y se incrementa la robustez en la comunicación entre cliente y servidor.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={Modelo de dominio \texttt{Producto}.},label=lst:producto-model]
+	//src/app/core/models/producto.model.ts
+	
+	export interface Producto {
+		id: number;
+		nombre: string;
+		precio: number;
+		descripcion?: string; // opcional
+		stock?: number;
+	}\end{lstlisting}
+				
+				\paragraph{Contrato JSON con el back-end.}
+				La interfaz \texttt{Producto} define el contrato de datos que se intercambia con la API. Para garantizar compatibilidad, los nombres de las propiedades deben corresponderse con las claves del JSON emitido por Spring Boot (p.\,ej., \texttt{id}, \texttt{nombre}, \texttt{precio}). Si el back-end expone nombres distintos (por ejemplo, \texttt{price} en lugar de \texttt{precio}), se recomienda adaptar el DTO en el servidor o mapear la respuesta en el cliente antes de exponerla al resto de la aplicación, a fin de mantener un modelo de dominio consistente en el front-end.
+				
+				Este modelo ofrece ventajas claras en términos de mantenibilidad, ya que cualquier cambio en la definición de un producto —por ejemplo, agregar un nuevo campo como \texttt{categoria} o \texttt{stock}— puede centralizarse en este archivo, propagándose de manera automática a todas las partes del sistema que lo utilizan. Además, permite aprovechar al máximo el sistema de tipos de TypeScript, proporcionando autocompletado, detección temprana de errores y mayor claridad semántica en el código fuente.
+				
+				Además, este modelo actúa como contrato de datos entre el cliente Angular y la API REST \cite{Fielding2000REST,WWWFieldingREST} de Spring Boot, ya que refleja la misma estructura de atributos utilizada en el formato JSON del servidor. De esta manera, se asegura que la comunicación entre ambos extremos sea consistente, evitando errores por discrepancias en los tipos de datos o nombres de campos \cite{Tilkov2009RESTQCon,AngularHTTP2025}.
+				
+				Dentro de la arquitectura de la aplicación, el modelo \texttt{Producto} actúa como la base de la comunicación entre el \texttt{ProductosService} y los componentes de interfaz, ya que define la forma exacta de los datos que se reciben desde la API y que posteriormente se presentan en la UI. En consecuencia, constituye un punto de convergencia entre la lógica de negocio y la representación visual, garantizando coherencia y seguridad de tipos en todo el flujo de datos de la aplicación.
+				
+				En aplicaciones de mediana o gran escala, este enfoque modular resulta fundamental porque evita la duplicación de definiciones en distintos puntos del sistema, facilita el trabajo colaborativo y asegura la compatibilidad entre las distintas capas de la aplicación \cite{AngularServices2025,AngularHttpClient2025,AngularEssentialsComponents}.
+				
+			\subsubsection{Componente \texttt{productos/lista}}
+				Antes de presentar la plantilla principal de la aplicación, conviene ilustrar un ejemplo de componente protegido. El \texttt{DashboardComponent} constituye la vista de acceso restringido, normalmente asociada a un área interna de la aplicación. Su propósito es mostrar información sensible únicamente a usuarios autenticados y con permisos adecuados.
+				
+				El listado de código \ref{lst:dashboard-standalone} muestra la definición mínima de este componente en modo Standalone.
+				
+				\begin{lstlisting}[language=bash,caption={\texttt{DashboardComponent} Standalone.},label=lst:dashboard-standalone]
+	/* src/app/dashboard/dashboard.component.ts */
+	import { Component } from '@angular/core';
+	
+	@Component({
+		selector: 'app-dashboard',
+		standalone: true,
+		template: `<h1>Dashboard</h1><p>Zona protegida.</p>`
+	})
+	export class DashboardComponent {} \end{lstlisting}
+				
+				De manera complementaria al panel de control, el \texttt{LoginComponent} (ver Listado de código \ref{lst:login-standalone}) proporciona la interfaz inicial para la autenticación de usuarios. Se trata de un componente Standalone que expone un formulario de acceso o, en su versión básica, un mensaje indicando la necesidad de iniciar sesión. Su implementación sencilla facilita la integración posterior con servicios de autenticación más avanzados.
+				
+				\begin{lstlisting}[language=bash,caption={\texttt{LoginComponent} Standalone.},label=lst:login-standalone]
+	/* src/app/login/login.component.ts */
+	import { Component } from '@angular/core';
+	
+	@Component({
+		selector: 'app-login',
+		standalone: true,
+		template: `<h1>Login</h1><p>Autentíquese para continuar.</p>`
+	})
+	export class LoginComponent {} \end{lstlisting}
+
+				Para manejar los intentos de acceso no autorizado, se utiliza el \texttt{Forbidden\-Component} cuya lógica de negocios se muestra en el Listado de código \ref{lst:forbidden-standalone}. Este componente Standalone actúa como página de error dedicada a usuarios que, si bien están autenticados, no poseen los privilegios necesarios para acceder a determinadas rutas. De esta forma, se refuerza la separación entre autenticación y autorización dentro de la aplicación.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={\texttt{ForbiddenComponent} Standalone.},label=lst:forbidden-standalone]
+	/* src/app/forbidden/forbidden.component.ts */
+	import { Component } from '@angular/core';
+	
+	@Component({
+		selector: 'app-forbidden',
+		standalone: true,
+		template: `<h1>403</h1><p>Acceso denegado.</p>`
+	})
+	export class ForbiddenComponent {} \end{lstlisting}
+				El \texttt{AppComponent} constituye el componente raíz de la aplicación Angular. En el enfoque Standalone, este componente importa explícitamente \texttt{RouterOutlet} para habilitar la navegación entre vistas, lo que garantiza que el enrutamiento definido en \texttt{app.routes.ts} se renderice dinámicamente en la interfaz. El Listado de código \ref{lst:appcomponent-standalone} muestra su definición.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={Componente raíz Standalone \texttt{AppComponent}.},label=lst:appcomponent-standalone]
+	/* src/app/app.component.ts */
+	import { Component } from '@angular/core';
+	import { RouterOutlet } from '@angular/router';
+	
+	@Component({
+		selector: 'app-root',
+		standalone: true,
+		imports: [RouterOutlet],
+		templateUrl: './app.component.html',
+		styleUrls: ['./app.component.scss']
+	})
+	export class AppComponent {} \end{lstlisting}
+				
+				La plantilla asociada al componente raíz es sumamente concisa, ya que delega la responsabilidad de la navegación en el enrutador de Angular. Mediante la directiva \texttt{<router-outlet>}, se insertan dinámicamente los componentes correspondientes a las rutas activas. Este patrón refuerza la modularidad y la separación de responsabilidades en la arquitectura de la aplicación.El listado de código \ref{lst:appcomponent-html} muestra la inclusión de la directiva \texttt{<router-outlet>} como parte de la plantilla raíz, cuya función es actuar como contenedor dinámico de los componentes enrutados.
+				
+				
+				\begin{lstlisting}[language=html,mathescape=false,caption={Plantilla raíz con \texttt{RouterOutlet}.},label=lst:appcomponent-html]
+		<!-- src/app/app.component.html -->
+		<router-outlet></router-outlet> \end{lstlisting}
+		
+				El componente \texttt{productos/lista} (ver Listados~\ref{lst:lista-standalone} y \ref{lst:lista-html}) constituye la pieza de interfaz encargada de proyectar en pantalla los datos consumidos desde la API REST. Este componente se suscribe al flujo de productos expuesto por el servicio, y mediante el uso de \texttt{AsyncPipe} y \texttt{trackBy}, renderiza eficientemente los registros devueltos por el servidor. De esta forma, el front-end Angular refleja en tiempo real la información proveniente del back-end, manteniendo la separación entre la lógica de datos (servicio) y la presentación (componente) \cite{AngularTeam2025Advanced,RxjsDocs2025RxjsDocs}.
+				
+				\paragraph{Vinculación UI \(\leftrightarrow\) API.}
+				Los componentes de presentación consumen el \texttt{Observable\-<Producto[]>} expuesto por \texttt{ProductosService} y proyectan sus datos en la plantilla mediante \texttt{AsyncPipe}. En la clase del componente (listado \ref{lst:lista-standalone}), la propiedad \texttt{productos\$} recibe el flujo emitido por \texttt{listar()}, mientras que en la plantilla (listado \ref{lst:lista-html}) se recorre la colección con \texttt{*ngFor}, aplicando \texttt{trackBy} para minimizar el trabajo de detección de cambios. Esta separación de responsabilidades mantiene el componente \emph{delgado} y delega en el servicio la interacción con la API.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={\texttt{ListaComponent} Standalone con \texttt{CommonModule}.},label=lst:lista-standalone]
+	/* src/app/productos/lista/lista.component.ts */
+	import { Component, ChangeDetectionStrategy } from '@angular/core';
+	import { CommonModule } from '@angular/common';
+	import { Observable } from 'rxjs';
+	import { ProductosService } from '../../core/productos.service';
+	import { Producto } from '../../core/models/producto.model';
+	
+	@Component({
+		selector: 'app-productos-lista',
+		standalone: true,
+		imports: [CommonModule],
+		templateUrl: './lista.component.html',
+		styleUrls: ['./lista.component.scss'],
+		changeDetection: ChangeDetectionStrategy.OnPush
+	})
+	export class ListaComponent {
+		productos$: Observable<Producto[]> = this.productosSvc.listar();
+		constructor(private productosSvc: ProductosService) {}
+		trackById = (_: number, p: Producto) => p.id;
+		seleccionar(p: Producto): void { console.log('Seleccionado:', p); }
+		editar(p: Producto): void { console.log('Editar:', p); }
+} \end{lstlisting}
+
+				Este enfoque admite flujos de trabajo declarativos mediante enlaces de datos, que incluyen interpolación, binding de propiedades y binding de eventos, permitiendo sincronizar la vista con el modelo sin manipulación manual del DOM. La detección de cambios (change detection) opera automáticamente, actualizando el DOM cuando el estado del componente varía \cite{DataBindingAngular}. Además, Angular permite renderizar listas dinámicamente mediante directivas estructurales como \texttt{*ngFor} e incorpora condicionales en la vista con \texttt{*ngIf}, facilitando la creación de estructura dinámica en la interfaz \cite{AngularStructuralDirectives}.
+				
+				En su funcionamiento, el componente inyecta un servicio que proporciona un observable con una lista de productos (por ejemplo, \texttt{Observable<Producto[]>}), y la plantilla recorre dicha colección utilizando \texttt{*ngFor}, donde puede aplicarse \texttt{trackBy} para optimizar el rendimiento. Cada elemento del listado puede incluir botones o acciones (como ``seleccionar'' o ``editar'') enlazados mediante eventos, lo que permite comunicar interacciones hacia componentes superiores. Esta arquitectura separa claramente la responsabilidad de presentación del acceso a datos—la lógica reside en el servicio, mientras el componente solo maneja la visualización y la interacción.
+				
+				El listado \ref{lst:lista-html} muestra la plantilla del componente con \texttt{AsyncPipe} y \texttt{trackBy}, que renderiza eficientemente la colección proveniente del servicio. La lógica TypeScript correspondiente se presenta en el listado \ref{lst:lista-standalone}, donde se habilita \texttt{Change\-Detection\-Strategy.\-OnPush} y se expone el flujo \texttt{productos\$}.
+				
+				\begin{lstlisting}[language=html,mathescape=false,caption={Plantilla del componente \texttt{productos/lista} con \texttt{AsyncPipe} y \texttt{trackBy}.},label=lst:lista-html]
+<!-- src/app/productos/lista/lista.component.html -->
+
+<section class="productos">
+	<h2>Productos</h2>
+	
+	<ng-container *ngIf="productos$ | async as productos; else cargando">
+		<div *ngIf="productos.length; else sinDatos">
+			<ul>
+				<li *ngFor="let p of productos; trackBy: trackById">
+					<strong>{{ p.nombre }}</strong>
+					— {{ p.precio | currency:'USD' }}
+					<button type="button" (click)="seleccionar(p)">Seleccionar</button>
+					<button type="button" (click)="editar(p)">Editar</button>
+				</li>
+			</ul>
+		</div>
+	</ng-container>
+	
+	<ng-template #cargando>
+		<p>Cargando...</p>
+	</ng-template>
+	
+	<ng-template #sinDatos>
+		<p>No hay productos para mostrar.</p>
+	</ng-template>
+</section>\end{lstlisting}
+				
+			\subsubsection{Arranque Standalone en \texttt{main.ts}}
+				En esta configuración, \texttt{provideHttpClient} actúa como punto de integración con la API REST de Spring Boot, mientras que \texttt{provideRouter} establece la navegación de la SPA. El front-end permanece desacoplado del back-end: basta con ajustar \texttt{environment.apiBaseUrl} (o un \texttt{proxy} de desarrollo) para redirigir el tráfico HTTP al servidor correspondiente sin tocar el código de los componentes.
+				
+				El punto de entrada Standalone (ver Listado~\ref{lst:main-standalone}) utiliza la función \texttt{bootstrap\-Application} y registra tanto el enrutador como el cliente HTTP mediante \texttt{provide\-Router} y \texttt{\-provide\-Http\-Client}. Esta configuración habilita la integración directa del front-end Angular con el back-end RESTful en Spring Boot, asegurando que todas las rutas declaradas en \texttt{app.routes.ts} se comuniquen con la API de manera tipada y consistente.
+				
+				A partir de Angular 17, las APIs \textit{Standalone} se han convertido en la forma recomendada para crear aplicaciones sin necesidad de utilizar \texttt{NgModule}. En esta guía se adopta plenamente el enfoque \textit{Standalone}: las rutas se definen en \texttt{app.routes.ts} y se registran en \texttt{main.ts} mediante \texttt{provideRouter}. El arranque de la aplicación se realiza con \texttt{bootstrap\-Application}, y cada componente enrutado se declara con la opción \texttt{standalone: true}. Este cambio simplifica la estructura del proyecto, mejora la legibilidad del código y refleja las mejores prácticas actuales en el ecosistema Angular.
+			
+			\subsubsection{Consumo de API RESTful desde Angular}
+				Un cliente Angular interactúa con una API RESTful mediante peticiones HTTP tipadas que intercambian JSON. Este esquema promueve la separación de responsabilidades: el cliente gestiona estado de vista, interacción y composición de UI; el servidor define recursos, reglas de negocio y persistencia. La asincronía se representa con \emph{Observables} de RxJS, lo que habilita composición, cancelación y manejo uniforme de éxito/errores.
+				
+				En entornos profesionales, se recomienda parametrizar la URL base del back-end vía \texttt{environments}, emplear un \texttt{proxy} en desarrollo para evitar CORS, y centralizar en servicios el acceso a datos y el tratamiento de errores.
+				
+			\subsubsection{Servicio \texttt{core/productos}} 
+				El servicio \texttt{core/productos} constituye la capa de acceso a datos y lógica compartida para la gestión de productos, siendo el componente responsable de conectar la aplicación con el back-end. Su propósito es aislar los detalles de comunicación HTTP del resto de la aplicación, de manera que los componentes se mantengan enfocados en la presentación y en la interacción con el usuario. Este enfoque favorece la separación de responsabilidades y permite una mayor mantenibilidad del código en aplicaciones de mediana y gran escala \cite{AngularServices2025}.  
+				
+				\paragraph{Fundamentos del consumo REST en Angular.}
+				En Angular, el consumo de una API RESTful se realiza típicamente mediante \texttt{HttpClient}, que emite \emph{Observables} de RxJS para representar respuestas asincrónicas. El intercambio de datos se efectúa en formato JSON y, por convención, cada recurso se identifica mediante una ruta estable (p.\,ej., \texttt{/api/productos}) y operaciones CRUD accesibles vía HTTP (\texttt{GET}, \texttt{POST}, \texttt{PUT}, \texttt{DELETE}). Este patrón, alineado con la arquitectura cliente-servidor, favorece la independencia entre el front-end Angular y el back-end (API RESTful implementada en Spring Boot), simplifica pruebas y despliegues, y habilita optimizaciones como \emph{caching} y reintentos controlados en el cliente \cite{Tilkov2009RESTQCon,Fielding2000REST,WWWFieldingREST}.  
+				
+				Una de sus principales características es que se declara como inyectable mediante el mecanismo de inyección de dependencias (DI) propio de Angular. Esto significa que el servicio puede ser reutilizado en múltiples componentes sin necesidad de instanciarlo manualmente. Además, define métodos tipados para las operaciones más comunes sobre productos —como \texttt{get}, \texttt{post}, \texttt{put} y \texttt{delete}— garantizando la coherencia de tipos gracias al uso de TypeScript.  
+				
+				Las funcionalidades de este servicio incluyen la encapsulación de las URLs de la API, la definición de parámetros de las solicitudes y el mapeo de las respuestas obtenidas. También centraliza operaciones avanzadas como reintentos de conexión, almacenamiento en caché y manejo de errores. Para un desarrollador principiante, esto se traduce en una ventaja significativa: no es necesario repetir en cada componente la lógica de conexión al servidor, ya que todo se concentra en un punto común y reutilizable dentro de la aplicación.  
+				
+				En la práctica, el servicio \texttt{core/productos} suele implementar métodos como \texttt{listar()}, \texttt{obtener(id)}, \texttt{crear(dto)}, \texttt{actualizar(id, dto)} y \texttt{eliminar(id)}. Estos métodos son consumidos desde los componentes o resolvers de Angular. Por ejemplo, un componente de lista puede invocar de manera directa a \texttt{productosService\-.listar()} para obtener los datos y mostrarlos en la interfaz, sin necesidad de preocuparse por los detalles técnicos de la comunicación HTTP.
+				Este nivel de abstracción mejora la productividad del equipo y reduce la probabilidad de errores relacionados con la duplicación de lógica de red en diferentes partes del sistema \cite{AngularHttpClient2025}.  
+				
+				\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title={Transferencia de Representaciones del Estado de los Recursos o \textit{Representational State Transfer} (REST)}]
+					REST (\textit{Representational State Transfer}) es un estilo arquitectónico propuesto por Roy Fielding en el año 2000, caracterizado por restricciones como la comunicación cliente-servidor, la ausencia de estado, el uso de una interfaz uniforme y la posibilidad de almacenamiento en caché \cite{Fielding2000REST,WWWFieldingREST}. Estas reglas definen un marco teórico que ha servido de base para la evolución de la web moderna y la construcción de servicios distribuidos.
+				\end{tcolorbox}
+				
+				La literatura técnica y fuentes aplicadas coinciden en destacar que RESTful representa un mayor grado de conformidad con los principios de REST, garantizando uniformidad y consistencia en el diseño de las interfaces \cite{MediumRESTvsRESTful,RadixWebRESTvsRESTful}. En la práctica, esta distinción ayuda a evaluar la calidad arquitectónica de un servicio y su capacidad para integrarse en entornos distribuidos, escalables y confiables.
+				
+				\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title={Diferencia entre REST y RESTful}]
+					El término \textbf{RESTful} hace referencia a aquellas implementaciones de servicios que cumplen estrictamente con todos los principios de REST. En contraste, algunas APIs denominadas únicamente “REST” pueden no adherirse completamente a dichas restricciones, aplicando solo un subconjunto de ellas \cite{GeeksForGeeksRESTvsRESTful,StackOverflowRESTvsRESTful}. De esta forma, mientras REST describe el estilo y sus principios, RESTful designa la fidelidad de una API a dicho estilo.
+				\end{tcolorbox}
+				
+				\paragraph{Presentación del listado \ref{lst:productservice}.}
+				El listado \ref{lst:productservice}, correspondiente al archivo \texttt{src/\-app/\-core/\-productos\-.service\-.ts}, muestra la implementación del servicio \texttt{Productos\-Service} que orquesta las operaciones CRUD contra la API RESTful implementada en Spring Boot. La URL base del back-end se obtiene desde los archivos de \texttt{environments}, lo que permite diferenciar entornos (desarrollo/producción) sin modificar el código de la capa de acceso a datos. Además, cada método retorna un \texttt{\-Observable<T>} tipado, de modo que los componentes puedan suscribirse (o usar \texttt{AsyncPipe}) y reaccionar a nuevas emisiones, errores o finalización de la secuencia \cite{Richardson2018Microservices,AngularHTTP2025}.
+				
+				\begin{lstlisting}[language=bash,caption={Servicio core/productos en Angular para gestionar operaciones CRUD.},label=lst:productservice]
+// src/app/core/productos.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Producto } from './models/producto.model';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class ProductosService {
+	private baseUrl = '/api/productos'; // URL base de la API
+	
+	constructor(private http: HttpClient) {}
+	
+	listar(): Observable<Producto[]> {
+		return this.http.get<Producto[]>(this.baseUrl);
+	}
+	
+	obtener(id: number): Observable<Producto> {
+		return this.http.get<Producto>(`${this.baseUrl}/${id}`);
+	}
+	
+	crear(producto: Omit<Producto, 'id'>): Observable<Producto> {
+		return this.http.post<Producto>(this.baseUrl, producto);
+	}
+	
+	actualizar(id: number, producto: Producto): Observable<Producto> {
+		return this.http.put<Producto>(`${this.baseUrl}/${id}`, producto);
+	}
+	
+	eliminar(id: number): Observable<void> {
+		return this.http.delete<void>(`${this.baseUrl}/${id}`);
+	}
+}\end{lstlisting}		
+			
+				Además, gracias a la anotación \texttt{@Injectable(\{ providedIn: 'root' \})}, el servicio está disponible de forma global en la aplicación, evitando configuraciones adicionales y facilitando su reutilización en cualquier componente que lo requiera.
+			
+			\subsubsection{Guardia de rutas \texttt{auth/auth}}
+				En Angular, un guardia de rutas constituye un mecanismo fundamental para controlar el acceso a secciones específicas de una aplicación. Se implementa mediante interfaces como \texttt{CanActivate}, \texttt{CanDeactivate} o \texttt{CanLoad}, que permiten determinar si una ruta debe activarse, cargarse o abandonarse en función de condiciones predefinidas \cite{AngularRouterGuide}. Este enfoque resulta especialmente útil en aplicaciones que requieren protección de áreas privadas o sensibles, como paneles administrativos o flujos restringidos a determinados perfiles de usuario.
+				
+				La característica central de los guardias de rutas es su integración directa con el enrutador de Angular. Gracias a esta integración, es posible consultar de manera directa el estado de autenticación del usuario o validar sus roles antes de renderizar un componente o cargar un módulo de forma diferida (\textit{lazy loading}). Cuando las condiciones no se cumplen, el guardia redirige la navegación hacia rutas alternativas, como la página de inicio de sesión, evitando así accesos no autorizados \cite{AngularSecurityBestPractices}.  
+				
+				Su funcionalidad no se limita únicamente a la autenticación. Los guardias también pueden utilizarse para verificar la validez de datos en formularios, la disponibilidad de servicios o incluso la configuración de permisos a nivel de organización. De este modo, los desarrolladores obtienen una herramienta versátil para aplicar reglas de negocio relacionadas con la navegación y la seguridad de la aplicación \cite{AngularAdvancedRouting2024}.  
+				
+				Un caso práctico habitual consiste en verificar el estado de sesión mediante un servicio de autenticación. Si la función \texttt{isLoggedIn()} (véase el Listado de código \ref{lst:authguard}) devuelve \texttt{true}, el guardia concede acceso a la ruta solicitada. En entornos empresariales, este mecanismo puede ampliarse para implementar políticas más estrictas, como la validación de roles específicos antes de autorizar el acceso a determinados recursos, lo que permite aplicar un modelo de control de acceso basado en roles (RBAC).  
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={Guardia de rutas \texttt{auth/auth.guard.ts} en Angular para gestionar accesos y roles.},label=lst:authguard]
+// src/app/auth/auth.guard.ts
+import { Injectable } from '@angular/core';
+import { CanActivate, Router, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+	
+	constructor(private authService: AuthService, private router: Router) {}
+	
+	canActivate():
+	| boolean
+	| UrlTree
+	| Observable<boolean | UrlTree>
+	| Promise<boolean | UrlTree> {
+		
+		// Verificar si el usuario está autenticado
+		if (this.authService.isLoggedIn()) {
+			// Opcional: validar roles
+			if (this.authService.hasRole('ADMIN')) {
+				return true;
+			} else {
+				// Redirigir a página de "acceso denegado"
+				return this.router.createUrlTree(['/forbidden']);
+			}
+		}
+		
+		// Si no está autenticado, redirigir al login
+		return this.router.createUrlTree(['/login']);
+	}
+} \end{lstlisting}
+				
+				El listado de código \ref{lst:authservice} muestra un servicio de autenticación básico que proporciona el estado de sesión y la verificación de roles, sobre el cual se apoya el guardia de rutas.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={Servicio auth/auth.service.ts en Angular para gestionar las sesiones.},label=lst:authservice]
+// src/app/auth/auth.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class AuthService {
+	
+	// Simulación de estado de sesión
+	private user = {
+		loggedIn: true,
+		role: 'ADMIN'
+	};
+	
+	isLoggedIn(): boolean {
+		return this.user.loggedIn;
+	}
+	
+	hasRole(role: string): boolean {
+		return this.user.role === role;
+	}
+} \end{lstlisting}
+
+				En entornos empresariales, donde es común tener múltiples perfiles de usuario (administradores, editores, visitantes), los guardias de rutas resultan imprescindibles para asegurar la segmentación de funciones y el cumplimiento de políticas de seguridad. El listado de código~\ref{lst:authservice} muestra un servicio de autenticación básico que gestiona el estado de sesión y la verificación de roles, sobre el cual se apoya el guardia de rutas.
+				
+				La combinación de sencillez en la implementación y solidez en los resultados convierte a este mecanismo en un pilar esencial dentro de la arquitectura de seguridad de Angular. Su integración con el enrutador proporciona un control granular sobre la navegación, permitiendo no solo validar la autenticación del usuario, sino también aplicar reglas de negocio relacionadas con la autorización y la gestión de permisos. Gracias a esta capacidad de interceptar y condicionar el flujo de enrutamiento, los guardias garantizan que las aplicaciones web desarrolladas con Angular mantengan altos niveles de seguridad, coherencia y confiabilidad, incluso en escenarios complejos de uso real \cite{AngularRouterGuide,AngularSecurityBestPractices,AngularAdvancedRouting2024}.
+				
+			\subsubsection{Enrutamiento Standalone con \texttt{app.routes.ts}}
+				En aplicaciones Standalone (Angular 17/18), el enrutamiento se declara en un archivo de rutas exportadas y se registra mediante \texttt{provideRouter} en \texttt{main.ts}, sin necesidad de un \textit{NgModule}. El siguiente listado define rutas públicas (\texttt{/login}, \texttt{/forbidden}) y una ruta protegida (\texttt{/dashboard}) con el guard \texttt{AuthGuard}.
+				
+				El Listado de código \ref{lst:app-routes}, correspondiente al archivo \texttt{src/app/app.routes.ts}, define la configuración de rutas en Angular bajo el enfoque \emph{Standalone}. Dichas rutas no solo delimitan vistas públicas (como el inicio de sesión o la página de acceso denegado), sino también zonas protegidas que consumen datos expuestos por el back-end REST desarrollado en Spring Boot. Esta separación garantiza que la navegación del cliente esté controlada mediante guardias de autenticación, mientras que los recursos del servidor se mantienen accesibles únicamente bajo las condiciones establecidas. De esta manera, el enrutador se convierte en un elemento clave de integración entre la interfaz de usuario y la API RESTful.
+				
+				\begin{lstlisting}[language=bash,mathescape=false,caption={Rutas Standalone en \texttt{app.routes.ts}.},label=lst:app-routes]
+/* src/app/app.routes.ts */
+import { Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+export const routes: Routes = [
+	{ path: 'login', component: LoginComponent },
+	{ path: 'forbidden', component: ForbiddenComponent },
+	{
+		path: 'dashboard',
+		component: DashboardComponent,
+		canActivate: [AuthGuard] // Ruta protegida
+	},
+	{ path: '**', redirectTo: 'login' }
+];
+\end{lstlisting}
+			
+			\subsubsection{Estructura Final del Proyecto Angular}
+				La Figura \ref{fig:estructura-angular-final} presenta la estructura final de un proyecto en Angular construido bajo el enfoque \emph{Standalone} (Angular 17+). Este esquema refleja no solo los archivos generados automáticamente por la CLI mediante el comando \texttt{ng new}, sino también los directorios y ficheros creados de forma manual durante el desarrollo de la aplicación, tales como servicios, modelos, componentes adicionales y guardias de rutas.
+				
+				\begin{figure}[!hbt]
+					\dirtree{%
+						.1 tienda-app/.
+						.2 node\_modules/.         % dependencias instaladas por el gestor (ocupa mucho; no se versiona).
+						.2 src/.
+						.3 app/.
+						.4 app.component.ts.       % componente raíz Standalone (imports: RouterOutlet).
+						.4 app.component.html.     % plantilla raíz con <router-outlet>.
+						.4 app.component.scss.     % estilos del componente raíz.
+						.4 app.routes.ts.          % definición de rutas (Standalone) con AuthGuard.
+						.4 auth/.
+						.5 auth.guard.ts.          % guardia de rutas (canActivate) con redirecciones /login y /forbidden.
+						.5 auth.service.ts.        % servicio básico de autenticación (isLoggedIn, hasRole).
+						.4 core/.
+						.5 models/.
+						.6 producto.model.ts.      % interfaz Producto (id, nombre, precio, ...).
+						.5 productos.service.ts.   % servicio CRUD contra /api/productos usando HttpClient.
+						.4 dashboard/.
+						.5 dashboard.component.ts. % componente Standalone de zona protegida.
+						.4 login/.
+						.5 login.component.ts.     % componente Standalone de login.
+						.4 forbidden/.
+						.5 forbidden.component.ts. % componente Standalone de acceso denegado.
+						.4 productos/.
+						.5 lista/.
+						.6 lista.component.ts.     % componente Standalone de listado (OnPush, trackBy, AsyncPipe).
+						.6 lista.component.html.   % plantilla del listado (ngIf, ngFor, trackBy, botones).
+						.6 lista.component.scss.   % estilos (opcional, recomendado).
+						.3 assets/.                % recursos estáticos (imágenes, íconos, etc.).
+						.3 environments/.
+						.4 environment.ts.         % configuración para desarrollo (si fue generada por la CLI).
+						.4 environment.prod.ts.    % configuración para producción (si fue generada por la CLI).
+						.3 favicon.ico.            % ícono por defecto.
+						.3 main.ts.                % arranque Standalone (bootstrapApplication, provideRouter, provideHttpClient).
+						.2 angular.json.           % configuración de Angular CLI (build, serve, test, budgets, etc.).
+						.2 package.json.           % dependencias y scripts (ng serve, ng build, etc.).
+						.2 tsconfig.app.json.      % configuración TypeScript para la app.
+						.2 tsconfig.json.          % configuración TypeScript raíz.
+						.2 tsconfig.spec.json.     % configuración TypeScript para pruebas unitarias.
+						.2 README.md.              % guía inicial del proyecto.
+					}
+					\textcolor{Orange}{\textbf{\caption{Estructura final del proyecto Angular (Standalone) con todos los archivos creados y referenciados en el capítulo.\label{fig:estructura-angular-final}}}}
+				\end{figure}
+				
+				\begin{tcolorbox}[title={Nota sobre entornos y CORS}, colback=gray!3, colframe=gray!50]
+					En desarrollo, es habitual emplear un archivo \texttt{proxy.conf.json} para redirigir las solicitudes realizadas a \texttt{/api} hacia \texttt{http://localhost:8080}, evitando así problemas de CORS cuando se ejecuta \texttt{ng serve}. 
+					En producción, la URL base del back-end se gestiona a través de \texttt{environment.prod.ts} (\texttt{apiBaseUrl}), de modo que la aplicación Angular pueda apuntar a un servidor desplegado sin cambios en el código. 
+					Esta estrategia permite alternar entre entornos sin modificar los servicios ni los componentes, reforzando la portabilidad y mantenibilidad del proyecto.
+				\end{tcolorbox}
+				
+				En primer lugar, se observa el directorio \texttt{src/app}, que constituye el núcleo de la aplicación. Allí se ubican tanto el componente raíz (\texttt{AppComponent}) como los subdirectorios que agrupan funcionalidades específicas: \texttt{auth/} para la lógica de autenticación (incluyendo el guardia de rutas y el servicio correspondiente), \texttt{core/} para servicios reutilizables y modelos de dominio, y \texttt{productos/} que contiene el componente de lista encargado de mostrar los datos obtenidos desde el back-end. De igual forma, los directorios \texttt{dashboard/}, \texttt{login/} y \texttt{forbidden/} agrupan los componentes asociados a cada vista principal de la aplicación, siguiendo una organización modular que facilita la mantenibilidad y la escalabilidad.
+				
+				Por otra parte, la carpeta \texttt{environments/} contiene los archivos de configuración para distintos contextos de ejecución (desarrollo y producción), mientras que \texttt{assets/} agrupa los recursos estáticos necesarios para la interfaz (como imágenes o íconos). Los ficheros de configuración a nivel raíz —\texttt{angular.json}, \texttt{tsconfig.json}, \texttt{package.json}, entre otros— permiten orquestar la compilación, gestionar dependencias y definir parámetros de tipado en TypeScript, garantizando la reproducibilidad del proyecto en distintos entornos.
+				
+				El archivo \texttt{main.ts}, junto con \texttt{app.routes.ts}, desempeña un rol central en la arquitectura Standalone: el primero constituye el punto de entrada que inicializa la aplicación mediante la función \texttt{bootstrapApplication}, mientras que el segundo define el conjunto de rutas de navegación y aplica las reglas de acceso asociadas a los guardias. De esta manera, el proyecto combina la simplicidad estructural de Angular moderno con la robustez necesaria para escenarios empresariales, asegurando buenas prácticas de modularidad, separación de responsabilidades y control de dependencias.
+				
+				Finalmente, es importante subrayar que esta estructura no solo responde a una necesidad técnica, sino que representa un estándar académico y profesional para el desarrollo de software moderno. La claridad en la organización de los archivos fomenta la colaboración en equipos multidisciplinarios, reduce la curva de aprendizaje para nuevos desarrolladores y facilita las prácticas de ingeniería de software basadas en pruebas, control de versiones y despliegue continuo. Por ello, comprender y aplicar esta organización es un componente esencial en la formación de competencias en desarrollo web avanzado, particularmente en entornos universitarios y en proyectos de investigación orientados a la transferencia tecnológica y la innovación.
+				
+			
+	\section{React}
+	\label{sec:react}
+		React es una biblioteca de JavaScript centrada en la construcción de interfaces mediante componentes funcionales y un modelo declarativo de actualización de la vista. Su contribución arquitectónica más influyente es la abstracción del DOM mediante un árbol virtual y un proceso de \emph{reconciliación} que determina de manera eficiente los cambios mínimos a aplicar, simplificando el modelo de programación y, a la vez, mejorando el rendimiento observable en la práctica \cite{CACMReact2016}. En términos de ingeniería de software, React se alinea con el paradigma de programación reactiva, donde los flujos de datos y la propagación de cambios permiten mantener la coherencia entre estado, lógica y representación \cite{BainomugishaCSUR2013}.
+			
+		\subsection{Principios y Modelo de Componentes}
+			El modelo de React parte de componentes funcionales que reciben \texttt{props}, gestionan \texttt{state} de manera local y producen una descripción declarativa de la UI. La composición de componentes resulta natural al estar basada en objetos y funciones de JavaScript, lo que favorece la modularidad y la reutilización a gran escala \cite{CACMReact2016}. Asimismo, la introducción de \emph{Hooks} formaliza un mecanismo para encapsular y reutilizar lógica de estado y efectos secundarios sin recurrir a clases, reforzando la separación de preocupaciones y la testabilidad del código.
+			
+		\subsection{Entorno y Gestión de Versiones}
+			Para asegurar reproducibilidad y consistencia entre equipos, se recomienda fijar versiones de Node.js y dependencias con un gestor de versiones (v.\,gr., NVM) y bloquear resoluciones en el gestor de paquetes (véase la discusión de entorno en la Sección~\ref{sec:INJS}). Esta disciplina de entorno es especialmente relevante en ecosistemas con herramientas de construcción modernas, dado que pequeñas divergencias de versión pueden alterar el comportamiento de la cadena de construcción y del \emph{bundler} subyacente \cite{MOBILESoftPWA2020}.
+			
+			En el caso de React, se sugiere crear un archivo de configuración que deje constancia de la versión de Node.js utilizada y del gestor de paquetes adoptado en el proyecto. Esto puede lograrse, por ejemplo, con un archivo \texttt{.nvmrc}, el cual asegura que todos los miembros del equipo utilicen la misma versión al activar el entorno. El listado~\ref{lst:nvmrc-react} muestra un ejemplo de este archivo.
+			
+			\begin{lstlisting}[language=bash,mathescape=false,caption={Archivo .nvmrc para fijar la versión de Node.js en un proyecto React.},label={lst:nvmrc-react}]
+	# Versión LTS recomendada para proyectos React
+	lts/*
+	# O una versión específica
+	v20.11.1
+			\end{lstlisting}
+			
+			De manera complementaria, es recomendable bloquear la resolución de dependencias del proyecto mediante los archivos de bloqueo (\texttt{package-lock.json} en npm o \texttt{pnpm-lock.yaml} en pnpm). Estos ficheros garantizan que las mismas versiones de librerías se instalen en cada máquina y en cada despliegue, evitando errores difíciles de reproducir. El listado~\ref{lst:init-react} ilustra la inicialización de un proyecto React con Vite y la creación automática de dicho archivo de bloqueo.
+			
+			\begin{lstlisting}[language=bash,mathescape=false,caption={Inicialización de un proyecto React con Vite que genera automáticamente el archivo de bloqueo de dependencias.},label={lst:init-react}]
+	# Crear un nuevo proyecto con Vite + React
+	npm create vite@latest mi-app-react -- --template react
+	cd mi-app-react
+	
+	# Instalar dependencias (se crea package-lock.json)
+	npm install
+			\end{lstlisting}
+			
+			Finalmente, para reforzar la consistencia del entorno, puede añadirse al proyecto un archivo \texttt{.npmrc} (o su equivalente en otros gestores), que especifique configuraciones clave como la política de versiones semánticas o la fuente del registro de paquetes. Esto permite alinear las configuraciones locales con las de la integración continua y el entorno de producción, minimizando sorpresas en el ciclo de vida de la aplicación.
+			
+		\subsection{Creación de un Proyecto con Vite}
+			A diferencia de otros \emph{toolchains}, React adopta un enfoque agnóstico a la herramienta de construcción. Una opción liviana y ampliamente usada es Vite, que aprovecha módulos ES y una arquitectura de desarrollo rápido. Antes de ejecutar el listado \ref{lst:react-vite-init}, es pertinente señalar que la selección de plantilla y gestor de paquetes debe alinearse con las políticas del proyecto (tipado con TypeScript, estrategias de linting y formato, etc.).
+			
+			\begin{lstlisting}[language=bash,mathescape=false,caption={Inicialización de un proyecto React con Vite.},label={lst:react-vite-init}]
+	# Crear proyecto con plantilla React + TypeScript
+	npm create vite@latest tienda-react -- --template react-ts
+	cd tienda-react
+	npm install
+	npm run dev
+			\end{lstlisting}
+			
+			% Párrafo que referencia listado y figura
+			Tras ejecutar el procedimiento del listado~\ref{lst:react-vite-init}, Vite crea una
+			organización inicial de archivos y carpetas mostrada en la Figura~\ref{fig:react-vite-struct}.
+			Esta estructura separa la configuración de compilación del código fuente y los recursos estáticos.
+			
+			\begin{figure}[!hbt]
+				%\centering
+				\begin{verbatim}
+			tienda-react/
+			├── index.html
+			├── package.json
+			├── tsconfig.json
+			├── vite.config.ts
+			├── .gitignore
+			├── node_modules/   (dependencias instaladas; carpeta grande, generada)
+			└── src/
+			├── main.tsx        (punto de entrada; monta <App />)
+			├── App.tsx         (componente raíz)
+			├── App.css         (estilos iniciales)
+			└── assets/         (recursos estáticos)
+				\end{verbatim}
+				\caption{Estructura inicial de un proyecto React creado con Vite y TypeScript.}
+				\label{fig:react-vite-struct}
+			\end{figure}
+			
+			% Introducción a la figura (mantén un párrafo antes del float)
+			La Figura~\ref{fig:react-env} resume el flujo de entorno reproducible para React, evitando inconsistencias entre desarrollo, CI/CD y producción mediante la fijación de Node.js con NVM, el uso de un único gestor de paquetes y el bloqueo de dependencias.
+			
+			\begin{figure}[!hbt]
+				\centering
+				% Si hace falta compactar, descomenta la línea siguiente:
+				% \begin{adjustbox}{max width=\linewidth}
+					\begin{tikzpicture}[
+						>=Latex,
+						node distance=8mm and 18mm,
+						box/.style={
+							draw,
+							rounded corners,
+							fill=gray!5,
+							align=center,
+							inner sep=3mm,
+							text width=44mm
+						},
+						arr/.style={-{Latex[length=2mm]},thick},
+						every node/.style={font=\small}
+						]
+						
+						% Fila 1
+						\node[box] (react) {Proyecto React\\(código fuente)};
+						\node[box, right=of react] (nvm) {Node.js con NVM\\\texttt{.nvmrc}};
+						\node[box, right=of nvm] (policy) {Política de versiones\\\texttt{.npmrc}, semver, registro};
+						
+						% Fila 2
+						\node[box, below=of react] (pkg) {Gestor de paquetes\\npm / pnpm / yarn / bun};
+						\node[box, below=of nvm] (lockf) {Bloqueo de dependencias\\\texttt{package-lock.json}\\\texttt{pnpm-lock.yaml}};
+						
+						% Fila 3
+						\node[box, below=of pkg] (dev) {Estación de desarrollo\\\texttt{npm ci}\\\texttt{pnpm install --frozen-lockfile}};
+						\node[box, below=of lockf] (ci)  {CI/CD\\(Node + lockfile)};
+						\node[box, right=of ci] (prod)  {Producción\\despliegue reproducible};
+						
+						% Flechas
+						\draw[arr] (react) -- (pkg);
+						\draw[arr] (nvm)   -- (pkg);
+						\draw[arr] (policy) -- (pkg);
+						
+						\draw[arr] (pkg)   -- node[above,sloped]{resuelve} (lockf);
+						
+						\draw[arr] (lockf) -- (dev);
+						\draw[arr] (nvm)   |- (dev);
+						
+						\draw[arr] (lockf) -- (ci);
+						\draw[arr] (nvm)   |- (ci);
+						
+						\draw[arr] (ci)    -- (prod);
+						
+					\end{tikzpicture}
+					% \end{adjustbox}
+				\caption{Flujo de entorno reproducible para React: fijación de Node.js con NVM, uso de un único gestor de paquetes, bloqueo de dependencias y aplicación consistente en desarrollo, CI/CD y producción.}
+				\label{fig:react-env}
+			\end{figure}
+			
+			La Figura~\ref{fig:react-env} representa de manera esquemática el flujo recomendado para configurar un entorno de trabajo reproducible en proyectos React. En ella se observa cómo la selección de la versión de Node.js mediante NVM y la adopción de un único gestor de paquetes convergen en la generación de archivos de bloqueo de dependencias, los cuales son reutilizados tanto en las estaciones de desarrollo como en los entornos de integración continua y despliegue en producción. Este diseño asegura que las dependencias se resuelvan de forma idéntica en todas las fases del ciclo de vida del software, reduciendo la posibilidad de inconsistencias y fallos difíciles de depurar.
+			
+			
+		\subsection{Arquitectura Lógica: Estado, Efectos y Reconciliación}
+			El flujo de datos en React es unidireccional: los padres pasan propiedades a los hijos, mientras que el estado local y el contexto se utilizan para gestionar información transversal. El \emph{render} produce un árbol virtual que React compara (\emph{diff}) con el árbol previo para aplicar únicamente los cambios necesarios en el DOM real, lo cual reduce trabajo de manipulación y latencias de actualización \cite{CACMReact2016}. El paradigma subyacente de propagación de cambios se corresponde con patrones estudiados en programación reactiva, donde la semántica de flujos y dependencias hace explícitas las fuentes de actualización \cite{BainomugishaCSUR2013}.
+			
+		\subsection{Ejemplo de Componente con \textit{Hooks} y Consumo de API}
+			El listado \ref{lst:react-hooks-fetch} muestra un componente funcional que consume una API REST y maneja estado y efectos con \texttt{useState} y \texttt{useEffect}. Este patrón ilustra la separación entre obtención de datos, estado de carga y representación, así como el tratamiento de abortos de petición para evitar actualizaciones sobre componentes desmontados.
+			
+			\begin{lstlisting}[language=Java,mathescape=false,caption={Componente React con Hooks para consumo de API REST.},label={lst:react-hooks-fetch}]
+import { useEffect, useState } from "react";
+
+type Producto = { id: number; nombre: string; precio: number };
+
+export function ListaProductos() {
+	const [data, setData] = useState<Producto[]>([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<Error | null>(null);
+	
+	useEffect(() => {
+		const ctrl = new AbortController();
+		async function run() {
+			try {
+				setLoading(true);
+				const resp = await fetch("/api/productos", { signal: ctrl.signal });
+				if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+				const json = (await resp.json()) as Producto[];
+				setData(json);
+			} catch (e) {
+				if ((e as any).name !== "AbortError") setError(e as Error);
+			} finally {
+				setLoading(false);
+			}
+		}
+		run();
+		return () => ctrl.abort();
+	}, []);
+	
+	if (loading) return <p>Cargando…</p>;
+	if (error)   return <p>Fallo: {error.message}</p>;
+	
+	return (
+	<ul>
+	{data.map(p => (
+		<li key={p.id}>
+		{p.nombre} — ${"{p.precio.toFixed(2)}"}
+		</li>
+		))}
+	</ul>
+	);
+} \end{lstlisting}
+			
+		\subsection{Gestión de Estado Compartido con Context y \textit{Custom Hooks}}
+			Cuando varias ramas del árbol requieren el mismo estado (tema visual, sesión, carrito), \texttt{Context} evita el \emph{prop drilling}. En combinación con \emph{custom hooks} se encapsula la lógica para su reutilización sistemática. El listado \ref{lst:react-context-hook} muestra un patrón minimalista que separa proveedor y consumo de contexto.
+			
+			\begin{lstlisting}[language=Java,mathescape=false,caption={Contexto de sesión y \emph{custom hook} para su consumo.},label={lst:react-context-hook}]
+import { createContext, useContext, useState } from "react";
+
+type Session = { user: string } | null;
+
+const SessionCtx = createContext<Session>(null);
+
+export function SessionProvider({ children }: { children: React.ReactNode }) {
+	const [session, setSession] = useState<Session>(null);
+	// ... lógica de login/logout que actualiza 'session'
+	return <SessionCtx.Provider value={session}>{children}</SessionCtx.Provider>;
+}
+
+export function useSession(): Session {
+	return useContext(SessionCtx);
+} \end{lstlisting}
+			
+		\subsection{Pruebas de Componentes}
+			La verificación se apoya comúnmente en \emph{React Testing Library}, que promueve pruebas orientadas al comportamiento del usuario. Antes del listado \ref{lst:react-rtl}, cabe subrayar que este enfoque desaconseja acoplarse a detalles de implementación, privilegiando selectores accesibles y aserciones sobre el resultado observable.
+			
+			\begin{lstlisting}[language=Java,mathescape=false,caption={Prueba de componente centrada en comportamiento observable con React Testing Library.},label={lst:react-rtl}]
+import { render, screen } from "@testing-library/react";
+import { ListaProductos } from "./ListaProductos";
+
+test("muestra indicador de carga y luego listado", async () => {
+	// Se puede simular fetch con MSW o jest.spyOn(global, "fetch") ...
+	render(<ListaProductos />);
+	expect(screen.getByText(/Cargando/)).toBeInTheDocument();
+	// ... esperar al contenido real según la simulación
+}); \end{lstlisting}
+			
+		\subsection{Consideraciones de Rendimiento}
+			El rendimiento de aplicaciones web modernas está influido por múltiples factores: tamaño del \emph{bundle}, estrategias de carga, caché y el patrón de actualizaciones del árbol de UI. La literatura reciente en ingeniería de software móvil y web ofrece evidencia empírica sobre cómo técnicas de \emph{caching} y \emph{service workers} impactan consumo energético y tiempos de carga, directrices de utilidad también para aplicaciones React orientadas a experiencias progresivas \cite{MOBILESoftPWA2020}. Estas evidencias refuerzan la necesidad de medir en contexto (perfilado de renders, descomposición de código y límites de contexto/efectos) en lugar de asumir beneficios a priori.
+			
+		\subsection{Arquitectura de Alto Nivel}
+			La Figura~\ref{fig:react-arch} resume un flujo típico en React: componentes funcionales $\rightarrow$ \emph{hooks} (estado/efectos) $\rightarrow$ contexto/servicios de acceso a datos $\rightarrow$ capa de transporte HTTP. El árbol virtual resultante se reconcilia con el DOM para materializar cambios mínimos. Esta abstracción del DOM y el razonamiento por componentes son las claves de su modelo arquitectónico \cite{CACMReact2016,BainomugishaCSUR2013}.
+			
+			\begin{figure}[!hbt]
+				\centering
+				\begin{tikzpicture}[
+					node distance=8mm,
+					box/.style={draw,rounded corners,fill=gray!5,inner sep=3mm,align=center},
+					arr/.style={-{Latex[length=2mm]},thick}
+					]
+					\node[box] (cmp) {Componentes\\(funcionales)};
+					\node[box,below=of cmp] (hooks) {Hooks\\(estado, efectos)};
+					\node[box,below=of hooks] (ctx) {Contexto/Servicios\\(datos compartidos)};
+					\node[box,below=of ctx] (http) {Transporte\\(fetch/XHR)};
+					\node[box,right=20mm of hooks] (vdom) {Árbol Virtual\\\& Reconciliación};
+					\node[box,below=of http] (api) {API REST};
+					
+					\draw[arr] (cmp) -- (hooks);
+					\draw[arr] (hooks) -- (ctx);
+					\draw[arr] (ctx) -- (http);
+					\draw[arr] (http) -- (api);
+					\draw[arr] (cmp) -- (vdom);
+					\draw[arr] (hooks) -- (vdom);
+				\end{tikzpicture}
+				\caption{Esquema de alto nivel del flujo en React: composición de componentes, gestión de estado/efectos y reconciliación del árbol virtual.}
+				\label{fig:react-arch}
+			\end{figure}
+			

@@ -1,0 +1,635 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{AngularOverview2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is Angular?}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/overview
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/overview
+      \endverb
+    \endentry
+    \entry{AngularHTTP2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{HTTP Client — Overview}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/guide/http
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/guide/http
+      \endverb
+    \endentry
+    \entry{AngularRouting2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Routing — Overview}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/guide/routing
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/guide/routing
+      \endverb
+    \endentry
+    \entry{AngularReleasesV20}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Announcing Angular v20}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://blog.angular.dev/announcing-angular-v20-b5c9c06cf301
+      \endverb
+      \verb{url}
+      \verb https://blog.angular.dev/announcing-angular-v20-b5c9c06cf301
+      \endverb
+    \endentry
+    \entry{AngularSetupLocal2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Setting up the local environment and workspace}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/tools/cli/setup-local
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/tools/cli/setup-local
+      \endverb
+    \endentry
+    \entry{AngularCLI2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{6}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{CLI Reference}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/cli
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/cli
+      \endverb
+    \endentry
+    \entry{AngularStyleGuide2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Angular Coding Style Guide}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/style-guide
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/style-guide
+      \endverb
+    \endentry
+    \entry{AngularArchitecture2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{8}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to Angular concepts (Architecture)}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.io/guide/architecture
+      \endverb
+      \verb{url}
+      \verb https://angular.io/guide/architecture
+      \endverb
+    \endentry
+    \entry{RxJSObservableGuide}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=51498dfdcf93f7bb6bc4345bb2221033}{%
+           family={{RxJS Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{fullhash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{fullhashraw}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{bibnamehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authorbibnamehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authornamehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authorfullhash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authorfullhashraw}{51498dfdcf93f7bb6bc4345bb2221033}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Observable — Guide}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://rxjs.dev/guide/observable
+      \endverb
+      \verb{url}
+      \verb https://rxjs.dev/guide/observable
+      \endverb
+    \endentry
+    \entry{RxJSOperators}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=51498dfdcf93f7bb6bc4345bb2221033}{%
+           family={{RxJS Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{fullhash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{fullhashraw}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{bibnamehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authorbibnamehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authornamehash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authorfullhash}{51498dfdcf93f7bb6bc4345bb2221033}
+      \strng{authorfullhashraw}{51498dfdcf93f7bb6bc4345bb2221033}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Operators — Guide}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://rxjs.dev/guide/operators
+      \endverb
+      \verb{url}
+      \verb https://rxjs.dev/guide/operators
+      \endverb
+    \endentry
+    \entry{AngularSecurity2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Security — Best Practices}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/best-practices/security
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/best-practices/security
+      \endverb
+    \endentry
+    \entry{HttpClientXsrfConfig}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{10}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{withXsrfConfiguration (HttpClient)}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/api/common/http/withXsrfConfiguration
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/api/common/http/withXsrfConfiguration
+      \endverb
+    \endentry
+    \entry{SpringCorsGuide}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=48f029d1267de7768629e5c3289c443b}{%
+           family={{Spring Team}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{fullhash}{48f029d1267de7768629e5c3289c443b}
+      \strng{fullhashraw}{48f029d1267de7768629e5c3289c443b}
+      \strng{bibnamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorbibnamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authornamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorfullhash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorfullhashraw}{48f029d1267de7768629e5c3289c443b}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Enabling Cross Origin Requests for a RESTful Web Service}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://spring.io/guides/gs/rest-service-cors
+      \endverb
+      \verb{url}
+      \verb https://spring.io/guides/gs/rest-service-cors
+      \endverb
+    \endentry
+    \entry{SpringRESTTutorial}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=48f029d1267de7768629e5c3289c443b}{%
+           family={{Spring Team}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{fullhash}{48f029d1267de7768629e5c3289c443b}
+      \strng{fullhashraw}{48f029d1267de7768629e5c3289c443b}
+      \strng{bibnamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorbibnamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authornamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorfullhash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorfullhashraw}{48f029d1267de7768629e5c3289c443b}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building REST services with Spring}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://spring.io/guides/tutorials/rest
+      \endverb
+      \verb{url}
+      \verb https://spring.io/guides/tutorials/rest
+      \endverb
+    \endentry
+    \entry{AngularInterceptors2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{11}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Intercepting requests and responses}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/guide/http/interceptors
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/guide/http/interceptors
+      \endverb
+    \endentry
+    \entry{TrustedTypesMDN}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=eace3534eb86e51f9a1db37427425ce9}{%
+           family={{MDN Web Docs}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{fullhash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{fullhashraw}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{bibnamehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authorbibnamehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authornamehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authorfullhash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authorfullhashraw}{eace3534eb86e51f9a1db37427425ce9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Trusted Types API — Web APIs}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API
+      \endverb
+      \verb{url}
+      \verb https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API
+      \endverb
+    \endentry
+    \entry{TrustedTypesCaseStudy}{online}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=88db8afc9d2e79bab8bf24f639bf78e3}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Peiying},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{fullhash}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{fullhashraw}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{bibnamehash}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{authorbibnamehash}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{authornamehash}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{authorfullhash}{29132c0100fe72f5c725fe4a6695b3bf}
+      \strng{authorfullhashraw}{29132c0100fe72f5c725fe4a6695b3bf}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Adopting Trusted Types in Production Web Frameworks to Prevent DOM-Based XSS: A Case Study}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://research.google/pubs/adopting-trusted-types-in-production-web-frameworks-to-prevent-dom-based-cross-site-scripting-a-case-study/
+      \endverb
+      \verb{url}
+      \verb https://research.google/pubs/adopting-trusted-types-in-production-web-frameworks-to-prevent-dom-based-cross-site-scripting-a-case-study/
+      \endverb
+    \endentry
+    \entry{AngularFormsReactive2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c621ca266c6ebbd99b2fa716591f0e63}{%
+           family={{Angular Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{fullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{bibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorbibnamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authornamehash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhash}{c621ca266c6ebbd99b2fa716591f0e63}
+      \strng{authorfullhashraw}{c621ca266c6ebbd99b2fa716591f0e63}
+      \field{extraname}{12}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reactive Forms}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.dev/guide/forms/reactive-forms
+      \endverb
+      \verb{url}
+      \verb https://angular.dev/guide/forms/reactive-forms
+      \endverb
+    \endentry
+    \entry{SpringRESTGuide}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=48f029d1267de7768629e5c3289c443b}{%
+           family={{Spring Team}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{fullhash}{48f029d1267de7768629e5c3289c443b}
+      \strng{fullhashraw}{48f029d1267de7768629e5c3289c443b}
+      \strng{bibnamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorbibnamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authornamehash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorfullhash}{48f029d1267de7768629e5c3289c443b}
+      \strng{authorfullhashraw}{48f029d1267de7768629e5c3289c443b}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building a RESTful Web Service}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://spring.io/guides/gs/rest-service
+      \endverb
+      \verb{url}
+      \verb https://spring.io/guides/gs/rest-service
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
