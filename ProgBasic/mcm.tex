@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+% --- LuaLaTeX: usar fontspec + polyglossia (NO babel, NO inputenc, NO fontenc) ---
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+
+\title{Diagrama de Flujo para el Cálculo del MCM}
+\author{}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\section{Diagrama de flujo (MCM usando MCD por Euclides)}
+	
+	\begin{center}
+		\begin{tikzpicture}[
+			>=Latex,
+			font=\small,
+			startstop/.style={ellipse, draw, align=center, minimum width=30mm, minimum height=9mm},
+			process/.style={rectangle, draw, align=center, minimum width=52mm, minimum height=9mm},
+			decision/.style={diamond, draw, align=center, aspect=2.2, inner sep=1.2pt, minimum width=30mm, minimum height=10mm},
+			% Entrada/Salida: rectángulo inclinado (no depende de parallelogram)
+			io/.style={
+				draw,
+				align=center,
+				minimum width=52mm,
+				minimum height=9mm,
+				transform shape,
+				xslant=0.25
+			}
+			]
+			
+			% --- Coordenadas fijas ---
+			\node[startstop] (ini) at (0,0) {Inicio};
+			\node[io]        (in)  at (0,-1.2) {Leer $a,b$};
+			
+			\node[decision]  (dec0) at (0,-2.6) {$a=0$\\o\\$b=0$?};
+			
+			% Rama Sí (izquierda)
+			\node[process]   (mcm0) at (-4.2,-4.2) {$\mathrm{mcm}\leftarrow 0$};
+			\node[io]        (out0) at (-4.2,-5.5) {Mostrar $\mathrm{mcm}$};
+			\node[startstop] (fin0) at (-4.2,-6.8) {Fin};
+			
+			% Rama No (derecha)
+			\node[process]   (abs)  at (4.2,-4.2) {$A\leftarrow |a|$\\$B\leftarrow |b|$};
+			\node[process]   (initg) at (4.2,-5.7) {$x\leftarrow A$\\$y\leftarrow B$};
+			
+			\node[decision]  (dec1) at (4.2,-7.3) {$y=0$?};
+			
+			% Euclides (bucle)
+			\node[process]   (eucl) at (8.6,-7.3) {$r\leftarrow x\bmod y$\\$x\leftarrow y$\\$y\leftarrow r$};
+			
+			% Salida del MCD y cálculo del MCM
+			\node[process]   (setg) at (4.2,-9.0) {$g\leftarrow x$};
+			\node[process]   (mcm)  at (4.2,-10.3) {$\mathrm{mcm}\leftarrow \dfrac{A\cdot B}{g}$};
+			\node[io]        (out)  at (4.2,-11.6) {Mostrar $\mathrm{mcm}$};
+			\node[startstop] (fin)  at (4.2,-12.9) {Fin};
+			
+			% --- Flechas ---
+			\draw[->] (ini) -- (in);
+			\draw[->] (in) -- (dec0);
+			
+			\draw[->] (dec0) -- node[above left]{Sí} (mcm0);
+			\draw[->] (mcm0) -- (out0);
+			\draw[->] (out0) -- (fin0);
+			
+			\draw[->] (dec0) -- node[above right]{No} (abs);
+			\draw[->] (abs) -- (initg);
+			\draw[->] (initg) -- (dec1);
+			
+			\draw[->] (dec1) -- node[above]{No} (eucl);
+			\draw[->] (eucl) |- (dec1);
+			
+			\draw[->] (dec1) -- node[right]{Sí} (setg);
+			\draw[->] (setg) -- (mcm);
+			\draw[->] (mcm) -- (out);
+			\draw[->] (out) -- (fin);
+			
+		\end{tikzpicture}
+	\end{center}
+	
+\end{document}

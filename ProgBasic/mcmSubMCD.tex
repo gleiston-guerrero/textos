@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+
+% --- LuaLaTeX: sin babel ---
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+
+\title{Diagrama de Flujo para el Cálculo del MCM con Llamada a Módulo MCD}
+\author{}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\section{Diagrama de flujo (MCM con llamada a módulo MCD)}
+	
+	\begin{center}
+		\begin{tikzpicture}[
+			>=Latex,
+			font=\small,
+			startstop/.style={ellipse, draw, align=center, minimum width=30mm, minimum height=9mm},
+			process/.style={rectangle, draw, align=center, minimum width=56mm, minimum height=9mm},
+			decision/.style={diamond, draw, align=center, aspect=2.2, inner sep=1.2pt, minimum width=30mm, minimum height=10mm},
+			% Entrada/Salida: rectángulo inclinado
+			io/.style={
+				draw, align=center,
+				minimum width=56mm, minimum height=9mm,
+				transform shape, xslant=0.25
+			},
+			% Proceso predefinido (módulo): doble línea vertical
+			predefined/.style={
+				rectangle, draw, align=center,
+				minimum width=56mm, minimum height=9mm,
+				path picture={
+					\draw ([xshift=2mm]path picture bounding box.west) -- ([xshift=2mm]path picture bounding box.north west)
+					([xshift=2mm]path picture bounding box.south west) -- ([xshift=2mm]path picture bounding box.west);
+					\draw ([xshift=-2mm]path picture bounding box.east) -- ([xshift=-2mm]path picture bounding box.north east)
+					([xshift=-2mm]path picture bounding box.south east) -- ([xshift=-2mm]path picture bounding box.east);
+				}
+			}
+			]
+			
+			% --- Coordenadas ---
+			\node[startstop] (ini) at (0,0) {Inicio};
+			\node[io]        (in)  at (0,-1.2) {Leer $a,b$};
+			
+			\node[decision]  (dec0) at (0,-2.6) {$a=0$\\o\\$b=0$?};
+			
+			% Rama Sí (izquierda)
+			\node[process]   (mcm0) at (-4.6,-4.2) {$\mathrm{mcm}\leftarrow 0$};
+			\node[io]        (out0) at (-4.6,-5.5) {Mostrar $\mathrm{mcm}$};
+			\node[startstop] (fin0) at (-4.6,-6.8) {Fin};
+			
+			% Rama No (derecha)
+			\node[process]    (abs)  at (4.6,-4.2) {$A\leftarrow |a|$\\$B\leftarrow |b|$};
+			
+			% Llamada al módulo MCD
+			\node[predefined] (call) at (4.6,-5.7) {$g \leftarrow \mathrm{MCD}(A,B)$};
+			
+			% Cálculo del MCM y salida
+			\node[process]   (mcm)  at (4.6,-7.2) {$\mathrm{mcm}\leftarrow \dfrac{A\cdot B}{g}$};
+			\node[io]        (out)  at (4.6,-8.5) {Mostrar $\mathrm{mcm}$};
+			\node[startstop] (fin)  at (4.6,-9.8) {Fin};
+			
+			% --- Flechas ---
+			\draw[->] (ini) -- (in);
+			\draw[->] (in) -- (dec0);
+			
+			\draw[->] (dec0) -- node[above left]{Sí} (mcm0);
+			\draw[->] (mcm0) -- (out0);
+			\draw[->] (out0) -- (fin0);
+			
+			\draw[->] (dec0) -- node[above right]{No} (abs);
+			\draw[->] (abs) -- (call);
+			\draw[->] (call) -- (mcm);
+			\draw[->] (mcm) -- (out);
+			\draw[->] (out) -- (fin);
+			
+		\end{tikzpicture}
+	\end{center}
+	
+\end{document}
