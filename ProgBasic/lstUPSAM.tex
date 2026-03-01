@@ -1,0 +1,152 @@
+%========================================================
+% Listados UPSAM 2.0 con colores (lstlisting)
+%========================================================
+% Requiere en el preámbulo:
+% \usepackage{xcolor}
+% \usepackage{listings}
+%
+% (Opcional pero recomendable para acentos en comentarios/strings)
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc} % si NO compila con LuaLaTeX/XeLaTeX
+%========================================================
+
+%-----------------------------
+% Paleta de colores (ajustable)
+%-----------------------------
+\definecolor{upsamKeyword}{RGB}{0,76,153}     % palabras reservadas
+\definecolor{upsamType}{RGB}{128,0,128}       % tipos (entero, real, cadena, lógico)
+\definecolor{upsamId}{RGB}{0,102,0}           % identificadores
+\definecolor{upsamInt}{RGB}{153,76,0}         % constantes enteras
+\definecolor{upsamReal}{RGB}{153,0,76}        % constantes reales
+\definecolor{upsamString}{RGB}{163,21,21}     % cadenas
+\definecolor{upsamComment}{RGB}{120,120,120}  % comentarios { ... }
+\definecolor{upsamOp}{RGB}{0,0,0}             % operadores
+\definecolor{upsamBg}{RGB}{250,250,250}       % fondo suave
+\definecolor{upsamFrame}{RGB}{220,220,220}    % marco
+
+%--------------------------------------------------------
+% Definición del lenguaje UPSAM (lstdefinelanguage)
+%--------------------------------------------------------
+\lstdefinelanguage{UPSAM}{
+	sensitive=true,
+	
+	% Comentarios entre llaves: { ... }
+	morecomment=[s]{\{}{\}},
+	commentstyle=\color{upsamComment}\itshape,
+	
+	% Cadenas entre comillas
+	morestring=[b]",
+	stringstyle=\color{upsamString},
+	
+	% Palabras reservadas (control, E/S, estructura)
+	morekeywords=[1]{
+		ALGORITMO,PROGRAMA,VAR,INICIO,FIN,
+		SI,ENTONCES,SINO,FINSI,FIN_SI,
+		MIENTRAS,HAGA,FINMIENTRAS,FIN_MIENTRAS,
+		PARA,HASTA,CON,PASO,FINPARA,FIN_PARA,
+		REPETIR,HASTAQUE,HASTA_QUE,
+		LEER,ESCRIBIR,
+		FUNCION,FUNCTION,RETORNAR,DEVOLVER,FINFUNCION,FIN_FUNCION
+	},
+	keywordstyle=[1]\color{upsamKeyword}\bfseries,
+	
+	% Tipos y literales lógicos
+	morekeywords=[2]{ENTERO,REAL,CADENA,LOGICO,LÓGICO,VERDADERO,FALSO},
+	keywordstyle=[2]\color{upsamType}\bfseries,
+	
+	% Operadores/relacionales frecuentes (para destacarlos)
+	morekeywords=[3]{MOD,DIV,Y,O,NO},
+	keywordstyle=[3]\color{upsamOp}\bfseries,
+	
+	% Reglas para números (enteros y reales)
+	% (listings no separa "real" vs "entero" por defecto; se consigue con "literate")
+	alsoletter={.},
+	literate=
+	% Reales (con punto decimal)
+	{0.0}{{\textcolor{upsamReal}{0.0}}}3
+	{0.1}{{\textcolor{upsamReal}{0.1}}}3
+	{0.2}{{\textcolor{upsamReal}{0.2}}}3
+	{0.3}{{\textcolor{upsamReal}{0.3}}}3
+	{0.4}{{\textcolor{upsamReal}{0.4}}}3
+	{0.5}{{\textcolor{upsamReal}{0.5}}}3
+	{0.6}{{\textcolor{upsamReal}{0.6}}}3
+	{0.7}{{\textcolor{upsamReal}{0.7}}}3
+	{0.8}{{\textcolor{upsamReal}{0.8}}}3
+	{0.9}{{\textcolor{upsamReal}{0.9}}}3
+	% Operador de asignación UPSAM 2.0
+	{<-}{{\textcolor{upsamOp}{<-}}}2
+	% Operadores lógicos estilo C/C++ presentes en ejemplos comparativos
+	{||}{{\textcolor{upsamOp}{||}}}2
+	{|}{{\textcolor{upsamOp}{|}}}1
+	{&}{{\textcolor{upsamOp}{\&}}}1
+	{^}{{\textcolor{upsamOp}{\^{}}}}1
+	{<<}{{\textcolor{upsamOp}{<<}}}2
+	{>>}{{\textcolor{upsamOp}{>>}}}2
+}
+
+%--------------------------------------------------------
+% Estilo global para listados UPSAM
+% - Identificadores (variables, nombres) en otro color
+%--------------------------------------------------------
+\lstdefinestyle{upsamStyle}{
+	language=UPSAM,
+	basicstyle=\ttfamily\small,
+	backgroundcolor=\color{upsamBg},
+	frame=single,
+	rulecolor=\color{upsamFrame},
+	frameround=ffff,
+	framesep=6pt,
+	
+	% Identificadores: se colorean con identifierstyle
+	identifierstyle=\color{upsamId},
+	
+	% Números: se colorean por "numbersstyle" solo si se activan números de línea;
+	% para constantes enteras se usa el estilo "upsamInt" vía regla de "literate" parcial (ver abajo).
+	% Para enteros, se aplica un truco: resaltar dígitos individuales.
+	literate=
+	*{0}{{\textcolor{upsamInt}{0}}}1
+	{1}{{\textcolor{upsamInt}{1}}}1
+	{2}{{\textcolor{upsamInt}{2}}}1
+	{3}{{\textcolor{upsamInt}{3}}}1
+	{4}{{\textcolor{upsamInt}{4}}}1
+	{5}{{\textcolor{upsamInt}{5}}}1
+	{6}{{\textcolor{upsamInt}{6}}}1
+	{7}{{\textcolor{upsamInt}{7}}}1
+	{8}{{\textcolor{upsamInt}{8}}}1
+	{9}{{\textcolor{upsamInt}{9}}}1
+	% Mantener las reglas del lenguaje (reales y operadores) por encima:
+	{0.0}{{\textcolor{upsamReal}{0.0}}}3
+	{0.1}{{\textcolor{upsamReal}{0.1}}}3
+	{0.2}{{\textcolor{upsamReal}{0.2}}}3
+	{0.3}{{\textcolor{upsamReal}{0.3}}}3
+	{0.4}{{\textcolor{upsamReal}{0.4}}}3
+	{0.5}{{\textcolor{upsamReal}{0.5}}}3
+	{0.6}{{\textcolor{upsamReal}{0.6}}}3
+	{0.7}{{\textcolor{upsamReal}{0.7}}}3
+	{0.8}{{\textcolor{upsamReal}{0.8}}}3
+	{0.9}{{\textcolor{upsamReal}{0.9}}}3
+	{<-}{{\textcolor{upsamOp}{<-}}}2
+	{||}{{\textcolor{upsamOp}{||}}}2
+	{|}{{\textcolor{upsamOp}{|}}}1
+	{&}{{\textcolor{upsamOp}{\&}}}1
+	{^}{{\textcolor{upsamOp}{\^{}}}}1
+	{<<}{{\textcolor{upsamOp}{<<}}}2
+	{>>}{{\textcolor{upsamOp}{>>}}}2,
+	
+	showstringspaces=false,
+	tabsize=3,
+	keepspaces=true,
+	columns=fullflexible,
+	
+	% Opcional: números de línea
+	numbers=left,
+	numberstyle=\scriptsize\color{upsamComment},
+	numbersep=10pt,
+	
+	% Saltos de línea en listados largos
+	breaklines=true,
+	breakatwhitespace=true,
+	
+	% Títulos (caption) consistentes
+	captionpos=b
+}
