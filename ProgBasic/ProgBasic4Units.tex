@@ -5331,9 +5331,9 @@ BoldItalicFont = {*}
 									\hline
 									\textbf{Tipo} & \textbf{Ejemplo} \\
 									\hline
-									entero & \texttt{entero : contador} \\
-									real & \texttt{real : salario} \\
-									cadena & \texttt{cadena : mensaje $\leftarrow$ "Hola"} \\
+									entero & \texttt{contador: entero} \\
+									real & \texttt{salario: real} \\
+									cadena & \texttt{mensaje $\leftarrow$ "Hola": cadena } \\
 									\hline
 								\end{tabular}
 							\end{table}
@@ -5372,7 +5372,7 @@ BoldItalicFont = {*}
 						\paragraph{Funciones de cadena.}
 							Las funciones de cadena permiten manipular texto, algo muy frecuente en sistemas de información, por ejemplo al procesar nombres, códigos, mensajes, identificadores o entradas del usuario. En programación básica, estas funciones ayudan a introducir al estudiante en el tratamiento de datos no numéricos y en operaciones típicas como contar caracteres o extraer partes de un texto~\cite{Farrell2018Programming,Joyanes2007Fundamentos}.
 							
-							\begin{table}[h]
+							\begin{table}[!hbt]
 								\centering
 								\caption{Funciones de cadena predefinidas en UPSAM 2.0}
 								\label{tab:upsam_func_cad}
@@ -8760,7 +8760,651 @@ BoldItalicFont = {*}
 						
 						\noindent
 						El algoritmo presentado en el Listado de código~\ref{alg:ordenamientoVector} contempla una comprobación inicial del número de elementos a ingresar. Este control evita uno de los errores más frecuentes en programas introductorios: intentar recorrer o procesar estructuras de datos cuyo tamaño no ha sido definido correctamente. La verificación temprana de los datos de entrada constituye una práctica recomendada en programación básica, ya que permite prevenir comportamientos inesperados durante la ejecución y facilita el manejo seguro de estructuras de datos como arreglos o listas \cite{Gaddis2022Starting,Farrell2018Programming,Seacord2013Secure}.
+			%================================================================
+			\subsection{Ejercicio 9: Cálculo de Medidas de Tendencia Central}
+			%================================================================
+			\noindent
+				Se requiere diseñar un algoritmo que permita calcular el \textbf{promedio}, la \textbf{varianza} y la \textbf{desviación estándar} de un conjunto de valores numéricos reales ingresados por teclado. El procedimiento debe solicitar primero la cantidad de datos que se desean procesar, verificar que exista un número suficiente de observaciones para realizar el cálculo y, posteriormente, capturar cada uno de los valores. Una vez almacenados los datos, el algoritmo debe obtener la suma total para calcular el promedio, recorrer nuevamente el conjunto de valores para acumular las desviaciones cuadráticas respecto del promedio y, finalmente, determinar la varianza y la desviación estándar a partir de dichas operaciones \cite{Cormen2022Introduction,Sebesta2018Concepts,Gaddis2022Starting}.
+				
+				En este ejercicio vuelve a ser necesario el uso de un \textbf{arreglo} o \textbf{vector}, ya que no se trabaja con un único valor, sino con una colección de datos del mismo tipo. El vector permite conservar todos los elementos introducidos por el usuario para reutilizarlos en más de una fase del algoritmo. En efecto, el promedio requiere recorrer el conjunto completo para sumar sus valores, mientras que la varianza exige una segunda pasada sobre los mismos datos para calcular las diferencias respecto de la media. Esto hace que el uso de variables individuales resulte insuficiente y que el arreglo se convierta en la estructura natural para almacenar y recuperar cada observación mediante índices \cite{Sebesta2018Concepts,Gaddis2022Starting}.
+				
+				Desde una perspectiva formativa, este problema resulta especialmente importante porque introduce al estudiante en el cálculo de medidas estadísticas básicas a partir de un procedimiento algorítmico organizado en varias etapas. A diferencia de ejercicios centrados únicamente en operaciones directas, aquí la solución requiere conservar los datos, recorrerlos más de una vez y coordinar cálculos sucesivos cuya dependencia lógica debe mantenerse con precisión. Por ello, este ejercicio no solo amplía el tratamiento de arreglos, sino que también refuerza la comprensión de acumuladores, recorridos secuenciales, operaciones aritméticas compuestas y reutilización de resultados intermedios dentro de una misma solución \cite{Futschek2006Algorithmic,Qian2018Students,Robins2003Learning,Lister2004Learning}.
+				
+				%--------------------------------------------------
+				\subsubsection{Pasos para Desarrollar la Solución}
+				%--------------------------------------------------
+					\noindent
+					Los pasos para desarrollar la solución algorítmica de un problema permiten convertir un procedimiento matemático en una secuencia ordenada de operaciones que puedan ejecutarse de manera mecánica. En este ejercicio, la solución requiere dos recorridos sobre el mismo conjunto de datos: el primero para obtener la suma total y calcular el promedio, y el segundo para acumular los cuadrados de las desviaciones de cada dato respecto de la media. Esta organización introduce al estudiante en una idea fundamental del desarrollo de algoritmos: no siempre basta con una sola pasada sobre la información, sino que en ciertos problemas es necesario almacenar los datos y reutilizarlos posteriormente.
+					
+					\noindent
+					\textbf{1. Análisis del problema.}  
+					Para comprender el problema conviene partir de pequeños conjuntos de datos y calcular manualmente las medidas estadísticas requeridas. En esta propuesta se trabaja con la versión poblacional de la varianza, por lo que la suma de cuadrados se divide entre \(n\). El procedimiento algorítmico sigue una secuencia clara: primero se valida que exista un número suficiente de datos, luego se leen y almacenan las observaciones, después se calcula el promedio y finalmente se recorren nuevamente los valores para obtener la suma de las diferencias cuadráticas respecto de la media. A partir de este resultado se calcula la varianza y, posteriormente, la desviación estándar como raíz cuadrada de la varianza. Esta descomposición facilita el aprendizaje porque separa con nitidez la etapa de captura, la etapa de cálculo de la media y la etapa de dispersión estadística \cite{Cormen2022Introduction,Sebesta2018Concepts,Qian2018Students}.
+					
+					\noindent
+					%---------------------------------------------------------
+					\textbf{Ejercicios de análisis manual con valores representativos.}
+					%---------------------------------------------------------
+					Antes de diseñar el algoritmo, es recomendable resolver manualmente algunos casos que permitan verificar el cálculo del promedio, la varianza y la desviación estándar, así como el comportamiento de la validación inicial del número de datos.
+					
+					\begin{itemize}
 						
+						\item \textbf{Caso 1: Caso normal con valores conocidos}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{n} = 8
+								\item \texttt{datos} = [2,\;4,\;4,\;4,\;5,\;5,\;7,\;9]
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							\text{promedio}=\frac{2+4+4+4+5+5+7+9}{8}=5
+							\]
+							\[
+							\sum (x_i-\bar{x})^2 = (2-5)^2+(4-5)^2+\cdots+(9-5)^2 = 32
+							\]
+							\[
+							\text{varianza}=\frac{32}{8}=4,\qquad
+							\text{desviación estándar}=\sqrt{4}=2
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							\text{promedio}=5,\qquad \text{varianza}=4,\qquad \text{desviación estándar}=2
+							\]
+							\item \textbf{Observación.} Este caso verifica un conjunto de datos donde los resultados son enteros y fáciles de comprobar manualmente.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 2: Dos valores}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{n} = 2
+								\item \texttt{datos} = [1,\;3]
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							\text{promedio}=\frac{1+3}{2}=2
+							\]
+							\[
+							\sum (x_i-\bar{x})^2 = (1-2)^2+(3-2)^2 = 2
+							\]
+							\[
+							\text{varianza}=\frac{2}{2}=1,\qquad
+							\text{desviación estándar}=\sqrt{1}=1
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							\text{promedio}=2,\qquad \text{varianza}=1,\qquad \text{desviación estándar}=1
+							\]
+							\item \textbf{Observación.} Este caso muestra el comportamiento mínimo aceptado por la propuesta al trabajar con al menos dos datos.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 3: Todos los valores iguales}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{n} = 4
+								\item \texttt{datos} = [6,\;6,\;6,\;6]
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							\text{promedio}=6
+							\]
+							\[
+							\sum (x_i-\bar{x})^2 = 0
+							\]
+							\[
+							\text{varianza}=0,\qquad \text{desviación estándar}=0
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							\text{promedio}=6,\qquad \text{varianza}=0,\qquad \text{desviación estándar}=0
+							\]
+							\item \textbf{Observación.} Cuando no existe dispersión entre los datos, tanto la varianza como la desviación estándar son cero.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 4: Valores negativos y positivos}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{n} = 3
+								\item \texttt{datos} = [-2,\;0,\;2]
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							\text{promedio}=\frac{-2+0+2}{3}=0
+							\]
+							\[
+							\sum (x_i-\bar{x})^2 = (-2)^2+0^2+2^2 = 8
+							\]
+							\[
+							\text{varianza}=\frac{8}{3},\qquad
+							\text{desviación estándar}=\sqrt{\frac{8}{3}}
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							\text{promedio}=0,\qquad \text{varianza}=\frac{8}{3},\qquad \text{desviación estándar}\approx 1.633
+							\]
+							\item \textbf{Observación.} Este caso confirma que el algoritmo debe operar correctamente con valores reales de distinto signo.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 5: Valores decimales}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{n} = 4
+								\item \texttt{datos} = [1.5,\;2.5,\;3.0,\;5.0]
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							\text{promedio}=\frac{1.5+2.5+3.0+5.0}{4}=3
+							\]
+							\[
+							\sum (x_i-\bar{x})^2 = (1.5-3)^2+(2.5-3)^2+(3-3)^2+(5-3)^2 = 6.5
+							\]
+							\[
+							\text{varianza}=\frac{6.5}{4}=1.625,\qquad
+							\text{desviación estándar}=\sqrt{1.625}\approx 1.275
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							\text{promedio}=3,\qquad \text{varianza}=1.625,\qquad \text{desviación estándar}\approx 1.275
+							\]
+							\item \textbf{Observación.} Este caso confirma que el algoritmo debe tratar correctamente datos reales no enteros.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 6: Cantidad no válida}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{n} = 1
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							Como la propuesta exige al menos dos datos para desarrollar el procedimiento, el algoritmo debe solicitar nuevamente un valor válido de \texttt{n}.
+							\item \textbf{Resultado esperado}
+							\item \textit{``Error: la cantidad de valores debe ser mayor o igual que 2. Intente de nuevo.''}
+							\item \textbf{Observación.} Este caso obliga a incorporar una validación inicial del tamaño del arreglo y evita que el procesamiento continúe con un conjunto insuficiente de datos \cite{Pressman2019Software,Sommerville2015Software}.
+						\end{enumerate}
+					\end{itemize}
+					
+					\noindent
+					\textbf{2. Identificación de datos de entrada.}
+					Los datos de entrada corresponden a la información que el algoritmo necesita recibir para ejecutar los cálculos estadísticos.
+					
+					\begin{itemize}
+						\item \textbf{\texttt{n} (entero):} cantidad de datos que serán procesados.
+						\item \textbf{\texttt{datos[i]} (real):} cada uno de los valores numéricos almacenados en el arreglo.
+					\end{itemize}
+					
+					\noindent
+					La cantidad de datos debe validarse antes de iniciar la captura de valores, de manera que el arreglo se construya solo cuando exista un número suficiente de observaciones. Además, cada lectura debe estar precedida por un mensaje claro que identifique al usuario qué dato se espera en cada iteración \cite{Gaddis2022Starting,Farrell2018Programming}.
+					
+					\noindent
+					\textbf{3. Identificación de datos de salida.}
+					Los datos de salida son los resultados que el algoritmo entrega una vez concluidos los cálculos.
+					
+					\begin{itemize}
+						\item \textbf{Promedio (real):} media aritmética de los datos ingresados.
+						\item \textbf{Varianza (real):} medida de dispersión obtenida a partir de las desviaciones cuadráticas respecto del promedio.
+						\item \textbf{Desviación estándar (real):} raíz cuadrada de la varianza.
+					\end{itemize}
+					
+					\noindent
+					La salida combina tres resultados numéricos complementarios que describen tanto la tendencia central como la dispersión del conjunto de datos, lo que permite al estudiante apreciar que un mismo arreglo puede ser procesado con distintos fines dentro de un solo algoritmo.
+					
+					\noindent
+					\textbf{4. Identificación de cálculos intermedios (procesos intermedios).}
+					Los procesos intermedios son las operaciones necesarias para obtener las medidas estadísticas finales.
+					
+					\begin{itemize}
+						\item \textbf{Validación inicial de \texttt{n}:} verificar que el número de datos sea al menos dos.
+						\item \textbf{Inicialización de acumuladores:} \texttt{suma <- 0} y \texttt{sumaCuadrados <- 0}.
+						\item \textbf{Primer recorrido del vector:} lectura de cada \texttt{datos[i]} y acumulación en \texttt{suma}.
+						\item \textbf{Cálculo del promedio:} \texttt{promedio <- suma / n}.
+						\item \textbf{Segundo recorrido del vector:} acumulación de \((\texttt{datos[i]}-\texttt{promedio})^2\) en \texttt{sumaCuadrados}.
+						\item \textbf{Cálculo de la varianza:} \texttt{varianza <- sumaCuadrados / n}.
+						\item \textbf{Cálculo de la desviación estándar:} \texttt{desviacion <- raiz2(varianza)}.
+					\end{itemize}
+					
+					\noindent
+					Estos pasos muestran con claridad que el problema se resuelve mediante una secuencia de operaciones acumulativas y no mediante una única fórmula aplicada directamente sobre los datos. Esta organización permite dividir el cálculo en fases comprensibles y facilita su implementación progresiva en un lenguaje de programación \cite{Cormen2022Introduction,Sebesta2018Concepts}.
+					
+					\noindent
+					\textbf{5. Identificación de cálculos finales (procesos finales).}
+					Los procesos finales son aquellos que producen directamente la respuesta que se mostrará al usuario.
+					
+					\begin{itemize}
+						\item \textbf{Obtención del promedio:} resultado del primer acumulador normalizado por el número de datos.
+						\item \textbf{Obtención de la varianza:} resultado del segundo acumulador normalizado por \texttt{n}.
+						\item \textbf{Obtención de la desviación estándar:} raíz cuadrada de la varianza.
+						\item \textbf{Presentación de resultados:} impresión de las tres medidas estadísticas.
+					\end{itemize}
+					
+					\noindent
+					Estas operaciones convierten los acumuladores intermedios en información estadística interpretable, completando la transición desde los datos crudos hasta un resumen cuantitativo del conjunto analizado.
+					
+					\noindent
+					\textbf{6. Identificación de condiciones (decisiones).}
+					Las decisiones son expresiones lógicas que controlan el flujo del algoritmo.
+					
+					\begin{itemize}
+						\item \textbf{Validación de la cantidad de datos:} \texttt{n >= 2}. Permite continuar solo cuando existe un número suficiente de observaciones.
+						\item \textbf{Condición del primer recorrido:} controla la captura y acumulación de los datos.
+						\item \textbf{Condición del segundo recorrido:} controla la acumulación de las desviaciones cuadráticas.
+					\end{itemize}
+					
+					\noindent
+					Estas decisiones separan con claridad la fase de validación de la fase de cálculo y hacen explícito que ciertos procesos solo deben ejecutarse cuando las condiciones iniciales del problema se encuentran satisfechas \cite{Sebesta2018Concepts,Farrell2018Programming}.
+					
+					\noindent
+					\textbf{7. Identificación de repeticiones o iteraciones.}
+					El algoritmo contiene varias estructuras repetitivas claramente diferenciadas.
+					
+					\begin{itemize}
+						\item \textbf{Repetición para la validación de \texttt{n}:} mientras no se cumpla la condición mínima requerida.
+						\item \textbf{Primer recorrido del arreglo:} lectura de cada dato y acumulación de la suma total.
+						\item \textbf{Segundo recorrido del arreglo:} cálculo de las diferencias cuadráticas respecto del promedio.
+					\end{itemize}
+					
+					\noindent
+					La presencia de más de un recorrido sobre el mismo vector constituye uno de los aportes didácticos más importantes de este ejercicio, ya que enseña que una estructura de datos puede reutilizarse en distintas fases del algoritmo para resolver problemas de mayor complejidad \cite{Qian2018Students,Lister2004Learning,Robins2003Learning}.
+					
+					\noindent
+					\textbf{8. Condiciones para finalizar el algoritmo.}
+					El algoritmo finaliza cuando:
+					
+					\begin{itemize}
+						\item se ha ingresado una cantidad válida de datos;
+						\item todos los valores han sido leídos y almacenados en el arreglo;
+						\item se han completado los dos recorridos necesarios para el cálculo;
+						\item se han obtenido y mostrado el promedio, la varianza y la desviación estándar.
+					\end{itemize}
+					
+					\noindent
+					En consecuencia, la finalización del proceso depende de la culminación ordenada de varias etapas sucesivas, lo que convierte este ejercicio en un ejemplo adecuado para mostrar cómo un mismo conjunto de datos puede ser utilizado en distintas fases de procesamiento dentro de una única solución algorítmica.
+				
+				%---------------------------------------------------------
+				\subsubsection{Propuesta de Solución}
+				%---------------------------------------------------------
+					\noindent
+					La Figura~\ref{fig:estadisticasVector} presenta una solución algorítmica estructurada para calcular el promedio, la varianza y la desviación estándar de un conjunto de números reales almacenados en un arreglo. El diseño separa con claridad (i) la validación del número de datos, (ii) la inicialización de acumuladores, (iii) la captura y almacenamiento de cada observación, (iv) el cálculo del promedio a partir de la suma total, (v) el segundo recorrido del vector para acumular las desviaciones cuadráticas y (vi) la obtención final de la varianza y la desviación estándar. Esta organización favorece la comprensión del flujo completo del problema y permite apreciar cómo el uso de arreglos y múltiples recorridos se integra en una misma solución \cite{Hooshyar2015Flowchart,Farrell2018Programming}.
+					
+					\begin{figure}[htbp]
+						\centering
+						\includegraphics[width=0.78\textwidth]{dfs/fig2.9.9.2.png}
+						\caption{Cálculo del promedio, la varianza y la desviación estándar a partir de un arreglo de datos reales.}
+						\label{fig:estadisticasVector}
+					\end{figure}
+					
+					\noindent
+					El Algoritmo~\ref{alg:estadisticasVector} presenta una propuesta de solución estructurada para calcular estas tres medidas estadísticas. En esta formulación se distinguen explícitamente la validación inicial del número de datos, la carga del arreglo, el uso de dos acumuladores y la separación del proceso en dos recorridos del mismo vector. Esta organización reduce la complejidad del razonamiento, ya que evita mezclar en una sola etapa el cálculo de la media con el de la dispersión, y permite al estudiante reconocer con claridad la dependencia existente entre promedio, varianza y desviación estándar \cite{Cormen2022Introduction,Qian2018Students}.
+					
+					\begin{lstlisting}[style=upsamStyle,caption={Cálculo del promedio, la varianza y la desviación estándar de un conjunto de datos},label={alg:estadisticasVector}]
+	Algoritmo EstadisticasBasicasVector
+	1.    Var:
+	1.1.      n, i: entero
+	1.2.      datos[ ]: real
+	1.3.      suma, sumaCuadrados, promedio, varianza, desviacion: real
+	
+	2.    Escribir "Ingrese la cantidad de datos (n):"
+	3.    Leer n
+	4.    Mientras n < 2 Hacer
+	4.1.       Escribir "Error: la cantidad de valores debe ser mayor o igual que 2. Intente de nuevo."
+	4.2.       Escribir "Ingrese la cantidad de datos (n):"
+	4.3.       Leer n
+	5.    FinMientras
+	
+	6.    suma <- 0
+	7.    sumaCuadrados <- 0
+	
+	8.    Para i <- 1 Hasta n Hacer
+	8.1.       Escribir "Ingrese el dato ", i, ":"
+	8.2.       Leer datos[i-1]
+	8.3.       suma <- suma + datos[i-1]
+	9.    FinPara
+	
+	10.   promedio <- suma / n
+	
+	11.   Para i <- 1 Hasta n Hacer
+	11.1.      sumaCuadrados <- sumaCuadrados + (datos[i-1] - promedio)^2
+	12.   FinPara
+	
+	13.   varianza <- sumaCuadrados / n
+	14.   desviacion <- raiz2(varianza)
+	
+	15.   Escribir "Promedio: ", promedio
+	16.   Escribir "Varianza: ", varianza
+	17.   Escribir "Desviacion estandar: ", desviacion
+	FinAlgoritmo \end{lstlisting}
+				
+				\noindent
+				El algoritmo presentado en el Listado de código~\ref{alg:estadisticasVector} organiza el cálculo en dos recorridos claramente diferenciados sobre el mismo arreglo. En el primero se capturan los datos y se acumula su suma total; en el segundo se reutilizan las observaciones almacenadas para calcular la suma de las desviaciones cuadráticas respecto del promedio. Esta separación mejora la legibilidad del procedimiento y ayuda a comprender que ciertas medidas estadísticas dependen de resultados previos que deben obtenerse antes de continuar con el resto del procesamiento. Además, la validación inicial de \texttt{n} evita que el algoritmo avance con una cantidad insuficiente de observaciones, lo que da mayor coherencia al flujo general de la solución \cite{Gaddis2022Starting,Farrell2018Programming,Pressman2019Software,Sommerville2015Software}.
+			
+			%=============================================================
+			\subsection{Ejercicio 10: Conversión de un Número Entero en base 10 a Otra Base Menor que 10}
+			%=============================================================
+				\noindent
+				Se requiere diseñar un algoritmo que permita convertir un número entero expresado en \textbf{base 10} a otra base numérica entera menor que 10. El procedimiento debe solicitar primero el número que se desea convertir, luego pedir la base de destino y verificar que esta pertenezca al dominio permitido. Una vez validada la base, el algoritmo debe aplicar divisiones sucesivas entre la base elegida, registrar los residuos obtenidos en cada iteración y construir con ellos la representación final del número en el nuevo sistema de numeración. Este tipo de problema es especialmente útil en la formación inicial porque integra validación de entradas, operaciones enteras, uso de residuos, concatenación de resultados y control de iteraciones mediante una condición de parada \cite{Sebesta2018Concepts,Gaddis2022Starting,Farrell2018Programming}.
+				
+				Desde el punto de vista matemático, la conversión de un número decimal a otra base se fundamenta en un procedimiento clásico de divisiones sucesivas. En cada paso, el residuo de la división entre el número actual y la base de destino produce uno de los dígitos de la nueva representación. Posteriormente, el cociente entero se convierte en el nuevo valor a procesar. Este mecanismo se repite hasta que el cociente sea menor que la base. La secuencia de residuos generados debe reconstruirse en orden inverso para obtener el resultado final, razón por la cual el algoritmo concatena cada nuevo dígito al inicio de la cadena de salida \cite{Cormen2022Introduction,Sebesta2018Concepts}. En consecuencia, este ejercicio no solo introduce la conversión entre sistemas de numeración, sino que también muestra cómo una propiedad matemática puede transformarse en una estrategia computacional precisa y repetible.
+				
+				Desde una perspectiva formativa, este problema también resulta valioso porque obliga a distinguir entre el \textbf{valor numérico} del dato y su \textbf{representación textual} en otra base. Mientras las divisiones, residuos y cocientes se realizan sobre variables enteras, la representación final del número convertido debe almacenarse como una cadena, ya que el resultado no se construye mediante una suma aritmética, sino mediante la concatenación ordenada de dígitos. Esta separación entre cálculo numérico y presentación textual constituye una idea importante en programación básica, pues muestra que no todos los resultados se representan internamente del mismo modo \cite{Futschek2006Algorithmic,Qian2018Students,Robins2003Learning,Lister2004Learning}.
+				
+				%--------------------------------------------------
+				\subsubsection{Pasos para Desarrollar la Solución}
+				%--------------------------------------------------
+					\noindent
+					Los pasos para desarrollar la solución algorítmica de un problema permiten convertir un procedimiento matemático en una secuencia ordenada de operaciones ejecutables. En este ejercicio, la conversión se construye a partir de una iteración por reducción: en cada paso el número disminuye mediante división entera, mientras los residuos obtenidos se van acumulando como parte del resultado final. Esta organización permite al estudiante comprender que ciertos problemas no se resuelven mediante una única fórmula directa, sino a través de una secuencia de transformaciones sucesivas sobre el dato original.
+					
+					\noindent
+					\textbf{1. Análisis del problema.}  
+					Para comprender el problema conviene partir de algunos ejemplos pequeños y ejecutar manualmente las divisiones sucesivas. El algoritmo sigue una secuencia clara: primero se lee el número original, luego se obtiene su valor absoluto para trabajar con una magnitud no negativa durante la conversión, después se solicita la base de destino y se verifica que sea menor que 10. Una vez satisfechas estas condiciones, se inicializa una cadena vacía y se repite el siguiente proceso: calcular el residuo de dividir el número actual entre la base, convertir ese residuo en texto, concatenarlo al inicio del resultado parcial y reemplazar el número actual por el cociente entero de la división. Cuando el cociente ya no supera la base, el proceso concluye agregando el último dígito y, si el número original era negativo, anteponiendo el signo menos al resultado final. Esta descomposición facilita el aprendizaje porque separa con nitidez la etapa de validación, la etapa de reducción iterativa y la etapa de presentación del resultado \cite{Cormen2022Introduction,Sebesta2018Concepts,Qian2018Students}.
+					
+					\noindent
+					%---------------------------------------------------------
+					\textbf{Ejercicios de análisis manual con valores representativos.}
+					%---------------------------------------------------------
+					Antes de diseñar el algoritmo, es recomendable resolver manualmente algunos casos que permitan verificar el comportamiento de la división entera, el uso del residuo y la concatenación de dígitos.
+					
+					\begin{itemize}
+						
+						\item \textbf{Caso 1: Conversión de un valor positivo a base 2}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{numero} = 13
+								\item \texttt{base} = 2
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							13 \div 2 = 6 \text{ residuo } 1,\qquad
+							6 \div 2 = 3 \text{ residuo } 0,
+							\]
+							\[
+							3 \div 2 = 1 \text{ residuo } 1,\qquad
+							1 \div 2 = 0 \text{ residuo } 1
+							\]
+							Los residuos leídos en orden inverso forman la representación final:
+							\[
+							13_{10}=1101_2
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							1101_2
+							\]
+							\item \textbf{Observación.} Este caso permite verificar el funcionamiento elemental del método de divisiones sucesivas.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 2: Conversión a base 8}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{numero} = 100
+								\item \texttt{base} = 8
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							\[
+							100 \div 8 = 12 \text{ residuo } 4,\qquad
+							12 \div 8 = 1 \text{ residuo } 4
+							\]
+							\[
+							1 \div 8 = 0 \text{ residuo } 1
+							\]
+							Por lo tanto:
+							\[
+							100_{10}=144_8
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							144_8
+							\]
+							\item \textbf{Observación.} Este caso muestra que el mismo procedimiento se aplica a cualquier base válida menor que 10.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 3: Número menor que la base}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{numero} = 5
+								\item \texttt{base} = 7
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							Como el número ya es menor que la base, no se requieren iteraciones completas de división sucesiva; su representación en la base de destino es el mismo dígito.
+							\[
+							5_{10}=5_7
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							5_7
+							\]
+							\item \textbf{Observación.} Este caso permite verificar la condición de parada cuando el valor actual ya no necesita reducción adicional.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 4: Número negativo}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{numero} = -25
+								\item \texttt{base} = 2
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							Primero se trabaja con el valor absoluto:
+							\[
+							25_{10}=11001_2
+							\]
+							Luego se antepone el signo:
+							\[
+							-25_{10}=-11001_2
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							-11001_2
+							\]
+							\item \textbf{Observación.} Este caso confirma la conveniencia de separar el tratamiento del signo del proceso de conversión de magnitud.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 5: Número cero}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{numero} = 0
+								\item \texttt{base} = 3
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							El valor cero se representa como cero en cualquier base válida:
+							\[
+							0_{10}=0_3
+							\]
+							\item \textbf{Resultado esperado}
+							\[
+							0_3
+							\]
+							\item \textbf{Observación.} Este caso exige que el algoritmo trate correctamente un valor cuyo proceso de reducción no genera residuos sucesivos relevantes.
+						\end{enumerate}
+						
+						%---------------------------------------------------------
+						
+						\item \textbf{Caso 6: Base no válida}
+						\begin{enumerate}
+							\item \textbf{Datos de entrada}
+							\begin{itemize}
+								\item \texttt{numero} = 18
+								\item \texttt{base} = 12
+							\end{itemize}
+							\item \textbf{Resolución manual}
+							Como el ejercicio restringe la conversión a bases menores que 10, el algoritmo debe solicitar nuevamente la base.
+							\item \textbf{Resultado esperado}
+							\item \textit{``Error: la base debe ser menor que 10.''}
+							\item \textbf{Observación.} Este caso obliga a incorporar una validación inicial del dominio permitido para la base \cite{Pressman2019Software,Sommerville2015Software}.
+						\end{enumerate}
+					\end{itemize}
+					
+					\noindent
+					\textbf{2. Identificación de datos de entrada.}
+					Los datos de entrada corresponden a la información que el algoritmo necesita recibir para ejecutar la conversión.
+					
+					\begin{itemize}
+						\item \textbf{\texttt{numero} (entero):} valor original expresado en base 10.
+						\item \textbf{\texttt{base} (entero):} base de destino a la cual se desea convertir el número.
+					\end{itemize}
+					
+					\noindent
+					La base debe validarse antes de iniciar la conversión, de modo que el procedimiento continúe únicamente cuando el valor ingresado pertenezca al dominio previsto. Asimismo, cada lectura debe estar precedida por un mensaje claro que indique al usuario qué dato se espera en cada etapa del proceso \cite{Gaddis2022Starting,Farrell2018Programming}.
+					
+					\noindent
+					\textbf{3. Identificación de datos de salida.}
+					Los datos de salida son los resultados que el algoritmo entrega una vez concluido el procesamiento.
+					
+					\begin{itemize}
+						\item \textbf{Representación convertida (cadena):} número equivalente al valor original expresado en la base seleccionada.
+						\item \textbf{Mensaje informativo:} salida textual que presenta el número original, la base de destino y la representación final obtenida.
+					\end{itemize}
+					
+					\noindent
+					La salida combina un resultado textual con información contextual, lo que permite interpretar correctamente la conversión realizada y distinguir el sistema numérico de destino.
+					
+					\noindent
+					\textbf{4. Identificación de cálculos intermedios (procesos intermedios).}
+					Los procesos intermedios son las operaciones necesarias para obtener la representación final del número en la nueva base.
+					
+					\begin{itemize}
+						\item \textbf{Normalización del signo:} \texttt{num <- abs(numero)}. Permite trabajar con una magnitud no negativa durante la conversión.
+						\item \textbf{Inicialización del resultado:} \texttt{resultado <- ""}. La representación final se construye progresivamente como cadena.
+						\item \textbf{Cálculo del residuo:} \texttt{residuo <- num MOD base}. Cada residuo representa un dígito de la nueva base.
+						\item \textbf{Concatenación del dígito:} \texttt{resultado <- concatenar(convertirATexto(residuo), resultado)}. El nuevo dígito se agrega al inicio de la cadena parcial.
+						\item \textbf{Actualización del número:} \texttt{num <- num DIV base}. El cociente entero se convierte en el nuevo valor a procesar.
+					\end{itemize}
+					
+					\noindent
+					Estos pasos muestran con claridad cómo el problema se resuelve mediante una reducción iterativa del valor inicial, mientras se construye simultáneamente una representación textual ordenada de sus dígitos. Esta organización separa la parte aritmética de la parte de presentación y facilita la comprensión del procedimiento \cite{Cormen2022Introduction,Sebesta2018Concepts}.
+					
+					\noindent
+					\textbf{5. Identificación de cálculos finales (procesos finales).}
+					Los procesos finales son aquellos que producen directamente la respuesta visible para el usuario.
+					
+					\begin{itemize}
+						\item \textbf{Incorporación del último dígito:} cuando el número ya no requiere más divisiones, se agrega el valor restante al inicio del resultado.
+						\item \textbf{Tratamiento del signo:} si el número original era negativo, se antepone el signo menos a la representación convertida.
+						\item \textbf{Presentación del resultado:} impresión del número original, la base de destino y la representación final obtenida.
+					\end{itemize}
+					
+					\noindent
+					Estas operaciones completan la transición desde el valor decimal inicial hasta su equivalente textual en la nueva base, permitiendo cerrar el proceso con una salida interpretable y consistente.
+					
+					\noindent
+					\textbf{6. Identificación de condiciones (decisiones).}
+					Las decisiones son expresiones lógicas que controlan el flujo del algoritmo.
+					
+					\begin{itemize}
+						\item \textbf{Validación de la base:} controla que el valor ingresado sea menor que 10 y, didácticamente, mayor que 1.
+						\item \textbf{Condición del ciclo de conversión:} determina si el valor actual aún requiere nuevas divisiones.
+						\item \textbf{Condición del signo:} verifica si el número original era negativo para decidir si debe anteponerse el símbolo menos al resultado.
+					\end{itemize}
+					
+					\noindent
+					Estas decisiones separan con claridad la fase de validación de la fase de cálculo y hacen explícito que la conversión solo debe continuar cuando las entradas pertenecen al dominio previsto \cite{Sebesta2018Concepts,Farrell2018Programming}.
+					
+					\noindent
+					\textbf{7. Identificación de repeticiones o iteraciones.}
+					El algoritmo contiene dos estructuras repetitivas bien diferenciadas.
+					
+					\begin{itemize}
+						\item \textbf{Repetición para la validación de la base:} mientras la base no pertenezca al dominio permitido, se solicita nuevamente.
+						\item \textbf{Repetición para la conversión:} mientras el número actual siga siendo reducible por divisiones sucesivas, se calculan residuos y se actualiza el cociente.
+					\end{itemize}
+					
+					\noindent
+					La presencia de estas dos repeticiones muestra que el problema combina control de entrada con transformación progresiva del dato. Esta combinación resulta didácticamente útil porque enseña que un algoritmo puede contener distintos ciclos con propósitos claramente diferenciados \cite{Qian2018Students,Lister2004Learning,Robins2003Learning}.
+					
+					\noindent
+					\textbf{8. Condiciones para finalizar el algoritmo.}
+					El algoritmo finaliza cuando:
+					
+					\begin{itemize}
+						\item se ha ingresado una base válida;
+						\item el número ha sido reducido completamente mediante divisiones sucesivas;
+						\item se ha construido la cadena con la representación convertida;
+						\item se ha presentado el resultado final con o sin signo negativo.
+					\end{itemize}
+					
+					\noindent
+					En consecuencia, la finalización del proceso depende tanto de la validez de la base ingresada como de la culminación ordenada de la reducción iterativa del número original.
+					
+				%---------------------------------------------------------
+				\subsubsection{Propuesta de Solución}
+				%---------------------------------------------------------
+					\noindent
+					La Figura~\ref{fig:conversionBase} presenta una solución algorítmica estructurada para convertir un número entero en base 10 a otra base menor que 10. El diseño separa con claridad (i) la lectura del número original, (ii) la normalización de su magnitud mediante valor absoluto, (iii) la validación de la base de destino, (iv) la reducción iterativa por división entera, (v) la construcción textual del resultado a partir de residuos y (vi) la incorporación final del signo cuando corresponde. Esta organización favorece la comprensión del flujo completo del problema y permite apreciar cómo una operación matemática recurrente puede traducirse en un procedimiento algorítmico bien estructurado \cite{Hooshyar2015Flowchart,Farrell2018Programming}.
+					
+					\begin{figure}[htbp]
+						\centering
+						\includegraphics[width=0.72\textwidth]{dfs/fig2.9.10.2.png}
+						\caption{Conversión de un número entero en base 10 a otra base menor que 10 mediante divisiones sucesivas.}
+						\label{fig:conversionBase}
+					\end{figure}
+					
+					\noindent
+					El Algoritmo~\ref{alg:conversionBase} presenta una propuesta de solución estructurada para realizar esta conversión. En esta formulación se distinguen explícitamente la validación de la base, el tratamiento separado del signo, la construcción progresiva del resultado como cadena y el uso de las operaciones \texttt{MOD} y \texttt{DIV} para obtener los dígitos de la nueva base. Esta organización reduce la complejidad del razonamiento, ya que evita mezclar el proceso aritmético de reducción con la presentación final del número convertido y permite al estudiante reconocer con claridad cómo los residuos de las divisiones sucesivas se transforman en los dígitos de la nueva representación \cite{Cormen2022Introduction,Qian2018Students}.
+					
+					\begin{lstlisting}[style=upsamStyle,caption={Conversión de un entero decimal a una base menor que 10},label={alg:conversionBase}]
+	Algoritmo ConversionBaseMenorQueDiez
+	1.    Var:
+	1.1.      numero, num, base, residuo: entero
+	1.2.      resultado: cadena
+	
+	2.    Escribir "Digite un numero entero en base 10:"
+	3.    Leer numero
+	
+	4.    num <- abs(numero)
+	
+	5.    Escribir "A que base desea convertirlo (menor que 10):"
+	6.    Leer base
+	7.    Mientras base >= 10 O base <= 1 Hacer
+	7.1.       Escribir "Error: la base debe ser mayor que 1 y menor que 10."
+	7.2.       Escribir "A que base desea convertirlo (menor que 10):"
+	7.3.       Leer base
+	8.    FinMientras
+	
+	9.    resultado <- ""
+	
+	10.   Si num = 0 Entonces
+	10.1.      resultado <- "0"
+	10.2.   SiNo
+	10.3.      Mientras num >= base Hacer
+	10.3.1.       residuo <- num MOD base
+	10.3.2.       resultado <- concatenar(convertirATexto(residuo), resultado)
+	10.3.3.       num <- num DIV base
+	10.4.      FinMientras
+	10.5.      resultado <- concatenar(convertirATexto(num), resultado)
+	11.   FinSi
+	
+	12.   Si numero < 0 Entonces
+	12.1.      resultado <- concatenar("-", resultado)
+	13.   FinSi
+	
+	14.   Escribir numero, " en base ", base, " = ", resultado
+	FinAlgoritmo \end{lstlisting}
+				
+					\noindent
+					El algoritmo presentado en el Listado de código~\ref{alg:conversionBase} separa de manera explícita el tratamiento de la magnitud del número y el manejo del signo. Durante la conversión, el procedimiento trabaja con el valor absoluto del dato original para simplificar el cálculo de residuos y cocientes; una vez construida la representación en la nueva base, el signo negativo se incorpora solo si el número inicial era menor que cero. Esta organización mejora la claridad del flujo y evita mezclar la lógica aritmética de la conversión con la presentación final del resultado. Además, la validación previa de la base impide continuar con valores fuera del dominio previsto, lo que aporta coherencia al procedimiento general y hace la solución más comprensible en contextos de aprendizaje inicial \cite{Gaddis2022Starting,Farrell2018Programming,Pressman2019Software,Sommerville2015Software}.
+			
 			%=====================================================================
 			\section{Estrategias para el aprendizaje técnico en IS}
 			%=====================================================================
