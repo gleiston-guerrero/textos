@@ -1,0 +1,20 @@
+# Archivos auxiliares LaTeX
+*.aux
+*.acn
+*.acr
+*.alg
+*.bcf
+*.bbl
+*.blg
+*.glg
+*.glo
+*.gls
+*.ist
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
