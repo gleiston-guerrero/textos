@@ -1,0 +1,45 @@
+{\justifying
+	\chapterimage{jpg/GleistonGuerrero.jpeg}{3cm}
+	\chapter{Glosario de términos}
+	\epigraph{The glory of God is intelligence.}{--- \textup{Jesucristo}}
+    
+\begin{description}
+
+    \item[Calico] \hfill \\ 
+    \textbf{Calico} es un plugin de red CNI que proporciona conectividad de red basada en enrutamiento IP sin encapsulaci\'{o}n, junto con pol\'{i}ticas de seguridad basadas en firewall. Se utiliza ampliamente en entornos de producci\'{o}n por su rendimiento y escalabilidad.
+    
+    \item[Cluster] \hfill \\ 
+    Un \textbf{cl\'{u}ster de Kubernetes} es un conjunto de nodos interconectados que trabajan conjuntamente para ejecutar aplicaciones en contenedores. Incluye un Plano de Control, que administra el estado general, y Nodos de Trabajo, donde se ejecutan los Pods.
+    
+    \item[ClusterIP] \hfill \\ 
+    \textbf{ClusterIP} es el tipo de servicio por defecto en Kubernetes. Expone un servicio dentro del cl\'{u}ster, accesible solo desde otras aplicaciones internas. Es ideal para la comunicaci\'{o}n entre microservicios.
+    
+    \item[CNI (Container Network Interface)] \hfill \\ 
+    La \textbf{CNI (Container Network Interface)} es una especificaci\'{o}n y conjunto de librer\'{i}as para configurar redes en contenedores. Define mecanismos de asignaci\'{o}n de direcciones IP, configuraci\'{o}n de rutas y aplicaci\'{o}n de pol\'{i}ticas de red en Kubernetes.
+    
+    \item[Flannel] \hfill \\ 
+    \textbf{Flannel} es un plugin CNI que proporciona redes de superposici\'{o}n (overlay networks) en Kubernetes. Encapsula el tr\'{a}fico entre nodos y permite la comunicaci\'{o}n entre Pods ubicados en distintos nodos de un cl\'{u}ster.
+    
+    \item[Hipervisor] \hfill \\ 
+    Un \textbf{hipervisor} es un software, firmware o hardware que crea y gestiona máquinas virtuales (\textit{Virtual Machines, VMs}), permitiendo que varios sistemas operativos se ejecuten de manera simultánea sobre un solo hardware físico. También se conoce como \textit{monitor de máquinas virtuales} (\textit{Virtual Machine Monitor, VMM}).
+    
+    El hipervisor es el componente clave de la virtualización tradicional, ya que abstrae los recursos físicos del servidor (CPU, memoria, almacenamiento, etc.) y los distribuye entre múltiples entornos virtualizados. Esto asegura que cada máquina virtual funcione de manera aislada, como si tuviera su propio hardware dedicado, proporcionando eficiencia y seguridad en el uso de los recursos computacionales.
+    
+    \item[Ingress Controllers] \hfill \\ 
+    Los \textbf{Ingress Controllers} gestionan el acceso HTTP/HTTPS externo hacia los servicios del cl\'{u}ster. Implementan las reglas definidas en los recursos \texttt{Ingress}, permitiendo balanceo de carga, enrutamiento y terminaci\'{o}n de TLS.
+    
+    \item[Kernel] \hfill \\ 
+    El \textbf{kernel} es el núcleo o corazón de un sistema operativo. Es el componente fundamental que gestiona la comunicación entre el hardware de un ordenador y el software que se ejecuta sobre él.
+    
+    La función principal del kernel es controlar y coordinar el acceso a los recursos del sistema, tales como la CPU, la memoria, el almacenamiento y los dispositivos de entrada/salida. Actúa como intermediario, garantizando que las aplicaciones y procesos puedan utilizar el hardware de manera segura, eficiente y controlada.
+    
+    \item[Modelo de Red Plano] \hfill \\ 
+    Un \textbf{modelo de red plano} en Kubernetes hace referencia a un dise\~{n}o de red en el cual todos los Pods pueden comunicarse directamente entre s\'{i}, sin necesidad de traducci\'{o}n de direcciones o Network Address Translation (NAT). En este modelo, cada Pod posee una direcci\'{o}n IP \'{u}nica dentro del cl\'{u}ster, lo que garantiza una conectividad directa y uniforme entre los distintos componentes, independientemente del nodo en el que se encuentren.
+    
+    \item[NAT (Network Address Translation)] \hfill \\ 
+    \textbf{NAT} es una t\'{e}cnica utilizada para modificar las direcciones IP de los paquetes que pasan a trav\'{e}s de un enrutador o firewall. En redes de contenedores, permite que m\'{u}ltiples contenedores compartan una misma direcci\'{o}n IP p\'{u}blica para acceder a redes externas.
+    
+    \item[Pods] \hfill \\ 
+    Un \textbf{Pod} es la unidad m\'{a}s peque\~{n}a y b\'{a}sica de ejecuci\'{o}n en Kubernetes. Consiste en uno o varios contenedores que comparten el mismo espacio de red, almacenamiento y configuraci\'{o}n. Los contenedores dentro de un Pod pueden comunicarse entre s\'{i} a trav\'{e}s de interfaces \texttt{localhost} y comparten recursos como vol\'{u}menes de almacenamiento persistente.
+  
+\end{description}
